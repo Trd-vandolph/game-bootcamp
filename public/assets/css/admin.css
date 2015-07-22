@@ -1,0 +1,87 @@
+@charset "utf-8";
+header{
+    background:#9CD18C;
+}
+header nav li a:link,
+header nav li a:visited{
+    background: #7AAE2A;
+}
+header nav li a:hover,
+header nav li a:active{
+    color: #fff;
+}
+#contents-wrap {
+}
+table.table-base .button{
+  padding: 6px 10px;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+table.table-base  p.email{
+  word-break:break-all;
+}
+table.table-base  td.html-course{
+  text-align: center;
+}
+.search-table{
+  text-align: right;
+  max-width: 10px 0;
+}
+.search-table form{
+  float: right;
+  display: block;
+}
+.search-table form input{
+    padding:4px;
+    margin-bottom: 4px;
+    border:solid 1px #bbb;
+    font-size: 16px;
+    border-radius: 3px;
+    max-width: 100%;
+}
+.link-more.table-top{
+  float: right;
+  margin: 0 0 0 20px!important;
+}
+.table-base td.hangout{
+  word-break:break-all;
+}
+.table-base td.name p{
+}
+.table-base td.name p span{
+  font-weight: 700;
+}
+.table-base td.grades ul{
+  float: left;
+}
+.table-base td.grades ul li{
+  float: left;
+  margin-right: 40px;
+}
+.table-base td.grades ul input{
+    padding:2px 4px;
+    margin: 0 0 4px 5px;
+    border:solid 1px #bbb;
+    font-size: 16px;
+    border-radius: 3px; 
+    width: 120px; 
+}
+.table-base tr.reserved th,.table-base tr.reserved td{
+  background: #F6F7F2;
+}
+.table-base tr.reserved td.status{
+  font-weight: 700;
+  color: #7E9E42;
+}
+.clndr-table .class-number {
+    color: #7e9e42;
+    font-size: 20px;
+    text-align: right;
+    padding: 10px;
+}
+.clndr-table a{
+  display: block;
+}
+.clndr-table a:hover{
+  text-decoration: none;
+}

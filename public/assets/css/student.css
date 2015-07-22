@@ -1,0 +1,360 @@
+@charset "utf-8";
+#user-data{
+    background:#9CD18C;
+}
+#user-data .reserve a{
+    color:#7CA771;
+}
+#user-data .reserve a:hover{
+    color:#D87C60;
+}
+
+#topic-path{
+    background:#9CD18C;
+}
+#topic-path ul li:after{
+    color:#7CA771;
+}
+#topic-path ul li a:hover{
+    color:#54754E;
+}
+
+@media screen and (min-width : 680px) {
+    #user-data .reserve a:after{
+        content:"Reserve Lesson";
+    }
+}
+
+/* new course proposal */
+.new-course-proposal{
+    padding: 20px;
+}
+.new-course-proposal:before{
+    content:"";
+    margin: 0;
+}
+@media screen and (max-width : 680px) {
+    .new-course-proposal a.button{
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}
+
+
+/* schedule */
+ul.curriculum {
+    margin:0 0 10px 0;
+}
+ul.curriculum li{
+    display: inline;
+    margin:0 5px 0 0;
+    white-space: nowrap;
+}
+ul.curriculum li a{
+    background: #ccc;
+    font-size: 85%;
+    border-radius: 20px;
+    padding: 5px 20px 3px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+ul.curriculum li.selected.course0 a{
+    background: #7E9E42;
+}
+ul.curriculum li.selected.course1 a{
+    background: #DD795D;
+}
+ul.curriculum li.selected.course2 a{
+    background: #889CD0;
+}
+ul.curriculum li.selected.course3 a{
+    background: #DA88AA;
+}
+.schedule {
+    position: relative;
+}
+.schedule table {
+    text-align: center;
+    background: #fff;
+    margin:0 0 40px 0;
+    box-shadow:0 0 4px 0 rgba(0,0,0,0.05);
+}
+.schedule table td,.schedule table th{
+    padding: 15px 0;
+}
+.schedule table thead {
+    background: #9A9492;
+    color: #fff;
+}
+.schedule table thead th{
+    font-size: 18px;
+}
+@media screen and (min-width : 680px) and (max-width : 1100px) {
+    .schedule table thead th{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width : 680px) {
+    .schedule table thead th{
+        font-size: 10px;
+    }
+}
+.schedule table tbody th{
+    background: #eee;
+}
+.schedule table td{
+    width: 10%;
+    font-weight: 700;
+}
+.schedule table tbody td{
+    border-right: solid 1px #eee;
+    vertical-align: top;
+    padding: 10px 0 0 0;
+}
+.schedule table tbody th{
+    border-right: solid 1px #E4E4E4;
+}
+.schedule table tbody td:last-child,.schedule table tbody th:last-child{
+    border: none;
+}
+.schedule table td ul{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+.schedule table td li{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.schedule table td li a{
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 8px 0;
+}
+.schedule.course1 table td li.reserved a{
+    background: #DD795D;
+}
+.schedule.course1 table td li.events a{
+    background: #7E9E42;
+}
+.schedule.course1 table td li.gocal a{
+    background: rgb(73, 134, 231) !important;
+}
+.schedule.course2 table td li.reserved a{
+    background: #889CD0;
+}
+.schedule.course3 table td li.reserved a{
+    background: #DA88AA;
+}
+
+.schedule table td li.unavailable a{
+    pointer-events:none;
+    color: #ccc;
+}
+.schedule table td li.reserved a{
+    color: #fff;
+}
+.schedule table td li.events a,
+.schedule table td li.gocal a{
+    color: #fff !important;
+}
+.schedule table td li a:hover{
+    background: #7E9E42;
+    color: #fff;
+    text-decoration: none;
+}
+.select-teacher ul li{
+    border-bottom: dotted 1px #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+.select-teacher ul li:last-child{
+    border:none;
+}
+.select-teacher p.date{
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    background: #fff;
+    border:solid 1px #eee;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.select-teacher .profile h3{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.select-teacher .confirm{
+    background: #fff;
+    border:solid 1px #eee;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.select-teacher .confirm .time{
+    font-weight: 700;
+}
+.modal-event {
+	text-align: left;
+}
+@media screen and (min-width : 500px) {
+     .select-teacher .photo{
+        width: 200px;
+        float: left;
+    }
+   .select-teacher .profile{
+        width: 100%;
+        float: right;
+        margin: 0 0 0 -200px;
+    }
+    .select-teacher .profile h3,.select-teacher .profile p{
+        margin-left: 240px;
+    }
+}
+@media screen and (max-width : 500px) {
+     .select-teacher .photo{
+        text-align: center;
+     }
+    .schedule table tbody th{
+        font-size: 12px;
+    }
+    .schedule table td li a{
+         font-size: 12px;
+   }
+    .schedule table td li a{
+        font-size: 10px;
+        font-weight: normal;
+    }
+    ul.curriculum li a{
+        padding: 5px 10px 3px 10px;
+    }
+}
+
+/* payment */
+@media screen and (min-width : 900px) {
+    .payment .select-course {
+            display: -webkit-box;
+            display: -moz-box;
+            padding: 40px 0;
+    }
+     .payment .select-course li{
+        max-width: 500px;
+        margin:auto;
+     }
+   /*
+    .payment .select-course li{
+        width: 29%;
+        padding: 0 2%;
+        border-right: solid 1px #eee;
+    }
+    */
+}
+@media screen and (max-width : 900px) {
+    .payment .select-course li{
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: solid 1px #eee;
+    }
+}
+.payment .select-course li:last-child{
+    border: none;
+}
+.payment .select-course li h4{
+    text-align: center;
+}
+.payment .select-course li aside{
+    text-align: center;
+}
+.payment .select-course li p.price {
+    text-align: center;
+    font-size: 18px;
+    margin: 40px 0;
+    line-height: 40px;
+}
+.payment .select-course li p.paypal{
+    text-align: center;
+}
+.payment .select-course li p.price span{
+    display: block;
+    color: #D87054;
+    font-size: 30px;
+    font-weight: 700;
+}
+.payment .select-course li div{
+    margin-bottom: 20px;
+}
+.payment .select-course .paypal-link{
+    text-align: center;
+    margin-top: 60px;
+}
+.payment .select-course input[type="submit"]{
+    border:none;
+    font-size: 22px;
+    padding:15px 50px;
+    color:#fff!important;
+    border-radius:7px;
+    background:#7E9E42;
+    cursor:pointer;
+    border:none;
+    white-space:nowrap;
+}
+
+/* Student Payment */
+.pay-content {
+	border: solid 1px #7aae2a;
+	padding: 20px;
+}
+.pay-content p {
+    font-size: 17px;
+    line-height: 40px;
+}
+.pay-content #first-block {
+	background: #FFF none repeat scroll 0% 0%;
+	border: 1px solid #EEE;
+	margin: 0px 0px 40px;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05);
+	min-height: 100px;
+	width: 97%;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.pay-content #second-block {
+    background: #FFF none repeat scroll 0% 0%;
+	border: 1px solid #EEE;
+	margin: 0px 0px 40px;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05);
+    min-height: 100px;
+    width: 97%;
+    padding: 10px;
+}
+#first-left {
+	display: inline-block;
+	margin-right: 20px;
+}
+#first-right {
+    display: inline-block;
+}
+hr {
+	width: 50px;
+	margin: auto;
+}
+#second-left {
+    display: inline-block;
+    margin-right: 88px;
+}
+#second-right {
+    display: inline-block;
+}
+#second-right select, input {
+	padding: 4px;
+	margin-bottom: 4px;
+	border: 1px solid #BBB;
+	font-size: 16px;
+	border-radius: 3px;
+	max-width: 100%;
+}
