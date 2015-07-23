@@ -154,13 +154,18 @@ header nav .member-menu li a{
 	border-radius: 3px;
 }
 header nav .member-menu li.signup a{
-	background: #7AAE2A;
-	margin-right: 5px;
+	background: red;
+	padding: 10px;
+	border-radius: 7px;
+	margin: 20px 15px 46px 0;
 }
-header nav .member-menu li.login a{
-	background: #D9B146;
+.member-menu li.login a{
+	background: red;
+	padding: 10px;
+	border-radius: 7px;
+	margin: 20px 15px 46px 0;
 }
-header nav .member-menu li a:hover{
+.member-menu li a:hover{
 	text-decoration: none;
 	filter: alpha(opacity=7);
 	-moz-opacity:0.7;
@@ -355,7 +360,7 @@ footer {
 	margin-top: 140px;
 	background: #33542A;
 	text-align: center;
-	overflow: hidden; 
+	overflow: hidden;
 }
 footer a:link,footer a:visited{
 	color: #fff;
@@ -497,7 +502,7 @@ footer .copyright{
         padding: 15px 10px !important;
         top: 0 !important;
     }
-    
+
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
     div#banner{
@@ -576,10 +581,10 @@ footer .copyright{
 		float: left;
 	}
 	#features ul li:nth-child(3){
-		margin:0; 
+		margin:0;
 	}
 	#features ul li:nth-child(4){
-		margin:0 7% 0 16%; 
+		margin:0 7% 0 16%;
 	}
 }
 @media screen and (min-width: 640px) and (max-width: 840px) {
@@ -1012,7 +1017,7 @@ div.payment.clearfix:hover {
 	}
 }
 ul.tutors_list_l li .photo{
-	margin:0 0 40px 0; 
+	margin:0 0 40px 0;
   position: relative;
   color: #fff;
   padding: 5px;
@@ -1092,10 +1097,10 @@ ul.tutors_list_l li div.text{
 		float: left;
 	}
 	#contents.flow ol li:nth-child(3){
-		margin:0; 
+		margin:0;
 	}
 	#contents.flow ol li:nth-child(4){
-		margin:0 7% 0 16%; 
+		margin:0 7% 0 16%;
 	}
 	#contents.flow ol.registration li:after{
 		content: "\f061";
@@ -1246,10 +1251,10 @@ ul.tutors_list_l li div.text{
         float: left;
     }
     #contents.fee ol li:nth-child(3){
-        margin:0; 
+        margin:0;
     }
     #contents.fee ol li:nth-child(4){
-        margin:0 7% 0 16%; 
+        margin:0 7% 0 16%;
     }
     #contents.fee ol.fee li:after{
         content: "\f061";
@@ -1345,7 +1350,7 @@ ul.tutors_list_l li div.text{
     }
 }
  .bordered-section {
-	padding-left: 10px !important; 
+	padding-left: 10px !important;
     box-sizing : content-box;
     border : solid 4px #f7f7f7;
     height: 550px;
@@ -1603,7 +1608,7 @@ h4#ref {
 =============== */
 #contents.contact{
 	max-width: 740px;
-} 
+}
 #contents.contact .text{
 	margin-bottom: 20px;
 }
@@ -1921,12 +1926,12 @@ div.containPay {
     display: none;
     position: fixed;
     background: #7aae2a;
-    border-radius:7px; 
+    border-radius:7px;
     width:550px;
     z-index: 10001;
 }
 #dialogbox > div{ background:#FFF; margin:8px; }
-#dialogbox > div > #dialogboxhead{ 
+#dialogbox > div > #dialogboxhead{
 	background: #f7f7f7;
 	font-size: 19px;
 	padding: 10px;
@@ -1934,15 +1939,15 @@ div.containPay {
 	font-family: "Raleway", Sans-serif;
 	text-align: center;
 }
-#dialogbox > div > #dialogboxbody{ 
+#dialogbox > div > #dialogboxbody{
 	background: white;
 	padding: 20px;
 	color: black;
 }
-#dialogbox > div > #dialogboxfoot{ 
+#dialogbox > div > #dialogboxfoot{
 	background: #f7f7f7;
 	padding: 10px;
-	text-align: right;	
+	text-align: right;
 }
 #dialogbox > div > #dialogboxfoot button {
 	padding: 11px 30px;
@@ -1955,4 +1960,3 @@ div.containPay {
 	border: none;
 	white-space: nowrap;
 }
-
