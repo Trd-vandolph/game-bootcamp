@@ -1099,3 +1099,11 @@ ul.mc_list li {
 	border-radius: 7px;
 	margin: 20px 15px 46px 0;
 }
+/*A font fabric font - http://fontfabric.com/lovelo-font/ */
+@font-face {
+    font-family: 'Lovelo';
+    src: url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.eot');
+    src: url('../../wp-content/themes/salient/css/fonts/Lovelo_Blackd41d.eot?#iefix') format('embedded-opentype'), url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.woff') format('woff'), url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.html') format('truetype'), url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.svg#loveloblack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

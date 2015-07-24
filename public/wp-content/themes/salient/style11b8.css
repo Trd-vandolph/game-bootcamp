@@ -1936,7 +1936,7 @@ body .wpb_text_column h2:last-child, body .wpb_text_column h3:last-child {
     margin-bottom: 10px;
     opacity: 1;
     line-height: 20px;
-    background-color: #27CFC3;
+    background-color: #014099!important; /*#27CFC3*/
     display: inline-block;
     -webkit-backface-visibility: hidden;
 }
