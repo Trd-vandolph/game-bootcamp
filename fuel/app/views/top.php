@@ -1,3 +1,23 @@
+<?php
+
+	$file_handle = fopen("en.csv", "r");
+
+	$row = 0;
+	while (!feof($file_handle) ) {
+		$row++;	
+		$line_of_text = fgets($file_handle);
+		$parts = explode('=', $line_of_text);
+		if($row === 1) {
+			$exp = explode(',',$parts[0]);
+			$header = $exp[1];
+		}elseif ($row == 2) {
+			$exp = explode(',',$parts[0]);
+			$subheader = $exp[1];
+		}
+	}
+	fclose($file_handle);
+
+?>
 <div id="ajax-loading-screen"><span class="loading-icon "> <span class="default-skin-loading-icon"></span> </span>
 </div>
 <div id="ajax-content-wrap">
@@ -18,7 +38,7 @@
 
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<h1 style="text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 3px; text-align: center;">Experience Game Development</h1>
+										<h1 style="text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 3px; text-align: center;"><? echo $header; ?></h1>
 										<p style="text-align: center;"><a class="nectar-button large accent-color has-icon regular-button" href="about/index.html" data-color-override="false" data-hover-color-override="false" data-hover-text-color-override="#fff"><span>Enroll Now</span> <i class="icon-button-arrow"></i></a></p>
 
 									</div>
@@ -40,7 +60,7 @@
 
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<p style="font-size: 1.4em; text-align: center; color: white;">Learn Game Development while you're having fun and experience the world of Programming in just 4 classes per Month.</p>
+										<p style="font-size: 1.4em; text-align: center; color: white;"><? echo $subheader; ?></p>
 
 									</div>
 								</div>

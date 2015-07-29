@@ -960,9 +960,11 @@ header#top #logo img {
 }
 
 header#top {
-	position: relative;
+	position: absolute;
+	top: 0;
 	z-index: 9998;
 	width: 100%;
+	background-color: #014099;
 }
 
 
@@ -1310,7 +1312,8 @@ header#top #mobile-cart-link {
 }
 
 header#top #toggle-nav i, header#top #mobile-cart-link i {
-	background-color: transparent!important;
+	background-color: #014099 !important;
+	/* background-color: transparent!important; */
 	color: #a9a9a9;
 	line-height: 34px;
 	font-size: 18px;
@@ -1333,7 +1336,7 @@ header#top #toggle-nav i, header#top #mobile-cart-link i {
 	}
 	
 	body #header-outer[data-transparent-header="true"].transparent .cart-menu {
-		background-color: transparent;
+		background-color: #014099 !important;
 		border-left: 1px solid rgba(255,255,255,0.25);
 	}
 	
@@ -1346,7 +1349,7 @@ header#top #toggle-nav i, header#top #mobile-cart-link i {
 	}
 	
 	body #header-outer[data-transparent-header="true"].transparent {
-		background-color: transparent!important;
+		background-color: #014099 !important;
 		box-shadow: none!important;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
