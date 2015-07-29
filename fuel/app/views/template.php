@@ -25,13 +25,13 @@
 	<!--script type="application/ld+json">{ "@context": "http://schema.org", "@type": "WebSite", "url": "http://bootcamp.csp.edu/", "potentialAction": { "@type": "SearchAction", "target": "http://bootcamp.csp.edu/?s={search_term}", "query-input": "required name=search_term" } }</script-->
 	<!-- / Yoast WordPress SEO plugin. -->
 	<!--link rel="alternate" type="application/rss+xml" title="CSP Bootcamp &raquo; Feed" href="feed/index.html" />
-	<link rel="alternate" type="application/rss+xml" title="CSP Bootcamp &raquo; Comments Feed" href="comments/feed/index.html" />
-	<link rel="alternate" type="application/rss+xml" title="CSP Bootcamp &raquo; Homepage &#8211; Bootcamp w/ Video Comments Feed" href="homepage-bootcamp-w-video/feed/index.html" /-->
+<link rel="alternate" type="application/rss+xml" title="CSP Bootcamp &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="CSP Bootcamp &raquo; Homepage &#8211; Bootcamp w/ Video Comments Feed" href="homepage-bootcamp-w-video/feed/index.html" /-->
 	<!--link rel='stylesheet' id='flick-css' href='wp-content/plugins/mailchimp_/css/flick/flickf39e.css?ver=4.0.1' type='text/css' media='all' /-->
 	<!--link rel='stylesheet' id='mailchimpSF_main_css-css' href='indexd153.html?mcsf_action=main_css&amp;ver=4.0.1' type='text/css' media='all' /-->
 	<!--[if IE]>
-		<link rel='stylesheet' id='mailchimpSF_ie_css-css'  href='http://bootcamp.csp.edu/wp-content/plugins/mailchimp/css/ie.css?ver=4.0.1' type='text/css' media='all' />
-	<![endif]-->
+<link rel='stylesheet' id='mailchimpSF_ie_css-css'  href='http://bootcamp.csp.edu/wp-content/plugins/mailchimp/css/ie.css?ver=4.0.1' type='text/css' media='all' />
+<![endif]-->
 	<? echo Asset::css( "wpbakery/js_composer/assets/css/js_composer_front1ac1.css"); ?>
 	<link rel='stylesheet' id='options_typography_Open+Sans-300-css' href='https://fonts.googleapis.com/css?family=Open+Sans:300' type='text/css' media='all' />
 	<!--? echo Asset::css("plugins/contact-form-7/includes/css/styles7e2e.css"); ?-->
@@ -44,8 +44,8 @@
 	<link rel='stylesheet' id='main-styles-css' href='wp-content/themes/salient/style11b8.css?ver=4.5' type='text/css' media='all' />
 	<!-- <? echo Asset::css("style11b8.css"); ?> -->
 	<!--[if lt IE 9]>
-		<link rel='stylesheet' id='nectar-ie8-css'  href='http://bootcamp.csp.edu/wp-content/themes/salient/css/ie8.css?ver=4.0.1' type='text/css' media='all' />
-	<![endif]-->
+<link rel='stylesheet' id='nectar-ie8-css'  href='http://bootcamp.csp.edu/wp-content/themes/salient/css/ie8.css?ver=4.0.1' type='text/css' media='all' />
+<![endif]-->
 	<link rel='stylesheet' id='responsive-css' href='wp-content/themes/salient/css/responsive11b8.css?ver=4.5' type='text/css' media='all' />
 	<!--link rel='stylesheet' id='dashicons-css' href='wp-includes/css/dashicons.minf39e.css?ver=4.0.1' type='text/css' media='all' /-->
 	<link rel='stylesheet' id='thickbox-css' href='wp-includes/js/thickbox/thickboxf39e.css?ver=4.0.1' type='text/css' media='all' />
@@ -61,8 +61,8 @@
         "ajax_url": "http:\/\/bootcamp.csp.edu\/"
     };
     /* ]]> */
-	</script>
-	<!--script type='text/javascript' src='wp-content/plugins/mailchimp/js/mailchimp330a.js?ver=1.4.1'></script-->
+</script>
+<!--script type='text/javascript' src='wp-content/plugins/mailchimp/js/mailchimp330a.js?ver=1.4.1'></script-->
 	<script type='text/javascript' src='wp-includes/js/jquery/ui/jquery.ui.core.min2c18.js?ver=1.10.4'></script>
 	<!--script type='text/javascript' src='wp-content/plugins/mailchimp_/js/datepickerf39e.js?ver=4.0.1'></script-->
 	<script type='text/javascript' src='wp-content/plugins/wp-countdown-timer/public/assets/js/public8a54.js?ver=1.0.0'></script>
@@ -114,7 +114,7 @@
 								</li>
 							</ul>
 							<ul class="sf-menu">
-								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="#program/index.html">For Parents</a>
+								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents">For Parents</a>
 								</li>
 								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#faq/index.html">Try it Yourself</a>
 								</li>
@@ -138,7 +138,7 @@
 	<div id="mobile-menu">
 		<div class="container">
 			<ul>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="#program/index.html">For Parents</a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents">For Parents</a>
 				</li>
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#faq/index.html">Try it Yourself</a>
 				</li>
@@ -158,7 +158,13 @@
 	</div>
 
 	<? echo $content ?>
-
+	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 50px 244px 25px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
+		<div class="col span_12 light ">
+            <h3 style="text-align: center;" id="rogers_salient_call_to_action">Any questions or inquiries? want to give feedbacks? &nbsp;
+				<a class="nectar-button large see-through" href="/contact-us" data-color-override="false"><span>CONTACT US</span></a>
+			</h3>
+        </div>
+	</div>
 	<div id="footer-outer">
 		<div class="row" id="copyright">
 			<div class="container">
@@ -195,7 +201,7 @@
         "sending": "Sending ..."
     };
     /* ]]> */
-	</script-->
+</script-->
 	<!--script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/scripts7e2e.js?ver=3.8.1'></script-->
 	<? echo Asset::js( "top.jquery.js"); ?>
 	<script type='text/javascript' src='wp-content/themes/salient/js/superfishb493.js?ver=1.4.8'></script>
@@ -220,10 +226,10 @@
         "disqusComments": "false"
     };
     /* ]]> */
-	</script-->
-		<!--script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/wpbakery/js_composer/assets/js/js_composer_front1ac1.js?ver=3.7.3'></script>
-	<!--script type='text/javascript'>
+</script-->
+	<!--script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
+<script type='text/javascript' src='wp-content/themes/salient/wpbakery/js_composer/assets/js/js_composer_front1ac1.js?ver=3.7.3'></script>
+<script type='text/javascript'>
     /* <![CDATA[ */
     var thickboxL10n = {
         "next": "Next >",
@@ -235,7 +241,7 @@
         "loadingAnimation": "http:\/\/bootcamp.csp.edu\/wp-includes\/js\/thickbox\/loadingAnimation.gif"
     };
     /* ]]> */
-	</script-->
+</script-->
 	<!--script type='text/javascript' src='wp-includes/js/thickbox/thickboxab87.js?ver=3.1-20121105'></script-->
 	<!--script type="text/javascript">
     window.NREUM || (NREUM = {});
@@ -250,7 +256,7 @@
         "errorBeacon": "bam.nr-data.net",
         "agent": "js-agent.newrelic.com\/nr-632.min.js"
     }
-	</script-->
+</script-->
 </body>
 
 </html>

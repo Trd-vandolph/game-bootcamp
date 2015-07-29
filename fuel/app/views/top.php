@@ -307,13 +307,6 @@
 		</div>
 		<!--/container-->
 	</div>
-	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 50px 244px 25px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
-		<div class="col span_12 light ">
-            <h3 style="text-align: center;" id="rogers_salient_call_to_action">Any questions or inquiries? want to give feedbacks? &nbsp;
-				<a class="nectar-button large see-through" href="/contact-us" data-color-override="false"><span>CONTACT US</span></a>
-			</h3>
-        </div>
-	</div>
 	<!-- <div id="call-to-action">
 		<div class="container">
 			<div class="triangle"></div>
