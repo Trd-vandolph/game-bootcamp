@@ -71,23 +71,23 @@
 						<a href="#mobilemenu" id="toggle-nav"><i class="icon-reorder"></i></a>
 						<nav>
 							<ul class="member-menu">
-								<li class="signup"><a href="/students">SIGN UP</a>
+								<li class="signup"><a href="/students"><? echo $memSettings1; ?></a>
 								</li>
-								<li class="login"><a href="/students/?logout=1">LOGIN</a>
+								<li class="login"><a href="/students/?logout=1"><? echo $memSettings2; ?></a>
 								</li>
 							</ul>
 							<ul class="sf-menu">
-								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents">For Parents</a>
+								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents"><? echo $menu1; ?></a>
 								</li>
-								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#faq/index.html">Try it Yourself</a>
+								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#faq/index.html"><? echo $menu2; ?></a>
 								</li>
-								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#employer-network/index.html">Course</a>
+								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#employer-network/index.html"><? echo $menu3; ?></a>
 								</li>
-								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#contact/index.html">Course Fee</a>
+								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#contact/index.html"><? echo $menu4; ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html">How to Join</a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html"><? echo $menu5; ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html">FAQ</a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html"><? echo $menu6; ?></a>
 								</li>
 							</ul>
 						</nav>
