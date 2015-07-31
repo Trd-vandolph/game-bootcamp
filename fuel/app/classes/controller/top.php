@@ -19,7 +19,7 @@ class Controller_Top extends Controller_Base
 			
 			$exp = explode(',', $parts[0]);
 			
-			switch ($lines) {
+			switch ($row) {
 				case "1":
 					$header = $exp[1];
 					break;
@@ -47,32 +47,6 @@ class Controller_Top extends Controller_Base
 				default:
 					break;
 			}
-		
-// 			if($row === 1) {
-// 				$exp = explode(',', $parts[0]);
-// 				$header = $exp[1];
-// 			}elseif ($row == 2) {
-// 				$exp = explode(',', $parts[0]); 
-// 				$subheader = $exp[1];
-// 			}elseif($row === 3) {
-// 				$exp = explode(',',$parts[0]);
-// 				$item = explode('-', $exp[1]); 
-// 				$menu1 = $item[0];
-// 				$menu2 = $item[1];
-// 				$menu3 = $item[2];
-// 				$menu4 = $item[3];
-// 				$menu5 = $item[4];
-// 				$menu6 = $item[5];
-// 			}elseif ($row === 4) {
-// 				$exp = explode(',',$parts[0]); 
-// 				$item = explode('-', $exp[1]);
-// 				$memSettings1 = $item[0];
-// 				$memSettings2 = $item[1];
-// 			}elseif ($row === 5) {
-// 				$exp = explode(',',$parts[0]);
-// 				$item = explode('-', $exp[1]);
-// 				$headButton = $item[0];
-// 			}
 		}
 		fclose($file_handle);
 		
@@ -89,6 +63,7 @@ class Controller_Top extends Controller_Base
 				'headButton' => $headButton,
 				'header' => $header,
 				'subheader' => $subheader,
+				'lines' => $lines,
 		), null, true);
 		
 		$this->template->title = "Top";
