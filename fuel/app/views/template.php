@@ -34,8 +34,13 @@
 	<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
 	<script type='text/javascript' src='wp-includes/js/jquery/ui/jquery.ui.core.min2c18.js?ver=1.10.4'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/modernizr61da.js?ver=2.6.2'></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<? echo Asset::js("top.jquery.js"); ?>
 	<? echo Asset::js("top.GoogleAnalyticsObject.js"); ?>
+	<? echo Asset::js("bootstrap-editable.js"); ?>
+	<? echo Asset::js("bootstrap-editable.min.js"); ?>
 	<title> Game-BootCamp </title>
 </head>
 
@@ -71,23 +76,23 @@
 						<a href="#mobilemenu" id="toggle-nav"><i class="icon-reorder"></i></a>
 						<nav>
 							<ul class="member-menu">
-								<li class="signup"><a href="/students">SIGN UP</a>
+								<li class="signup"><a href="/students" class="editable"><? echo $memSettings1; ?></a>
 								</li>
-								<li class="login"><a href="/students/?logout=1">LOGIN</a>
+								<li class="login"><a href="/students/?logout=1" class="editable"><? echo $memSettings2; ?></a>
 								</li>
 							</ul>
 							<ul class="sf-menu">
-								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents">For Parents</a>
+								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862 editable"><a href="/parents"><? echo $menu1; ?></a>
 								</li>
-								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#faq/index.html">Try it Yourself</a>
+								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="#faq/index.html"><? echo $menu2; ?></a>
 								</li>
-								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#employer-network/index.html">Course</a>
+								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="#employer-network/index.html"><? echo $menu3; ?></a>
 								</li>
-								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#contact/index.html">Course Fee</a>
+								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="#contact/index.html"><? echo $menu4; ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html">How to Join</a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#apply-now/index.html"><? echo $menu5; ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html">FAQ</a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#apply-now/index.html"><? echo $menu6; ?></a>
 								</li>
 							</ul>
 						</nav>
@@ -169,6 +174,16 @@
 	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
 
 	<script type='text/javascript' src='wp-content/plugins/wp-countdown-timer/public/assets/js/public8a54.js?ver=1.0.0'></script>
+	<script>
+		$(function() {
+			$('.editable').editable({
+				type: 'wysihtml5',
+				pk: 1,
+				url: '/post',
+				title: 'Edit'
+			});
+		});
+	</script>
 </body>
 
 </html>
