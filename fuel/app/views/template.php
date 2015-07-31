@@ -167,6 +167,8 @@
 	/* ]]> */
 	</script>
 	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
+
+	<script type='text/javascript' src='wp-content/plugins/wp-countdown-timer/public/assets/js/public8a54.js?ver=1.0.0'></script>
 </body>
 
 </html>
