@@ -65,6 +65,12 @@
 		<header id="top">
 			<div class="container">
 				<div class="row">
+					<ul class="member-menu">
+						<li class="signup"><a href="/students" class="editable"><? echo $memSettings1; ?></a>
+						</li>
+						<li class="login"><a href="/students/?logout=1" class="editable"><? echo $memSettings2; ?></a>
+						</li>
+					</ul>
 					<div class="col span_3">
 						<a id="logo" href="/">
 							<img class="" alt="CSP Bootcamp" src="assets/img/logo/logo2_b.png" />
@@ -74,25 +80,22 @@
 					</div>
 					<div class="col span_9 col_last">
 						<a href="#mobilemenu" id="toggle-nav"><i class="icon-reorder"></i></a>
+							
 						<nav>
-							<ul class="member-menu">
-								<li class="signup"><a href="/students" class="editable"><? echo $memSettings1; ?></a>
-								</li>
-								<li class="login"><a href="/students/?logout=1" class="editable"><? echo $memSettings2; ?></a>
-								</li>
-							</ul>
 							<ul class="sf-menu">
 								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862 editable"><a href="/parents"><? echo $menu1; ?></a>
 								</li>
-								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="#faq/index.html"><? echo $menu2; ?></a>
+								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="#"><? echo $menu2; ?></a>
 								</li>
-								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="#employer-network/index.html"><? echo $menu3; ?></a>
+								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="#"><? echo $menu3; ?></a>
 								</li>
-								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="#contact/index.html"><? echo $menu4; ?></a>
+								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="#"><? echo $menu4; ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#apply-now/index.html"><? echo $menu5; ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo $menu5; ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#apply-now/index.html"><? echo $menu6; ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo $menu6; ?></a>
+								</li>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo $menu7; ?></a>
 								</li>
 							</ul>
 						</nav>
@@ -105,17 +108,19 @@
 	<div id="mobile-menu">
 		<div class="container">
 			<ul>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents">For Parents</a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents"><? echo $menu1; ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#faq/index.html">Try it Yourself</a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#"><? echo $menu2; ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#employer-network/index.html">Course</a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#"><? echo $menu3; ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#contact/index.html">Course Fee</a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#"><? echo $menu4; ?></a>
 				</li>
-				<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html">How to Join</a>
+				<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo $menu5; ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#apply-now/index.html">FAQ</a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo $menu6; ?></a>
+				</li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo $menu7; ?></a>
 				</li>
 			</ul>
 		</div>
@@ -124,10 +129,8 @@
 	<? echo $content ?>
 
 	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 50px 244px 25px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
-		<div class="col span_12 light ">
-            <h3 style="text-align: center;" id="rogers_salient_call_to_action">Any questions or inquiries? want to give feedbacks? &nbsp;
-				<a class="nectar-button large see-through" href="/contact-us" data-color-override="false"><span>CONTACT US</span></a>
-			</h3>
+		<div class="col span_12 light">
+			<a class="nectar-button large see-through" href="/students/signup" data-color-override="false"><span>Take a Free Trial Lesson</span></a>
         </div>
 	</div>
 	<div id="footer-outer">
