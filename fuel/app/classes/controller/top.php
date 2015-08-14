@@ -67,29 +67,26 @@ class Controller_Top extends Controller_Base
 		}
 		fclose($file_handle);
 		
-		
-		View::set_global(array(
-				'memSettings1' => $memSettings1,
-				'memSettings2' => $memSettings2,
-				'menu1' => $menu1,
-				'menu2' => $menu2,
-				'menu3' => $menu3,
-				'menu4' => $menu4,
-				'menu5' => $menu5,
-				'menu6' => $menu6,
-				'menu7' => $menu7,
-				'headButton' => $headButton,
-				'header' => $header,
-				'subheader' => $subheader,
-				'lines' => $lines,
-				'gameHeader' => $gameHeader,
-				'titleFeature1' => $titleFeature1,
-				'titleFeature2' => $titleFeature2,
-				'titleFeature3' => $titleFeature3,
-				'bodyFeature1' => $bodyFeature1,
-				'bodyFeature2' => $bodyFeature2,
-				'bodyFeature3' => $bodyFeature3,
-		), null, true);
+		Session::set('memSettings1', $memSettings1);
+		Session::set('memSettings2', $memSettings2);
+		Session::set('menu1', $menu1);
+		Session::set('menu2', $menu2);
+		Session::set('menu3', $menu3);
+		Session::set('menu4', $menu4);
+		Session::set('menu5', $menu5);
+		Session::set('menu6', $menu6);
+		Session::set('menu7', $menu7);
+		Session::set('headButton', $headButton);
+		Session::set('header', $header);
+		Session::set('subheader', $subheader);
+		Session::set('lines', $lines);
+		Session::set('gameHeader', $gameHeader);
+		Session::set('titleFeature1', $titleFeature1);
+		Session::set('titleFeature2', $titleFeature2);
+		Session::set('titleFeature3', $titleFeature3);
+		Session::set('bodyFeature1', $bodyFeature1);
+		Session::set('bodyFeature2', $bodyFeature2);
+		Session::set('bodyFeature3', $bodyFeature3);
 		
 		$this->template->title = "Top";
 		$view = View::forge("top");

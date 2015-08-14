@@ -18,8 +18,8 @@
 
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<h1 style="text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 3px; text-align: center;" class="editable"><? echo $header; ?></h1>
-										<p style="text-align: center;"><a class="nectar-button large accent-color has-icon regular-button" href="about/index.html" data-color-override="false" data-hover-color-override="false" data-hover-text-color-override="#fff"><span><? echo $headButton; ?></span> <i class="icon-button-arrow"></i></a></p>
+										<h1 style="text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 3px; text-align: center;" class="editable"><? echo Session::get('header'); ?></h1>
+										<p style="text-align: center;"><a class="nectar-button large accent-color has-icon regular-button" href="about/index.html" data-color-override="false" data-hover-color-override="false" data-hover-text-color-override="#fff"><span><? echo Session::get('headButton'); ?></span> <i class="icon-button-arrow"></i></a></p>
 
 									</div>
 								</div>
@@ -40,7 +40,7 @@
 
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<p class="editable" style="font-size: 1.4em; text-align: center; color: white;"><? echo $subheader; ?><a href="/parents">See more..</a></p>
+										<p class="editable" style="font-size: 1.4em; text-align: center; color: white;"><? echo Session::get('subheader'); ?><a href="/parents">See more..</a></p>
 
 									</div>
 								</div>
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				<div id="fws_55b22746735ec" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 80px 244px 100px; margin-left: -244px; visibility: visible; background-color: rgb(255, 255, 255);">
-				<h3 style="text-align: center;"><? echo $gameHeader; ?></h3>
+				<h3 style="text-align: center;"><? echo Session::get('gameHeader'); ?></h3>
 				<br>
 			    <div class="col span_12 dark ">
 			        <div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
@@ -91,8 +91,8 @@
 								</div>
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<h2><? echo $titleFeature1; ?></h2>
-										<p><? echo $bodyFeature1; ?>
+										<h2><? echo Session::get('titleFeature1'); ?></h2>
+										<p><? echo Session::get('bodyFeature1'); ?>
 											<br />
 											<a title="Program" href="program/index.html#what-is-bootcamp">Learn More</a></p>
 									</div>
@@ -116,8 +116,8 @@
 								</div>
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<h2><? echo $titleFeature2; ?></h2>
-										<p><? echo $bodyFeature2; ?>
+										<h2><? echo Session::get('titleFeature2'); ?></h2>
+										<p><? echo Session::get('bodyFeature2'); ?>
 											<br />
 											<a title="Program" href="program/index.html#why-bootcamp">Learn More</a></p>
 									</div>
@@ -141,8 +141,8 @@
 								</div>
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<h2 style="text-align: center;"><? echo $titleFeature3; ?></h2>
-										<p style="text-align: center;"><? echo $bodyFeature3; ?>
+										<h2 style="text-align: center;"><? echo Session::get('titleFeature3'); ?></h2>
+										<p style="text-align: center;"><? echo Session::get('titleFeature3'); ?>
 										<br />
 											<a title="Program" href="program/index.html#success">Learn More</a>
 										</p>

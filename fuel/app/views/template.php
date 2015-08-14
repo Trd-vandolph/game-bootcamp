@@ -66,9 +66,9 @@
 			<div class="container">
 				<div class="row">
 					<ul class="member-menu">
-						<li class="signup"><a href="/students" class="editable"><? echo $memSettings1; ?></a>
+						<li class="signup"><a href="/students" class="editable"><? echo Session::get('memSettings1'); ?></a>
 						</li>
-						<li class="login"><a href="/students/?logout=1" class="editable"><? echo $memSettings2; ?></a>
+						<li class="login"><a href="/students/?logout=1" class="editable"><? echo Session::get('memSettings2'); ?></a>
 						</li>
 					</ul>
 					<div class="col span_3">
@@ -83,19 +83,19 @@
 							
 						<nav>
 							<ul class="sf-menu">
-								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862 editable"><a href="/parents"><? echo $menu1; ?></a>
+								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862 editable"><a href="/parents"><? echo Session::get('menu1'); ?></a>
 								</li>
-								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="#"><? echo $menu2; ?></a>
+								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="#"><? echo Session::get('menu2'); ?></a>
 								</li>
-								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="#"><? echo $menu3; ?></a>
+								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="#"><? echo Session::get('menu3'); ?></a>
 								</li>
-								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="#"><? echo $menu4; ?></a>
+								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="#"><? echo Session::get('menu4'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo $menu5; ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo Session::get('menu5'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo $menu6; ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo Session::get('menu6'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo $menu7; ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="#"><? echo Session::get('menu7'); ?></a>
 								</li>
 							</ul>
 						</nav>
@@ -108,19 +108,19 @@
 	<div id="mobile-menu">
 		<div class="container">
 			<ul>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents"><? echo $menu1; ?></a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents"><? echo Session::get('menu1'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#"><? echo $menu2; ?></a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="#"><? echo Session::get('menu2'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#"><? echo $menu3; ?></a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="#"><? echo Session::get('menu3'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#"><? echo $menu4; ?></a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="#"><? echo Session::get('menu4'); ?></a>
 				</li>
-				<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo $menu5; ?></a>
+				<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu5'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo $menu6; ?></a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu6'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo $menu7; ?></a>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu7'); ?></a>
 				</li>
 			</ul>
 		</div>
