@@ -1137,3 +1137,139 @@ ul.member-menu li {
 	width: 130%;
 	margin: auto;
 }
+/******* Global Setup **********/
+section#contents {
+	min-height: 500px;
+	margin-top: 150px;
+	padding: 20px;
+}
+section.course > .content-text {
+	width: 80%;
+	margin: auto;
+}
+/******* Parents **********/
+section.parents > div.letter {
+	box-shadow: 0px 0px 5px #888888;
+	min-height: 100px;
+	padding: 50px;
+}
+section.parents > div.letter > .letter-content p{
+	font-size: 18px;
+}
+/******* Tutors **********/
+section.tutor div.content-tutor {
+	max-width: 980px;
+	margin: 120px auto;
+	padding: 0 20px;
+}
+section.tutor div.content-tutor p.top-catch {
+	color: #33532A;
+	font-size: 26px;
+	font-family: "Lovelo" ,sans-serif;
+	max-width: 800px;
+	margin: 0 auto 100px auto;
+	font-weight: 600;
+	text-align: center;
+	line-height: 160%;
+}
+section.tutor div.content-tutor ul.clearfix {
+	min-height: 1px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+section.tutor div.content-tutor ul.tutors_list_l li {
+	float: left;
+	width: 46%;
+}
+section.tutor div.content-tutor ul.tutors_list_l li:nth-child(2n) {
+	margin-left: 6%;
+}
+ul.tutors_list_l li .photo {
+	margin: 0 0 40px 0;
+	position: relative;
+	color: #fff;
+	padding: 5px;
+}
+ul.tutors_list_l li .photo img {
+	max-width: 100%;
+	z-index: 2;
+}
+ul.tutors_list_l li h4 {
+	font-size: 22px;
+	font-weight: 700;
+	padding: 0 0 10px 0!important;
+}
+ul.tutors_list_l li aside {
+	color: #DD795D;
+	font-size: 16px;
+	margin: 0 0 20px 0;
+}
+ul.tutors_list_l li div.text {
+	font-size: 16px;
+	margin: 0 0 60px 0;
+}
+/******* Course **********/
+
+/******* How to Join **********/
+#contents.join p.sub-catch {
+	font-size: 36px;
+}
+#contents.join .howjoin {
+	margin: 100px 0;
+}
+#contents.join .howjoin ol {
+	margin-top: 100px;
+}
+#contents.join .howjoin li {
+	margin: 0 0 40px 80px;
+	list-style: decimal-leading-zero;
+	font-family: "Raleway",sans-serif;
+	font-size: 44px;
+	font-weight: 700;
+	padding-left: 40px;
+}
+#contents.join .howjoin li:nth-child(1) h3 {
+	background: url(../img/front/choose.png) no-repeat left top;
+	background-size: 150px 130px;
+	padding: 40px 0 0 170px;
+	height: 105px;
+	color: #4f9d0a;
+}
+#contents.join .howjoin li:nth-child(2) h3 {
+	background: url(../img/front/signup.png) no-repeat left top;
+	background-size: 150px 130px;
+	padding: 40px 0 0 170px;
+	height: 105px;
+	color: #b8383b;
+}
+#contents.join .howjoin li:nth-child(3) h3 {
+	background: url(../img/front/read.png) no-repeat left top;
+	background-size: 200px 170px;
+	padding: 40px 0 0 205px;
+	height: 105px;
+	color: #30578f;
+	margin-left: -35px;
+}
+#contents.join .howjoin li:nth-child(4) h3 {
+	background: url(../img/front/trial.png) no-repeat left top;
+	background-size: 150px 130px;
+	padding: 40px 0 0 170px;
+	height: 105px;
+	color: #8f1c64;
+}
+#contents.join .howjoin li:nth-child(5) h3 {
+	background: url(../img/front/pay.png) no-repeat left top;
+	background-size: 165px 145px;
+	padding: 40px 0 0 200px;
+	height: 105px;
+	color: #fd7214;
+	margin-left: -30px;
+}
+#contents.join .howjoin li:nth-child(6) h3 {
+	background: url(../img/front/book.png) no-repeat left top;
+	background-size: 150px 130px;
+	padding: 40px 0 0 170px;
+	height: 105px;
+	color: #006699;
+}
