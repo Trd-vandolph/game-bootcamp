@@ -1128,6 +1128,8 @@ img.feature3-image {
 ul.member-menu {
 	margin-top: 10px;
 	text-align: right;
+	font-family: Lovelo, Sans-serif;
+	font-size: 18px;
 }
 ul.member-menu li {
 	display: inline-block;
@@ -1143,11 +1145,18 @@ section#contents {
 	margin-top: 150px;
 	padding: 20px;
 }
-section.course > .content-text {
-	width: 80%;
+#content {
+	font-family: 'OpenSansRegular';
+	width: 75%;
 	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 /******* Parents **********/
+section.parents #content {
+	width: 90%;
+	margin: auto;
+}
 section.parents > div.letter {
 	box-shadow: 0px 0px 5px #888888;
 	min-height: 100px;
@@ -1156,120 +1165,186 @@ section.parents > div.letter {
 section.parents > div.letter > .letter-content p{
 	font-size: 18px;
 }
+/******* Course **********/
+section.course #content p{
+	font-size: 18px;
+}
+section.course #content img.img-left {
+	float: left;
+	margin: 0 20px 130px 0;
+}
+section.course #content p.game-title {
+	box-shadow: 0px 0px 5px #888;
+	padding: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: black;   
+}
+section.course #content p.p-left {
+	clear: both;
+	font-size: 20px;
+	font-family: Lovelo, Sans serif;
+}
+section.course #content p#p-1st {
+	background: rgb(251, 247, 247);
+}
+section.course #content p#p-2nd {
+	background-color: rgb(0, 68, 141);
+}
+section.course #content p#p-3rd {
+	background-color: rgb(255, 0, 55);
+}
+section.course #content img {
+	width: 30%;
+	height: 50%;
+	margin: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 10px 10px 10px #888888;
+	border-radius: 5px;
+}
+section.course #content img.no-shadow {
+	box-shadow: none;
+	border-radius: 0;
+	width: 100%;
+}
+
 /******* Tutors **********/
 section.tutor div.content-tutor {
-	max-width: 980px;
-	margin: 120px auto;
-	padding: 0 20px;
+	font-family: 'OpenSansRegular';
+    max-width: 980px;
+    margin: 120px auto;
+    padding: 0 20px;
 }
 section.tutor div.content-tutor p.top-catch {
-	color: #33532A;
-	font-size: 26px;
-	font-family: "Lovelo" ,sans-serif;
-	max-width: 800px;
-	margin: 0 auto 100px auto;
-	font-weight: 600;
-	text-align: center;
-	line-height: 160%;
+    color: #33532A;
+    font-size: 26px;
+    font-family: "Lovelo" ,sans-serif;
+    max-width: 800px;
+    margin: 0 auto 100px auto;
+    font-weight: 600;
+    text-align: center;
+    line-height: 160%;
 }
 section.tutor div.content-tutor ul.clearfix {
-	min-height: 1px;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+    min-height: 1px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 section.tutor div.content-tutor ul.tutors_list_l li {
-	float: left;
-	width: 46%;
+    float: left;
+    width: 46%;
 }
 section.tutor div.content-tutor ul.tutors_list_l li:nth-child(2n) {
-	margin-left: 6%;
+    margin-left: 6%;
 }
 ul.tutors_list_l li .photo {
-	margin: 0 0 40px 0;
-	position: relative;
-	color: #fff;
-	padding: 5px;
+    margin: 0 0 40px 0;
+    position: relative;
+    color: #fff;
+    padding: 5px;
 }
 ul.tutors_list_l li .photo img {
-	max-width: 100%;
-	z-index: 2;
+    max-width: 100%;
+    z-index: 2;
 }
 ul.tutors_list_l li h4 {
-	font-size: 22px;
-	font-weight: 700;
-	padding: 0 0 10px 0!important;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 0 10px 0!important;
 }
 ul.tutors_list_l li aside {
-	color: #DD795D;
-	font-size: 16px;
-	margin: 0 0 20px 0;
+    color: #DD795D;
+    font-size: 16px;
+    margin: 0 0 20px 0;
 }
 ul.tutors_list_l li div.text {
-	font-size: 16px;
-	margin: 0 0 60px 0;
+    font-size: 16px;
+    margin: 0 0 60px 0;
 }
-/******* Course **********/
+/******* Operating Company **********/
+section.operatingcompany .content-operating-company #content p{
+	font-size: 18px;
+}
+section.operatingcompany .content-operating-company #content img{
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 10px 10px 10px #888888;
+	border-radius: 5px;
+}
+section.operatingcompany .content-operating-company #content div#grameen_center{
+	width: 70%;
+	margin: auto;
+}
+section.operatingcompany .content-operating-company #content img.grameen_img{
+	display: inline;
+	width: 48%;
+}
 
 /******* How to Join **********/
-#contents.join p.sub-catch {
+section.how p.sub-catch {
 	font-size: 36px;
+	font-family: Lovelo, sans-serif;
+	text-align: center;
 }
-#contents.join .howjoin {
+section.how.howjoin {
 	margin: 100px 0;
 }
-#contents.join .howjoin ol {
+section.how .howjoin ol {
 	margin-top: 100px;
 }
-#contents.join .howjoin li {
+section.how .howjoin li {
 	margin: 0 0 40px 80px;
 	list-style: decimal-leading-zero;
-	font-family: "Raleway",sans-serif;
+	font-family: Lovelo, sans-serif;
 	font-size: 44px;
 	font-weight: 700;
 	padding-left: 40px;
 }
-#contents.join .howjoin li:nth-child(1) h3 {
-	background: url(../img/front/choose.png) no-repeat left top;
-	background-size: 150px 130px;
-	padding: 40px 0 0 170px;
-	height: 105px;
-	color: #4f9d0a;
+section.how .howjoin li p{
+	font-family: 'OpenSansLight';
+	font-size: 20px;
 }
-#contents.join .howjoin li:nth-child(2) h3 {
+section.how .howjoin li:nth-child(1) h3 {
 	background: url(../img/front/signup.png) no-repeat left top;
 	background-size: 150px 130px;
 	padding: 40px 0 0 170px;
-	height: 105px;
+	height: 140px;
 	color: #b8383b;
 }
-#contents.join .howjoin li:nth-child(3) h3 {
+section.how .howjoin li:nth-child(2) h3 {
 	background: url(../img/front/read.png) no-repeat left top;
 	background-size: 200px 170px;
 	padding: 40px 0 0 205px;
-	height: 105px;
+	height: 140px;
 	color: #30578f;
 	margin-left: -35px;
 }
-#contents.join .howjoin li:nth-child(4) h3 {
+section.how .howjoin li:nth-child(3) h3 {
 	background: url(../img/front/trial.png) no-repeat left top;
 	background-size: 150px 130px;
 	padding: 40px 0 0 170px;
-	height: 105px;
+	height: 140px;
 	color: #8f1c64;
 }
-#contents.join .howjoin li:nth-child(5) h3 {
+section.how .howjoin li:nth-child(4) h3 {
 	background: url(../img/front/pay.png) no-repeat left top;
 	background-size: 165px 145px;
 	padding: 40px 0 0 200px;
-	height: 105px;
+	height: 140px;
 	color: #fd7214;
 	margin-left: -30px;
 }
-#contents.join .howjoin li:nth-child(6) h3 {
+section.how .howjoin li:nth-child(5) h3 {
 	background: url(../img/front/book.png) no-repeat left top;
 	background-size: 150px 130px;
 	padding: 40px 0 0 170px;
-	height: 105px;
+	height: 140px;
 	color: #006699;
 }

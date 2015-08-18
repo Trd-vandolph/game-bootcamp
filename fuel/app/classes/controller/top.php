@@ -35,6 +35,7 @@ class Controller_Top extends Controller_Base
 					$menu5 = $item[4];
 					$menu6 = $item[5];
 					$menu7 = $item[6];
+					$menu8 = $item[7];
 					break;
 				case "4":
 					$item = explode('~', $exp[1]);
@@ -76,6 +77,7 @@ class Controller_Top extends Controller_Base
 		Session::set('menu5', $menu5);
 		Session::set('menu6', $menu6);
 		Session::set('menu7', $menu7);
+		Session::set('menu8', $menu8);
 		Session::set('headButton', $headButton);
 		Session::set('header', $header);
 		Session::set('subheader', $subheader);

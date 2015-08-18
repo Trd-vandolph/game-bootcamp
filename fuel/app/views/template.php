@@ -93,9 +93,11 @@
 								</li>
 								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/operatingcompany"><? echo Session::get('menu5'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/howtojoin"><? echo Session::get('menu6'); ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/coursefee"><? echo Session::get('menu6'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/faq"><? echo Session::get('menu7'); ?></a>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/howtojoin"><? echo Session::get('menu7'); ?></a>
+								</li>
+								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/faq"><? echo Session::get('menu8'); ?></a>
 								</li>
 							</ul>
 						</nav>
@@ -121,6 +123,8 @@
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu6'); ?></a>
 				</li>
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu7'); ?></a>
+				</li>
+				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu8'); ?></a>
 				</li>
 			</ul>
 		</div>
