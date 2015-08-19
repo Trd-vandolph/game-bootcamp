@@ -1286,6 +1286,101 @@ section.operatingcompany .content-operating-company #content img.grameen_img{
 	display: inline;
 	width: 48%;
 }
+/******* Course Fee **********/
+	/*Table*/
+	table#table-coursefee {
+		width: 100%;
+		background-color: #FBFBFB;
+		box-shadow: 0px 0px 5px #888;
+		margin-bottom: 100px;
+	}
+	table#table-coursefee thead {
+		background-color: #ECECEC;
+		font-family: Lovelo, sans-serif;
+		font-size: 18px;
+	}
+	table#table-coursefee tbody {
+		font-family: OpenSansRegular;
+		font-size: 15px;
+		border-bottom: solid 2px rgb(199, 197, 197); 
+	}
+	table#table-coursefee tr th {
+		padding: 20px;
+		border-right: solid 1px rgb(199, 197, 197);
+	}
+	table#table-coursefee tr td {
+		padding: 20px;
+		width: 20%;
+		border: solid 1px rgb(199, 197, 197);
+		vertical-align: middle;
+		text-align: center;
+	}
+	#table-coursefee > thead > tr > th:nth-child(4) {
+		border: none;
+	}
+	table#table-coursefee > tbody > tr > td:nth-child(4) {
+		width: 40%;
+	}
+	#inside-coursefee > tbody > tr:nth-child(1) > td:nth-child(1) {
+		background-color: rgb(26, 83, 163);
+		color: white;
+	}
+	#inside-coursefee > tbody > tr:nth-child(2) > td:nth-child(1) {
+		background-color: rgb(232, 26, 77);
+		color: white;
+	}
+	/*End Table*/
+	
+section.coursefee #content p.p-left {
+	font-size: 20px;
+	font-family: Lovelo, Sans serif;
+}
+section.coursefee #content img {
+	width: 30%;
+	height: 50%;
+	margin: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 10px 10px 10px #888888;
+	border-radius: 5px;
+}
+section.coursefee #content p{
+	font-size: 18px;
+}
+section.coursefee #content button.button {
+	background-color: transparent;
+	display: block;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid rgb(230, 0, 57);
+	border-radius: 4px;
+	font-size: 20px;
+	margin:auto;
+	padding: 20px;
+	color: rgb(230, 0, 57);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-ms-touch-action: manipulation;
+}
+section.coursefee #content button.button:hover {
+	color: #FFF;
+	background-color: #E60039;
+	border-color: #E60039;
+}
+section.coursefee #content p.sub-title {
+	font: 40px Lovelo, sans-serif;
+	border-bottom: dotted 1.5px rgb(26, 83, 163);
+	margin-bottom: 40px;
+	padding-bottom: 25px;
+}
 
 /******* How to Join **********/
 section.how p.sub-catch {
@@ -1347,4 +1442,48 @@ section.how .howjoin li:nth-child(5) h3 {
 	padding: 40px 0 0 170px;
 	height: 140px;
 	color: #006699;
+}
+/******* FAQ **********/
+section.faq p.sub-title {
+	font: 40px Lovelo, sans-serif;
+	border-bottom: dotted 1.5px rgb(26, 83, 163);
+	margin-bottom: 40px;
+	padding-bottom: 25px;
+}
+section.faq blockquote {
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	font-style: italic;
+	font-family: OpenSansRegular;
+}
+section.faq blockquote:before {
+	font-family: serif;
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+section.faq blockquote:after {
+	font-family: serif;
+	color: #ccc;
+	content: close-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+section.faq p.answer {
+	font: 18px OpenSansRegular, sans-serif;
+	padding: 25px 0px 25px 50px;
+	box-shadow: 0px 0px 5px 888;
+	background: -webkit-linear-gradient(#F5F8FA, #CEDBE5);
+	background: -o-linear-gradient(#F5F8FA, #CEDBE5);
+	background: -moz-linear-gradient(#F5F8FA, #CEDBE5B);
+	background: linear-gradient(#F5F8FA, #CEDBE5);
+	border-radius: 10px;
+	margin-left: 70px;
 }
