@@ -62,6 +62,12 @@ class Controller_Top extends Controller_Base
 					$bodyFeature2 = $item[1];
 					$bodyFeature3 = $item[2];
 					break;
+				case "9":
+					$item = explode('~', $exp[1]);
+					$aboutList1 = $item[0];
+					$aboutList2 = $item[1];
+					$aboutList3 = $item[2];
+					break;
 				default:
 					break;
 			}
@@ -89,6 +95,9 @@ class Controller_Top extends Controller_Base
 		Session::set('bodyFeature1', $bodyFeature1);
 		Session::set('bodyFeature2', $bodyFeature2);
 		Session::set('bodyFeature3', $bodyFeature3);
+		Session::set('aboutList1', $aboutList1);
+		Session::set('aboutList2', $aboutList2);
+		Session::set('aboutList3', $aboutList3);
 		
 		$this->template->title = "Top";
 		$view = View::forge("top");

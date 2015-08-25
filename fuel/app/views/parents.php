@@ -66,7 +66,7 @@
 					Mitch Resnick: Professor of Learning Research, MIT Media Lab
 					<br>
 					<br>
-					<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code"><img src="../assets/img/common/Mitchel_Resnick.jpg" alt="Mitch Resnick" width="200"></a>
+					<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
 					<br>
 					<br>
 					"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"
