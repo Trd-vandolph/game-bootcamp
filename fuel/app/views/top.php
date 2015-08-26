@@ -60,17 +60,26 @@
 				<br>
 			    <div class="col span_12 dark ">
 			        <div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
-			            <p><a href="/brands/?filter=sports-entertainment"><i class="icon-3x icon-trophy accent-color"><i class="circle-border"></i></i></a></p>
+			            <div>
+							<img src="../assets/img/front/game1.gif" alt="catch the banana">
+							<p>Click to Play</p>
+			            </div>
 			            <h3>Catch the Banana</h3>
 			            <a class="nectar-button medium accent-color" href="/brands/?filter=sports-entertainment" data-color-override="false"><span>View Game Info</span> </a>
 			        </div>
 			        <div class="col span_3 centered-text one-fourths right-edge" data-animation="" data-delay="0">
-			            <p><a href="/brands/?filter=women"><i class="icon-3x icon-female accent-color"><i class="circle-border"></i></i></a></p>
+			            <div>
+				            <img src="../assets/img/front/game2.gif" alt="snow fight">
+				            <p>Click to Play</p>
+			            </div>
 			            <h3>Snow Fight</h3>
 			            <a class="nectar-button medium accent-color" href="www.rogersmedia.com/brands/?filter=women" data-color-override="false"><span>View Game Info</span> </a>
 			        </div>
 			        <div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
-			            <p><a href="/brands/?filter=news-business"><i class="icon-3x icon-briefcase accent-color"><i class="circle-border"></i></i></a></p>
+			            <div>
+				            <img src="../assets/img/front/game3.gif" alt="superbear">
+				            <p>Click to Play</p>
+			            </div>
 			            <h3>Super Bear</h3>
 			            <a class="nectar-button medium accent-color" href="/brands/?filter=news-business" data-color-override="false"><span>View Game Info</span> </a>
 			        </div>
@@ -160,11 +169,17 @@
 					</div>
 					<div id="fws_55b08d66d7df2" class="wpb_row vc_row-fluid full-width-section standard_section  highlights   bg-only" style="padding: 0px 102px; margin-left: -102px; visibility: visible; height: 60px; background-color: rgb(1, 64, 153) !important;" data-image-height="60"></div>
 					<div id="top-person-influence">
-						<img align="left" src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs"></img>
-						<img align="right" src="../assets/img/common/Mitchel_Resnick.jpg" alt="Mitchel Resnick"></img>
+						<div align="center" class="person 1st-person">
+							<p class="name-title">Steve Jobs: Apple’s co-founder</p>
+							<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200"> 
+							<p>“I think everybody in this country should learn how to program a computer because it teaches you how to think.”</p>
+						</div>
+						<div align="center" class="person 2nd-person">
+							<p class="name-title">Mitch Resnick</p>
+							<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
+							<p>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</p>
+						</div>
 					</div>
-				</div>
-			</div>
 			<!--/row-->
 		</div>
 		<!--/container-->

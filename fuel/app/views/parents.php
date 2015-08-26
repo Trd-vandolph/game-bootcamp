@@ -54,22 +54,6 @@
 					He has a degree in Economics from Kyushu University, Japan and holds Executive MBA from INSEAD.
 					<br>
 					<br>
-					Steve Jobs: Apple’s co-founder
-					<br>
-					<br>
-					<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200"> 
-					<br>
-					<br>
-					“I think everybody in this country should learn how to program a computer because it teaches you how to think.”
-					<br>
-					<br>
-					Mitch Resnick: Professor of Learning Research, MIT Media Lab
-					<br>
-					<br>
-					<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
-					<br>
-					<br>
-					"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"
 				</p>
 			</div>
 		</div>
