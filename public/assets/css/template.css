@@ -1145,6 +1145,9 @@ ul.mc_list li {
 	display: block;
 	text-transform: capitalize;
 }
+#fws_55b227467453e > div > a:hover {
+	text-decoration: none;
+}
 /******* Feature Images **********/
 img.feature1-image {
     width: 49%;
