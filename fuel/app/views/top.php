@@ -4,7 +4,7 @@
 	<div class="container-wrap">
 		<div class="container main-content">
 			<div class="row">
-				<div id="fws_55b08d66d62a8" class="wpb_row vc_row-fluid full-width-section standard_section  video-top  " style="background-image: url(http://i58.tinypic.com/o0ryh2.jpg); background-position: center center; background-repeat: no-repeat; padding-top: 200px; padding-bottom: 80px; ">
+				<div id="fws_55b08d66d62a8" class="wpb_row vc_row-fluid full-width-section standard_section  video-top  " style="background-image: url('../assets/img/header-image.jpg'); background-position: center center; background-repeat: no-repeat; padding-top: 200px; padding-bottom: 80px; margin-bottom: 8%;">
 				<!-- <div id="fws_55b0d04532c06" class="wpb_row vc_row-fluid full-width-section standard_section  video-top  " style="background-image: url(wp-content/uploads/banner4.jpg); background-position: center center; background-repeat: no-repeat; background-color: #3d3d3d; padding-top: 200px; padding-bottom: 80px; "> -->
 					<div class="col span_12 light left">
 						<div class="vc_span2 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
@@ -33,29 +33,16 @@
 						</div>
 					</div>
 				</div>
-				<div id="fws_55b0d045336ae" class="wpb_row vc_row-fluid full-width-section standard_section    " style="background-color: #014099; padding-top: 20px; padding-bottom: 20px; ">
-					<div class="col span_12 dark left">
-						<div class="vc_span12 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
-							<div class="wpb_wrapper">
-
-								<div class="wpb_text_column wpb_content_element ">
-									<div class="wpb_wrapper">
-										<p class="editable" style="font-size: 1.4em; text-align: center; color: white;"></p>
-
-									</div>
-								</div>
-							</div>
-						</div>
+				<div id="top-about-content">
+					<div>
+						<ul>
+							<li><? echo Session::get('aboutList1'); ?></li>
+							<li><? echo Session::get('aboutList2'); ?></li>
+							<li><? echo Session::get('aboutList3'); ?></li>
+						</ul>
 					</div>
 				</div>
-				<div id="top-about-content">
-					<ul>
-						<li><? echo Session::get('aboutList1'); ?></li>
-						<li><? echo Session::get('aboutList2'); ?></li>
-						<li><? echo Session::get('aboutList3'); ?></li>
-					</ul>
-				</div>
-				<div id="fws_55b22746735ec" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 80px 244px 100px; margin-left: -244px; visibility: visible; background-color: rgb(255, 255, 255);">
+				<div id="fws_55b22746735ec" class="wpb_row vc_row-fluid full-width-section standard_section" style="padding: 80px 244px 100px; margin-left: -244px; visibility: visible; background-color: #E21348;">
 				<h3 style="text-align: center;"><? echo Session::get('gameHeader'); ?></h3>
 				<br>
 			    <div class="col span_12 dark ">
@@ -86,8 +73,6 @@
 			    </div>
 				</div>
 				</div>
-				<div id="fws_55b08d66d7df2" class="wpb_row vc_row-fluid full-width-section standard_section  highlights  " style="background-color: #014099!important; padding-top: 30px; padding-bottom: 30px; ">
-				</div>
 				<div id="fws_55b08d66d8a64" class="wpb_row vc_row-fluid full-width-section parallax_section    " style="background-color: #ffffff; padding-top: 70px; padding-bottom: 60px; ">
 					<div class="col span_12 dark left">
 						<div class="vc_span4 wpb_column column_container col centered-text no-extra-padding has-animation" data-hover-bg="" data-animation="fade-in" data-delay="0">
@@ -110,7 +95,7 @@
 										<h2><? echo Session::get('titleFeature1'); ?></h2>
 										<p><? echo Session::get('bodyFeature1'); ?>
 											<br />
-											<a title="Program" href="program/index.html#what-is-bootcamp">Learn More</a></p>
+											<a title="Program" href="program/index.html#what-is-bootcamp">See More</a></p>
 									</div>
 								</div>
 							</div>
@@ -135,7 +120,7 @@
 										<h2><? echo Session::get('titleFeature2'); ?></h2>
 										<p><? echo Session::get('bodyFeature2'); ?>
 											<br />
-											<a title="Program" href="program/index.html#why-bootcamp">Learn More</a></p>
+											<a title="Program" href="program/index.html#why-bootcamp">See More</a></p>
 									</div>
 								</div>
 							</div>
@@ -158,38 +143,35 @@
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
 										<h2 style="text-align: center;"><? echo Session::get('titleFeature3'); ?></h2>
-										<p style="text-align: center;"><? echo Session::get('bodyFeature3'); ?>
+										<p><? echo Session::get('bodyFeature3'); ?>
 										<br />
-											<a title="Program" href="program/index.html#success">Learn More</a>
+											<a title="Program" href="program/index.html#success">See More</a>
 										</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div id="fws_55b08d66d7df2" class="wpb_row vc_row-fluid full-width-section standard_section  highlights   bg-only" style="padding: 0px 102px; margin-left: -102px; visibility: visible; height: 60px; background-color: rgb(1, 64, 153) !important;" data-image-height="60"></div>
-					<div id="top-person-influence">
-						<div align="center" class="person 1st-person">
-							<p class="name-title">Steve Jobs: Apple’s co-founder</p>
-							<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200"> 
-							<p>“I think everybody in this country should learn how to program a computer because it teaches you how to think.”</p>
-						</div>
-						<div align="center" class="person 2nd-person">
-							<p class="name-title">Mitch Resnick</p>
-							<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
-							<p>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</p>
+					<div class="full-width-div">
+						<div id="top-person-influence">
+							<div align="center" class="person 1st-person">
+								<span class="name-title">Steve Jobs </span>
+								<p class="person-title">Apple’s co-founder</p>
+								<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200"> 
+								<blockquote>“I think everybody in this country should learn how to program a computer because it teaches you how to think.”</blockquote>
+							</div>
+							<div align="center" class="person 2nd-person">
+								<span class="name-title">Mitch Resnick</span>
+								<p class="person-title">Professor of Learning Research, MIT Media Lab</p>
+								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
+								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code</a>
+								<blockquote>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</blockquote>
+							</div>
 						</div>
 					</div>
 			<!--/row-->
 		</div>
 		<!--/container-->
 	</div>
-	<!-- <div id="call-to-action">
-		<div class="container">
-			<div class="triangle"></div>
-			<span> Why Wait to Start Your Career? </span>
-			<a class="nectar-button regular-button  accent-color" data-color-override="false" href="apply-now/index.html">APPLY TODAY </a>
-		</div>
-	</div> -->
 </div>
 <!--/ajax-content-wrap-->

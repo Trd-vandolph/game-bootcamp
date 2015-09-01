@@ -1,5 +1,5 @@
 body a {
-    color: #ffb30d;
+    color: #fff;
 }
 
 header#top nav ul li a:hover,
@@ -1107,7 +1107,10 @@ ul.mc_list li {
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+	font-family: Montserrat;
+	src: url('../../wp-content/themes/salient/css/fonts/Montserrat-Regular.ttf.woff') format('woff');
+}
 
 /******* Free Trial Lesson Button **********/
 #fws_55b227467453e > div {
@@ -1158,12 +1161,32 @@ img.feature2-image {
 img.feature3-image {
     width: 75%;
 }
+#fws_55b08d66d8a64 > div.col.span_12.dark.left {
+	margin-top: 5%;
+	margin-bottom: 15% !important;
+}
+#fws_55b08d66d8a64 > div > div > div > div > div > p {
+	text-align: left;
+	margin: auto;
+}
+#fws_55b08d66d8a64 > div > div:nth-child(1) > div > div > div > p {
+	width: 84%;
+}
+#fws_55b08d66d8a64 > div > div:nth-child(2) > div > div > div > p {
+	width: 70%;
+}
+#fws_55b08d66d8a64 > div > div:nth-child(3) > div > div > div > p {
+	width: 82%;
+}
+#fws_55b08d66d8a64 > div > div > div > div > div > p > a {
+	color: #D50D43 !important;
+}
 /******* Navigation Bar **********/
 ul.member-menu {
 	margin-top: 10px;
 	text-align: right;
 	font-family: Lovelo, Sans-serif;
-	font-size: 18px;
+	font-size: 15px;
 }
 ul.member-menu li {
 	display: inline-block;
@@ -1188,15 +1211,13 @@ section#contents {
 }
 /******* Top **************/
 #top-about-content {
-	margin-top: 30px;
+	margin: 8% auto;
 	padding: 20px;
 	width: 95%;
-	margin: auto;
-	font-family: Roman, sans-serif;
+	font-family: Montserrat, sans-serif;
 	letter-spacing: 2px;
 	font-size: 30px;
 	color: #444;
-	margin: 20px auto;
 	background: -webkit-linear-gradient(#F2F6FA, #ECECF0);
 	background: -o-linear-gradient(#F2F6FA, #ECECF0);
 	background: -moz-linear-gradient(#F2F6FA, #ECECF0);
@@ -1220,6 +1241,27 @@ section#contents {
 }
 #fws_55b08d66d8a64 > div > div p {
 	font-size: 20px;
+	text-align: left;
+}
+#fws_55b08d66d8a64 > div > div p.person-title {
+	text-align: center;
+}
+#top-person-influence > div.person.\31 st-person {
+	border-right: 1px solid #CBC39A;
+}
+#fws_55b08d66d8a64 > div.full-width-div {
+	margin-left: -25px;
+	width: 105%;
+	background-color: #E2DBB7;
+}
+#top-person-influence > div.person > blockquote {
+	background: #F0EDED;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	font-style: italic;
+	font-family: OpenSansRegular;
+	text-align: left;
 }
 #top-person-influence {
 	width: 90%;
@@ -1230,6 +1272,14 @@ section#contents {
 	width: 49%;
 	min-height: 100px;
 	display: inline-block;
+	padding: 5%;
+}
+#top-person-influence > div.person.\32 nd-person > a:nth-child(4) {
+	color: #E51746;
+	font-family: OpenSansRegular, Sans serif;
+}
+#top-person-influence > div.person.\31 st-person > img {
+	margin-bottom: 15% !important;
 }
 #top-person-influence > div:nth-child(2){
 	float: right;
@@ -1241,10 +1291,8 @@ section#contents {
 #top-person-influence p {
 	margin: 20px;
 }
-#top-person-influence p.name-title {
+#top-person-influence span.name-title {
 	font: 22px Lovelo, sans serif;
-	border-bottom: dotted #444;
-	border-size: 50%;
 }
 #top-person-influence > div:nth-child(1) > img {
 	width: 55%;
@@ -1252,6 +1300,7 @@ section#contents {
 #top-person-influence > div:nth-child(2) > a > img {
 	width: 100%;
 	height: auto;
+	margin-bottom: 3% !important
 }
 #fws_55b22746735ec > div > div img {
 	border: 1px solid #fff;
@@ -1285,6 +1334,31 @@ section#contents {
 	left: 145px;
 	text-decoration: underline;
 	cursor: pointer;
+}
+#fws_55b22746735ec > h3 {
+	margin-top: 0;
+	margin-bottom: 4%;
+	color: #fff;
+}
+#fws_55b22746735ec > div > div > h3 {
+	margin-top: 10%;
+	letter-spacing: 1px;
+	font-size: 20px;
+	color: #fff;
+}
+#fws_55b08d66d62a8 > div > div > div > div > div {
+	padding: 50px;
+	border: 2px solid #fff;
+}
+#fws_55b08d66d62a8 {
+	margin-top: 152px !important;
+}
+.row > div.span_9 > nav > ul > li > a {
+	font-size: 15px !important;
+}
+header#top {
+	width: 90% !important;
+	margin: auto;
 }
 /******* Parents **********/
 section.parents #content {
@@ -1339,7 +1413,6 @@ section.course #content img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	box-shadow: 10px 10px 10px #888888;
 	border-radius: 5px;
 }
 section.course #content img.no-shadow {
@@ -1413,7 +1486,6 @@ section.operatingcompany .content-operating-company #content img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	box-shadow: 10px 10px 10px #888888;
 	border-radius: 5px;
 }
 section.operatingcompany .content-operating-company #content div#grameen_center{
@@ -1480,7 +1552,6 @@ section.coursefee #content img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	box-shadow: 10px 10px 10px #888888;
 	border-radius: 5px;
 }
 section.coursefee #content p{

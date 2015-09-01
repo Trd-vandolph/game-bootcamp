@@ -1,22 +1,24 @@
 @charset "utf-8";
 #user-data{
-    background:#9CD18C;
+	background: transparent;
+	border: 2px dotted #FD0037;
+	margin: 15px auto;
 }
 #user-data .reserve a{
-    color:#7CA771;
+	color:#FF0039;
 }
 #user-data .reserve a:hover{
-    color:#D87C60;
+	color:#D87C60;
 }
 
 #topic-path{
-    background:#9CD18C;
+	background:#9CD18C;
 }
 #topic-path ul li:after{
-    color:#7CA771;
+	color:#7CA771;
 }
 #topic-path ul li a:hover{
-    color:#54754E;
+	color:#54754E;
 }
 
 @media screen and (min-width : 680px) {
