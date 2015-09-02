@@ -36,20 +36,18 @@
 				<td class="html-course">
 					<table>
 						<tr>
-							<th title="Chapter 1 to 8">Q1</th>
-							<th title="Chapter 9 to 17">Q2</th>
-							<th title="Chapter 18 to 24">Q3</th>
-							<th title="JavaScript">Q4</th>
+							<th title="1st month">1st</th>
+							<th title="2nd month">2nd</th>
+							<th title="3rd month">3rd</th>
 						</tr>
 						<tr>
 						<?
 							$id = $user->id;
 							$charge = $user->charge_html;
 						?>
-							<td title="Chapter 1 to 8"><input id="html1_<?= $id; ?>" type="checkbox" onclick="changeCourse1(<?= $id; ?>)" <? if($charge == 1 or strlen($charge) > 1) echo "checked"; ?>></td>
-							<td title="Chapter 9 to 17"><input id="html2_<?= $id; ?>" type="checkbox" onclick="changeCourse2(<?= $id; ?>)" <? if(strlen($charge)==2 or strlen($charge) > 2) echo "checked"; ?>></td>
-							<td title="Chapter 18 to 24"><input id="html3_<?= $id; ?>" type="checkbox" onclick="changeCourse3(<?= $id; ?>)" <? if(strlen($charge)==3 or strlen($charge) > 3) echo "checked"; ?>></td>
-							<td title="JavaScript"><input id="html4_<?= $id; ?>" type="checkbox" onclick="changeCourse4(<?= $id; ?>)" <? if(strlen($charge) == 4) echo "checked"; ?>></td>
+							<td title="1st month"><input id="html1_<?= $id; ?>" type="checkbox" onclick="changeCourse1(<?= $id; ?>)" <? if($charge == 1 or strlen($charge) > 1) echo "checked"; ?>></td>
+							<td title="2nd month"><input id="html2_<?= $id; ?>" type="checkbox" onclick="changeCourse2(<?= $id; ?>)" <? if(strlen($charge)==2 or strlen($charge) > 2) echo "checked"; ?>></td>
+							<td title="3rd month"><input id="html3_<?= $id; ?>" type="checkbox" onclick="changeCourse3(<?= $id; ?>)" <? if(strlen($charge)==3 or strlen($charge) > 3) echo "checked"; ?>></td>
 						</tr>
 					</table>
 					<script>
@@ -72,11 +70,6 @@
 							$("#html2_<? echo $id; ?>").attr("disabled", true);
 							$("#html3_<? echo $id; ?>").attr("disabled", false);
 							$("#html4_<? echo $id; ?>").attr("disabled", false);
-						}
-						if($("#html4_<? echo $id; ?>").is(':checked')){
-							$("#html1_<? echo $id; ?>").attr("disabled", true);
-							$("#html2_<? echo $id; ?>").attr("disabled", true);
-							$("#html3_<? echo $id; ?>").attr("disabled", true);
 						}
 
 						$(document).ready(function(){
@@ -103,15 +96,6 @@
 								}else{
 									$("#html4_<? echo $id; ?>").attr("disabled", false);
 									$("#html2_<? echo $id; ?>").attr("disabled", true);
-								}
-						    });
-						    $("#html4_<? echo $id; ?>").click(function(){
-						    	if(!$("#html4_<? echo $id; ?>").is(':checked')){
-									$("#html4_<? echo $id; ?>").attr("disabled", true);
-									$("#html3_<? echo $id; ?>").attr("disabled", false);
-								}else{
-									$("#html4_<? echo $id; ?>").attr("disabled", false);
-									$("#html3_<? echo $id; ?>").attr("disabled", true);
 								}
 						    });
 						});

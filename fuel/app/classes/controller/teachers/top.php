@@ -20,8 +20,9 @@ class Controller_Teachers_Top extends Controller_Teachers
 			"where" => [
 				["deleted_at", 0],
 				["teacher_id", $this->user->id],
-				["status", "<>", 0],
+				["status", 1],
 				["freetime_at", ">=", time()],
+				["category", 1],
 			],
 			"order_by" => [
 				["id", "desc"],

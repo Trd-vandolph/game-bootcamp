@@ -51,20 +51,13 @@
 							["language", 0],
 							["student_id", $this->user->id],
 							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-
-					$javascript = Model_Lessontime::count([
-						"where" => [
-							["language", 1],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
+							["deleted_at", 0],
+							["category", 1]
+							
 						],
 					]);
 					?>
-				HTML / CSS / JavaScript Course (<?= $html + $javascript; ?>/32)
+				enchant.js Course (<?= $html; ?>/12)
 				<? elseif($user->charge_html == 11): ?>
 					<?
 					$html = Model_Lessontime::count([
@@ -72,20 +65,12 @@
 							["language", 0],
 							["student_id", $this->user->id],
 							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-
-					$javascript = Model_Lessontime::count([
-						"where" => [
-							["language", 1],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
+							["deleted_at", 0],
+							["category", 1]
 						],
 					]);
 					?>
-				HTML / CSS / JavaScript Course (<?= $html + $javascript; ?>/32)
+				enchant.js Course (<?= $html; ?>/12)
 				<? elseif($user->charge_html == 111): ?>
 					<?
 					$html = Model_Lessontime::count([
@@ -93,41 +78,12 @@
 							["language", 0],
 							["student_id", $this->user->id],
 							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-
-					$javascript = Model_Lessontime::count([
-						"where" => [
-							["language", 1],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
+							["deleted_at", 0],
+							["category", 1]
 						],
 					]);
 					?>
-				HTML / CSS / JavaScript Course (<?= $html + $javascript; ?>/32)
-				<? elseif($user->charge_html == 1111): ?>
-					<?
-					$html = Model_Lessontime::count([
-						"where" => [
-							["language", 0],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-
-					$javascript = Model_Lessontime::count([
-						"where" => [
-							["language", 1],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-					?>
-				HTML / CSS / JavaScript Course (<?= $html + $javascript; ?>/32)
+				enchant.js Course (<?= $html; ?>/12)
 				<? endif ?>
 			</p>
 		</div>

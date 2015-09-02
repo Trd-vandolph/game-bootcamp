@@ -53,6 +53,7 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 1],
 				["deleted_at", 0],
+				["category", 1],
 			]
 		]);
 
@@ -61,7 +62,8 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 2],
 				["language", Input::get("course", 0)],
-				["deleted_at", 0]
+				["deleted_at", 0],
+				["category", 1],
 			]
 		]);
 		if($pasts == null){
@@ -168,6 +170,7 @@ class Controller_Students_Lesson extends Controller_Students
 				["status", 0],
 				["freetime_at", ">=", time()],
 				["freetime_at", "<", time() + 864000],
+				["category", 1],
 			],
 			'related' => [
 				'teacher' => [
@@ -187,7 +190,8 @@ class Controller_Students_Lesson extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1]
 				]
 		]);
 		
@@ -221,7 +225,8 @@ class Controller_Students_Lesson extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", 0)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1]
 				]
 		]);
 		
@@ -230,7 +235,8 @@ class Controller_Students_Lesson extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1]
 				]
 		]);
 		
@@ -240,6 +246,7 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", "<>", 0],
 				["freetime_at", "<", time()],
+				["category", 1]
 			],
 			"order_by" => [
 				["updated_at", "desc"],

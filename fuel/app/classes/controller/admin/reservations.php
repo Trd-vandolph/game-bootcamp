@@ -24,7 +24,7 @@ class Controller_Admin_Reservations extends Controller_Admin
 			$reservation->save();
 		}
 
-		$where = [["deleted_at", 0]];
+		$where = [["deleted_at", 0],["category", 1]];
 
 		if(Input::get("search_teacher", 0) != 0){
 			array_push($where, ["teacher_id" => Input::get("search_teacher", 0)]);

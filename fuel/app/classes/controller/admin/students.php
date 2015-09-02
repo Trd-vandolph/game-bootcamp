@@ -12,11 +12,12 @@ class Controller_Admin_Students extends Controller_Admin
 	public function action_index()
 	{
 
-		$where = [["group_id", 1],["deleted_at", 0]];
+		$where = [["group_id", 1],["deleted_at", 0],["category", 1]];
 
 		$query = Model_User::query()
 	    ->where('group_id', '=', 1)
-	    ->where('deleted_at', '=', 0);
+	    ->where('deleted_at', '=', 0)
+		->where('category', '=', 1);
 
 		if($search_text = Input::get("search_text", ""))
 		{

@@ -12,7 +12,8 @@ class Model_Content extends \Orm\Model
 		'sort' => array('default' => 0),
 		'created_at',
 		'updated_at',
-		'exam'
+		'exam',
+		'category'
 	);
 
 	protected static $_observers = array(

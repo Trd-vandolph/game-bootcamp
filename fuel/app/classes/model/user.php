@@ -183,6 +183,10 @@ class Model_User extends \Orm\Model
 				'default' 	  => 0,
 				'null'		  => false,
 		),
+		'category'      => array(
+				'default' 	  => 0,
+				'null'		  => false,
+		),
 	);
 
 	/**

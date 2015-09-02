@@ -65,12 +65,22 @@
 		<header id="top">
 			<div class="container">
 				<div class="row">
+				<? if(Auth::check()): ?>
 					<ul class="member-menu">
-						<li class="signup"><a href="/students" class="editable"><? echo Session::get('memSettings1'); ?></a>
+						<li class="signup"><a href="/students" class="editable">My Page</a>
 						</li>
-						<li class="login"><a href="/students/?logout=1" class="editable"><? echo Session::get('memSettings2'); ?></a>
+						<li class="login"><a href="/students/?logout=1" class="editable">Log Out</a>
 						</li>
 					</ul>
+				<? else: ?>
+					<ul class="member-menu">
+						<li class="signup"><a href="/students/signup" class="editable"><? echo Session::get('memSettings1'); ?></a>
+						</li>
+						<li class="login"><a href="/students/signin" class="editable"><? echo Session::get('memSettings2'); ?></a>
+						</li>
+					</ul>
+				<? endif; ?>
+				
 					<div class="col span_3">
 						<a id="logo" href="/">
 							<img class="" alt="CSP Bootcamp" src="assets/img/logo/logo2_b.png" />

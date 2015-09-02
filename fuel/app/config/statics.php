@@ -8,19 +8,16 @@ return [
 	'info_email' => "info@olivecode.com",
 
 	'content_types' => [
-		"HTML/CSS",
-		"JavaScript",
-		"PHP",
-		"Final Exam",
+		"enchant.js",
 	],
 	'content_numbers' => [
 		24,
 		8,
 	],
-	'html_courses' => [
+	'enchantJS' => [
+		4,
 		8,
-		16,
-		24,
+		12,
 	],
 	'js_courses' => [
 		8

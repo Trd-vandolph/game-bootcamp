@@ -16,12 +16,6 @@
 <? else: ?>
 	<h3>Lesson Schedule (Home)</h3>
 <? endif; ?>
-<?
-	/*$id = $user->id;
-	if($user->charge_html != 0 && $user->place == 0):
-		DB::query("UPDATE `users` SET `grameen_student` = 0 WHERE `id` = $id")->execute();
-	endif;*/
-?>
 <form action="" method="post" enctype="multipart/form-data">
 	<? if($user->place == 1): ?>
 		<input name="place" type="radio" value="0" checked hidden>
@@ -35,9 +29,7 @@
 </form>
 <ul class="curriculum">
 	<li class="course0 <? if($course == "-1") echo "selected"; ?>"><a href="./add?course=-1">Trial</a></li>
-	<li class="course1 <? if($course == "0") echo "selected"; ?>"><a href="./add?course=0">HTML/CSS</a></li>
-	<li class="course2 <? if($course == "1") echo "selected"; ?>"><a href="./add?course=1">JavaScript</a></li>
-	<?php /* <li class="course3 <? if($course == "2") echo "selected"; ?>"><a href="./add?course=2">PHP</a></li> */?>
+	<li class="course1 <? if($course == "0") echo "selected"; ?>"><a href="./add?course=0">enchant.js</a></li>
 </ul>
 <? if($user->place == 0): ?>
 	<div class="schedule course1"> <!-- calendar for online students starts-->
@@ -120,19 +112,6 @@
 																	<? endif; ?>
 																<?php elseif($user->charge_html == 111 && $course == "0"): ?>
 																	<? if(Model_Lessontime::courseNumber_3($course) > count($pasts)): ?>
-																		<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																		<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																			<div class="content confirm">
-																				<p>Do you want to book this lesson?</p>
-																				<div class="button-area">
-																					<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																					<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																				</div>
-																			</div>
-																		</div>
-																	<? endif; ?>
-																<?php elseif($user->charge_html == 1111 && $course == "1"): ?>
-																	<? if(Model_Lessontime::courseNumber_4($course) > count($pasts)): ?>
 																		<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
 																		<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
 																			<div class="content confirm">

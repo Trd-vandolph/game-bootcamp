@@ -16,6 +16,7 @@ class Model_Lessontime extends \Orm\Model
 		'created_at',
 		'updated_at',
 		'history',
+		'category',
 	);
 
 	protected static $_observers = array(
@@ -96,7 +97,7 @@ class Model_Lessontime extends \Orm\Model
 			case -1:
 				return 1;
 			default:
-				return Config::get("statics.html_courses")[0];
+				return Config::get("statics.enchantJS")[0];
 		}
 	}
 	
@@ -105,7 +106,7 @@ class Model_Lessontime extends \Orm\Model
 			case -1:
 				return 1;
 			default:
-				return Config::get("statics.html_courses")[1];
+				return Config::get("statics.enchantJS")[1];
 		}
 	}
 	
@@ -114,17 +115,7 @@ class Model_Lessontime extends \Orm\Model
 			case -1:
 				return 1;
 			default:
-				return Config::get("statics.html_courses")[2];
+				return Config::get("statics.enchantJS")[2];
 		}
 	}
-	
-	public static function courseNumber_4($id){
-		switch($id){
-			case -1:
-				return 1;
-			default:
-				return Config::get("statics.js_courses")[0];
-		}
-	}
-
 }

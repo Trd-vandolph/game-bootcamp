@@ -13,11 +13,8 @@
 								$content_types = Config::get("statics.content_types", []);
 								$i = 0;
 
-								foreach($content_types as $content_type):
-									//if($i != 2){
-								?>
+								foreach($content_types as $content_type):?>
 									<option value="<? echo $i++; ?>"><? echo $content_type; ?></option>
-								<? //} ?>
 								<? endforeach; ?>
 							</select>
 						</div>
@@ -44,7 +41,7 @@
 							<select name="number">
 								<?
 
-								for($i = 1; $i < 25; $i++):
+								for($i = 1; $i < 13; $i++):
 									?>
 									<option value="<?= $i; ?>"><?= $i; ?></option>
 								<? endfor; ?>
@@ -54,9 +51,7 @@
 					<li id="exam">
 						<h4>Exam For</h4>
 						<div>
-							<label><input type="checkbox" name="course[]" value="0"> HTML/CSS</label>
-							<label><input type="checkbox" name="course[]" value="1"> JavaScript</label>
-							<!-- <label><input type="checkbox" name="course[]" value="2"> PHP</label>-->
+							<label><input type="checkbox" name="course[]" value="0"> enchant.js</label>
 						</div>
 					</li>
 					<li>
@@ -68,6 +63,7 @@
 							<p class="error">Upload failed. File already exists.</p>
 							<? endif; ?>
 							<input name="file" type="file" required>
+							<input type="text" name="category" value="1">
 						</div>
 					</li>
 				</ul>

@@ -1,5 +1,5 @@
 body a {
-    color: #fff;
+    color: #D36161;
 }
 
 header#top nav ul li a:hover,
@@ -1111,7 +1111,10 @@ ul.mc_list li {
 	font-family: Montserrat;
 	src: url('../../wp-content/themes/salient/css/fonts/Montserrat-Regular.ttf.woff') format('woff');
 }
-
+/******* Header *************/
+header#top > div > div > ul > li > a {
+	color: #fff;
+}
 /******* Free Trial Lesson Button **********/
 #fws_55b227467453e > div {
 	width: 50%;

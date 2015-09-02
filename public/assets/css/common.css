@@ -11,7 +11,7 @@ body {
 	height: 100%;
 	font-size: 88%;
 	line-height: 160%;
-	color: #FFF;
+	color: #6E5555;
 	background: #f7f7f7;
 	font-family: Meiryo , sans-serif;
 }
@@ -20,7 +20,7 @@ img {
 	vertical-align: bottom;
 }
 a:link, a:visited {
-	color: #FFF;
+	color: #014099;
 	text-decoration: none;
 }
 a:hover,a:active {
@@ -159,7 +159,6 @@ header nav li a:hover{
 	user-data
 ==================== */
 #user-data{
-	width: 99%;
 	display: -webkit-box;
 	display: -moz-box;
 	box-shadow:0 0 8px 0 rgba(0,0,0,0.1) inset;
@@ -862,6 +861,7 @@ span.icon-course5{
 /* login */
 #login .login-area h4{
     min-width: 130px;
+    color: #fff;
 }
 #login .login-area .button{
     margin:0 0 10px 0; 
@@ -878,6 +878,13 @@ span.icon-course5{
 }
 #login .signup-area .signup p{
     margin-bottom:20px; 
+    color: #fff;
+}
+#login > div > form > div.login-area > div > p > label {
+	color: #fff;
+}
+#login > div > form > div.login-area > p > a {
+	color: #fff;
 }
 #login .signup-area .signup .button{
     width: 100%;

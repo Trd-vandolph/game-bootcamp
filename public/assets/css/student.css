@@ -1,9 +1,4 @@
 @charset "utf-8";
-#user-data{
-	background: transparent;
-	border: 2px dotted #FD0037;
-	margin: 15px auto;
-}
 #user-data .reserve a{
 	color:#FF0039;
 }
