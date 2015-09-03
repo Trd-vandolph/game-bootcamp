@@ -9,27 +9,17 @@
 		<ul>
 			<? if(isset($donetrial) && count($donetrial) < 1  && count($pasts) < 1): ?>
 				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
-				<? else: ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
 				<? endif; ?>
-			<? elseif(isset($donetrial) && count($donetrial) == 1 && count($pasts) >= 0 && count($pasts) <= 23): ?>
+			<? elseif(isset($donetrial) && count($donetrial) == 1 && count($pasts) >= 0 && count($pasts) <= 12): ?>
 				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
-				<? else: ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
-				<? endif; ?>
-			<? elseif(isset($donetrial) && count($pasts) >= 24 && count($pasts) <= 32): ?>
-				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
-				<? else: ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
 				<? endif; ?>
 			<? else: ?>
 				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
 				<? else: ?>
-					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
 				<? endif; ?>
 			<? endif; ?>
 			

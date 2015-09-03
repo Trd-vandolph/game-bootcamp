@@ -21,6 +21,7 @@ class Controller_Students_Top extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 1],
 				["freetime_at", ">=", time()],
+				["category", 1],
 			],
 			"order_by" => [
 				["id", "desc"],
@@ -35,6 +36,7 @@ class Controller_Students_Top extends Controller_Students
 				["status", 1],
 				["freetime_at", "<=", time() + 1800],
 				["freetime_at", ">=", time() - 1800],
+				["category", 1],
 			]
 		]);
 
@@ -54,7 +56,8 @@ class Controller_Students_Top extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", 0)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1],
 				]
 		]);
 		
@@ -63,7 +66,8 @@ class Controller_Students_Top extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1],
 				]
 		]);
 		

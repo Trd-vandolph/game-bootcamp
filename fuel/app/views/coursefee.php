@@ -34,6 +34,12 @@
 				</tbody>
 			</table>
 			<br><br>
+			<? if(!Auth::check()) {
+					$redirectCredit = "/students/signin/?p=1&g=3";
+				}else {
+					$redirectCredit = "/students/courses/";
+				}
+			?>
 			<p class="sub-title">Payment</p>
 				<br>
 					<a href="http://www.paypal.com"><p class="p-left">PayPal</p></a>
@@ -43,7 +49,7 @@
 					<p>PayPal is a global online payment service.</p>
 					<p>You can use most of the major credit cards including VISA, Master, American Express.</p>
 					<p>Choose either one-time or installment payment.</p>
-					<button class="button">Go to Payment</button>
+					<a href="<?=$redirectCredit; ?>"><button class="button">Go to Payment</button></a>
 		</div>
 	</div>
 </section>
