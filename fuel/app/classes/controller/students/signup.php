@@ -98,6 +98,7 @@ class Controller_Students_Signup extends Controller_Base
 					$user->timezone = Session::get_flash("timezone");
 					$user->place =  Session::get_flash("grameen");
 					$user->grameen_student =  Session::get_flash("grameen_student");
+					$user->category =  1;
 					$user->save();
 
 					// send mail
@@ -108,20 +109,13 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail = Email::forge("JIS");
 					$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 					$sendmail->to($user->email);
-					$sendmail->subject("Welcome Aboard! / OliveCode");
+					$sendmail->subject("Welcome Aboard! / Game-BootCamp");
 					$sendmail->html_body(htmlspecialchars_decode($body));
- 					if(Session::get_flash('grameen')==1){
- 						$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->limit(1)->get_one(); 
- 						if(count($documents)>0){
-	 						$query = Model_Document::find($documents->id);
-							$sendmail->attach(DOCROOT.'/contents/'.$query->path);
- 						}
-					}else{
-						$documents = Model_Document::query()->where('type', 2)->where('deleted_at', 0)->limit(1)->get_one();
-						if(count($documents)>0){
-							$query = Model_Document::find($documents->id);
-							$sendmail->attach(DOCROOT.'/contents/'.$query->path);
-						}
+					
+					$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
+					if(count($documents)>0){
+						$query = Model_Document::find($documents->id);
+						$sendmail->attach(DOCROOT.'/contents/'.$query->path);
 					}
 
 					$sendmail->send();

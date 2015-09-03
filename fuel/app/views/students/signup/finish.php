@@ -1,21 +1,8 @@
 <?
-	$user = Model_User::find("last", [
-			"where" => [
-					["deleted_at", 0],
-			]
-	]);
+	$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
+	$query = Model_Document::find($documents->id);
 	
-	if($user->place == 1) {
-		$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->limit(1)->get_one();
-		$query = Model_Document::find($documents->id);
-		
-		$doc = "/contents/".$query->path;
-	}else {
-		$documents = Model_Document::query()->where('type', 2)->where('deleted_at', 0)->limit(1)->get_one();
-		$query = Model_Document::find($documents->id);
-		
-		$doc = "/contents/".$query->path;
-	}
+	$doc = "/contents/".$query->path;
 ?>
 <div id="login">
 	<div class="content-wrap_s">

@@ -1,11 +1,11 @@
 <?php
 
 return [
-	'url' => 'http://www.olivecode.com',
+	'url' => 'http://www.game-bootcamp.com',
 
-	'info_name' => "OliveCode",
+	'info_name' => "Game-BootCamp",
 
-	'info_email' => "info@olivecode.com",
+	'info_email' => "info@game-bootcamp.com",
 
 	'content_types' => [
 		"enchant.js",

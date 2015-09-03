@@ -20,8 +20,7 @@
 						<div>
 							<select name="doc_type">
 								<option value="0">Ordinary Use</option>
-								<option value="2">Online Course Information</option>
-								<option value="1">Grameen Course Information</option>
+								<option value="1">Online Course Information</option>
 							</select>
 						</div>
 					</li>
@@ -49,10 +48,10 @@
 					<th class="number"><? echo $document->id; ?></th>
 					<td class="date-width"><? echo date("M d, Y. H:i:s", $document->created_at); ?></td>
 					<td>
-						<?php if(Uri::base() == "http://olivecode.com/" OR Uri::base() == "http://www.olivecode.com/"): ?>
-							<? echo Html::anchor("http://www.olivecode.com/contents/{$document->path}", "$document->path", ["target" => "_blank"]); ?>
-						<?php elseif(Uri::base() == "http://olivecode-devsite.zz.mu/" OR Uri::base() == "http://www.olivecode-devsite.zz.mu/"): ?>
-							<? echo Html::anchor("http://www.olivecode-devsite.zz.mu/contents/{$document->path}", "$document->path", ["target" => "_blank"]); ?>
+						<?php if(Uri::base() == "http://game-bootcamp.com/" OR Uri::base() == "http://www.game-bootcamp.com/"): ?>
+							<? echo Html::anchor("http://www.game-bootcamp.com/contents/{$document->path}", "$document->path", ["target" => "_blank"]); ?>
+						<?php elseif(Uri::base() == "http://game-bootcamp-devsite.zz.mu/" OR Uri::base() == "http://www.game-bootcamp-devsite.zz.mu/"): ?>
+							<? echo Html::anchor("http://www.game-bootcamp-devsite.zz.mu/contents/{$document->path}", "$document->path", ["target" => "_blank"]); ?>
 						<?php else: ?>
 							<? echo Html::anchor("contents/{$document->path}", "$document->path", ["target" => "_blank"]); ?>
 						<?php endif; ?>
@@ -80,48 +79,15 @@
 					<th class="number"><? echo $onlines->id; ?></th>
 					<td class="date-width"><? echo date("M d, Y. H:i:s", $onlines->created_at); ?></td>
 					<td>
-						<?php if(Uri::base() == "http://olivecode.com/" OR Uri::base() == "http://www.olivecode.com/"): ?>
-							<? echo Html::anchor("http://www.olivecode.com/contents/{$onlines->path}", "$onlines->path", ["target" => "_blank"]); ?>
-						<?php elseif(Uri::base() == "http://olivecode-devsite.zz.mu/" OR Uri::base() == "http://www.olivecode-devsite.zz.mu/"): ?>
-							<? echo Html::anchor("http://www.olivecode-devsite.zz.mu/contents/{$onlines->path}", "$onlines->path", ["target" => "_blank"]); ?>
+						<?php if(Uri::base() == "http://game-bootcamp.com/" OR Uri::base() == "http://www.game-bootcamp.com/"): ?>
+							<? echo Html::anchor("http://www.game-bootcamp.com/contents/{$onlines->path}", "$onlines->path", ["target" => "_blank"]); ?>
+						<?php elseif(Uri::base() == "http://game-bootcamp-devsite.zz.mu/" OR Uri::base() == "http://www.game-bootcamp-devsite.zz.mu/"): ?>
+							<? echo Html::anchor("http://www.game-bootcamp-devsite.zz.mu/contents/{$onlines->path}", "$onlines->path", ["target" => "_blank"]); ?>
 						<?php else: ?>
 							<? echo Html::anchor("contents/{$onlines->path}", "$onlines->path", ["target" => "_blank"]); ?>
 						<?php endif; ?>
 					</td>
 					<td class="del-width"><button class="button gray right" onclick="deleteDocument(<? echo $onlines->id; ?>)"><i
-								class="fa fa-times"></i>
-							Delete</button></td>
-				</tr>
-				<? endforeach; ?>
-			<? endif; ?>
-			</tbody>
-		</table>
-		<h3>Grameen Course Information</h3>
-		<table class="table-base" width="100%" border="0" cellpadding="0" cellspacing="0" >
-			<thead>
-			<tr>
-				<th>ID</th>
-				<th>Uploaded at</th>
-				<th>File name</th>
-				<th></th>
-			</tr>
-			</thead>
-			<tbody>
-			<? if($grameen != null): ?>
-				<? foreach($grameen as $grameens): ?>
-				<tr id="document_<? echo $grameens->id; ?>">
-					<th class="number"><? echo $grameens->id; ?></th>
-					<td class="date-width"><? echo date("M d, Y. H:i:s", $grameens->created_at); ?></td>
-					<td>
-						<?php if(Uri::base() == "http://olivecode.com/" OR Uri::base() == "http://www.olivecode.com/"): ?>
-							<? echo Html::anchor("http://www.olivecode.com/contents/{$grameens->path}", "$grameens->path", ["target" => "_blank"]); ?>
-						<?php elseif(Uri::base() == "http://olivecode-devsite.zz.mu/" OR Uri::base() == "http://www.olivecode-devsite.zz.mu/"): ?>
-							<? echo Html::anchor("http://www.olivecode-devsite.zz.mu/contents/{$grameens->path}", "$grameens->path", ["target" => "_blank"]); ?>
-						<?php else: ?>
-							<? echo Html::anchor("contents/{$grameens->path}", "$grameens->path", ["target" => "_blank"]); ?>
-						<?php endif; ?>
-					</td>
-					<td class="del-width"><button class="button gray right" onclick="deleteDocument(<? echo $grameens->id; ?>)"><i
 								class="fa fa-times"></i>
 							Delete</button></td>
 				</tr>

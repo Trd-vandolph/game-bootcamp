@@ -7,7 +7,8 @@ class Controller_Students_Documents extends Controller_Students
 	{
 		$data["documents"] = Model_Document::find("all", [
 			"where" => [
-				["deleted_at", 0]
+				["deleted_at", 0],
+				["category", 1]
 			],
 			"order_by" => [
 				["created_at", "desc"],
@@ -19,7 +20,8 @@ class Controller_Students_Documents extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", 0)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1]
 				]
 		]);
 		
@@ -28,7 +30,8 @@ class Controller_Students_Documents extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["category", 1]
 				]
 		]);
 		

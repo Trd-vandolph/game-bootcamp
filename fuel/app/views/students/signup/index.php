@@ -2,7 +2,7 @@
 	<div id="main">
 	<? $g=Input::GET('g',0); ?>	
 		<?php echo Uri::segment(3); ?>
-		<h3>Signup<? if($g==1){echo "&nbsp;<font style='color: red;'>(Grameen Course)</font>"; } else { echo "&nbsp;<font style='color: red;'>(Home Course)</font>"; } ?></h3>
+		<h3>Signup<h3>
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<input type="hidden" id="id" value="<? echo Input::get("id", ""); ?>" />

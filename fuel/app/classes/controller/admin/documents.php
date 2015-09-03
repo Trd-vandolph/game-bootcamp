@@ -25,30 +25,18 @@ class Controller_Admin_Documents extends Controller_Admin
 	
 					// save
 					if(Input::post("doc_type")==1){
-						$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->limit(1)->get_one();
+						$documents = Model_Document::query()->where('type', 2)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
 						if(count($documents)<1){
 							$document = Model_Document::forge();
 							$document->path = $filename;
 							$document->type = Input::post("doc_type");
+							$document->category = 1;
 							$document->save();
 						}else{
 							$query = Model_Document::find($documents->id);
 							$query->path = $filename;
 							$query->type = Input::post("doc_type");
-							$query->save();
-						}
-					
-					}elseif(Input::post("doc_type")==2){
-						$documents = Model_Document::query()->where('type', 2)->where('deleted_at', 0)->limit(1)->get_one();
-						if(count($documents)<1){
-							$document = Model_Document::forge();
-							$document->path = $filename;
-							$document->type = Input::post("doc_type");
-							$document->save();
-						}else{
-							$query = Model_Document::find($documents->id);
-							$query->path = $filename;
-							$query->type = Input::post("doc_type");
+							$document->category = 1;
 							$query->save();
 						}
 						
@@ -56,21 +44,23 @@ class Controller_Admin_Documents extends Controller_Admin
 						$document = Model_Document::forge();
 						$document->path = $filename;
 						$document->type = Input::post("doc_type");
+						$document->category = 1;
 						$document->save();
 					}
 					
 					Response::redirect("/admin/documents/");
 	
 				}else{
-					Response::redirect("/admin/contents/?e=1");
+					Response::redirect("/admin/documents/?e=1");
 				}
 			}else{
-				Response::redirect("/admin/contents/?e=1");
+				Response::redirect("/admin/documents/?e=3");
 			}
 		}
 		$where = [
 					["deleted_at", 0],
-					["type", 0]
+					["type", 0],
+					["category", 1]
 		];
 
 		$data["documents"] = Model_Document::find("all", [
@@ -79,21 +69,10 @@ class Controller_Admin_Documents extends Controller_Admin
 				["created_at", "desc"],
 			]
 		]);
-		
-		$where_grameen = [
-				["deleted_at", 0],
-				["type", 1]
-		];
-		
-		$data["grameen"] = Model_Document::find("all", [
-				"where" => $where_grameen,
-				"order_by" => [
-						["created_at", "desc"],
-				]
-		]);
 		$where_online = [
 				["deleted_at", 0],
-				["type", 2]
+				["type", 1],
+				["category", 1]
 		];
 		
 		$data["online"] = Model_Document::find("all", [

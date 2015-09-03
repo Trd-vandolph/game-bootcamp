@@ -59,6 +59,7 @@ return array (
         50 => '064_add_category_to_users',
         51 => '065_add_category_to_contents',
         52 => '066_add_category_to_lessontimes',
+        53 => '067_add_category_to_documents',
       ),
     ),
     'module' => 

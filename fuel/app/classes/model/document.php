@@ -8,7 +8,8 @@ class Model_Document extends \Orm\Model
 		'deleted_at' =>  array('default' => 0),
 		'created_at',
 		'updated_at',
-		'type'
+		'type',
+		'category'
 	);
 
 	protected static $_observers = array(
