@@ -92,7 +92,7 @@
 
  		//adding table head titles
  		th.css({
-	 		'background' : '#9A9492',
+	 		'background' : '#E41D48',
 	 		'color' : '#fff',
 	 		'border-right' : 'none',
 	 		'text-align' : 'left',

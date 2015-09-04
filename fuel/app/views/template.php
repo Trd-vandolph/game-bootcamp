@@ -142,7 +142,7 @@
 
 	<? echo $content ?>
 
-	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 50px 244px 25px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
+	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 30px 244px 25px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
 		<div class="col span_12 light">
 			<a class="nectar-button large see-through" href="/students/signup" data-color-override="false">
 				<span>Take a Free Trial Lesson</span><br><br>

@@ -98,19 +98,6 @@
 							<?= View::forge("_timezone",["user" => $user]); ?>
 						</div>
 					</li>
-					<li>
-						<h4>Place of Learning</h4>
-						<div>
-							<select id="place" name="place">
-								<option <? if(Input::post("place", $user->place) == 0) echo "selected" ?> value="0">Online School</option>
-								<option <? if(Input::post("place", $user->place) == 1) echo "selected" ?> value="1">Grameen Course</option>
-							</select>
-							<select id="grameen_student" name="grameen_student" hidden>
-								<option <? if(Input::post("grameen_student", $user->grameen_student) == 0) echo "selected" ?> value="0">No</option>
-								<option <? if(Input::post("grameen_student", $user->grameen_student) == 1) echo "selected" ?> value="1">Yes</option>
-							</select>
-						</div>
-					</li>
 				</ul>
 				<p class="button-area">
 					<button class="button" href="">Submit <i class="fa fa-chevron-right"></i></button>

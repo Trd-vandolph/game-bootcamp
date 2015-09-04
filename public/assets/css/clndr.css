@@ -2,7 +2,7 @@
   display: inline-block;
   width: 100%;
   position: relative;
-  background: #9A9492;
+  background: #0F5573;
   padding: 20px 0;
   color: #fff;
   font-weight: 700;
@@ -110,7 +110,7 @@
   background: #eee;
 }
 #calendar .clndr-table tr .day.today {
-  color: #7E9E42;
+  color: #FF0037;
 }
 /*
 #calendar .clndr-table tr .day.today:hover {
@@ -121,11 +121,11 @@
 }
 */
 #calendar .clndr-table tr .day.event {
-  background: #dd795d;
+  background: #0F5573;
   color: #fff;
 }
 #calendar .clndr-table tr .day.booked{
-  background: #7e9e42;
+  background: #FE0036;
   color: #fff;
 }
 #calendar .clndr-table tr .day.event:hover,

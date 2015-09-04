@@ -3,7 +3,6 @@
 		<h3>Students</h3>
 		<div class="search-table">
 			<p class="link-more table-top left"><? echo Html::anchor("admin/students/paid", '<i class="fa fa-fw fa-graduation-cap"></i> View Paying Students'); ?></p>
-			<p class="link-more table-top left"><? echo Html::anchor("admin/students/grameen", '<i class="fa fa-fw fa-graduation-cap"></i> View Grameen Students'); ?></p>
 			<p class="link-more table-top left"><? echo Html::anchor("admin/students/trial", '<i class="fa fa-fw fa-graduation-cap"></i> View Trial Students'); ?></p>
 			<p class="link-more table-top"><? echo Html::anchor("admin/students/add", '<i class="fa fa-plus-circle"></i> Add'); ?></p>
 			<form action="" method="get" id="search_form">

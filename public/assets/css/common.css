@@ -11,8 +11,8 @@ body {
 	height: 100%;
 	font-size: 88%;
 	line-height: 160%;
-	color: #6E5555;
-	background: #f7f7f7;
+	color: #374249;
+	background: #f8f8f8;
 	font-family: Meiryo , sans-serif;
 }
 img {
@@ -24,7 +24,7 @@ a:link, a:visited {
 	text-decoration: none;
 }
 a:hover,a:active {
-	color: #8AAD49;
+	color: #E41D48;;
 	text-decoration: underline;
 }
 
@@ -96,7 +96,7 @@ ul.forms li{
 	header
 ==================== */
 header {
-	background: #003989;
+	background: #0f5573;
 	color: #fff;
 	height: 50px;
 	z-index: 2;
@@ -137,13 +137,14 @@ header nav li {
 	white-space: nowrap;
 }
 header nav li a:link,header nav li a:visited{
-	background: #C53252;
+	background: #e6b122;
 	padding: 4px 20px;
 	border-radius: 15px;
-	color: #fff;
+	color: #374249;
+	font-family: Lovelo, Sans-serif;
 }
 header nav li a:hover{
-	background:#fff;
+	background:#F2E6C7;
 	color:#79706E;
 	text-decoration:none;
 }
@@ -183,7 +184,7 @@ header nav li a:hover{
 #user-data .profile .name{
 	font-size:18px;
 	font-weight:700;
-	color: #FF0039
+	color: #5192B8;
 }
 #user-data .reserve{
 	padding:30px 20px 0 20px;
@@ -279,7 +280,7 @@ header nav li a:hover{
 }
 /* side */
 #side {
-    background: #9A9492;
+    background: #0f5573;
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
 }
@@ -294,18 +295,18 @@ header nav li a:hover{
 #side a:hover {
     color: #33353D;
     text-decoration: none;
-    background:#f7f7f7;
+    background:#ECECEC;
 }
 
 #side h3{
     padding:20px;
-    color:#fff;
+    color:#fff;;
 }
 #side nav {
-    background:#938D8B;
+    background: #1C617E;
 }
 #side nav li{
-    border-bottom:solid 1px #9A9492;
+    border-bottom:solid 1px #A3C4D7;
 }
 #side nav li a{
     display:block;
@@ -354,7 +355,7 @@ header nav li a:hover{
 #main h4{
     font-size:20px;
     padding:10px 0 20px 0;
-    color:#7E9E42;
+    color:#5192B8;
 }
 #main h5{
     font-size:18px;
@@ -362,7 +363,7 @@ header nav li a:hover{
 }
 p.catchcopy{
     font-size: 26px;
-    color: #33522A;
+    color: #0F5573;
     text-align: center;
     font-weight: 700;
     margin: 40px 0!important;
@@ -382,15 +383,15 @@ p.description{
 	parts
 ==================== */
 .content-wrap {
-	background:#FFF;
-	border:solid 1px #eee;
+	background: #fff;
+	border: solid 1px #FFFFFF;
 	padding:20px;
 	margin:0 0 40px 0;
 	box-shadow:0 0 4px 0 rgba(0,0,0,0.05);
 }
 .content-wrap_s{
-	background: #D22751;
-	border: solid 1px #C23557;
+	background: #FAF9F9;
+	border: solid 1px #FAF9F9;
 	padding: 20px;
 	margin: 100px auto 40px auto;
 	width: 800px;
@@ -412,14 +413,14 @@ p.link-more {
 }
 p.link-more a{
     padding:4px 15px;
-    color:#fff;
+    color:#374240;
     border-radius:15px;
     margin:0 10px 0 0;
-    background:#9A9492;
+    background:#e6b122;
 }
 p.link-more a:hover{
     text-decoration:none;
-    background:#7CA771;
+    background:#C7E6FA;
 }
 @media screen and (max-width : 840px) {
     .content-wrap_s{
@@ -693,7 +694,7 @@ p.error-ok{
 /* table base */
 table.table-base{
     margin:0 0 40px 0;
-    background:#FFF;
+    background:#fff;
     border:solid 1px #eee;
     box-shadow:0 0 4px 0 rgba(0,0,0,0.05);
 }
@@ -721,7 +722,7 @@ table.table-base th{
     color:#666;
 }
 table.table-base thead th{
-    background:#9A9492;
+    background:#E41D48;
     color:#fff;
     border-right:none;
 }
@@ -741,13 +742,13 @@ table.table-base thead th:last-child{
     border:none;
 }
 table.table-base.course0 th{
-    background:#7E9E42;
+    background:#0F5573;
 }
 table.table-base.course1 th{
-    background:#DD795D;
+    background:#E41D48;
 }
 table.table-base.course2 th{
-    background:#889CD0;
+    background:#E41D48;
 }
 table.table-base.course3 th{
     background:#DA88AA;
@@ -824,15 +825,15 @@ span.icon-course5{
 	float:left;
 }
 .button{
-	padding:12px 30px 10px 30px;
-	color:#fff!important;
-	border-radius:3px;
-	margin:0 10px 0 0;
-	background: #014099;
+	padding: 12px 30px 10px 30px;
+	color: #374249!important;
+	border-radius: 3px;
+	margin: 0 10px 0 0;
+	background: #E6B122;
 	font-size: 16px;
-	cursor:pointer;
-	border:none;
-	white-space:nowrap;
+	cursor: pointer;
+	border: none;
+	white-space: nowrap;
 }
 .button.gray{
 	background:#ccc;
@@ -861,7 +862,7 @@ span.icon-course5{
 /* login */
 #login .login-area h4{
     min-width: 130px;
-    color: #fff;
+    color: #374249;
 }
 #login .login-area .button{
     margin:0 0 10px 0; 
@@ -878,13 +879,13 @@ span.icon-course5{
 }
 #login .signup-area .signup p{
     margin-bottom:20px; 
-    color: #fff;
+    color: #374249;
 }
 #login > div > form > div.login-area > div > p > label {
-	color: #fff;
+	color: #374249;
 }
 #login > div > form > div.login-area > p > a {
-	color: #fff;
+	color: #374249;
 }
 #login .signup-area .signup .button{
     width: 100%;
@@ -1110,7 +1111,7 @@ ul.tutors_list_l li h4{
     padding: 0 0 10px 0!important;
 }
 ul.tutors_list_l li aside{
-    color: #DD795D;
+    color: #FF0037;
     font-size: 16px;
     margin: 0 0 20px 0;
 }

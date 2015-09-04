@@ -1,87 +1,92 @@
 @charset "utf-8";
 header{
-    background:#9CD18C;
+	background: #0f5573;
 }
 header nav li a:link,
 header nav li a:visited{
-    background: #7AAE2A;
+	background: #e6b122;
 }
 header nav li a:hover,
 header nav li a:active{
-    color: #fff;
+	color: #79706E;
+	background: #F2E6C7;
 }
 #contents-wrap {
 }
 table.table-base .button{
-  padding: 6px 10px;
-  margin-bottom: 2px;
-  font-size: 14px;
+	padding: 6px 10px;
+	margin-bottom: 2px;
+	font-size: 14px;
 }
 table.table-base  p.email{
-  word-break:break-all;
+	word-break:break-all;
 }
 table.table-base  td.html-course{
-  text-align: center;
+	text-align: center;
 }
 .search-table{
-  text-align: right;
-  max-width: 10px 0;
+	text-align: right;
+	max-width: 10px 0;
 }
 .search-table form{
-  float: right;
-  display: block;
+	float: right;
+	display: block;
 }
 .search-table form input{
-    padding:4px;
-    margin-bottom: 4px;
-    border:solid 1px #bbb;
-    font-size: 16px;
-    border-radius: 3px;
-    max-width: 100%;
+	padding:4px;
+	margin-bottom: 4px;
+	border:solid 1px #bbb;
+	font-size: 16px;
+	border-radius: 3px;
+	max-width: 100%;
 }
 .link-more.table-top{
-  float: right;
-  margin: 0 0 0 20px!important;
+	float: right;
+	margin: 0 0 0 20px!important;
 }
 .table-base td.hangout{
-  word-break:break-all;
+	word-break:break-all;
 }
 .table-base td.name p{
 }
 .table-base td.name p span{
-  font-weight: 700;
+	font-weight: 700;
 }
 .table-base td.grades ul{
-  float: left;
+	float: left;
 }
 .table-base td.grades ul li{
-  float: left;
-  margin-right: 40px;
+	float: left;
+	margin-right: 40px;
 }
 .table-base td.grades ul input{
-    padding:2px 4px;
-    margin: 0 0 4px 5px;
-    border:solid 1px #bbb;
-    font-size: 16px;
-    border-radius: 3px; 
-    width: 120px; 
+	padding:2px 4px;
+	margin: 0 0 4px 5px;
+	border:solid 1px #bbb;
+	font-size: 16px;
+	border-radius: 3px; 
+	width: 120px; 
 }
 .table-base tr.reserved th,.table-base tr.reserved td{
-  background: #F6F7F2;
+	background: #F6F7F2;
 }
 .table-base tr.reserved td.status{
-  font-weight: 700;
-  color: #7E9E42;
+	font-weight: 700;
+	color: #E41D48;
 }
 .clndr-table .class-number {
-    color: #7e9e42;
-    font-size: 20px;
-    text-align: right;
-    padding: 10px;
+	color: #0F5573;
+	font-size: 20px;
+	text-align: right;
+	padding: 10px;
 }
 .clndr-table a{
-  display: block;
+	display: block;
 }
 .clndr-table a:hover{
-  text-decoration: none;
+	text-decoration: none;
+}
+/*LOGIN*/
+ul.forms li h4 {
+	color: #374249;
 }

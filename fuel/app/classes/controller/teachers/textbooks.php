@@ -8,7 +8,8 @@ class Controller_Teachers_Textbooks extends Controller_Teachers
 		$data["trial"] = Model_Content::find("all", [
 			"where" => [
 				["type_id", -1],
-				["deleted_at", 0]
+				["deleted_at", 0],
+				["category", 1]
 			],
 			"order_by" => [
 				["number", "asc"],

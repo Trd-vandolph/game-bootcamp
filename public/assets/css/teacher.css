@@ -4,13 +4,13 @@
 
 
 #user-data{
-    background:#E6E3DB;
+    background:#F8F8F8;
 }
 #user-data .reserve a{
-    color:#B45734;
+    color:#606060;
 }
 #user-data .reserve a:hover{
-    color:#7CA771;
+    color:#FE0036;
 }
 #user-data ul {
     margin-top: 10px
@@ -112,10 +112,10 @@ p.calender-notice span{
     font-size: 12px;
 }
 p.calender-notice span.reserved{
-    background: #7E9E42;
+    background: #FE0036;
 }
 p.calender-notice span.selected{
-    background: #DD795D;
+    background: #0F5573;
 }
 .clndr-controls .month{
     font-size: 18px;
@@ -139,7 +139,7 @@ p.calender-notice span.selected{
     color: #fff;
 }
 .lesson-time ul li.selected{
-    background: #DD795D;
+    background: #0F5573;
     color: #fff;
 }
 .lesson-time ul li.selected:hover{
@@ -147,7 +147,7 @@ p.calender-notice span.selected{
     color: #333;
 }
 .lesson-time ul li.reserved{
-    background: #7E9E42!important;
+    background: #FE0036!important;
     color: #fff!important;
 }
 .lesson-time .button-area{

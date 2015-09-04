@@ -30,11 +30,6 @@
 					<p>Sign up as tutor</p>
 					<? echo Html::anchor("teachers/signup", 'Signup <i class="fa fa-chevron-right"></i>',array('class' => 'button')); ?>
 				</div>
-				<p>Or signup with your social account</p>
-				<ul class="social-signup clearfix">
-					<li class="fb"><? echo Html::anchor("teachers/auth/oauth/facebook", '<i class="fa fa-facebook-square"></i> Facebook'); ?></li>
-					<li class="gp"><? echo Html::anchor("teachers/auth/oauth/google", '<i class="fa fa-google-plus"></i> Google+'); ?></li>
-				</ul>
 				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</div>
 		</form>

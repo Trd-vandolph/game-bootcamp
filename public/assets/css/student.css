@@ -1,9 +1,9 @@
 @charset "utf-8";
 #user-data .reserve a{
-	color:#FF0039;
+	color:#606060;
 }
 #user-data .reserve a:hover{
-	color:#D87C60;
+	color:#FE0036;
 }
 
 #topic-path{
@@ -52,14 +52,14 @@ ul.curriculum li a{
     font-size: 85%;
     border-radius: 20px;
     padding: 5px 20px 3px 20px;
-    color: #fff;
+    color: #374249;
     text-decoration: none;
 }
 ul.curriculum li.selected.course0 a{
     background: #7E9E42;
 }
 ul.curriculum li.selected.course1 a{
-    background: #DD795D;
+    background: #E6B122;
 }
 ul.curriculum li.selected.course2 a{
     background: #889CD0;
@@ -80,8 +80,8 @@ ul.curriculum li.selected.course3 a{
     padding: 15px 0;
 }
 .schedule table thead {
-    background: #9A9492;
-    color: #fff;
+	background: #0F5573;
+	color: #fff;
 }
 .schedule table thead th{
     font-size: 18px;
@@ -97,104 +97,105 @@ ul.curriculum li.selected.course3 a{
     }
 }
 .schedule table tbody th{
-    background: #eee;
+	background: #eee;
 }
 .schedule table td{
-    width: 10%;
-    font-weight: 700;
+	width: 10%;
+	font-weight: 700;
 }
 .schedule table tbody td{
-    border-right: solid 1px #eee;
-    vertical-align: top;
-    padding: 10px 0 0 0;
+	border-right: solid 1px #eee;
+	vertical-align: top;
+	padding: 10px 0 0 0;
 }
 .schedule table tbody th{
-    border-right: solid 1px #E4E4E4;
+	border-right: solid 1px #E4E4E4;
 }
 .schedule table tbody td:last-child,.schedule table tbody th:last-child{
-    border: none;
+	border: none;
 }
 .schedule table td ul{
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-shadow: none;
-    background: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	background: none;
 }
 .schedule table td li{
-    margin: 0;
-    padding: 0;
-    border: none;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 .schedule table td li a{
-    width: 100%;
-    text-align: center;
-    display: block;
-    padding: 8px 0;
+	width: 100%;
+	text-align: center;
+	display: block;
+	padding: 8px 0;
+	color: #0F5573;
 }
 .schedule.course1 table td li.reserved a{
-    background: #DD795D;
+	background: #DD795D;
 }
 .schedule.course1 table td li.events a{
-    background: #7E9E42;
+	background: #7E9E42;
 }
 .schedule.course1 table td li.gocal a{
-    background: rgb(73, 134, 231) !important;
+	background: rgb(73, 134, 231) !important;
 }
 .schedule.course2 table td li.reserved a{
-    background: #889CD0;
+	background: #889CD0;
 }
 .schedule.course3 table td li.reserved a{
-    background: #DA88AA;
+	background: #DA88AA;
 }
 
 .schedule table td li.unavailable a{
-    pointer-events:none;
-    color: #ccc;
+	pointer-events:none;
+	color: #ccc;
 }
 .schedule table td li.reserved a{
-    color: #fff;
+	color: #fff;
 }
 .schedule table td li.events a,
 .schedule table td li.gocal a{
-    color: #fff !important;
+	color: #fff !important;
 }
 .schedule table td li a:hover{
-    background: #7E9E42;
-    color: #fff;
-    text-decoration: none;
+	background: #FE0036;
+	color: #FFF;
+	text-decoration: none;
 }
 .select-teacher ul li{
-    border-bottom: dotted 1px #ccc;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    text-align: left;
+	border-bottom: dotted 1px #ccc;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	text-align: left;
 }
 .select-teacher ul li:last-child{
-    border:none;
+	border:none;
 }
 .select-teacher p.date{
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-    background: #fff;
-    border:solid 1px #eee;
-    padding: 20px;
-    margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: center;
+	background: #fff;
+	border:solid 1px #eee;
+	padding: 20px;
+	margin-bottom: 20px;
 }
 .select-teacher .profile h3{
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .select-teacher .confirm{
-    background: #fff;
-    border:solid 1px #eee;
-    padding: 20px;
-    margin-bottom: 20px;
+	background: #fff;
+	border:solid 1px #eee;
+	padding: 20px;
+	margin-bottom: 20px;
 }
 .select-teacher .confirm .time{
-    font-weight: 700;
+	font-weight: 700;
 }
 .modal-event {
 	text-align: left;
@@ -278,7 +279,7 @@ ul.curriculum li.selected.course3 a{
 }
 .payment .select-course li p.price span{
     display: block;
-    color: #D87054;
+    color: #FF0037;
     font-size: 30px;
     font-weight: 700;
 }
@@ -293,9 +294,9 @@ ul.curriculum li.selected.course3 a{
     border:none;
     font-size: 22px;
     padding:15px 50px;
-    color:#fff!important;
+    color:#374249!important;
     border-radius:7px;
-    background:#7E9E42;
+    background:#E6B122;
     cursor:pointer;
     border:none;
     white-space:nowrap;

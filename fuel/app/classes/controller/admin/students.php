@@ -68,40 +68,10 @@ class Controller_Admin_Students extends Controller_Admin
 		$view = View::forge("admin/students/index", $data);
 		$this->template->content = $view;
 	}
-
-	public function action_grameen()
-	{
-
-		$where = [["group_id", 1],["deleted_at", 0],["place", 1]];
-
-		$data["users"] = Model_User::find("all", [
-				"where" => $where,
-				"order_by" => [
-						["id", "desc"]
-				]
-
-		]);
-
-		$config=array(
-				'pagination_url'=>"?search_text=".Input::get("search_text", ""),
-				'uri_segment'=>"p",
-				'num_links'=>9,
-				'per_page'=>20,
-				'total_items'=>count($data["users"]),
-		);
-
-		$data["pager"] = Pagination::forge('mypagination', $config);
-
-		$data["users"] = array_slice($data["users"], $data["pager"]->offset, $data["pager"]->per_page);
-
-		$view = View::forge("admin/students/grameen", $data);
-		$this->template->content = $view;
-	}
-
 	public function action_paid()
 	{
 
-		$where = [["group_id", 1],["deleted_at", 0],["charge_html", "!=", 0]];
+		$where = [["group_id", 1],["deleted_at", 0],["charge_html", "!=", 0],["category", 1]];
 
 		$data["users"] = Model_User::find("all", [
 				"where" => $where,
@@ -129,8 +99,8 @@ class Controller_Admin_Students extends Controller_Admin
 	public function action_trial()
 	{
 
-		$where = [["group_id", 1],["deleted_at", 0],["charge_html", 0]];
-		$trial_where = [["status", 2],["deleted_at",0], ["language", -1],["number", 1]];
+		$where = [["group_id", 1],["deleted_at", 0],["charge_html", 0],["category", 1]];
+		$trial_where = [["status", 2],["deleted_at",0], ["language", -1],["number", 1], ["category", 1]];
 
 		$data["users"] = Model_User::find("all", [
 				"where" => $where,
@@ -241,7 +211,7 @@ class Controller_Admin_Students extends Controller_Admin
 				$user->birthday = Input::post("year", 0) . "-" . Input::post("month", 0) . "-" . Input::post("day", 0);
 				$user->timezone = Input::post("timezone", "");
 				$user->place = Input::post("place", "");
-				$user->grameen_student = Input::post("grameen_student", "");
+				$user->category = 1;
 				$user->save();
 
 				Response::redirect("/admin/students");

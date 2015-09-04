@@ -84,7 +84,6 @@
     </section>
 	
     <h3>Lesson Calender</h3>
-	<p class="link-more"><? echo Html::anchor('/admin/grameencom/top', ' <i class="fa fa-undo"></i> Switch to Grameen Calendar'); ?></p>
 	<a name="cal"></a>
     <div id="calendar">
     </div>

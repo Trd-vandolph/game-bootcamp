@@ -2,7 +2,6 @@
 	<div id="main">
 		<h3>Students</h3>
 		<div class="search-table">
-			<p class="link-more table-top left"><? echo Html::anchor("admin/students/grameen", '<i class="fa fa-fw fa-graduation-cap"></i> View Grameen Students'); ?></p>
 			<p class="link-more table-top left"><? echo Html::anchor("admin/students", '<i class="fa fa-fw fa-graduation-cap"></i> View all Students'); ?></p>
 			<p class="link-more table-top left"><? echo Html::anchor("admin/students/trial", '<i class="fa fa-fw fa-graduation-cap"></i> View Trial Students'); ?></p>
 		</div>

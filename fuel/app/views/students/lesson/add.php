@@ -6,7 +6,7 @@
 	$rss_2 = simplexml_load_file($feed_2);
 ?>
 <div id="loading">
-  <p><?php echo Html::anchor('/students/',Asset::img('front/logo_front.png', array('width'=> '200','alt'=> 'OliveCode'))); ?></p>
+  <p><?php echo Html::anchor('/students/',Asset::img('logo/icon_b.png', array('width'=> '200','alt'=> 'OliveCode'))); ?></p>
   <img src="/assets/img/loading.gif"></div>
 <div id="contents-wrap">
 <div id="main">

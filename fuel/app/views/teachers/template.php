@@ -27,7 +27,7 @@
 </head>
 <body>
 <header>
-	<h1><?php echo Html::anchor('/teachers/',Asset::img('common/logo.png', array('alt'=> 'OliveCode'))); ?></h1>
+	<h1><?php echo Html::anchor('/',Asset::img('logo/logo3_c.png', array('alt'=> 'Game-bootcamp', 'style'=>'width: 100%;'))); ?></h1>
 	<nav>
 		<div class="toggle"><i class="fa fa-bars"></i></div>
 		<ul>

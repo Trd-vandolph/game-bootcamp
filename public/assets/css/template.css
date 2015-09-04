@@ -1243,8 +1243,9 @@ section#contents {
 	color: #E20D3D;
 }
 #fws_55b08d66d8a64 > div > div p {
-	font-size: 20px;
 	text-align: left;
+	font-size: 15px;
+	margin-top: 0;
 }
 #fws_55b08d66d8a64 > div > div p.person-title {
 	text-align: center;
@@ -1265,6 +1266,7 @@ section#contents {
 	font-style: italic;
 	font-family: OpenSansRegular;
 	text-align: left;
+	font-size: 20px;
 }
 #top-person-influence {
 	width: 90%;
@@ -1295,7 +1297,7 @@ section#contents {
 	margin: 20px;
 }
 #top-person-influence span.name-title {
-	font: 22px Lovelo, sans serif;
+	font: 22px sans-serif;
 }
 #top-person-influence > div:nth-child(1) > img {
 	width: 55%;

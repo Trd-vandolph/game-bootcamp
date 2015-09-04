@@ -63,7 +63,7 @@
 							<p class="error">Upload failed. File already exists.</p>
 							<? endif; ?>
 							<input name="file" type="file" required>
-							<input type="text" name="category" value="1">
+							<input type="text" name="category" value="1" hidden>
 						</div>
 					</li>
 				</ul>
@@ -301,7 +301,7 @@
 								<form action="" method="post" id="number_<? echo $content->id; ?>">
 									<input type="hidden" name="n_id" value="<? echo $content->id; ?>">
 										<select name="number"  onchange="$('#number_<? echo $content->id; ?>').submit();">
-										<? for($i = 1; $i < 25; $i++): ?>
+										<? for($i = 1; $i < 13; $i++): ?>
 											<option <? if($content->number == $i) echo "selected" ?> value="<?= $i; ?>"><?= $i; ?></option>
 										<? endfor; ?>
 										</select>

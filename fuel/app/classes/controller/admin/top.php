@@ -42,7 +42,7 @@ class Controller_Admin_Top extends Controller_Admin
 			"order_by" => [
 				["id", "desc"],
 			],
-			"limit" => 10,
+			"limit" => 5,
 		]);
 		
 		$data["payment"] = Model_Payment::find("all", [
@@ -52,7 +52,7 @@ class Controller_Admin_Top extends Controller_Admin
 				"order_by" => [
 						["id", "desc"],
 				],
-				"limit" => 10,
+				"limit" => 5,
 		]);
 
 		$data["reservations"] = Model_Lessontime::find("all", [

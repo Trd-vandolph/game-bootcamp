@@ -155,16 +155,16 @@
 					<div class="full-width-div">
 						<div id="top-person-influence">
 							<div align="center" class="person 1st-person">
-								<span class="name-title">Steve Jobs </span>
+								<span class="name-title"><strong>Steve Jobs</strong></span>
 								<p class="person-title">Apple’s co-founder</p>
 								<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200"> 
 								<blockquote>“I think everybody in this country should learn how to program a computer because it teaches you how to think.”</blockquote>
 							</div>
 							<div align="center" class="person 2nd-person">
-								<span class="name-title">Mitch Resnick</span>
+								<span class="name-title"><strong>Mitch Resnick</strong></span>
 								<p class="person-title">Professor of Learning Research, MIT Media Lab</p>
 								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
-								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code</a>
+								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Click here to visit this site..</a>
 								<blockquote>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</blockquote>
 							</div>
 						</div>
