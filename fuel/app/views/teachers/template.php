@@ -6,7 +6,7 @@
   <meta name="keywords" content="OliveCode,Online Computer Programming Course,Job Guaranteed,WordPress,HTML,CSS,Programming,Git,JavaScript,Bangladesh,Private Lesson,Edoo" />
   <meta name="description" content="OliveCode is the job guaranteed online computer programming course for Bangladeshi. It is a private lesson in English for 4 months, followed by 2-month internship at an IT company." />
 
-  <link rel="shortcut icon" href="/assets/img/common/game_b.ico">
+  <link rel="shortcut icon" href="/assets/img/common/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
 
 	<meta property="og:title" content="Olive code | Job Guaranteed Online Computer Programming Course for Bangladeshi">
@@ -23,7 +23,7 @@
 	<? echo Asset::css("clndr.css"); ?>
   <!--[if IE]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-	<title><? echo $title; ?> | Olive code | Job Guaranteed Online Computer Programming Course for Bangladeshi</title>
+	<title><? echo $title; ?> | Game-BootCamp | Get Your Kids the Most Powerful Skill in 21st Century</title>
 </head>
 <body>
 <header>

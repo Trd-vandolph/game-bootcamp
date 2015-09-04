@@ -14,7 +14,7 @@
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/what-is-bootcamp.png" />
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/man-blue.png" />
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/success1.png" />
-	<link rel="shortcut icon" href="/assets/img/common/game_b.ico">
+	<link rel="shortcut icon" href="/assets/img/common/favicon.ico">
 
 	<? echo Asset::css("template.css"); ?>
 	<? echo Asset::js("reum.js"); ?>

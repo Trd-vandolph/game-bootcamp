@@ -6,32 +6,6 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 			<p>Update success.</p>
 		<? endif; ?>
 		
-		<h3>Place of Learning</h3>
-		<section class="content-wrap">
-			<form action="" method="post" enctype="multipart/form-data">
-				<ul class="forms">
-					<li>
-						<h4>Study at</h4>
-						<select id="place" name="place" <?= ($user->charge_html != 0) ? 'disabled' : 'enabled'; ?> >
-							<option <? if(Input::post("place", $user->place) == 0) echo "selected" ?> value="0">Online School</option>
-							<option <? if(Input::post("place", $user->place) == 1) echo "selected" ?> value="1">Grameen Course</option>
-						</select>
-						<select id="grameen_student" name="grameen_student" hidden>
-							<option <? if(Input::post("grameen_student", $user->grameen_student) == 0) echo "selected" ?> value="0">No</option>
-							<option <? if(Input::post("grameen_student", $user->grameen_student) == 1) echo "selected" ?> value="1">Yes</option>
-						</select>
-					</li>
-				</ul>
-				<? if($user->charge_html == 0): ?>
-					<p class="button-area">
-						<button class="button" href="">Change</button>
-					</p>
-				<? else: ?>
-					<p class="disable-message">If you want to change your Place of Learning, contact us at support@olivecode.com</p>
-				<? endif; ?>
-				<? echo $token; ?>
-			</form>
-		</section>
 		<h3>Email</h3>
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">

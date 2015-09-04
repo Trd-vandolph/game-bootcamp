@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 
-  <link rel="shortcut icon" href="/assets/img/common/game_b.ico">
+  <link rel="shortcut icon" href="/assets/img/common/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
 
 	<meta name="keywords" content="OliveCode,Programming,Bangladesh,Job,E-Learning,Edoo" />
@@ -27,7 +27,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	
 	<? echo Asset::js("tinymce/tinymce.min.js"); ?>
-	<title><? echo $title; ?> | Olive Code</title>
+	<title><? echo $title; ?> | Game-BootCamp</title>
 </head>
 <body>
 <header>

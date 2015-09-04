@@ -1,4 +1,7 @@
 @charset "utf-8";
+#user-data {
+	background: -webkit-linear-gradient(268deg,#83B7CD,#FFFFFF);
+}
 #user-data .reserve a{
 	color:#606060;
 }
