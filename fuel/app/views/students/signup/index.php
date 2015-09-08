@@ -16,7 +16,7 @@
 						</div>
 					</li>
 					<li>
-						<h4>Email address</h4>
+						<h4>Gmail address</h4>
 						<div>
 							<? if(isset($errors)): ?>
 								<? foreach($errors as $error): ?>
@@ -65,12 +65,6 @@
 									<option <? if(Session::get_flash("year", 0) == $i) echo "selected"; ?> value="<? echo $i; ?>"><? echo $i; ?></option>
 								<? endfor; ?>
 							</select>
-						</div>
-					</li>
-					<li>
-						<h4>Gmail address</h4>
-						<div>
-							<input name="google_account" type="text" required pattern=".{2,40}" title="must be less than 40 chars" value="<? echo Session::get_flash("google_account", ""); ?>" style="width:300px;">
 						</div>
 					</li>
 					<li>

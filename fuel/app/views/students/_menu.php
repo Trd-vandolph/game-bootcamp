@@ -35,7 +35,7 @@
 			<li><? echo Html::anchor('/students/teachers', '<i class="fa fa-fw fa-search"></i> Tutors'); ?></li>
 			<li><? echo Html::anchor('/students/documents', '<i class="fa fa-fw fa-file"></i> Documents'); ?></li>
 			<li><? echo Html::anchor('/students/news', '<i class="fa fa-fw fa-info-circle"></i> Information'); ?></li>
-			<li><? echo Html::anchor('/students/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li>
+			<!-- li><? echo Html::anchor('/students/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li-->
 			<li><? echo Html::anchor('/students/contactforum', '<i class="fa fa-fw fa-envelope"></i> Contact'); ?></li>
 			<li><? echo Html::anchor('/faq', '<i class="fa fa-fw fa-question-circle"></i> FAQ', array('class' => 'blank')); ?></li>
 		</ul>

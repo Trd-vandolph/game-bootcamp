@@ -13,7 +13,7 @@
 			<li><? echo Html::anchor('/admin/contents', '<i class="fa fa-fw fa-file-text"></i> Content management'); ?></li>
 			<li><? echo Html::anchor('/admin/contactforum', '<i class="fa fa-fw fa-envelope"></i> Contact management'); ?></li>
 			<li><? echo Html::anchor('/admin/news', '<i class="fa fa-fw fa-info-circle"></i> Information management'); ?></li>
-			<li><? echo Html::anchor('/admin/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li>
+			<!-- li><? echo Html::anchor('/admin/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li -->
 			<li><? echo Html::anchor('/admin/prices', '<i class="fa fa-fw fa-paypal"></i> Price management'); ?></li>
 			<li><? echo Html::anchor('/admin/fee', '<i class="fa fa-fw fa-money"></i> Tutor\'s fee management'); ?></li>
 			<li><? echo Html::anchor('/admin/documents', '<i class="fa fa-fw fa-file"></i> Document management'); ?></li>

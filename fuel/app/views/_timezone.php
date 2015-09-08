@@ -30,7 +30,7 @@
 		}
 	}
 	<? if($user == ""): ?>
-	changeTimeZone("Bangladesh");
+	changeTimeZone("Singapore");
 	<? else: ?>
 	changeTimeZone("<?= Session::get_flash("timezone", $user->timezone) ?>");
 	<? endif; ?>

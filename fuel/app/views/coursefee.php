@@ -41,15 +41,20 @@
 				}
 			?>
 			<p class="sub-title">Payment</p>
-				<br>
-					<a href="http://www.paypal.com"><p class="p-left">PayPal</p></a>
-				<br><br>
+			<div id="coursefee-content1">
+				<div id="first-content">
 					<a href="http://www.paypal.com"><img src="../assets/img/front/paypal.png" alt="Paypal Logo"/></a>
-				<br><br>
-					<p>PayPal is a global online payment service.</p>
-					<p>You can use most of the major credit cards including VISA, Master, American Express.</p>
-					<p>Choose either one-time or installment payment.</p>
-					<a href="<?=$redirectCredit; ?>"><button class="button">Go to Payment</button></a>
+				</div>
+				<div id="second-content">
+					<br>
+						<a href="http://www.paypal.com"><p class="p-left">PayPal</p></a>
+					<br><br>
+						<p>PayPal is a global online payment service.</p>
+						<p>You can use most of the major credit cards including VISA, Master, American Express.</p>
+						<p>Choose either one-time or installment payment.</p>
+						<a href="<?=$redirectCredit; ?>"><button class="button">Go to Payment</button></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

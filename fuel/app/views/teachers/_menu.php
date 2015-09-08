@@ -18,7 +18,7 @@
 		<ul>
 			<li><? echo Html::anchor('/teachers/documents', '<i class="fa fa-fw fa-file"></i> Documents</a>'); ?></li>
 			<li><? echo Html::anchor('/teachers/news', '<i class="fa fa-fw fa-info-circle"></i> Information'); ?></li>
-			<li><? echo Html::anchor('/teachers/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li>
+			<!-- li><? echo Html::anchor('/teachers/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li-->
 			<li><? echo Html::anchor('/teachers/contactforum', '<i class="fa fa-fw fa-envelope"></i> Contact'); ?></li>
 		</ul>
 	</nav>

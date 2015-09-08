@@ -1,3 +1,6 @@
+body {
+	overflow: hidden;
+}
 body a {
     color: #D36161;
 }
@@ -1124,7 +1127,7 @@ header#top > div > div > ul > li > a {
 	margin: auto;
 	width: 100%;
 	text-align: center;
-	height: 220px;
+	height: 240px;
 }
 #fws_55b227467453e > div > a > span{
 	font-size: 35px;
@@ -1147,7 +1150,7 @@ header#top > div > div > ul > li > a {
 	color: #fff;
 }
 #fws_55b227467453e > div > a > span.signup-text {
-	font: 13px OpenSansRegular;
+	font: 18px OpenSansRegular;
 	display: block;
 	text-transform: capitalize;
 }
@@ -1172,17 +1175,27 @@ img.feature3-image {
 	text-align: left;
 	margin: auto;
 }
-#fws_55b08d66d8a64 > div > div:nth-child(1) > div > div > div > p {
-	width: 84%;
+#fws_55b08d66d8ede > div > div > div > div > div > p > img {
+	margin: 18% !important;
 }
-#fws_55b08d66d8a64 > div > div:nth-child(2) > div > div > div > p {
-	width: 70%;
+#fws_55b08d66d9865 > div > div > div > div > div > p > img {
+	margin: 0 !important;
 }
-#fws_55b08d66d8a64 > div > div:nth-child(3) > div > div > div > p {
-	width: 82%;
+#fws_55b08d66da11c > div > div > div > div > div > p > img {
+	margin: 0 !important;
+}
+
+#fws_55b08d66d8a64 > div > div > div > div > div > h2 {
+	text-align: left;
+}
+#fws_55b08d66d8ede > div > div > div > div > div > p > img {
+	margin: auto !important;
 }
 #fws_55b08d66d8a64 > div > div > div > div > div > p > a {
 	color: #D50D43 !important;
+}
+#fws_55b08d66d8a64 > div > div > div > div > div {
+	margin-left: 10%;
 }
 /******* Navigation Bar **********/
 ul.member-menu {
@@ -1202,7 +1215,7 @@ ul.member-menu li {
 /******* Global Setup **********/
 section#contents {
 	min-height: 500px;
-	margin-top: 150px;
+	margin-top: 170px;
 	padding: 20px;
 }
 #content {
@@ -1218,6 +1231,7 @@ section#contents {
 	padding: 20px;
 	width: 95%;
 	font-family: Montserrat, sans-serif;
+	font-weight: bold;
 	letter-spacing: 2px;
 	font-size: 30px;
 	color: #444;
@@ -1244,8 +1258,11 @@ section#contents {
 }
 #fws_55b08d66d8a64 > div > div p {
 	text-align: left;
-	font-size: 15px;
+	font-size: 18px;
 	margin-top: 0;
+}
+#fws_55b22746735ec > div > div > a > span {
+	font-size: 16px !important;
 }
 #fws_55b08d66d8a64 > div > div p.person-title {
 	text-align: center;
@@ -1282,6 +1299,7 @@ section#contents {
 #top-person-influence > div.person.\32 nd-person > a:nth-child(4) {
 	color: #E51746;
 	font-family: OpenSansRegular, Sans serif;
+	font-size: 18px;
 }
 #top-person-influence > div.person.\31 st-person > img {
 	margin-bottom: 15% !important;
@@ -1371,17 +1389,80 @@ section.parents #content {
 	margin: auto;
 }
 section.parents > div.letter {
-	box-shadow: 0px 0px 5px #888888;
+	box-shadow: 0px 0px 1px #888888;
 	min-height: 100px;
 	padding: 50px;
 }
 section.parents > div.letter > .letter-content p{
-	font-size: 18px;
+	font-size: 16px;
 }
 section.parents #content p a img {
 	width: 100%;
 }
-
+section.parents #picture-parents {
+	width: 37%;
+}
+section.parents #picture-parents #picture-enclose {
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #F2E2E0;
+	padding: 0px 0px;
+}
+section.parents #picture-parents #picture-caption {
+	width: 100%;
+	margin: auto;
+	bottom: 0;
+	color: red;
+}
+section.parents #picture-caption > p {
+	text-align: center;
+}
+section.parents p.picture-caption-desc {
+	text-align: center;
+	margin: 10px;
+}
+section.parents #content-1 {
+	position: relative;
+	min-height: 1070px;
+}
+section.parents #content-1 div {
+	position: absolute;
+}
+section.parents #topic-parents {
+	width: 20%;
+	left: 0;
+	height: 100%;
+	padding: 25% 0;
+}
+section.parents #answer-parents {
+	width: 75%;
+	right: 0;
+	padding: 0 30px;
+	border-left: 2px solid #E81A4D;
+}
+section.parents #answer-parents p{
+	text-indent: 30px;
+}
+section.parents #content-2 {
+	position: relative;
+	min-height: 520px;
+}
+section.parents #content-2 div {
+	position: absolute;
+}
+section.parents #content-2 #picture-parents {
+	width: 40%;
+	right: 0;
+	height: 520px;
+}
+section.parents #content-2 #ihara-descriptions {
+	width: 50%;
+	left: 0;
+}
+section.parents #content-2 #ihara-descriptions p {
+	text-indent: 30px;
+	line-height: 30px;
+}
 /******* Course **********/
 section.course #content p{
 	font-size: 18px;
@@ -1425,7 +1506,67 @@ section.course #content img.no-shadow {
 	border-radius: 0;
 	width: 100%;
 }
-
+section.course #content #under-timeline {
+	width: 100%;
+	border-radius: 10px;
+	margin-bottom: 10%;
+	border: 1px solid #000;
+	overflow: hidden;
+}
+section.course #\31 st-content > table {
+	width: 100%;
+}
+section.course #\31 st-content div{
+	width: 33%;
+}
+section.course #\31 st-content > table > tbody > tr > td > p {
+	font-family: Lovelo, Sans-serif;
+	line-height: 50px;
+	font-size: 35px;
+	text-align: center;
+}
+section.course #\32 nd-content {
+	background-color: #1c1a1b;
+	color: #fff;
+	margin-bottom: -10px;
+	padding: 20px;
+}
+section.course #enchantJS {
+	position: relative;
+	min-height: 800px;
+}
+section.course #enchantJS > div {
+	position: absolute;
+}
+section.course #enchantJS > div.\31 st-content {
+	width: 55%;
+	left: 0;
+}
+section.course #enchantJS > div.\32 nd-content {
+	right: 0;
+	width: 40%;
+}
+section.course #enchantJS > div.\32 nd-content img {
+	width: 100%;
+}
+section.course #\39 leap {
+	position: relative;
+	min-height: 400px;
+}
+section.course #\39 leap div {
+	position: absolute;
+}
+section.course #\39 leap > div.\31 st-content {
+	width: 40%;
+	left: 0;
+}
+section.course #\39 leap > div.\32 nd-content {
+	right: 0;
+	width: 55%;
+}
+section.course #\39 leap > div.\31 st-content > a > img {
+	width: 100%;
+}
 /******* Tutors **********/
 section.tutor div.content-tutor {
 	font-family: 'OpenSansRegular';
@@ -1485,7 +1626,7 @@ section.operatingcompany .content-operating-company #content p{
 	font-size: 18px;
 }
 section.operatingcompany .content-operating-company #content img{
-	width: 50%;
+	width: 80%;
 	height: 50%;
 	margin: auto;
 	display: block;
@@ -1501,13 +1642,75 @@ section.operatingcompany .content-operating-company #content img.grameen_img{
 	display: inline;
 	width: 48%;
 }
+section.operatingcompany .content-company {
+	position: relative;
+	margin-bottom: 10%;
+}
+section.operatingcompany #first-content {
+	min-height: 310px;
+}
+section.operatingcompany #second-content {
+	min-height: 255px;
+}
+section.operatingcompany #third-content {
+	min-height: 255px;
+}
+section.operatingcompany #fourth-content {
+	min-height: 650px;
+}
+section.operatingcompany #fifth-content {
+	min-height: 255px;
+}
+section.operatingcompany .picture-content {
+	position: absolute;
+	width: 45%;
+	left: 0;
+	padding: 8% 0;
+}
+#fourth-content > div.picture-content {
+	padding: 13% 0;
+}
+section.operatingcompany .text-content {
+	position: absolute;
+	width: 55%;
+	right: 0;
+}
+section.operatingcompany div.text-content p.title {
+	border-bottom: 1px solid #E81A4D;
+	line-height: 0px;
+	font-weight: bold;
+	color: #E81A4D;
+	font-size: 30px !important;
+	margin-bottom: 5%;
+}
+section.operatingcompany div.text-content p {
+	text-indent: 30px;
+}
+section.operatingcompany div.text-content p.title {
+	text-indent: 0;
+}
+section.operatingcompany #fourth-content > div:nth-child(3) {
+	top: 260px;
+}
+section.operatingcompany #fourth-content > div:nth-child(4) {
+	top: 340px;
+}
+section.operatingcompany #fourth-content > div:nth-child(2) > p.title {
+	line-height: 1;
+}
+section.operatingcompany .bold-title {
+	width: 15%;
+	border-bottom: 10px solid #E81A4D;
+	display: block;
+	margin-top: -55px;
+}
 /******* Course Fee **********/
 	/*Table*/
 	table#table-coursefee {
 		width: 100%;
 		background-color: #FBFBFB;
 		box-shadow: 0px 0px 5px #888;
-		margin-bottom: 100px;
+		margin-bottom: 20%;
 	}
 	table#table-coursefee thead {
 		background-color: #ECECEC;
@@ -1551,7 +1754,7 @@ section.coursefee #content p.p-left {
 	font-family: Lovelo, Sans serif;
 }
 section.coursefee #content img {
-	width: 30%;
+	width: 100%;
 	height: 50%;
 	margin: auto;
 	display: block;
@@ -1576,7 +1779,7 @@ section.coursefee #content button.button {
 	border: 1px solid rgb(230, 0, 57);
 	border-radius: 4px;
 	font-size: 20px;
-	margin:auto;
+	margin-left:auto;
 	padding: 20px;
 	color: rgb(230, 0, 57);
 	-webkit-user-select: none;
@@ -1591,9 +1794,27 @@ section.coursefee #content button.button:hover {
 }
 section.coursefee #content p.sub-title {
 	font: 40px Lovelo, sans-serif;
-	border-bottom: dotted 1.5px rgb(26, 83, 163);
-	margin-bottom: 40px;
+	border-bottom: dotted 2px rgb(26, 83, 163);
+	margin-bottom: 10%;
 	padding-bottom: 25px;
+}
+section.coursefee #coursefee-content1 {
+	position: relative;
+	min-height: 470px;
+}
+section.coursefee #coursefee-content1 div {
+	position: absolute;
+}
+section.coursefee #first-content {
+	left: 0;
+	width: 40%;
+}
+section.coursefee #second-content{
+	right: 0;
+	width: 55%;
+}
+section.coursefee #content > p:nth-child(5) {
+	margin-bottom: 5%;
 }
 
 /******* How to Join **********/
@@ -1664,40 +1885,80 @@ section.faq p.sub-title {
 	margin-bottom: 40px;
 	padding-bottom: 25px;
 }
-section.faq blockquote {
-	background: #f9f9f9;
-	border-left: 10px solid #ccc;
-	margin: 1.5em 10px;
-	padding: 0.5em 10px;
-	font-style: italic;
-	font-family: OpenSansRegular;
+section.faq #listContainer{
+  margin-top:15px;
 }
-section.faq blockquote:before {
-	font-family: serif;
-	color: #ccc;
-	content: open-quote;
-	font-size: 4em;
-	line-height: 0.1em;
-	margin-right: 0.25em;
-	vertical-align: -0.4em;
+
+section.faq #expList ul, li {
+    list-style: none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
 }
-section.faq blockquote:after {
-	font-family: serif;
-	color: #ccc;
-	content: close-quote;
-	font-size: 4em;
-	line-height: 0.1em;
-	margin-right: 0.25em;
-	vertical-align: -0.4em;
+section.faq #expList p {
+	margin-left: 2%;
+	display: inline;
+	font-weight: bold;
 }
-section.faq p.answer {
-	font: 18px OpenSansRegular, sans-serif;
-	padding: 25px 0px 25px 50px;
-	box-shadow: 0px 0px 5px 888;
-	background: -webkit-linear-gradient(#F5F8FA, #CEDBE5);
-	background: -o-linear-gradient(#F5F8FA, #CEDBE5);
-	background: -moz-linear-gradient(#F5F8FA, #CEDBE5B);
-	background: linear-gradient(#F5F8FA, #CEDBE5);
+section.faq #expList li {
+	font-family: OpenSansRegular, Sans-serif;
+ 	font-size: 25px;
+	line-height:140%;
+	text-indent:0px;
+	margin-bottom: 3%;
+	background-color: #E51A4E;
+	padding: 15px;
+	color: #fff;
 	border-radius: 10px;
-	margin-left: 70px;
+}
+section.faq #expList > li.collapsed.expanded > ul,
+#expList > li.collapsed.expanded > ul > li {
+	background-color: #fff;
+	border-radius: 10px;
+	color: #333;
+}
+section.faq #expList > li.collapsed.expanded > ul > li {
+	margin-left: 5%;
+	margin-top: 2%;
+	padding-right: 30px;
+}
+section.faq #expList > li.collapsed.expanded > ul > li > p > strong {
+	color: #1A53A3;
+}
+section.faq #expList > li.collapsed.expanded > ul > li > p {
+	margin-left: -5%;
+	font-size: 20px;
+	font-weight: normal;
+}
+/* Collapsed state for list element */
+section.faq #expList .collapsed:before {
+	font-family: "FontAwesome";
+	content: "\f055";
+}
+/* Expanded state for list element
+/* NOTE: This class must be located UNDER the collapsed one */
+section.faq #expList .expanded:before {
+	font-family: "FontAwesome";
+	content: "\f057";
+}
+section.faq #expList {
+    clear: both;
+}
+
+section.faq .listControl{
+  margin-bottom: 15px;
+}
+section.faq .listControl a {
+    border: 1px solid #555555;
+    color: #555555;
+    cursor: pointer;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right: 5px;
+    padding: 4px 10px;
+}
+section.faq .listControl a:hover {
+    background-color:#555555;
+    color:#222222; 
+    font-weight:normal;
 }

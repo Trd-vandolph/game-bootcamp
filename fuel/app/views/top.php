@@ -1,3 +1,5 @@
+<?php echo Asset::css("jquery.remodal.css"); ?>
+<?php echo Asset::js("jquery.remodal.js"); ?>
 <div id="ajax-loading-screen"><span class="loading-icon "> <span class="default-skin-loading-icon"></span> </span>
 </div>
 <div id="ajax-content-wrap">
@@ -49,26 +51,26 @@
 			        <div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
 			            <div>
 							<img src="../assets/img/front/game1.gif" alt="catch the banana">
-							<p>Click to Play</p>
+							<a data-remodal-target="choose1" href="#"><p>Click to Play</p></a>
 			            </div>
 			            <h3>Catch the Banana</h3>
-			            <a class="nectar-button medium accent-color" href="/brands/?filter=sports-entertainment" data-color-override="false"><span>View Game Info</span> </a>
+			            <a class="nectar-button medium accent-color" href="/course#1st-game" data-color-override="false"><span>View Game Info</span> </a>
 			        </div>
 			        <div class="col span_3 centered-text one-fourths right-edge" data-animation="" data-delay="0">
 			            <div>
 				            <img src="../assets/img/front/game2.gif" alt="snow fight">
-				            <p>Click to Play</p>
+				            <a data-remodal-target="choose2" href="#"><p>Click to Play</p></a>
 			            </div>
 			            <h3>Snow Fight</h3>
-			            <a class="nectar-button medium accent-color" href="www.rogersmedia.com/brands/?filter=women" data-color-override="false"><span>View Game Info</span> </a>
+			            <a class="nectar-button medium accent-color" href="/course#2nd-game" data-color-override="false"><span>View Game Info</span> </a>
 			        </div>
 			        <div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
 			            <div>
 				            <img src="../assets/img/front/game3.gif" alt="superbear">
-				            <p>Click to Play</p>
+				            <a data-remodal-target="choose3" href="#"><p>Click to Play</p></a>
 			            </div>
 			            <h3>Super Bear</h3>
-			            <a class="nectar-button medium accent-color" href="/brands/?filter=news-business" data-color-override="false"><span>View Game Info</span> </a>
+			            <a class="nectar-button medium accent-color" href="/course#3rd-game" data-color-override="false"><span>View Game Info</span> </a>
 			        </div>
 			    </div>
 				</div>
@@ -108,7 +110,7 @@
 											<div class="wpb_wrapper">
 												<div class="wpb_text_column wpb_content_element ">
 													<div class="wpb_wrapper">
-														<p><img class="aligncenter size-full wp-image-3024 feature2-image" src="assets/img/feature2.png" alt="man-blue" width="108" height="86" /></p>
+														<p style="margin-bottom: 20px;"><img style="height: 9em;" class="aligncenter size-full wp-image-3024 feature2-image" src="assets/img/feature2.png" alt="man-blue" width="108" height="86" /></p>
 													</div>
 												</div>
 											</div>
@@ -133,7 +135,7 @@
 											<div class="wpb_wrapper">
 												<div class="wpb_text_column wpb_content_element ">
 													<div class="wpb_wrapper">
-														<p><img class="aligncenter size-full wp-image-3123 feature3-image" src="assets/img/feature3.png" alt="success" width="70" height="86" /></p>
+														<p><img style="height: 10em;" class="aligncenter size-full wp-image-3123 feature3-image" src="assets/img/feature3.png" alt="success" width="70" height="86" /></p>
 													</div>
 												</div>
 											</div>
@@ -142,7 +144,7 @@
 								</div>
 								<div class="wpb_text_column wpb_content_element ">
 									<div class="wpb_wrapper">
-										<h2 style="text-align: center;"><? echo Session::get('titleFeature3'); ?></h2>
+										<h2><? echo Session::get('titleFeature3'); ?></h2>
 										<p><? echo Session::get('bodyFeature3'); ?>
 										<br />
 											<a title="Program" href="program/index.html#success">See More</a>
@@ -164,7 +166,7 @@
 								<span class="name-title"><strong>Mitch Resnick</strong></span>
 								<p class="person-title">Professor of Learning Research, MIT Media Lab</p>
 								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
-								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Click here to visit this site..</a>
+								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Click here to view his speech..</a>
 								<blockquote>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</blockquote>
 							</div>
 						</div>
@@ -172,6 +174,27 @@
 			<!--/row-->
 		</div>
 		<!--/container-->
+	</div>
+</div>
+<div class="remodal" data-remodal-id="choose1">
+	<div class="modal-event">
+		<section id="wrap" class="content-wrap" style="text-align: center;">
+			<div id="choose-remodal-header"><h3>Catch the Banana</h3></div>
+		</section>
+	</div>
+</div>
+<div class="remodal" data-remodal-id="choose2">
+	<div class="modal-event">
+		<section id="wrap" class="content-wrap" style="text-align: center;">
+			<div id="choose-remodal-header"><h3>Snow Fight</h3></div>
+		</section>
+	</div>
+</div>
+<div class="remodal" data-remodal-id="choose3">
+	<div class="modal-event">
+		<section id="wrap" class="content-wrap" style="text-align: center;">
+			<div id="choose-remodal-header"><h3>Super Bear</h3></div>
+		</section>
 	</div>
 </div>
 <!--/ajax-content-wrap-->

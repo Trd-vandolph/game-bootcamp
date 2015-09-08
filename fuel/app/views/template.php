@@ -95,8 +95,8 @@
 							<ul class="sf-menu">
 								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862 editable"><a href="/parents"><? echo Session::get('menu1'); ?></a>
 								</li>
-								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="/try"><? echo Session::get('menu2'); ?></a>
-								</li>
+								<!-- li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="/try"><? echo Session::get('menu2'); ?></a>
+								</li-->
 								<li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="/course"><? echo Session::get('menu3'); ?></a>
 								</li>
 								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="/tutor"><? echo Session::get('menu4'); ?></a>
@@ -142,7 +142,7 @@
 
 	<? echo $content ?>
 
-	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 30px 244px 25px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
+	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 80px 102px 80px; margin-left: -244px; visibility: visible; background-color: #E60039!important;">
 		<div class="col span_12 light">
 			<a class="nectar-button large see-through" href="/students/signup" data-color-override="false">
 				<span>Take a Free Trial Lesson</span><br><br>
