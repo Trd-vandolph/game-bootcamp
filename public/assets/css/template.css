@@ -1094,6 +1094,7 @@ ul.mc_list li {
 	background: #E60039;
 	padding: 10px !important;
 	border-radius: 7px;
+	-webkit-border-radius: 7px;
 	margin: 20px 15px 46px 0;
 }
 .member-menu li.login a{
@@ -1910,11 +1911,13 @@ section.faq #expList li {
 	padding: 15px;
 	color: #fff;
 	border-radius: 10px;
+	-webkit-border-radius: 10px;
 }
 section.faq #expList > li.collapsed.expanded > ul,
 #expList > li.collapsed.expanded > ul > li {
 	background-color: #fff;
 	border-radius: 10px;
+	-webkit-border-radius: 10px;
 	color: #333;
 }
 section.faq #expList > li.collapsed.expanded > ul > li {
