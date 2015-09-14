@@ -1223,7 +1223,7 @@ section#contents {
 	font-family: 'OpenSansRegular';
 	width: 75%;
 	margin: auto;
-	margin-bottom: 20px;
+	margin-bottom: 110px;
 	margin-top: 20px;
 }
 /******* Top **************/
@@ -1395,7 +1395,7 @@ section.parents > div.letter {
 	padding: 50px;
 }
 section.parents > div.letter > .letter-content p{
-	font-size: 16px;
+	font-size: 18px;
 }
 section.parents #content p a img {
 	width: 100%;
@@ -1413,7 +1413,7 @@ section.parents #picture-parents #picture-caption {
 	width: 100%;
 	margin: auto;
 	bottom: 0;
-	color: red;
+	color: #393333;
 }
 section.parents #picture-caption > p {
 	text-align: center;
@@ -1433,7 +1433,6 @@ section.parents #topic-parents {
 	width: 20%;
 	left: 0;
 	height: 100%;
-	padding: 25% 0;
 }
 section.parents #answer-parents {
 	width: 75%;
@@ -1442,7 +1441,6 @@ section.parents #answer-parents {
 	border-left: 2px solid #E81A4D;
 }
 section.parents #answer-parents p{
-	text-indent: 30px;
 }
 section.parents #content-2 {
 	position: relative;
@@ -1463,6 +1461,7 @@ section.parents #content-2 #ihara-descriptions {
 section.parents #content-2 #ihara-descriptions p {
 	text-indent: 30px;
 	line-height: 30px;
+	font-size: 16px;
 }
 /******* Course **********/
 section.course #content p{
@@ -1489,9 +1488,11 @@ section.course #content p#p-1st {
 }
 section.course #content p#p-2nd {
 	background-color: rgb(0, 68, 141);
+	color: white;
 }
 section.course #content p#p-3rd {
 	background-color: rgb(255, 0, 55);
+	color: white;
 }
 section.course #content img {
 	width: 30%;
@@ -1511,11 +1512,15 @@ section.course #content #under-timeline {
 	width: 100%;
 	border-radius: 10px;
 	margin-bottom: 10%;
-	border: 1px solid #000;
+	border: 1px solid #E2DBB7;
 	overflow: hidden;
 }
 section.course #\31 st-content > table {
 	width: 100%;
+}
+section.course #\31 st-content {
+	height: 80px;
+	padding: 20px 0;
 }
 section.course #\31 st-content div{
 	width: 33%;
@@ -1527,10 +1532,10 @@ section.course #\31 st-content > table > tbody > tr > td > p {
 	text-align: center;
 }
 section.course #\32 nd-content {
-	background-color: #1c1a1b;
-	color: #fff;
-	margin-bottom: -10px;
-	padding: 20px;
+	background-color: #E2DBB7;
+	color: #333;
+	margin-bottom: -30px;
+	padding: 45px 50px;
 }
 section.course #enchantJS {
 	position: relative;
@@ -1657,7 +1662,7 @@ section.operatingcompany #third-content {
 	min-height: 255px;
 }
 section.operatingcompany #fourth-content {
-	min-height: 650px;
+	min-height: 800px;
 }
 section.operatingcompany #fifth-content {
 	min-height: 255px;
@@ -1684,9 +1689,6 @@ section.operatingcompany div.text-content p.title {
 	font-size: 30px !important;
 	margin-bottom: 5%;
 }
-section.operatingcompany div.text-content p {
-	text-indent: 30px;
-}
 section.operatingcompany div.text-content p.title {
 	text-indent: 0;
 }
@@ -1694,7 +1696,7 @@ section.operatingcompany #fourth-content > div:nth-child(3) {
 	top: 260px;
 }
 section.operatingcompany #fourth-content > div:nth-child(4) {
-	top: 340px;
+	top: 360px;
 }
 section.operatingcompany #fourth-content > div:nth-child(2) > p.title {
 	line-height: 1;
@@ -1705,51 +1707,132 @@ section.operatingcompany .bold-title {
 	display: block;
 	margin-top: -55px;
 }
+section.operatingcompany div.picture-content div {
+	margin: auto;
+	width: 80%;
+}
+section.operatingcompany div.picture-content div a{
+	display: block;
+	text-align: center
+}
+section.operatingcompany  #fourth-content > div:nth-child(3) > div > div {
+	width: 100%;
+	background-color: #E2DBB7;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	padding: 8px;
+}
+section.operatingcompany .body-content {
+	margin-top: 30px;
+}
 /******* Course Fee **********/
-	/*Table*/
-	table#table-coursefee {
-		width: 100%;
-		background-color: #FBFBFB;
-		box-shadow: 0px 0px 5px #888;
-		margin-bottom: 20%;
-	}
-	table#table-coursefee thead {
-		background-color: #ECECEC;
-		font-family: Lovelo, sans-serif;
-		font-size: 18px;
-	}
-	table#table-coursefee tbody {
-		font-family: OpenSansRegular;
-		font-size: 15px;
-		border-bottom: solid 2px rgb(199, 197, 197); 
-	}
-	table#table-coursefee tr th {
-		padding: 20px;
-		border-right: solid 1px rgb(199, 197, 197);
-	}
-	table#table-coursefee tr td {
-		padding: 20px;
-		width: 20%;
-		border: solid 1px rgb(199, 197, 197);
-		vertical-align: middle;
-		text-align: center;
-	}
-	#table-coursefee > thead > tr > th:nth-child(4) {
-		border: none;
-	}
-	table#table-coursefee > tbody > tr > td:nth-child(4) {
-		width: 40%;
-	}
-	#inside-coursefee > tbody > tr:nth-child(1) > td:nth-child(1) {
-		background-color: rgb(26, 83, 163);
-		color: white;
-	}
-	#inside-coursefee > tbody > tr:nth-child(2) > td:nth-child(1) {
-		background-color: rgb(232, 26, 77);
-		color: white;
-	}
-	/*End Table*/
-	
+section.coursefee #cf-illustration {
+	border: 1px solid #CED1D6;
+	border-radius: 10px;
+	min-height: 410px;
+	background-color: #E2E7EF;
+	margin-bottom: 130px;
+	padding: 40px
+}
+section.coursefee #cf-illustration #first-section {
+	width: 43%;
+	position: relative;
+	padding: 10px;
+	float: left;
+	padding-top: 38px;
+}
+section.coursefee #cf-illustration #second-section {
+	width: 50%;
+	float: right;
+}
+section.coursefee #first-section > div.payment {
+	width: 45%;
+	position: absolute;
+	background-color: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+}
+section.coursefee #first-section > div:nth-child(1) {
+	border: 1px solid #1A53A3;
+}
+section.coursefee #first-section > div:nth-child(2) {
+	border: 1px solid #E81A4D;
+}
+section.coursefee #first-section > div:nth-child(1) {
+	left: 5px;
+}
+section.coursefee #first-section > div:nth-child(2) {
+	right: 5px;
+}
+section.coursefee #first-section > div.payment > div.header {
+	width: 100%;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	font: 20px lovelo;
+}
+section.coursefee #first-section > div:nth-child(1) > div.header {
+	background-color: #1A53A3;
+}
+section.coursefee #first-section > div:nth-child(2) > div.header {
+	background-color: #E81A4D;
+}
+section.coursefee #first-section > div.payment > div.footer {
+	color: #fff;
+	margin-bottom: -30px;
+	padding: 10px;
+	width: 100%;
+}
+section.coursefee #first-section > div:nth-child(1) > div.footer {
+	background-color: #1A53A3;
+}
+section.coursefee #first-section > div:nth-child(2)> div.footer {
+	background-color: #E81A4D;
+}
+section.coursefee #first-section > div.payment > div.header > p {
+	text-align: center;
+}
+section.coursefee #first-section > div.payment > div.footer > p {
+	text-align: center;
+}
+section.coursefee #first-section p.button {
+	font-size: 18px;
+}
+section.coursefee #first-section p.button a:after {
+	font-family: "FontAwesome";
+	content: "\f0a9"
+}
+section.coursefee #first-section > div.payment > div.footer:hover,
+section.coursefee #first-section > div.payment > div.footer > p:hover {
+	color: #000;
+	cursor: pointer;
+}
+section.coursefee #first-section > div.payment > div.body {
+	height: 140px;
+	line-height: 140px;
+	width: 85%;
+	margin: auto;
+}
+section.coursefee #first-section > div.payment > div.body > div > span {
+	position: absolute;
+	top: 75px;
+	left: 18px;
+}
+section.coursefee div.payment > div.body > div > strong {
+	font: 40px Lovelo;
+	color: #E81A4D;
+}
+section.coursefee #cf-illustration #second-section div {
+	width: 80%;
+	margin: auto;
+}
+#first-section > div > div.footer > p > a {
+	color: #fff;
+}
+#first-section > div > div.footer > p > a:hover {
+	color: #000;
+}
+
 section.coursefee #content p.p-left {
 	font-size: 20px;
 	font-family: Lovelo, Sans serif;
@@ -1891,13 +1974,11 @@ section.faq #listContainer{
 }
 
 section.faq #expList ul, li {
-    list-style: none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
+	list-style: none;
+	margin:0;
+	padding:0;
 }
 section.faq #expList p {
-	margin-left: 2%;
 	display: inline;
 	font-weight: bold;
 }
@@ -1929,39 +2010,33 @@ section.faq #expList > li.collapsed.expanded > ul > li > p > strong {
 	color: #1A53A3;
 }
 section.faq #expList > li.collapsed.expanded > ul > li > p {
-	margin-left: -5%;
 	font-size: 20px;
 	font-weight: normal;
 }
 /* Collapsed state for list element */
-section.faq #expList .collapsed:before {
+section.faq #expList .expanded:before {
 	font-family: "FontAwesome";
-	content: "\f055";
+	content: "\f05a";
+	margin-right: 15px;
 }
 /* Expanded state for list element
 /* NOTE: This class must be located UNDER the collapsed one */
-section.faq #expList .expanded:before {
-	font-family: "FontAwesome";
-	content: "\f057";
-}
 section.faq #expList {
     clear: both;
 }
-
 section.faq .listControl{
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 section.faq .listControl a {
-    border: 1px solid #555555;
-    color: #555555;
-    cursor: pointer;
-    height: 1.5em;
-    line-height: 1.5em;
-    margin-right: 5px;
-    padding: 4px 10px;
+	border: 1px solid #555555;
+	color: #555555;
+	height: 1.5em;
+	line-height: 1.5em;
+	margin-right: 5px;
+	padding: 4px 10px;
 }
 section.faq .listControl a:hover {
-    background-color:#555555;
-    color:#222222; 
-    font-weight:normal;
+	background-color:#555555;
+	color:#222222; 
+	font-weight:normal;
 }

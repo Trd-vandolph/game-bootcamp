@@ -4,7 +4,7 @@
 			<div id="content">
 				<div id="content-1">
 					<div id="topic-parents">
-						<p>What comes to your mind when you hear <strong style="color: red;">-“Programming”?</strong></p>
+						<p><strong><i>Dear Parents</i></strong>, What comes to your mind when you hear <strong style="color: red;">-“Programming”?</strong></p>
 					</div>
 					<div id="answer-parents">
 						<p>

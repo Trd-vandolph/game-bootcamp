@@ -10,26 +10,17 @@
 						<tr>
 							<td>
 								<p class="lesson-content">
-									Lesson 1<br>
-									Lesson 2<br>
-									Lesson 3<br>
-									Lesson 4
+									Lesson 1 ~ 4
 								</p>
 							</td>
 							<td>
 								<p class="lesson-content">
-									Lesson 5<br>
-									Lesson 6<br>
-									Lesson 7<br>
-									Lesson 8
+									Lesson 5 ~ 8
 								</p>
 							</td>
 							<td>
 								<p class="lesson-content">
-									Lesson 9<br>
-									Lesson 10<br>
-									Lesson 11<br>
-									Lesson 12
+									Lesson 9 ~ 12
 								</p>
 							</td>
 						</tr>
@@ -42,7 +33,9 @@
 						<br>
 						Students will learn how to code games for three months by taking a lesson once a week.
 						<br>
+						<br>
 						The length of each lesson is 45 minutes. 
+						<br>
 						<br>
 						Original textbooks are made by our experienced engineers.
 					</p>

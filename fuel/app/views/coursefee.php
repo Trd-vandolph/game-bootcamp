@@ -1,38 +1,44 @@
+<? if(!Auth::check()) {
+		$paymentText = 'Sign up ';
+		$paymentLink = '/students/signup';
+	}else {
+		$paymentText = 'Go To Payment ';
+		$paymentLink = '/students/course';
+	}
+?>
 <section id="contents" class="coursefee">
 	<div class="coursefee-content content-text">
 		<div id="content">
 			<p class="sub-title">Course Fee</p>
-			<table cellspacing="0" id="table-coursefee">
-				<thead>
-					<tr>
-						<th>Subject</th>
-						<th>No. of Lesson</th>
-						<th>Term</th>
-						<th>Course Fee</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>enchant.js</td>
-						<td>12</td>
-						<td>3 months</td>
-						<td>
-							<table id="inside-coursefee">
-								<tbody>
-									<tr>
-										<td>One-time payment</td>
-										<td>US$300</td>
-									</tr>
-									<tr>
-										<td>Installment Payment</td>
-										<td>US$110 x 3 times</td>
-									</tr>
-								</tbody>
-							</table>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<div id="cf-illustration">
+				<div id="first-section">
+					<div class="payment">
+						<div class="header">One-time</div>
+						<div class="body">
+							<div class="amount">
+								<strong>US$300/</strong><br>
+								<span>for 12 lessons</span>
+							</div>
+						</div>
+						<div class="footer"><p class="button"><a href="<?php echo $paymentLink; ?>"><?php echo $paymentText; ?></a></p></div>
+					</div>
+					<div class="payment">
+						<div class="header">Installment</div>
+						<div class="body">
+							<div class="amount">
+								<strong>US$110/</strong><br>
+								<span>every 4 lessons</span>
+							</div>
+						</div>
+						<div class="footer"><p class="button"><a href="<?php echo $paymentLink; ?>"><?php echo $paymentText; ?></a></p></div>
+					</div>
+				</div>
+				<div id="second-section">
+					<div>
+						<img src="../assets/img/front/coursefee.png" alt="course-cycle" />
+					</div>
+				</div>
+			</div>
 			<br><br>
 			<? if(!Auth::check()) {
 					$redirectCredit = "/students/signin/?p=1&g=3";

@@ -79,7 +79,7 @@
 					<div class="col span_12 dark left">
 						<div class="vc_span4 wpb_column column_container col centered-text no-extra-padding has-animation" data-hover-bg="" data-animation="fade-in" data-delay="0">
 							<div class="wpb_wrapper">
-								<div id="fws_55b08d66d8ede" class="wpb_row vc_row-fluid standard_section    " style="padding-top: 0px; padding-bottom: 0px; ">
+								<div id="fws_55b08d66d8ede" class="wpb_row vc_row-fluid standard_section    " style="padding-top: 0px; padding-bottom: 4px; ">
 									<div class="col span_12  ">
 										<div class="vc_span12 wpb_column column_container col no-extra-padding has-animation" data-hover-bg="" data-animation="fade-in" data-delay="600">
 											<div class="wpb_wrapper">
@@ -166,7 +166,7 @@
 								<span class="name-title"><strong>Mitch Resnick</strong></span>
 								<p class="person-title">Professor of Learning Research, MIT Media Lab</p>
 								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
-								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Click here to view his speech..</a>
+								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Click here to view his speech</a>
 								<blockquote>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</blockquote>
 							</div>
 						</div>
@@ -179,21 +179,30 @@
 <div class="remodal" data-remodal-id="choose1">
 	<div class="modal-event">
 		<section id="wrap" class="content-wrap" style="text-align: center;">
-			<div id="choose-remodal-header"><h3>Catch the Banana</h3></div>
+			<div id="choose-remodal-header">
+				<h3>Catch the Banana</h3>
+				<script type="text/javascript" src="http://9leap.net/games/4607/embed.js"></script>
+			</div>
 		</section>
 	</div>
 </div>
 <div class="remodal" data-remodal-id="choose2">
 	<div class="modal-event">
 		<section id="wrap" class="content-wrap" style="text-align: center;">
-			<div id="choose-remodal-header"><h3>Snow Fight</h3></div>
+			<div id="choose-remodal-header">
+				<h3>Snow Fight</h3>
+				<script type="text/javascript" src="http://9leap.net/games/4608/embed.js"></script>
+			</div>
 		</section>
 	</div>
 </div>
 <div class="remodal" data-remodal-id="choose3">
 	<div class="modal-event">
 		<section id="wrap" class="content-wrap" style="text-align: center;">
-			<div id="choose-remodal-header"><h3>Super Bear</h3></div>
+			<div id="choose-remodal-header">
+				<h3>Super Bear</h3>
+				<script type="text/javascript" src="http://9leap.net/games/4609/embed.js"></script>
+			</div>
 		</section>
 	</div>
 </div>
