@@ -1994,6 +1994,7 @@ body .wpb_text_column h2:last-child, body .wpb_text_column h3:last-child {
 	transition: all 0.2s ease-out;
 	-webkit-transition: all 0.2s ease-out;
 	position: relative;
+	font-size: 20px;
 }
 
 .nectar-button.has-icon {
