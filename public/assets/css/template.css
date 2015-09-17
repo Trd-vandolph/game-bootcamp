@@ -1092,7 +1092,7 @@ ul.mc_list li {
 }
 .member-menu li.signup a{
 	background: #E60039;
-	padding: 10px !important;
+	padding: 8px 22px 7px 21px !important;
 	border-radius: 7px;
 	-webkit-border-radius: 7px;
 	margin: 20px 15px 46px 0;
@@ -1118,7 +1118,13 @@ ul.mc_list li {
 /******* Header *************/
 header#top > div > div > ul > li > a {
 	color: #fff;
+	font-size: 19px !important;
 }
+header#top > div > div > ul > li.signup > a {
+	border: white solid;
+}
+
+
 /******* Free Trial Lesson Button **********/
 #fws_55b227467453e > div {
 	width: 50%;
@@ -1204,6 +1210,8 @@ ul.member-menu {
 	text-align: right;
 	font-family: Lovelo, Sans-serif;
 	font-size: 15px;
+	width: 28%;
+  	float: right;
 }
 ul.member-menu li {
 	display: inline-block;
@@ -1418,7 +1426,7 @@ section#contents {
 	margin-top: 152px !important;
 }
 .row > div.span_9 > nav > ul > li > a {
-	font-size: 15px !important;
+	font-size: 19px !important;
 }
 header#top {
 	width: 90% !important;
