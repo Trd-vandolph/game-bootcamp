@@ -1226,6 +1226,46 @@ section#contents {
 	margin-bottom: 110px;
 	margin-top: 20px;
 }
+/******* Slideshow ********/
+#slideshow {
+    position: relative; 
+    width: 103%;
+    height: auto;
+    margin-left: -20px;
+    margin-top: -10px;
+    height: 900px;
+    background-color: #f7f7f7;
+    overflow: hidden;
+}
+#slideshow > div.slideshow {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0px 162px;
+    height: 100%;
+}
+#slideshow > div.slideshow-1 {
+    background-image: url('../img/header-image.jpg');
+    background-position: 0px 162px;
+}
+#slideshow > div.slideshow-2 {
+    background-image: url('../img/header-image1.jpg');
+}
+#slideshow > div.slideshow-3 {
+    background-image: url('../img/header-image2.jpg');
+}
+#slideshow > div.slideshow-4 {
+    background-image: url('../img/header-image3.jpg');
+}
+#slideshow > div.slideshow-5 {
+    background-image: url('../img/header-image4.jpg');
+}
+.wpb_text_column.wpb_content_element .wpb_wrapper {
+    border: 2px solid #fff;
+    padding: 70px 0 
+}
+.col.span_12.light.left {
+    margin-top: -540px;
+}
 /******* Top **************/
 #top-about-content {
 	margin: 8% auto;

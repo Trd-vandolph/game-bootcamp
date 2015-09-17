@@ -6,9 +6,14 @@
 	<div class="container-wrap">
 		<div class="container main-content">
 			<div class="row">
-				<div id="fws_55b08d66d62a8" class="wpb_row vc_row-fluid full-width-section standard_section  video-top  " style="background-image: url('../assets/img/header-image.jpg'); background-position: center center; background-repeat: no-repeat; padding-top: 200px; padding-bottom: 80px; margin-bottom: 8%;">
-				<!-- <div id="fws_55b0d04532c06" class="wpb_row vc_row-fluid full-width-section standard_section  video-top  " style="background-image: url(wp-content/uploads/banner4.jpg); background-position: center center; background-repeat: no-repeat; background-color: #3d3d3d; padding-top: 200px; padding-bottom: 80px; "> -->
-					<div class="col span_12 light left">
+				<div id="slideshow">
+					<div class="slideshow slideshow-1"></div>
+					<div class="slideshow slideshow-2"></div>
+					<div class="slideshow slideshow-3"></div>
+					<div class="slideshow slideshow-4"></div>
+					<div class="slideshow slideshow-5"></div>
+				</div>
+				<div class="col span_12 light left">
 						<div class="vc_span2 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
 							<div class="wpb_wrapper">
 
@@ -33,8 +38,8 @@
 
 							</div>
 						</div>
-					</div>
 				</div>
+				
 				<div id="top-about-content">
 					<div>
 						<ul>
@@ -207,3 +212,17 @@
 	</div>
 </div>
 <!--/ajax-content-wrap-->
+<script>
+	$(function() {
+		$("#slideshow > div:gt(0)").hide();
+
+		setInterval(function() { 
+			$('#slideshow > div:first')
+				.fadeOut(2000)
+				.next()
+				.fadeIn(2000)
+				.end()
+				.appendTo('#slideshow');
+			},  4000);
+		});
+</script>
