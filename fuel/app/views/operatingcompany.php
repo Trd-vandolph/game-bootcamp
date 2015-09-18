@@ -20,7 +20,7 @@
 						Edoo is a Japanese education company established to support neglected people and the next generation people through education around the world.
 					</p>
 					<p>
-						The management of Edoo strongly believes education can change one's life. Mission of Edoo is to realize potential of people who are passionate about learning. 
+						The management of Edoo strongly believes education can change one's life. Mission of Edoo is to realize potential of people who are passionate about learning.
 					</p>
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 				<div class="picture-content">
 					<a href="http://www.olivecode.com"><img alt="OliveCode Logo" src="../assets/img/front/logo2.png" /></a><br>
 					<div>
-						<a href=""http://www.olivecode.com">www.olivecode.com</a>
+						<a href="http://www.olivecode.com">www.olivecode.com</a>
 					</div>
 				</div>
 				<div class="text-content">
@@ -37,10 +37,37 @@
 					</p>
 					<p class="bold-title"></p>
 					<p class="body-content">
-						Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of Grameen Bank, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.  
+						Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of Grameen Bank, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.
 					</p>
 				</div>
 			</div>
+
+			<div class="student_container">
+				<div id="students">
+				<p class="catch">Students</p>
+				<div class="detail">
+				<ul>
+					<li class="student01">
+						<img src="/assets/img/front/mazed.png" alt="photo" height="180" width="180">
+						<p class="name">Mazedur Rahman</p>
+						<h4><strong>"Learning programming enhances my logical thinking and also helps me make a right decision".</strong></h4>
+						<div class="read">
+							<a href="http://www.olivecode.com/voice1"><span><strong>Read More</strong></span></a>
+						</div>
+					</li>
+					<li class="student02">
+						<img src="/assets/img/front/sakib.png" alt="photo" height="180" width="180">
+						<p class="name">Sakib Hasan</p>
+						<h4><strong>"Learning the basics of how to code on OliveCode has improved my problem solving skills".</strong></h4>
+						<div class="read">
+							<a href="http://www.olivecode.com/voice2"><span><strong>Read More</strong></span></a>
+						</div>
+					</li>
+				</ul>
+				</div>
+				</div>
+			</div>
+
 			<div id="third-content" class="content-company">
 				<div class="picture-content">
 					<a href="http://www.grameencommunications.org"><img alt="Grameen Communication Logo" src="../assets/img/front/GC.png" /></a><br>
@@ -69,7 +96,7 @@
 					</p>
 					<p class="bold-title"></p>
 					<p class="body-content">
-						Grameen communications values a curriculum of OliveCode and collaborates with Edoo to operate the first job-guaranteed online programming school in Bangladesh. 
+						Grameen communications values a curriculum of OliveCode and collaborates with Edoo to operate the first job-guaranteed online programming school in Bangladesh.
 					</p>
 					<p>
 						Grameen Communications and Edoo executed an agreement on joint-initiative to grow OliveCode for the purpose of  raising programmers and creating job opportunities for poor young Bangladeshi in IT industry.

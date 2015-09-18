@@ -16,7 +16,7 @@
 						<div class="header">One-time</div>
 						<div class="body">
 							<div class="amount">
-								<strong>US$300/</strong><br>
+								<strong>US$300</strong><br>
 								<span>for 12 lessons</span>
 							</div>
 						</div>
@@ -26,7 +26,7 @@
 						<div class="header">Installment</div>
 						<div class="body">
 							<div class="amount">
-								<strong>US$110/</strong><br>
+								<strong>US$110</strong><br>
 								<span>every 4 lessons</span>
 							</div>
 						</div>

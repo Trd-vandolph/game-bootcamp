@@ -4,7 +4,7 @@
 			<div id="content">
 				<div id="content-1">
 					<div id="topic-parents">
-						<p><strong><i>Dear Parents</i></strong>, What comes to your mind when you hear <strong style="color: red;">-“Programming”?</strong></p>
+						<p><strong><i>Dear Parents</i></strong>, What comes to your mind when you hear <strong style="color: red;">“Programming”?</strong></p>
 					</div>
 					<div id="answer-parents">
 						<p>
@@ -26,7 +26,7 @@
 							However, realizing our idea requires logical thinking and creativity.
 						</p>
 						<p>
-							Programming is structured and layered by sequence, selection, and iteration. That means if you learn programming, you will naturally obtain an ability to critically analyze and logically think what you see.  
+							Programming is structured and layered by sequence, selection, and iteration. Therefore, if you learn programming, you will naturally obtain an ability to critically analyze and logically think what you see.  
 						</p>
 						<p>
 							On top of this, there is no absolute single solution in programming.
@@ -57,12 +57,19 @@
 						</div>
 					</div>
 					<div id="ihara-descriptions">
+						<p id="ihara-desc-title">
+							<strong>[Profile of Founder]</strong>
+						</p>
 						<p>
-							When Hiroto first visited Bangladesh in March, 2014, he found so many young people were unemployed due to a lack of access to education. After the visit, he decided to support neglected people and the next generation of people. He established Edoo Inc. and started a job-guaranteed online programming school for young Bangladeshi in February 2015. 
+							When Hiroto first visited Bangladesh, one of the poorest countries in Asia in March 2014, he found so many young people were unemployed due to a lack of access to education. After the visit, he decided to support neglected people to realize their hidden potential. He established Edoo Inc. and started a job-guaranteed online programming school for young Bangladeshi in February 2015. 
+							<br><br>
+							He also looks to raise the next generation through computer programming so that they can leverage an ability to think and create in the 21st century.
 							<br><br>
 							He was previously CFO and Executive Vice President at Everlife; a Japanese health supplement company, a director at CLSA Capital Partners; a Pan-Asian based private equity fund, and a director of international and investment banking division at Mizuho Financial Group in London/Tokyo. 
 							<br><br>
 							He has a degree in Economics from Kyushu University, Japan and holds Executive MBA from INSEAD.
+							<br><br>
+							He has a wife and two kids.
 							<br>
 							<br>
 						</p>
