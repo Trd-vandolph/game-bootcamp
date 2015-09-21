@@ -1120,10 +1120,10 @@ header#top > div > div > ul > li > a {
 	color: #fff;
 	font-size: 19px !important;
 }
-header#top > div > div > ul > li.signup > a {
+header#top > div > div > ul > li.login > a {
 	border: white solid;
+	padding: 4px 22px !important;
 }
-
 
 /******* Free Trial Lesson Button **********/
 #fws_55b227467453e > div {
@@ -1203,6 +1203,7 @@ img.feature3-image {
 }
 #fws_55b08d66d8a64 > div > div > div > div > div {
 	margin-left: 10%;
+	padding-top: 0;
 }
 /******* Navigation Bar **********/
 ul.member-menu {
@@ -1268,8 +1269,9 @@ section#contents {
     background-image: url('../img/header-image4.jpg');
 }
 .wpb_text_column.wpb_content_element .wpb_wrapper {
-    border: 2px solid #fff;
-    padding: 70px 0
+	border-bottom: 2px solid #fff;
+	border-top: 2px solid #fff;
+	padding: 70px 0
 }
 .col.span_12.light.left {
     margin-top: -540px;
@@ -1628,7 +1630,7 @@ section.course #\39 leap > div.\31 st-content > a > img {
 
 
 section.course #games-container #\31 st-game {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 section.course #game-container .game-table {
 	display: table;
@@ -1939,7 +1941,7 @@ section.coursefee #first-section > div.payment > div.body {
 section.coursefee #first-section > div.payment > div.body > div > span {
 	position: absolute;
 	top: 75px;
-	left: 18px;
+	left: 26px;
     font-size: 18px;
 }
 section.coursefee div.payment > div.body > div > strong {

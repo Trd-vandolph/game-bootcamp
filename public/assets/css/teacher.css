@@ -135,7 +135,7 @@ p.calender-notice span.selected{
     background: #eee;
 }
 .lesson-time ul li:hover{
-    background: #DD795D;
+    background: #FE0036;
     color: #fff;
 }
 .lesson-time ul li.selected{

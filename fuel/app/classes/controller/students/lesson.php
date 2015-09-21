@@ -185,6 +185,14 @@ class Controller_Students_Lesson extends Controller_Students
 			]
 		]);
 		
+		$data['status'] = Model_Lessontime::find("all", [
+				"where" => [
+						["student_id", $this->user->id],
+						["deleted_at", 0],
+						["status", 1],
+				]
+		]);
+		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],

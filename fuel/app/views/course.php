@@ -94,7 +94,7 @@
 			</div>
 
 			<div id="enchantJS">
-				<p class="p-left"><a href="http://enchantjs.com/">Enchant JS</a></p>
+				<p class="p-left"><a href="http://enchantjs.com/" target="_blank">Enchant JS</a></p>
 				<div class="1st-content">
 					<p>We teach students enchant.js.</p>
 					<p>echant.js is a game engine that enables students to create a program by writing simple codes and can work on Windows, Mac OS, iOS, and Android.</p>
@@ -107,7 +107,7 @@
 			</div>
 
 			<div id="9leap">
-				<p class="p-left"><a href="http://9leap.net/info/about?sessionLang=en">9leap</a></p>
+				<p class="p-left"><a href="http://9leap.net/info/about?sessionLang=en" target="_blank">9leap</a></p>
 				<div class="1st-content">
 					<a href="http://9leap.net/info/about?sessionLang=en"><img src="../assets/img/front/9leap_logo.jpg" alt="9leap"/></a>
 				</div>

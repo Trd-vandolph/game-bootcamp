@@ -3,9 +3,9 @@
 		<div id="content">
 			<div id="first-content" class="content-company">
 				<div class="picture-content">
-					<a href="http://www.edoo.co.jp"><img alt="Edoo Logo" src="../assets/img/front/edoo_logo.png" /></a><br>
+					<a href="http://www.edoo.co.jp" target="_blank"><img alt="Edoo Logo" src="../assets/img/front/edoo_logo.png" /></a><br>
 					<div>
-						<a href="http://www.edoo.co.jp">www.edoo.co.jp</a>
+						<a href="http://www.edoo.co.jp" target="_blank">www.edoo.co.jp</a>
 					</div>
 				</div>
 				<div class="text-content">
@@ -26,9 +26,9 @@
 			</div>
 			<div id="second-content" class="content-company">
 				<div class="picture-content">
-					<a href="http://www.olivecode.com"><img alt="OliveCode Logo" src="../assets/img/front/logo2.png" /></a><br>
+					<a href="http://www.olivecode.com" target="_blank"><img alt="OliveCode Logo" src="../assets/img/front/logo2.png" /></a><br>
 					<div>
-						<a href="http://www.olivecode.com">www.olivecode.com</a>
+						<a href="http://www.olivecode.com" target="_blank">www.olivecode.com</a>
 					</div>
 				</div>
 				<div class="text-content">
@@ -52,7 +52,7 @@
 						<p class="name">Mazedur Rahman</p>
 						<h4><strong>"Learning programming enhances my logical thinking and also helps me make a right decision".</strong></h4>
 						<div class="read">
-							<a href="http://www.olivecode.com/voice1"><span><strong>Read More</strong></span></a>
+							<a href="http://www.olivecode.com/voice1" target="_blank"><span><strong>Read More</strong></span></a>
 						</div>
 					</li>
 					<li class="student02">
@@ -60,7 +60,7 @@
 						<p class="name">Sakib Hasan</p>
 						<h4><strong>"Learning the basics of how to code on OliveCode has improved my problem solving skills".</strong></h4>
 						<div class="read">
-							<a href="http://www.olivecode.com/voice2"><span><strong>Read More</strong></span></a>
+							<a href="http://www.olivecode.com/voice2" target="_blank"><span><strong>Read More</strong></span></a>
 						</div>
 					</li>
 				</ul>
@@ -70,9 +70,9 @@
 
 			<div id="third-content" class="content-company">
 				<div class="picture-content">
-					<a href="http://www.grameencommunications.org"><img alt="Grameen Communication Logo" src="../assets/img/front/GC.png" /></a><br>
+					<a href="http://www.grameencommunications.org" target="_blank"><img alt="Grameen Communication Logo" src="../assets/img/front/GC.png" /></a><br>
 					<div>
-						<a href="http://www.grameencommunications.org">www.grameencommunications.org</a>
+						<a href="http://www.grameencommunications.org" target="_blank">www.grameencommunications.org</a>
 					</div>
 				</div>
 				<div class="text-content">
@@ -87,7 +87,7 @@
 			</div>
 			<div id="fourth-content" class="content-company">
 				<div class="picture-content">
-					<a href="http://www.olivecode.com/grameen"><img alt="Grameen and OliveCode Logo" src="../assets/img/front/banner.jpg" /></a>
+					<a href="http://www.olivecode.com/grameen" target="_blank"><img alt="Grameen and OliveCode Logo" src="../assets/img/front/banner.jpg" /></a>
 				</div>
 				<div class="text-content">
 					<p class="title">
@@ -105,7 +105,7 @@
 				<div class="picture-content">
 					<img src="../assets/img/front/DSC_0766.jpg" alt="Signing"/><br>
 					<div>
-						<a href="http://www.olivecode.com/grameen">www.olivecode.com/grameen</a>
+						<a href="http://www.olivecode.com/grameen" target="_blank">www.olivecode.com/grameen</a>
 						<div>
 							<i>Grameen Communications and Edoo executed an agreement in June 2015 on joint-initiative to grow.</i>
 						</div>

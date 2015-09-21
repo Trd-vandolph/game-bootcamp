@@ -1,7 +1,7 @@
 <?php
 	$feed_1 = 'https://www.google.com/calendar/feeds/grameencompany%40gmail.com/public/basic';
 	$rss_1 = simplexml_load_file($feed_1);
-	
+
 	$feed_2 = 'https://www.google.com/calendar/feeds/en.bd%23holiday%40group.v.calendar.google.com/public/basic';
 	$rss_2 = simplexml_load_file($feed_2);
 ?>
@@ -39,11 +39,11 @@
 				<?
 				$my = "";
 				$count = 0;
-		
+
 				$days = "";
 				if($my == "") $my = Date("F Y");
 				for($i = 0; $i < 10; $i++){
-		
+
 					if($my != Date("F Y", strtotime("+{$i} days"))){
 						echo "<th colspan=\"{$count}\">{$my}</th>";
 						$my = Date("F Y", strtotime("+{$i} days"));
@@ -76,10 +76,24 @@
 												<? if(($lesson->teacher->html5 == 1 and $course == "0") or ($lesson->teacher->javascript == 1 and $course == "1")  or ($lesson->teacher->php == 1 and $course == "2") or  ($lesson->teacher->trial == 1 and $course == "-1")): ?>
 													<?
 													$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
+													
+													$currentDay = strtotime(Date("Y-m-d {$j}:00:00"));
+													$scheduleDay = strtotime(Date("Y-m-d {$j}:00:00", $lesson->freetime_at));
+													
+													(count($status) == 1 || count($status) > 1) ? $ex_reserve = 1 : $ex_reserve = 0;
+													
 													if($lesson->freetime_at == $unixtime):
 														?>
 														<li class="clearfix">
 															<p class="date"><?= Date("M d Y(D)", $lesson->freetime_at); ?> <?= Date("H", $lesson->freetime_at); ?>:00 - <?= Date("H", $lesson->freetime_at); ?>:45</p>
+															<? if($scheduleDay == $currentDay): ?>
+																<span class="forbid-reservation" style="color: red;"><i>You cannot book a class on this day. Book a class before your reservation day.</i></span>
+																<br>
+															<? endif; ?>
+															<? if($ex_reserve == 1): ?>
+																<span style="color: red;"><i>You still have existing reservation or your tutor did not give you feedback yet.</i></span>
+																<br>
+															<? endif; ?>
 															<div class="photo"><img src="/assets/img/pictures/m_<?= $lesson->teacher->getImage(); ?>" width="200" alt=""></div>
 															<div class="profile">
 																<h3><?= $lesson->teacher->firstname;?> <?= $lesson->teacher->middlename;?> <?= $lesson->teacher->lastname;?></h3>
@@ -126,7 +140,7 @@
 																<? endif; ?>
 															</div>
 														</li>
-														
+
 													<? endif; ?>
 												<? endif; ?>
 											<? endforeach; ?>
@@ -137,7 +151,7 @@
 								$class = "unavailable";
 								$href = "#";
 								$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
-								
+
 								if($reserved != null and $reserved->freetime_at == $unixtime): ?>
 									<?
 									$href = "#reserved";
@@ -195,207 +209,6 @@
 			</div>
 		<? endif; ?>
 	</div> <!-- calendar for online students end -->
-<? else: ?>
-	<div class="schedule course1"> <!-- calendar for grameen students starts -->
-		<table width="100%" border="0" cellpadding="0" cellspacing="0" >
-			<thead>
-			<tr>
-				<?
-				$my = "";
-				$count = 0;
-				
-				$days = "";
-				if($my == "") $my = Date("F Y");
-				for($i = 0; $i < 10; $i++){
-					if($my != Date("F Y", strtotime("+{$i} days"))){
-						echo "<th colspan=\"{$count}\">{$my}</th>";
-						$my = Date("F Y", strtotime("+{$i} days"));
-						if($my == 'Fri'){
-							break;
-						}
-					}
-					$count++;
-					$D = Date('D', strtotime("+{$i} days"));
-					$days .= "<th class='we " . $D . "'>". $D . "</th>";
-				}
-				if($count != 0){
-					echo "<th colspan=\"{$count}\">{$my}</th>";
-				}
-				?>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-				<?= $days; ?>
-			</tr>
-			<tr>
-				<? for($i = 0; $i < 10; $i++): ?>
-				<td class="<?= Date("D", strtotime("+{$i} days")); ?>"><?= Date("d", strtotime("+{$i} days")); ?>
-					<p id="odate"><?= Date("m-j", strtotime("+{$i} days")); ?></p>
-					<ul>
-						<? for($j = 10; $j < 18; $j++): ?>
-							<div  class="remodal" data-remodal-id="<?= "{$i}_{$j}"; ?>">
-								<div class="content select-teacher">
-									<ul>
-										<? foreach($lessons as $lesson): ?>
-											<? if(($lesson->teacher->html5 == 1 and $course == "0") or ($lesson->teacher->javascript == 1 and $course == "1")  or ($lesson->teacher->php == 1 and $course == "2") or  ($lesson->teacher->trial == 1 and $course == "-1")): ?>
-												<?
-												$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
-												if($lesson->freetime_at == $unixtime):
-													?>
-													<li class="clearfix">
-														<p class="date"><?= Date("M d Y(D)", $lesson->freetime_at); ?> <?= Date("H", $lesson->freetime_at); ?>:00 - <?= Date("H", $lesson->freetime_at); ?>:45</p>
-														<div class="photo"><img src="/assets/img/pictures/m_<?= $lesson->teacher->getImage(); ?>" width="200" alt=""></div>
-														<div class="profile">
-															<h3><?= $lesson->teacher->firstname;?> <?= $lesson->teacher->middlename;?> <?= $lesson->teacher->lastname;?></h3>
-															<p><?= $lesson->teacher->pr;?></p>
-															<? if($reserved == null and ($user->charge_html == 1 or $course == "-1")): ?>
-																<? if(Model_Lessontime::courseNumber_1($course) > count($pasts)): ?>
-																	<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																	<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																		<div class="content confirm">
-																			<p>Do you want to book this lesson?</p>
-																			<div class="button-area">
-																				<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																				<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																			</div>
-																		</div>
-																	</div>
-																<? endif; ?>
-															<?php elseif($user->charge_html == 11 && $course == "0"): ?>
-																<? if(Model_Lessontime::courseNumber_2($course) > count($pasts)): ?>
-																	<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																	<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																		<div class="content confirm">
-																			<p>Do you want to book this lesson?</p>
-																			<div class="button-area">
-																				<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																				<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																			</div>
-																		</div>
-																	</div>
-																<? endif; ?>
-															<?php elseif($user->charge_html == 111 && $course == "0"): ?>
-																<? if(Model_Lessontime::courseNumber_3($course) > count($pasts)): ?>
-																	<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																	<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																		<div class="content confirm">
-																			<p>Do you want to book this lesson?</p>
-																			<div class="button-area">
-																				<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																				<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																			</div>
-																		</div>
-																	</div>
-																<? endif; ?>
-															<?php elseif($user->charge_html == 1111 && $course == "1"): ?>
-																<? if(Model_Lessontime::courseNumber_4($course) > count($pasts)): ?>
-																	<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																	<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																		<div class="content confirm">
-																			<p>Do you want to book this lesson?</p>
-																			<div class="button-area">
-																				<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																				<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																			</div>
-																		</div>
-																	</div>
-																<? endif; ?>
-															<? endif; ?>
-														</div>
-													</li>
-												<? endif; ?>
-											<? endif; ?>
-										<? endforeach; ?>
-									</ul>
-								</div>
-							</div>
-							<?
-							$class = "unavailable";
-							$href = "#";
-							$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
-							
-							if($reserved != null and $reserved->freetime_at == $unixtime):
-								$href = "#reserved";
-								$class = "reserved";
-							else: ?>
-								<? foreach($lessons as $lesson): ?>
-									<? if(($lesson->teacher->html5 == 1 and $course == "0") or ($lesson->teacher->javascript == 1 and $course == "1")  or ($lesson->teacher->php == 1 and $course == "2") or  ($lesson->teacher->trial == 1 and $course == "-1")): ?>
-									<? if($lesson->freetime_at == $unixtime){
-										$class = "";
-										$href = "#{$i}_{$j}";
-										break;
-									} ?>
-									<? endif; ?>
-								<? endforeach; ?>
-							<? endif;
-							
-							//view events on the calendar
-							if ($eventdetails != null):
-					 			foreach ($eventdetails as $eventdetail):
-									if ($eventdetail->start_time == $unixtime || $unixtime < $eventdetail->end_time && $unixtime > $eventdetail->start_time) {
-										$href = "#{$eventdetail->id}";
-										$class = "events";
-							 		}
-								endforeach;
-							endif; ?>
-							
-							<li class="<?= $class; ?>"><a href="<?= $href; ?>" class="boxer"><?= $j; ?>:00</a></li>
-						<? endfor; ?>
-					</ul>
-				</td>
-				<? endfor; ?>
-			</tr>
-			</tbody>
-		</table>
-		<? if($reserved != null): ?>
-			<div  class="remodal" data-remodal-id="reserved">
-				<div class="content select-teacher">
-					<div class="confirm">
-						<p>Your booking is as follows:</p>
-						<p class="time"><?= Date("M d Y(D)", $reserved->freetime_at); ?> <?= Date("H", $reserved->freetime_at); ?>:00 - <?= Date("H", $reserved->freetime_at); ?>:45</p>
-					</div>
-					<ul>
-						<li class="clearfix">
-							<div class="photo"><img src="/assets/img/pictures/m_<?= $reserved->teacher->getImage(); ?>"
-													width="200" alt=""></div>
-							<div class="profile">
-								<h3><?= $reserved->teacher->firstname;?> <?= $reserved->teacher->middlename;?> <?=
-									$reserved->teacher->lastname;?></h3>
-								<p><?= $reserved->teacher->pr;?></p>
-								<p class="button-area"><a class="button" href="#confirm">Cancel</a></p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div  class="remodal" data-remodal-id="confirm">
-				<div class="content confirm">
-					<p>Do you want to cancel this booking?</p>
-					<div class="button-area">
-						<a href="#reserved" class="button gray">Cancel <i class="fa fa-times"></i></a>
-						<a href="add?course=<?= $course; ?>&del_id=<?= $reserved->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-					</div>
-				</div>
-			</div>
-		<? endif; ?>
-		<? if($eventdetails != null): ?>
-			<? foreach($eventdetails as $eventdetail): ?>
-				<div class="remodal" data-remodal-id="<?= "{$eventdetail->id}"; ?>">
-					<div class="modal-event">
-						<section class="content-wrap" style="text-align: center;">
-							The selected Time and Date will not be available <br>for Booking due to the following details: <br>
-							<strong><?= date("H:i A", $eventdetail->start_time); ?> ~ <?= date("H:i A",$eventdetail->end_time); ?></strong>
-						</section>
-						Event Name: <strong><?= $eventdetail->title; ?></strong><br><br>
-						Start Time: <strong><?= date("H:i A", $eventdetail->start_time); ?></strong>
-						End Time: <strong><?= date("H:i A",$eventdetail->end_time); ?></strong><br><br>
-						Event Details: <br><strong><?= $eventdetail->body; ?></strong>
-					</div>
-				</div>
-			<? endforeach; ?>
-		<? endif; ?>
-	</div> <!-- calendar for grameen students ends -->
 <? endif; ?>
 </div>
 <? echo View::forge("students/_menu")->set($this->get()); ?>
@@ -403,13 +216,14 @@
 
 <?= Asset::js("base.js"); ?>
 <?= Asset::js("jquery.remodal.js"); ?>
+
 <script type="text/javascript">
 	$(function(){
 		$("ul.curriculum li").click(function () {
 			$("ul.curriculum li").removeClass('selected');
 			$(this).toggleClass("selected");
 		});
-		
+
 		$('.tiles').tiles(4,'div'); //.tilesの中のdiv
 		$('ul.tiles').tiles(4); //ul.tilesの中のli
 		$(".boxer").boxer();
@@ -419,7 +233,7 @@
 	    $("#contents-wrap").fadeIn();
 	});
 
-	//disable friday and saturday	
+	//disable friday and saturday
 	//$('.Fri').add('.Sat').on('click', function(){ return false; });
 	$('.Fri a').add('.Sat a').css({
 		'background':'#fff',
@@ -476,7 +290,7 @@
 				 $remove_br = $month . '-' . $dayNum ;  //local
 				$ono_br = str_replace('<br>', '', $remove_br);
 				$no_br = str_replace(',', '', $ono_br); ?>
-				
+
 				if($(this).text() == '<?= $no_br; ?>'){
 					$("#main table tr:nth-child(2) td:contains('<?= $no_br; ?>')").addClass('holiday');
 					$('#main table tr:nth-child(2) td.holiday ul li').attr('class','gocal');
@@ -501,20 +315,20 @@
 				/* $remove_br = $dayNum . '-' . $month; */ //dev site
 				$remove_br = $month . '-' . $dayNum ; //local / real site
 				$ono_br = str_replace('<br>', '', $remove_br);
-				$no_br = str_replace(',', '', $ono_br); 
+				$no_br = str_replace(',', '', $ono_br);
 
 				//changing Shab e-Barat 06-2 to 06-3 and removing USELESS Google Generated Holidays -.-
 				$search = array('06-2','07-26','07-28','07-29','07-30','10-31','05-10');
 				$replace = array('06-3','','','','','','');
 				$result = str_replace($search, $replace, $no_br); ?>
-				
+
 				if($(this).text() == '<?= $result; ?>'){
 					$("#main table tr:nth-child(2) td:contains('<?= $result; ?>')").addClass('holiday');
 					$('#main table tr:nth-child(2) td.holiday ul li').attr('class','gocal');
 					$(this).append("<div class='remodal' data-remodal-id='<?= $title; ?>'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: <?= str_replace(array('-','_'), array(' '), $title); ?></strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('<?= $result; ?>')").find('li a').attr('href','#<?= $title; ?>');
 				}
-				
+
 				//adding Bank Holiday 07-1
 				if($(this).text() == '07-1'){
 					$("#main table tr:nth-child(2) td:contains('07-1')").addClass('holiday');
@@ -530,7 +344,7 @@
 					$(this).append("<div class='remodal' data-remodal-id='Eid_ul_Adha_Day_1'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Eid ul-Adha Day 1 </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('09-24')").find('li a').attr('href','#Eid_ul_Adha_Day_1');
 				}
-				
+
 				//adding Eid ul-Adha Day 2 09-25
 				if($(this).text() == '09-25'){
 					$("#main table tr:nth-child(2) td:contains('09-25')").addClass('holiday');
@@ -538,7 +352,7 @@
 					$(this).append("<div class='remodal' data-remodal-id='Eid_ul_Adha_Day_2'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Eid ul-Adha Day 2 </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('09-25')").find('li a').attr('href','#Eid_ul_Adha_Day_2');
 				}
-				
+
 				//adding Durga Puja (Vijaya Dasami) 10-23
 				if($(this).text() == '10-23'){
 					$("#main table tr:nth-child(2) td:contains('10-23')").addClass('holiday');
@@ -546,7 +360,7 @@
 					$(this).append("<div class='remodal' data-remodal-id='Durga'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Durga Puja (Vijaya Dasami) </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('10-23')").find('li a').attr('href','#Durga');
 				}
-				
+
 				//adding Muharram (Ashura) 10-24
 				if($(this).text() == '10-24'){
 					$("#main table tr:nth-child(2) td:contains('10-24')").addClass('holiday');
@@ -554,7 +368,7 @@
 					$(this).append("<div class='remodal' data-remodal-id='Muharram'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Muharram (Ashura) </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('10-24')").find('li a').attr('href','#Muharram');
 				}
-				
+
 				//adding Christmas 12-25
 				if($(this).text() == '12-25'){
 					$("#main table tr:nth-child(2) td:contains('12-25')").addClass('holiday');
@@ -562,7 +376,7 @@
 					$(this).append("<div class='remodal' data-remodal-id='Christmas'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Christmas </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('12-25')").find('li a').attr('href','#Christmas');
 				}
-				
+
 				//adding Bank Holiday 12-31
 				if($(this).text() == '12-31'){
 					$("#main table tr:nth-child(2) td:contains('12-31')").addClass('holiday');
@@ -570,14 +384,14 @@
 					$(this).append("<div class='remodal' data-remodal-id='Bank'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Bank Holiday </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('12-31')").find('li a').attr('href','#Bank');
 				}
-				
+
 				//adding Bangla New Year's Day 04-14
 				if($(this).text() == '07-4'){
 					$("#main table tr:nth-child(2) td:contains('07-4')").addClass('holiday');
 					$('#main table tr:nth-child(2) td.holiday ul li').attr('class','gocal');
 					$(this).append("<div class='remodal' data-remodal-id='New_year'><div><section class='content-wrap' style='text-align: center;'>The selected Time and Date will not be available <br>for Booking due to the following details:<br><br><strong>Today is Holiday: Bangla New Year's Day </strong></section><div></div>");
 					$("#main table tr:nth-child(2) td:contains('07-4')").find('li a').attr('href','#New_year');
-				}				
+				}
 		<? } ?>
 	});
 </script>

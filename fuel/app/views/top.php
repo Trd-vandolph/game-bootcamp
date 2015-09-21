@@ -102,7 +102,7 @@
 										<h2><? echo Session::get('titleFeature1'); ?></h2>
 										<p><? echo Session::get('bodyFeature1'); ?>
 											<br />
-											<a title="Program" href="program/index.html#what-is-bootcamp">See More</a></p>
+											<a title="Program" href=/course" target="_blank">See More</a></p>
 									</div>
 								</div>
 							</div>
@@ -127,7 +127,7 @@
 										<h2><? echo Session::get('titleFeature2'); ?></h2>
 										<p><? echo Session::get('bodyFeature2'); ?>
 											<br />
-											<a title="Program" href="program/index.html#why-bootcamp">See More</a></p>
+											<a title="Program" href="/tutor" target="_blank">See More</a></p>
 									</div>
 								</div>
 							</div>
@@ -152,7 +152,7 @@
 										<h2><? echo Session::get('titleFeature3'); ?></h2>
 										<p><? echo Session::get('bodyFeature3'); ?>
 										<br />
-											<a title="Program" href="program/index.html#success">See More</a>
+											<a title="Program" href="/operatingcompany" target="_blank">See More</a>
 										</p>
 									</div>
 								</div>
@@ -171,7 +171,7 @@
 								<span class="name-title"><strong>Mitch Resnick</strong></span>
 								<p class="person-title">Professor of Learning Research, MIT Media Lab</p>
 								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank"><img src="../assets/img/common/Mitchel_Resnick.png" alt="Mitch Resnick" width="200"></a>
-								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Click here to view his speech</a>
+								<a href="http://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code" target="_blank">Click here to view his speech</a>
 								<blockquote>"Coding isn’t just for computer whizzes. It’s for everyone. Let's teach kids to code"</blockquote>
 							</div>
 						</div>
