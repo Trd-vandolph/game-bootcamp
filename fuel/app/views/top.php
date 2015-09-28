@@ -102,7 +102,7 @@
 										<h2><? echo Session::get('titleFeature1'); ?></h2>
 										<p><? echo Session::get('bodyFeature1'); ?>
 											<br />
-											<a title="Program" href=/course" target="_blank">See More</a></p>
+											<a title="Program" href="/course" target="_blank">See More</a></p>
 									</div>
 								</div>
 							</div>

@@ -9870,10 +9870,10 @@ body {
 		padding-top: 40px !important;
 	}
 	body header#top, body #header-outer {
-	    height: 84px !important;
+		height: 84px !important;
 	}
 	body #header-outer header#top #logo img {
-	    height: 48px !important;
+		height: 48px !important;
 	}
 	header#top #toggle-nav {
 		top: 18px;

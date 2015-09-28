@@ -1238,9 +1238,9 @@ section#contents {
 /******* Slideshow ********/
 #slideshow {
     position: relative;
-    width: 103%;
+    width: 118%;
     height: auto;
-    margin-left: -20px;
+    margin-left: -116px;
     margin-top: -10px;
     height: 900px;
     background-color: #f7f7f7;
@@ -1271,7 +1271,7 @@ section#contents {
 .wpb_text_column.wpb_content_element .wpb_wrapper {
 	border-bottom: 2px solid #fff;
 	border-top: 2px solid #fff;
-	padding: 70px 0
+	padding: 0
 }
 .col.span_12.light.left {
     margin-top: -540px;
@@ -1311,6 +1311,7 @@ section#contents {
 	text-align: left;
 	font-size: 18px;
 	margin-top: 0;
+	padding-bottom: 0;
 }
 #fws_55b22746735ec > div > div > a > span {
 	font-size: 16px !important;
@@ -1461,7 +1462,8 @@ section.parents #picture-parents #picture-enclose {
 	border-radius: 50%;
 	overflow: hidden;
 	border: 2px solid #F2E2E0;
-	padding: 0px 0px;
+	padding: 0;
+	margin-left: 10%;
 }
 section.parents #picture-parents #picture-caption {
 	width: 100%;
