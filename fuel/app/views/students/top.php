@@ -100,7 +100,7 @@
 </div>
 <script type="text/javascript">
 	//custom alert
-	
+
 	function CustomAlert(){
 	    this.render = function(dialog){
 	        var winW = window.innerWidth;
@@ -123,19 +123,19 @@
 		}
 	}
 	var Alert = new CustomAlert();
-	
-	//end alert	
-	
+
+	//end alert
+
 	$(function(){
 
-		
+
 		getReservation();
 
 		setInterval("getReservation()",10000);
 
 		var paySuccess = $('#pay').val();
 		var confirm = $('#confirm').val();
-		
+
 		if(paySuccess == 1) {
 			Alert.render("Successfully sent payment information. Once we confirm your photo of receipt, you can now book a lesson.");
 		} else if(paySuccess == 2) {

@@ -53,7 +53,6 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 1],
 				["deleted_at", 0],
-				["category", 1],
 			]
 		]);
 
@@ -66,12 +65,21 @@ class Controller_Students_Lesson extends Controller_Students
 				["category", 1],
 			]
 		]);
+		$lastClass = Model_Lessontime::find("last", [
+			"where" => [
+				["student_id", $this->user->id],
+				["status", 2],
+				["language", Input::get("course", 0)],
+				["deleted_at", 0],
+				["category", 1],
+			]
+		]);
 		if($pasts == null){
 			$pasts = [];
 		}
-		
+
 		$data["studentplace"] = Model_User::find("all");
-		
+
 		$id = Input::get("id", 0);
 		if($id != 0 and $reserved == null and($this->user->charge_html == 1 or Input::get("course", 0) == -1)){
 			if(Model_Lessontime::courseNumber_1(Input::get("course", 0)) > count($pasts)){
@@ -96,7 +104,7 @@ class Controller_Students_Lesson extends Controller_Students
 			if(Model_Lessontime::courseNumber_2(Input::get("course", 0)) > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
-			
+
 					if($reserve->status == 0 and $reserve->student_id == 0){
 						$reserve->student_id = $this->user->id;
 						$reserve->language = Input::get("course", 0);
@@ -104,9 +112,9 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
 						$reserve->save();
-			
+
 						Model_Lessontime::sendReservedEMail($reserve->id);
-			
+
 						$reserved = $reserve;
 					}
 				}
@@ -115,7 +123,7 @@ class Controller_Students_Lesson extends Controller_Students
 			if(Model_Lessontime::courseNumber_3(Input::get("course", 0)) > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
-			
+
 					if($reserve->status == 0 and $reserve->student_id == 0){
 						$reserve->student_id = $this->user->id;
 						$reserve->language = Input::get("course", 0);
@@ -123,9 +131,9 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
 						$reserve->save();
-						
+
 						Model_Lessontime::sendReservedEMail($reserve->id);
-						
+
 						$reserved = $reserve;
 					}
 				}
@@ -134,7 +142,7 @@ class Controller_Students_Lesson extends Controller_Students
 			if(Model_Lessontime::courseNumber_4(Input::get("course", 0)) > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
-			
+
 					if($reserve->status == 0 and $reserve->student_id == 0){
 						$reserve->student_id = $this->user->id;
 						$reserve->language = Input::get("course", 0);
@@ -142,9 +150,9 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
 						$reserve->save();
-			
+
 						Model_Lessontime::sendReservedEMail($reserve->id);
-			
+
 						$reserved = $reserve;
 					}
 				}
@@ -170,7 +178,6 @@ class Controller_Students_Lesson extends Controller_Students
 				["status", 0],
 				["freetime_at", ">=", time()],
 				["freetime_at", "<", time() + 864000],
-				["category", 1],
 			],
 			'related' => [
 				'teacher' => [
@@ -184,7 +191,7 @@ class Controller_Students_Lesson extends Controller_Students
 				["freetime_at", "asc"],
 			]
 		]);
-		
+
 		$data['status'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -192,7 +199,7 @@ class Controller_Students_Lesson extends Controller_Students
 						["status", 1],
 				]
 		]);
-		
+
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -202,22 +209,23 @@ class Controller_Students_Lesson extends Controller_Students
 						["category", 1]
 				]
 		]);
-		
+
 		$eventdetails = Model_Events::find("all", [
 				"where" => [
 						["deleted_at", 0],
 				]
 		]);
-		
+
 		if(Input::post("place", null) !== null and Security::check_token()){
-			
+
 			$this->user->place = Input::post("place", 1);
-			
+
 			$this->user->save();
 		}
-		
+
 		$data['eventdetails'] = $eventdetails;
 		$data["pasts"] = $pasts;
+		$data["lastClass"] = $lastClass;
 		$data["reserved"] = $reserved;
 		$data["user"] = $this->user;
 		$data["course"] = Input::get("course", 0);
@@ -227,7 +235,7 @@ class Controller_Students_Lesson extends Controller_Students
 	}
 
 	public function action_histories(){
-		
+
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -237,7 +245,7 @@ class Controller_Students_Lesson extends Controller_Students
 						["category", 1]
 				]
 		]);
-		
+
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -247,14 +255,14 @@ class Controller_Students_Lesson extends Controller_Students
 						["category", 1]
 				]
 		]);
-		
+
 		$data["reservations"] = Model_Lessontime::find("all", [
 			"where" => [
 				["deleted_at", 0],
 				["student_id", $this->user->id],
 				["status", "<>", 0],
+				["category", 1],
 				["freetime_at", "<", time()],
-				["category", 1]
 			],
 			"order_by" => [
 				["updated_at", "desc"],

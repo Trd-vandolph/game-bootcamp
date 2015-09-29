@@ -161,12 +161,12 @@
 							<? }else{ ?>
 							<option <? if($content->type_id == $i){ echo "selected";} ?>  value="<? echo $i++;?>"><? echo $content_type; ?></option>
 							 <? }endforeach; ?>
-									
+
 					</select>
 					<br>
 					<form action="" method="post" id="text_type_<? echo $content->id; ?>">
 						<input type="hidden" name="t_id" value="<? echo $content->id; ?>">
-						<select 
+						<select
 						name="text_type_id" id="text_type_<? echo $content->id; ?>" onchange="$('#text_type_<? echo $content->id; ?>').submit();">
 							<? $i = 0; foreach($content_text_types as $content_text_type): ?>
 								<? if($content_text_type=="Exam"){ ?>
@@ -190,19 +190,19 @@
 									$strlen = strlen($cs);
 									$chars = str_split($cs);
 									?>
-										<label><input id="html_<? echo $content->id; ?>" type="checkbox" name="course[]" value="0" 
+										<label><input id="html_<? echo $content->id; ?>" type="checkbox" name="course[]" value="0"
 											<? foreach($chars as $char){
 													if($strlen>0){
 														if($char==0){
 															echo "checked";
 														} }}?>> HTML/CSS</label>
-										<label><input id="js_<? echo $content->id; ?>" type="checkbox" name="course[]" value="1" 
+										<label><input id="js_<? echo $content->id; ?>" type="checkbox" name="course[]" value="1"
 											<? foreach($chars as $char){
 												if($strlen>0){
 														if($char==1){
 															echo "checked";
 														} }}?>> JavaScript</label>
-										<!-- <label><input id="php_<? //echo $content->id; ?>" type="checkbox" name="course[]" value="2" 
+										<!-- <label><input id="php_<? //echo $content->id; ?>" type="checkbox" name="course[]" value="2"
 											<?// foreach($chars as $char){
 // 												if($strlen>0){
 // 														if($char==2){
@@ -285,7 +285,7 @@
 											}
 											if($('#php_<? echo $content->id; ?>').is(':checked')){
 												var php="2";
-												
+
 											}else{
 												var php="";
 											}
@@ -321,18 +321,18 @@
 	<? echo View::forge("admin/_menu"); ?>
 </div>
 <script>
-	$(function(){
-
-
+	$(function() {
 		//out side
 		var type = $('#type');
 		var textType = $('#text_type');
-		var textTypeSelect = $('#text_type_2'); 
+		var textTypeSelect = $('#text_type_2');
 		var lesson = $('#lesson');
 		var exam = $('#exam');
 
 		$('#type > option:nth-child(4)').css('display','none');
-		
+
+		type.val(0);
+
 		if (type.val() == 3) {
 			lesson.css('display','none');
 			exam.css('display','flex');
@@ -377,7 +377,7 @@
 		}
 	}
 	function changeContentType(id){
-	
+
 		$.ajax({
 			url: '/admin/api/changecontenttype.json',
 			type: 'POST',
@@ -392,11 +392,11 @@
 			success: function(res) {
 			}
 		});
-		
+
 		if($("#type_" + id).val()==3){
 			$("#text_type_" + id).css('display','none')
 			$("#caption_" + id).css('display','flex')
-			
+
 		}else{
 			$("#text_type_" + id).css('display','flex')
 			$("#caption_" + id).css('display','none')
