@@ -3256,6 +3256,12 @@
 	}
 }
 /*MyCss*/
+@media only screen and (max-width: 800px) {
+  /*Course*/
+  section.course #content {
+    width: 100% !important;
+  }
+}
 @media only screen and (max-width: 600px) {
   /*Parents*/
   section.parents #content-1 div {
@@ -3269,6 +3275,39 @@
     position: relative;
     width: 100%;
     height: auto;
+  }
+  /*Tutor*/
+  section.tutor div.content-tutor ul.tutors_list_l li {
+    float: none;
+    width: 100%;
+  }
+  section.tutor div.content-tutor ul.tutors_list_l li:nth-child(2n) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  section.course #enchantJS > div {
+    position: relative;
+    width: 100% !important;
+  }
+  section.course #\39 leap div {
+    position: relative;
+    width: 100% !important;
+  }
+  section.course #enchantJS > div.\32 nd-content img,
+  section.course #\39 leap > div.\31 st-content > a > img {
+    width: 60%;
+  }
+  section.course #content img.img-left {
+    float: none;
+    width: 50%;
+    margin: auto;
+  }
+  section.course .game-table .game-row div:nth-child(2) {
+    margin: 5% 0;
+  }
+  section.course #\33 rd-game > div > div > div:nth-child(2) {
+    margin-bottom: 50%;
   }
 }
 @media only screen and (max-width: 380px) {

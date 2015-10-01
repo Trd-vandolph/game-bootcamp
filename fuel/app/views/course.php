@@ -118,3 +118,23 @@
 		</div>
 	</div>
 </section>
+<script>
+	$(function (){
+
+		exchange();
+
+		function exchange() {
+			var first = $('#enchantJS .1st-content');
+			var last = $('#enchantJS .2nd-content');
+
+			if($('body').width() <= 500) {
+				last.after(first);
+			}
+		}
+
+		$(window).resize(function (){
+			exchange();
+		});
+
+	});
+</script>

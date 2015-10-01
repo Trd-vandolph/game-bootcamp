@@ -1536,6 +1536,9 @@ section.parents #content-2 #ihara-descriptions p {
 	font-size: 16px;
 }
 /******* Course **********/
+section.course {
+	margin-top: 5% !important;
+}
 section.course #content p{
 	font-size: 18px;
 }
@@ -1599,7 +1602,7 @@ section.course #\31 st-content div{
 section.course #\31 st-content > table > tbody > tr > td > p {
 	font-family: Lovelo, Sans-serif;
 	line-height: 50px;
-	font-size: 35px;
+	font-size: 3vw;;
 	text-align: center;
 }
 section.course #\32 nd-content {
@@ -1659,6 +1662,9 @@ section.course #game-container .game-cell {
 	display: table-cell;
 }
 /******* Tutors **********/
+section.tutor {
+	margin-top: 5% !important;
+}
 section.tutor div.content-tutor {
 	font-family: 'OpenSansRegular';
     max-width: 980px;

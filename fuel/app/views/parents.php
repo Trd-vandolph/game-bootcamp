@@ -5,8 +5,6 @@
 				<div id="content-1">
 					<div id="topic-parents">
 						<p><strong><i>Dear Parents</i></strong>, What comes to your mind when you hear <strong style="color: red;">“Programming”?</strong></p>
-						<br>
-						<span id="putHere"></span>
 					</div>
 					<div id="answer-parents">
 						<p>
@@ -104,8 +102,6 @@
 				$('#content-2').css('min-height', sum2 + unit);
 			}
 		}
-
-
 
 		$(window).resize(function() {
 			adjustHeight();
