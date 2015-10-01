@@ -1444,6 +1444,9 @@ header#top {
 	margin: auto;
 }
 /******* Parents **********/
+section.parents#contents {
+	margin-top: 5% !important;
+}
 section.parents #content {
 	width: 90%;
 	margin: auto;
@@ -1451,7 +1454,7 @@ section.parents #content {
 section.parents > div.letter {
 	box-shadow: 0px 0px 1px #888888;
 	min-height: 100px;
-	padding: 50px;
+	padding: 5%;
 }
 section.parents > div.letter > .letter-content p{
 	font-size: 18px;
@@ -1471,13 +1474,17 @@ section.parents #picture-parents #picture-enclose {
 	overflow: hidden;
 	border: 2px solid #F2E2E0;
 	padding: 0;
-	margin-left: 10%;
+	position: relative;
+}
+section.parents #picture-parents #picture-enclose img {
+	width: 100%;
 }
 section.parents #picture-parents #picture-caption {
 	width: 100%;
 	margin: auto;
 	bottom: 0;
 	color: #393333;
+	position: relative;
 }
 section.parents #picture-caption > p {
 	text-align: center;
@@ -1497,7 +1504,7 @@ section.parents #topic-parents {
     width: 30%;
     left: 0;
     height: 100%;
-    margin-left: -60px;
+    margin-left: -8%;
 }
 section.parents #answer-parents {
 	width: 75%;

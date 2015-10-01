@@ -3255,3 +3255,26 @@
 		padding: 0px 10%!Important;
 	}
 }
+/*MyCss*/
+@media only screen and (max-width: 600px) {
+  /*Parents*/
+  section.parents #content-1 div {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    margin: auto;
+  }
+  section.parents #content-2 #picture-parents,
+  section.parents #content-2 #ihara-descriptions {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 380px) {
+  /*Parents*/
+  section.parents #answer-parents {
+    border: none;
+    padding: 0;
+  }
+}
