@@ -1646,6 +1646,7 @@ header#top #toggle-nav i, header#top #mobile-cart-link i {
     display: block;
     position: relative;
     padding: 16px 0 !important;
+		text-align: center;
 }
 
 #mobile-menu ul li a .sf-sub-indicator i {

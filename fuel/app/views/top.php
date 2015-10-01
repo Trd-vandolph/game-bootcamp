@@ -2,44 +2,45 @@
 <?php echo Asset::js("jquery.remodal.js"); ?>
 <div id="ajax-loading-screen"><span class="loading-icon "> <span class="default-skin-loading-icon"></span> </span>
 </div>
+<div class="col span_12 light left">
+		<div class="vc_span2 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
+			<div class="wpb_wrapper">
+
+			</div>
+		</div>
+
+		<div class="vc_span8 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
+			<div class="wpb_wrapper">
+
+				<div class="wpb_text_column wpb_content_element ">
+					<div class="wpb_wrapper">
+						<h1 style="text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 3px; text-align: center;" class="editable"><? echo Session::get('header'); ?></h1>
+						<p style="text-align: center;"><a class="nectar-button large accent-color has-icon regular-button" href="/parents" data-color-override="false" data-hover-color-override="false" data-hover-text-color-override="#fff"><span><? echo Session::get('headButton'); ?></span> <i class="icon-button-arrow"></i></a></p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="vc_span2 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
+			<div class="wpb_wrapper">
+
+			</div>
+		</div>
+</div>
+<div id="slideshow">
+	<div class="slideshow slideshow-1"></div>
+	<div class="slideshow slideshow-2"></div>
+	<div class="slideshow slideshow-3"></div>
+	<div class="slideshow slideshow-4"></div>
+	<div class="slideshow slideshow-5"></div>
+</div>
 <div id="ajax-content-wrap">
 	<div class="container-wrap">
 		<div class="container main-content">
 			<div class="row">
-				<div id="slideshow">
-					<div class="slideshow slideshow-1"></div>
-					<div class="slideshow slideshow-2"></div>
-					<div class="slideshow slideshow-3"></div>
-					<div class="slideshow slideshow-4"></div>
-					<div class="slideshow slideshow-5"></div>
-				</div>
-				<div class="col span_12 light left">
-						<div class="vc_span2 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
-							<div class="wpb_wrapper">
 
-							</div>
-						</div>
 
-						<div class="vc_span8 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
-							<div class="wpb_wrapper">
-
-								<div class="wpb_text_column wpb_content_element ">
-									<div class="wpb_wrapper">
-										<h1 style="text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 3px; text-align: center;" class="editable"><? echo Session::get('header'); ?></h1>
-										<p style="text-align: center;"><a class="nectar-button large accent-color has-icon regular-button" href="/parents" data-color-override="false" data-hover-color-override="false" data-hover-text-color-override="#fff"><span><? echo Session::get('headButton'); ?></span> <i class="icon-button-arrow"></i></a></p>
-
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="vc_span2 wpb_column column_container col no-extra-padding" data-hover-bg="" data-animation="" data-delay="0">
-							<div class="wpb_wrapper">
-
-							</div>
-						</div>
-				</div>
-				
 				<div id="top-about-content">
 					<div>
 						<ul>
@@ -84,13 +85,13 @@
 					<div class="col span_12 dark left">
 						<div class="vc_span4 wpb_column column_container col centered-text no-extra-padding has-animation" data-hover-bg="" data-animation="fade-in" data-delay="0">
 							<div class="wpb_wrapper">
-								<div id="fws_55b08d66d8ede" class="wpb_row vc_row-fluid standard_section    " style="padding-top: 0px; padding-bottom: 4px; ">
+								<div id="fws_55b08d66d8ede" class="wpb_row vc_row-fluid standard_section    " style="padding-top: 0px; padding-bottom: 0px; ">
 									<div class="col span_12  ">
 										<div class="vc_span12 wpb_column column_container col no-extra-padding has-animation" data-hover-bg="" data-animation="fade-in" data-delay="600">
 											<div class="wpb_wrapper">
 												<div class="wpb_text_column wpb_content_element ">
 													<div class="wpb_wrapper">
-														<p><img class="aligncenter size-full wp-image-3122 feature1-image" src="assets/img/feature1.png" alt="what-is-bootcamp" width="98" height="86" /></p>
+														<p><img style="height: 10em;" class="aligncenter size-full wp-image-3122 feature1-image" src="assets/img/feature1.png" alt="what-is-bootcamp" width="98" height="86" /></p>
 													</div>
 												</div>
 											</div>
@@ -164,7 +165,7 @@
 							<div align="center" class="person 1st-person">
 								<span class="name-title"><strong>Steve Jobs</strong></span>
 								<p class="person-title">Apple’s co-founder</p>
-								<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200"> 
+								<img src="../assets/img/common/steve-jobs.jpg" alt="Steve Jobs" width="200">
 								<blockquote>“I think everybody in this country should learn how to program a computer because it teaches you how to think.”</blockquote>
 							</div>
 							<div align="center" class="person 2nd-person">
@@ -216,7 +217,7 @@
 	$(function() {
 		$("#slideshow > div:gt(0)").hide();
 
-		setInterval(function() { 
+		setInterval(function() {
 			$('#slideshow > div:first')
 				.fadeOut(2000)
 				.next()
@@ -224,5 +225,13 @@
 				.end()
 				.appendTo('#slideshow');
 			},  4000);
-		});
+
+			$("#header-space").css("height", $("#header-outer").height());
+			
+			$(window).resize(function (){
+				$("#header-space").css("height", $("#header-outer").height());
+			});
+
+
+	});
 </script>

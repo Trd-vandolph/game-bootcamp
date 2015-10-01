@@ -4,7 +4,12 @@ body {
 body a {
     color: #D36161;
 }
-
+#header-outer {
+	position: fixed !important;
+}
+#header-space {
+	display: block !important;
+}
 header#top nav ul li a:hover,
 header#top nav .sf-menu li.sfHover > a,
 header#top nav .sf-menu li.current-menu-item > a,
@@ -684,9 +689,9 @@ body #page-header-bg .icon-salient-heart-2 {
 }
 
 @media only screen and (min-width:1000px) {
-    #header-space {
+    /*#header-space {
         display: none;
-    }
+    }*/
     .nectar-slider-wrap.first-section,
     .parallax_slider_outer.first-section,
     .full-width-content.first-section,
@@ -1092,7 +1097,7 @@ ul.mc_list li {
 }
 .member-menu li.signup a{
 	background: #E60039;
-	padding: 8px 22px 7px 21px !important;
+	padding: 0.5em 0.8em !important;
 	border-radius: 7px;
 	-webkit-border-radius: 7px;
 	margin: 20px 15px 46px 0;
@@ -1117,12 +1122,13 @@ ul.mc_list li {
 }
 /******* Header *************/
 header#top > div > div > ul > li > a {
+	border: #fff solid;
 	color: #fff;
-	font-size: 19px !important;
+	font-size: 1.5vw !important;
 }
 header#top > div > div > ul > li.login > a {
 	border: white solid;
-	padding: 4px 22px !important;
+	padding: 0.5em 0.8em !important
 }
 
 /******* Free Trial Lesson Button **********/
@@ -1238,10 +1244,8 @@ section#contents {
 /******* Slideshow ********/
 #slideshow {
     position: relative;
-    width: 118%;
-    height: auto;
     margin-left: -116px;
-    margin-top: -10px;
+    margin-top: 0;
     height: 900px;
     background-color: #f7f7f7;
     overflow: hidden;
@@ -1249,12 +1253,10 @@ section#contents {
 #slideshow > div.slideshow {
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: 0px 162px;
     height: 100%;
 }
 #slideshow > div.slideshow-1 {
     background-image: url('../img/header-image.jpg');
-    background-position: 0px 162px;
 }
 #slideshow > div.slideshow-2 {
     background-image: url('../img/header-image1.jpg');
@@ -1271,10 +1273,15 @@ section#contents {
 .wpb_text_column.wpb_content_element .wpb_wrapper {
 	border-bottom: 2px solid #fff;
 	border-top: 2px solid #fff;
-	padding: 0
+	padding: 0;
+	width: 90%;
+	margin: auto;
 }
 .col.span_12.light.left {
-    margin-top: -540px;
+	display: block !important;
+	position: absolute;
+	z-index: 1;
+	margin-top: 20%
 }
 /******* Top **************/
 #top-about-content {
@@ -1323,9 +1330,10 @@ section#contents {
 	border-right: 1px solid #CBC39A;
 }
 #fws_55b08d66d8a64 > div.full-width-div {
-	margin-left: -25px;
-	width: 105%;
+	width: 100%;
 	background-color: #E2DBB7;
+	border-radius: 5px;
+	border: 1px solid #CFC179;
 }
 #top-person-influence > div.person > blockquote {
 	background: #F0EDED;
@@ -2167,4 +2175,20 @@ section.faq .listControl a:hover {
 	background-color:#555555;
 	color:#222222;
 	font-weight:normal;
+}
+
+
+/******* Responsive ********/
+body > div.col.span_12.light.left > div > div > div > div > h1 {
+	font-size: 5.8vw !important;
+  line-height: 100% !important;
+}
+body > div.col.span_12.light.left > div > div > div > div > p > a > span {
+	font-size: 1.8vw !important;
+}
+#mobile-menu > div > ul > li > a {
+	text-align: center;
+}
+.nectar-button.has-icon {
+  padding: 2% 3% !important;
 }
