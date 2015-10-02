@@ -215,10 +215,10 @@
 <!--/ajax-content-wrap-->
 <script>
 	$(function() {
-		$("#slideshow > div:gt(0)").hide();
+		$("#slideshow > div.slideshow:gt(0)").hide();
 
 		setInterval(function() {
-			$('#slideshow > div:first')
+			$('#slideshow > div.slideshow:first')
 				.fadeOut(2000)
 				.next()
 				.fadeIn(2000)
@@ -226,12 +226,27 @@
 				.appendTo('#slideshow');
 			},  4000);
 
+		$("#header-space").css("height", $("#header-outer").height());
+
+		$(window).resize(function (){
 			$("#header-space").css("height", $("#header-outer").height());
+		});
 
-			$(window).resize(function (){
-				$("#header-space").css("height", $("#header-outer").height());
-			});
+		resizeHeight();
 
+		function resizeHeight() {
+			var origBodyWidth = 1349;
+			var div = $('#ajax-content-wrap');
+			var currentBodyWidth = $('body').width();
+			var diff = origBodyWidth - currentBodyWidth;
+			var neg = -1 * (diff/2);
+
+			div.css('margin-top', neg);
+		}
+
+		$(window).resize( function () {
+			resizeHeight();
+		});
 
 	});
 </script>

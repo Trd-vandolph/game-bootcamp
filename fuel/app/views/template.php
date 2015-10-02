@@ -207,40 +207,45 @@
 // 				url: '/post',
 // 				title: 'Edit'
 // 			});
+
 			var memLink1 = '<?php if(Auth::check()){echo "/students"; }else{echo "/students/signup";}?>';
 			var memLink2 = '<?php if(Auth::check()){echo "/students/?logout=1"; }else{echo "/students/signin";}?>';
 
 			var memText1 = '<?php if(Auth::check()){echo "My Page"; }else{echo "Sign Up";}?>';
 			var memText2 = '<?php if(Auth::check()){echo "Log Out"; }else{echo "Log In";}?>';
 
-			$(window).resize(function(){
-				if ( $(window).width() < 691) {
-						alert("less than");
-						var ul = $("#mobile-menu > div > ul");
-						var mem1 = "<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-2721'><a href="+ memLink1 +" id='mem1'>"+ memText1 +"</a></li>";
-						var mem2 = "<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-2721'><a href="+ memLink2 +" id='mem2'>"+ memText2 +"</a></li>";
-						ul.append(mem1);
-						ul.append(mem2);
-				}
+			var mem1 = "<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-2721'><a href="+ memLink1 +" id='mem1' class='mem'>"+ memText1 +"</a></li>";
+			var mem2 = "<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-2721'><a href="+ memLink2 +" id='mem2' class='mem'>"+ memText2 +"</a></li>";
 
-				if ( $(window).width() > 690) {
-					alert("greater than");
-					$( "#mem1" ).remove();
-					$( "#mem2" ).remove();
+			addMemSettings();
+			removeDuplicate();
+
+			function removeDuplicate() {
+				var seen = {};
+				$('a.mem').each(function() {
+			    var txt = $(this).text();
+			    if (seen[txt])
+			        $(this).remove();
+			    else
+			        seen[txt] = true;
+				});
+			}
+
+			function addMemSettings() {
+				if ( $(window).width() < 691) {
+					var ul = $("#mobile-menu > div > ul");
+					ul.append(mem1);
+					ul.append(mem2);
+				}else {
+					$( "#mem1" ).detach();
+					$( "#mem2" ).detach();
 				}
 			}
 
-			// $(window).resize(function(){
-			// 	if ( $(window).width() < 691) {
-			//
-			// 			var ul = $("#mobile-menu > div > ul");
-			// 			var mem1 = "<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-2721'><a href="+ memLink1 +" id='mem1'>"+ memText1 +"</a></li>";
-			// 			var mem2 = "<li class='menu-item menu-item-type-post_type menu-item-object-page menu-item-2721'><a href="+ memLink2 +" id='mem2'>"+ memText2 +"</a></li>";
-			// 			ul.append(mem1);
-			// 			ul.append(mem2);
-			// 	}
-			// }
-
+			$(window).resize(function () {
+				addMemSettings();
+				removeDuplicate();
+			});
 		});
 	</script>
 </body>

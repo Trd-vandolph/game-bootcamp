@@ -2059,11 +2059,11 @@
 	header#top #toggle-nav, header#top #mobile-cart-link { display: block!important; }
 
 	header#top .col.span_3 {
-		position: absolute;
-		left: 0px;
-		top: 0px;
-		z-index: 1000;
-  		width: 85%!important;
+  		position: absolute;
+  		left: 0px;
+  		top: 0px;
+  		z-index: 1000;
+    	width: 25%!important;
   	}
 
   	header#top .col.span_9 {
@@ -3261,6 +3261,32 @@
   section.operatingcompany #fourth-content > div:nth-child(4) {
     top: 400px;
   }
+  /*Course Fee*/
+  section.coursefee #cf-illustration div {
+    float: none !important;
+    width: 100% !important;
+  }
+  section.coursefee #first-section > div {
+    position: relative !important;
+    display: inline-block;
+    width: 25% !important;
+  }
+  section.coursefee #cf-illustration #first-section  {
+    margin-bottom: 10%;
+  }
+  section.coursefee #first-section > div:nth-child(1) {
+    margin-left: 21%;
+    margin-right: 10%;
+  }
+  section.coursefee div.payment > div.body > div > p {
+    padding: 10% 0 !important;
+  }
+}
+@media only screen and (max-width: 950px) {
+  /*Course Fee*/
+  section.coursefee #content {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 800px) {
   /*Course*/
@@ -3274,6 +3300,23 @@
   /*How To Join*/
   section.how #content {
     width: 100%;
+  }
+  /*Course Fee*/
+  section.coursefee #coursefee-content1 div {
+    position: relative;
+    width: 100%;
+  }
+  section.coursefee #first-content > a > img {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  section.coursefee #first-section > div {
+    width: 48% !important;
+  }
+  section.coursefee #first-section > div:nth-child(1) {
+    margin-left: 0;
+    margin-right: 3%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -3297,6 +3340,10 @@
   }
   section.tutor div.content-tutor ul.tutors_list_l li:nth-child(2n) {
     margin-left: 0;
+  }
+  /*Course Fee*/
+  section.coursefee #content {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -3337,6 +3384,17 @@
   section.how .howjoin li:nth-child(2) h3,
   section.how .howjoin li:nth-child(4) h3 {
     padding: 40px 0 0 30px !important;
+  }
+  /*Course Fee*/
+  section.coursefee #first-section > div {
+    width: 80% !important;
+    margin: auto;
+    display: block;
+  }
+  section.coursefee #first-section > div:nth-child(1) {
+    margin-left: 7%;
+    margin-right: auto;
+    margin-bottom: 5%;
   }
 }
 @media only screen and (max-width: 380px) {

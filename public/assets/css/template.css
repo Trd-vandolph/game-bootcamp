@@ -1719,6 +1719,9 @@ ul.tutors_list_l li div.text {
     margin: 0 0 60px 0;
 }
 /******* Operating Company **********/
+section.operatingcompany {
+	margin-top: 10% !important;
+}
 section.operatingcompany .content-operating-company #content p{
 	font-size: 18px;
 }
@@ -1874,6 +1877,9 @@ section.operatingcompany div ul .student02 h4 {
 }
 
 /******* Course Fee **********/
+section.coursefee {
+	margin-top: 10% !important;
+}
 section.coursefee #cf-illustration {
 	border: 1px solid #CED1D6;
 	border-radius: 10px;
@@ -1967,7 +1973,12 @@ section.coursefee #first-section > div.payment > div.body > div > span {
 	left: 26px;
     font-size: 18px;
 }
-section.coursefee div.payment > div.body > div > strong {
+section.coursefee div.payment > div.body > div > p {
+	line-height: 20px;
+	text-align: center;
+	padding: 25% 0;
+}
+section.coursefee div.payment > div.body > div > p > strong {
 	font: 40px Lovelo;
 	color: #E81A4D;
 }

@@ -16,8 +16,10 @@
 						<div class="header">One-time</div>
 						<div class="body">
 							<div class="amount" style="text-align: center">
-								<strong>US$300</strong><br>
-								<span>for 12 lessons</span>
+								<p>
+									<strong>US$300</strong><br>
+									for 12 lessons
+								</p>
 							</div>
 						</div>
 						<div class="footer"><p class="button"><a href="<?php echo $paymentLink; ?>"><?php echo $paymentText; ?></a></p></div>
@@ -26,8 +28,9 @@
 						<div class="header">Installment</div>
 						<div class="body">
 							<div class="amount" align="center">
-								<strong>US$110</strong><br>
-								<span>every 4 lessons</span>
+								<p><strong>US$110</strong><br>
+								every 4 lessons
+							</p>
 							</div>
 						</div>
 						<div class="footer"><p class="button"><a href="<?php echo $paymentLink; ?>"><?php echo $paymentText; ?></a></p></div>
