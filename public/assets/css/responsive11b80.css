@@ -3256,10 +3256,24 @@
 	}
 }
 /*MyCss*/
+@media only screen and (max-width: 1234px) {
+  /*OperatingCompany*/
+  section.operatingcompany #fourth-content > div:nth-child(4) {
+    top: 400px;
+  }
+}
 @media only screen and (max-width: 800px) {
   /*Course*/
   section.course #content {
     width: 100% !important;
+  }
+  /*FAQ*/
+  section.faq #content {
+    width: 100%;
+  }
+  /*How To Join*/
+  section.how #content {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -3283,6 +3297,12 @@
   }
   section.tutor div.content-tutor ul.tutors_list_l li:nth-child(2n) {
     margin-left: 0;
+  }
+}
+@media only screen and (max-width: 550px) {
+  /*How To Join*/
+  section.how .howjoin li {
+    padding-left: 0;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -3309,11 +3329,24 @@
   section.course #\33 rd-game > div > div > div:nth-child(2) {
     margin-bottom: 50%;
   }
+  /*How To join*/
+  section.how .howjoin li h3 {
+    background: none !important;
+    padding: 40px 0 0 0px !important;
+  }
+  section.how .howjoin li:nth-child(2) h3,
+  section.how .howjoin li:nth-child(4) h3 {
+    padding: 40px 0 0 30px !important;
+  }
 }
 @media only screen and (max-width: 380px) {
   /*Parents*/
   section.parents #answer-parents {
     border: none;
     padding: 0;
+  }
+  /*How To join*/
+  section.how {
+    padding: 10px !important;
   }
 }

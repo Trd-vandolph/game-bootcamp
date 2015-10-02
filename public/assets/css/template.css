@@ -2051,6 +2051,9 @@ section.coursefee #content > p:nth-child(5) {
 }
 
 /******* How to Join **********/
+section.how {
+	margin-top: 7% !important;
+}
 section.how p.sub-catch {
 	font-size: 36px;
 	font-family: Lovelo, sans-serif;
@@ -2060,7 +2063,7 @@ section.how.howjoin {
 	margin: 100px 0;
 }
 section.how .howjoin ol {
-	margin-top: 100px;
+	margin-top: 10%;
 }
 section.how .howjoin li {
 	margin: 0 0 40px 80px;

@@ -126,3 +126,30 @@
 		</div>
 	</div>
 </section>
+<script>
+	$(function () {
+		var originalHeight = $('section.operatingcompany #fourth-content .text-content').height();
+		var changeTop = $('section.operatingcompany #fourth-content > div:nth-child(4)');
+
+		dynamicHeight();
+
+		function dynamicHeight() {
+			if($('body').width() < 1180) {
+					var recentHeight = $('section.operatingcompany #fourth-content .text-content').height();
+
+			//		alert(recentHeight);
+					var diff = recentHeight - originalHeight;
+
+			//		alert(diff);
+
+					var sum = 400 + diff;
+					changeHeight.css('top', sum);
+			}
+		}
+
+		$(window).resize(function (){
+			dynamicHeight();
+		});
+
+	});
+</script>

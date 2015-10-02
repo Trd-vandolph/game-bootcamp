@@ -227,7 +227,7 @@
 			},  4000);
 
 			$("#header-space").css("height", $("#header-outer").height());
-			
+
 			$(window).resize(function (){
 				$("#header-space").css("height", $("#header-outer").height());
 			});
