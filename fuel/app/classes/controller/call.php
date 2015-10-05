@@ -30,6 +30,7 @@
         $menu6 = $item[5];
         $menu7 = $item[6];
         $menu8 = $item[7];
+        $menu9 = $item[8];
         break;
       case "4":
         $item = explode('~', $exp[1]);
@@ -78,6 +79,7 @@
   Session::set('menu6', $menu6);
   Session::set('menu7', $menu7);
   Session::set('menu8', $menu8);
+  Session::set('menu9', $menu9);
   Session::set('headButton', $headButton);
   Session::set('header', $header);
   Session::set('subheader', $subheader);
