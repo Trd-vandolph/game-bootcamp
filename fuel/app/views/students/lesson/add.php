@@ -11,11 +11,6 @@
 <div id="contents-wrap">
 <div id="main">
 
-<? if(($user->place == 1)): ?>
-	<h3>Lesson Schedule (Grameen)</h3>
-<? else: ?>
-	<h3>Lesson Schedule (Home)</h3>
-<? endif; ?>
 <form action="" method="post" enctype="multipart/form-data">
 	<? if($user->place == 1): ?>
 		<input name="place" type="radio" value="0" checked hidden>
@@ -76,6 +71,12 @@
 												<? if(($lesson->teacher->html5 == 1 and $course == "0") or ($lesson->teacher->javascript == 1 and $course == "1")  or ($lesson->teacher->php == 1 and $course == "2") or  ($lesson->teacher->trial == 1 and $course == "-1")): ?>
 													<?
 													$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
+
+													$currentDay = strtotime(Date("Y-m-d {$j}:00:00"));
+													$scheduleDay = strtotime(Date("Y-m-d {$j}:00:00", $lesson->freetime_at));
+
+													(count($status) == 1 || count($status) > 1) ? $ex_reserve = 1 : $ex_reserve = 0;
+
 													if($lesson->freetime_at == $unixtime):
 														?>
 														<li class="clearfix">

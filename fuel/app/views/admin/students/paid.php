@@ -11,6 +11,7 @@
 				<th>ID</th>
 				<th>name / email</th>
 				<th>Place registered</th>
+				<th>lesson progress</th>
 				<th>last login</th>
 				<th>
 					html course
@@ -27,6 +28,30 @@
 					<p class="email"><? echo Html::anchor("admin/students/detail/{$user->id}", $user->email); ?></p>
 				</td>
 				<td><? if($user->place == 1){echo "Grameen"; }else{echo "Online School"; } ?></td>
+				<td>
+					<?
+							$where = [["deleted_at", 0],["category", 1], ["status", 2], ["student_id", $user->id]];
+
+					  	$lesson = Model_Lessontime::find("last", [
+									"where" => $where,
+							]);
+
+							$course = $lesson['language'];
+							$numbers = $lesson['number'];
+
+							if($numbers == ""){
+								$number = 0;
+							}else {
+								$number = $numbers;
+							}
+
+							if($course == -1):
+								echo $number."/1 Trial";
+							else:
+								echo $number."/12 enchant.js";
+							endif;
+					?>
+				</td>
 				<td><? if($user->last_login != 0) echo date("M d, Y. H:i:s", $user->last_login); ?></td>
 				<td class="html-course">
 					<table>
@@ -51,11 +76,11 @@
 						if(!$("#html1_<? echo $id; ?>").is(':checked')){
 							$("#html2_<? echo $id; ?>").attr("disabled", true);
 							$("#html3_<? echo $id; ?>").attr("disabled", true);
-							$("#html4_<? echo $id; ?>").attr("disabled", true);	
+							$("#html4_<? echo $id; ?>").attr("disabled", true);
 						}
 						if($("#html1_<? echo $id; ?>").is(':checked')){
 							$("#html3_<? echo $id; ?>").attr("disabled", true);
-							$("#html4_<? echo $id; ?>").attr("disabled", true);	
+							$("#html4_<? echo $id; ?>").attr("disabled", true);
 						}
 						if($("#html2_<? echo $id; ?>").is(':checked')){
 							$("#html4_<? echo $id; ?>").attr("disabled", true);
@@ -66,14 +91,14 @@
 							$("#html1_<? echo $id; ?>").attr("disabled", true);
 							$("#html2_<? echo $id; ?>").attr("disabled", true);
 							$("#html3_<? echo $id; ?>").attr("disabled", false);
-							$("#html4_<? echo $id; ?>").attr("disabled", false);		
+							$("#html4_<? echo $id; ?>").attr("disabled", false);
 						}
 						if($("#html4_<? echo $id; ?>").is(':checked')){
 							$("#html1_<? echo $id; ?>").attr("disabled", true);
 							$("#html2_<? echo $id; ?>").attr("disabled", true);
-							$("#html3_<? echo $id; ?>").attr("disabled", true);		
+							$("#html3_<? echo $id; ?>").attr("disabled", true);
 						}
-							
+
 						$(document).ready(function(){
 							$("#html1_<? echo $id; ?>").click(function(){
 								if(!$("#html1_<? echo $id; ?>").is(':checked')){

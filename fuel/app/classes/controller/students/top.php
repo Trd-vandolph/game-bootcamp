@@ -28,6 +28,16 @@ class Controller_Students_Top extends Controller_Students
 			]
 		]);
 
+		$data["lastClass"] = Model_Lessontime::find("last", [
+			"where" => [
+				["student_id", $this->user->id],
+				["status", 2],
+				["language", Input::get("course", 0)],
+				["deleted_at", 0],
+				["category", 1],
+			]
+		]);
+
 		$data["lesson"] = Model_Lessontime::find("first", [
 			"where" => [
 				["deleted_at", 0],
@@ -50,7 +60,7 @@ class Controller_Students_Top extends Controller_Students
 			],
 			"limit" => 5
 		]);
-		
+
 		$data["pasts"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -60,7 +70,7 @@ class Controller_Students_Top extends Controller_Students
 						["category", 1],
 				]
 		]);
-		
+
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -70,7 +80,7 @@ class Controller_Students_Top extends Controller_Students
 						["category", 1],
 				]
 		]);
-		
+
 		$data["user"] = $this->user;
 
 		$view = View::forge("students/top", $data);

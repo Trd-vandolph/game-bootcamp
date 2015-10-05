@@ -53,11 +53,19 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 1],
 				["deleted_at", 0],
-				["category", 1],
 			]
 		]);
 
 		$pasts = Model_Lessontime::find("all", [
+			"where" => [
+				["student_id", $this->user->id],
+				["status", 2],
+				["language", Input::get("course", 0)],
+				["deleted_at", 0],
+				["category", 1],
+			]
+		]);
+		$lastClass = Model_Lessontime::find("last", [
 			"where" => [
 				["student_id", $this->user->id],
 				["status", 2],
@@ -170,7 +178,6 @@ class Controller_Students_Lesson extends Controller_Students
 				["status", 0],
 				["freetime_at", ">=", time()],
 				["freetime_at", "<", time() + 864000],
-				["category", 1],
 			],
 			'related' => [
 				'teacher' => [
@@ -183,6 +190,14 @@ class Controller_Students_Lesson extends Controller_Students
 			"order_by" => [
 				["freetime_at", "asc"],
 			]
+		]);
+
+		$data['status'] = Model_Lessontime::find("all", [
+				"where" => [
+						["student_id", $this->user->id],
+						["deleted_at", 0],
+						["status", 1],
+				]
 		]);
 
 		$data["donetrial"] = Model_Lessontime::find("all", [
@@ -210,6 +225,7 @@ class Controller_Students_Lesson extends Controller_Students
 
 		$data['eventdetails'] = $eventdetails;
 		$data["pasts"] = $pasts;
+		$data["lastClass"] = $lastClass;
 		$data["reserved"] = $reserved;
 		$data["user"] = $this->user;
 		$data["course"] = Input::get("course", 0);
@@ -245,8 +261,8 @@ class Controller_Students_Lesson extends Controller_Students
 				["deleted_at", 0],
 				["student_id", $this->user->id],
 				["status", "<>", 0],
+				["category", 1],
 				["freetime_at", "<", time()],
-				["category", 1]
 			],
 			"order_by" => [
 				["updated_at", "desc"],
