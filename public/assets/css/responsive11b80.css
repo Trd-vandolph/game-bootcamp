@@ -1865,22 +1865,6 @@
     width: 80%;
   }
 }
-@media only screen and (min-width : 1px) and (max-width : 1044px) {
-  /**Top - Content**/
-	header#top #toggle-nav {
-    display: block !important;
-  }
-  /**Template - header**/
-  #top > div > div > div > nav > ul {
-    display: none;
-  }
-  ul.member-menu {
-    text-align: left;
-  }
-  #top-about-content ul {
-    font-size: 3vw;
-  }
-}
 @media only screen and (min-width : 1px) and (max-width : 991px) {
   #top-person-influence > div {
     display: block;
@@ -3282,6 +3266,33 @@
     padding: 10% 0 !important;
   }
 }
+@media only screen and (min-width : 1px) and (max-width : 1044px) {
+  /**Top - Content**/
+	header#top #toggle-nav {
+    display: block !important;
+  }
+  /**Template - header**/
+  #top > div > div > div > nav > ul {
+    display: none;
+  }
+  ul.member-menu {
+    text-align: left;
+  }
+  #top-about-content ul {
+    font-size: 3vw;
+  }
+  /*Operating Company*/
+  section.operatingcompany #third-content > ul > li.text-content > p.title {
+    line-height: 40px;
+  }
+  section.operatingcompany #third-content > ul > li.text-content > p.title br {
+    display: block !important;
+  }
+  section.operatingcompany #third-content > ul > li.picture-content,
+  section.operatingcompany #fourth-content > ul > li.picture-content {
+    margin-top: 20%;
+  }
+}
 @media only screen and (max-width: 950px) {
   /*Course Fee*/
   section.coursefee #content {
@@ -3308,6 +3319,10 @@
   }
   section.coursefee #first-content > a > img {
     width: 60%;
+  }
+  /*Operating Company*/
+  section.operatingcompany #content {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -3344,6 +3359,26 @@
   /*Course Fee*/
   section.coursefee #content {
     width: 100%;
+  }
+  /*Operating Company*/
+  section.operatingcompany .content-company > ul > li.picture-content {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  section.operatingcompany .content-company > ul > li.text-content {
+    width: 100%;
+    margin-left: 0;
+  }
+  section.operatingcompany #students .detail ul {
+    display: block;
+  }
+  section.operatingcompany #students ul li {
+    width: 100% !important;
+    border-right: none !important;
+    padding-right: 0 !important;
+    padding-bottom: 10%;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -3395,6 +3430,10 @@
     margin-left: 7%;
     margin-right: auto;
     margin-bottom: 5%;
+  }
+  /*Operating Company*/
+  section.operatingcompany .content-company > ul > li.picture-content {
+    width: 95%;
   }
 }
 @media only screen and (max-width: 380px) {

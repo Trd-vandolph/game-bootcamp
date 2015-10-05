@@ -1725,99 +1725,44 @@ section.operatingcompany {
 section.operatingcompany .content-operating-company #content p{
 	font-size: 18px;
 }
-section.operatingcompany .content-operating-company #content img{
-	width: 80%;
-	height: 50%;
-	margin: auto;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 5px;
-}
-section.operatingcompany .content-operating-company #content div#grameen_center{
-	width: 70%;
-	margin: auto;
-}
-section.operatingcompany .content-operating-company #content img.grameen_img{
-	display: inline;
-	width: 48%;
-}
-section.operatingcompany .content-company {
-	position: relative;
-	margin-bottom: 10%;
-}
-section.operatingcompany #first-content {
-	min-height: 310px;
-}
-section.operatingcompany #second-content {
-	min-height: 255px;
-}
-section.operatingcompany #third-content {
-	min-height: 255px;
-}
-section.operatingcompany #fourth-content {
-	min-height: 800px;
-}
-section.operatingcompany #fifth-content {
-	min-height: 255px;
-}
-section.operatingcompany .picture-content {
-	position: absolute;
-	width: 45%;
-	left: 0;
-	padding: 8% 0;
-}
-#fourth-content > div.picture-content {
-	padding: 13% 0;
-}
-section.operatingcompany .text-content {
-	position: absolute;
-	width: 55%;
-	right: 0;
-}
-section.operatingcompany div.text-content p.title {
-	border-bottom: 1px solid #E81A4D;
+
+section.operatingcompany li.text-content p.title { /*new*/
+	background: url(../img/front/line.png) no-repeat left bottom;
 	line-height: 0px;
 	font-weight: bold;
 	color: #E81A4D;
 	font-size: 30px !important;
 	margin-bottom: 5%;
+	background-size: 100%;
+	padding-bottom: 7%;
 }
-section.operatingcompany div.text-content p.title {
-	text-indent: 0;
+section.operatingcompany .content-company {
+	margin-bottom: 10%;
 }
-section.operatingcompany #fourth-content > div:nth-child(3) {
-	top: 260px;
+section.operatingcompany .content-company > ul > li.picture-content {
+	display: inline-block;
+	width: 40%;
+	vertical-align: top;
+	margin-top: 7%;
 }
-section.operatingcompany #fourth-content > div:nth-child(4) {
-	top: 360px;
+section.operatingcompany .content-company > ul > li.text-content {
+	display: inline-block;
+	width: 50%;
+	margin-left: 3%;
 }
-section.operatingcompany #fourth-content > div:nth-child(2) > p.title {
-	line-height: 1;
+section.operatingcompany .content-company > ul > li.picture-content > a > img {
+	display: inline;
+	width: 100%;
 }
-section.operatingcompany .bold-title {
-	width: 15%;
-	border-bottom: 10px solid #E81A4D;
-	display: block;
-	margin-top: -55px;
-}
-section.operatingcompany div.picture-content div {
-	margin: auto;
-	width: 80%;
-}
-section.operatingcompany div.picture-content div a{
-	display: block;
-	text-align: center
-}
-section.operatingcompany  #fourth-content > div:nth-child(3) > div > div {
+section.operatingcompany #fourth-content > ul > li.picture-content > div > div {
 	width: 100%;
 	background-color: #E2DBB7;
 	border-radius: 5px;
 	border: 1px solid #fff;
 	padding: 8px;
 }
-section.operatingcompany .body-content {
-	margin-top: 30px;
+section.operatingcompany #fourth-content > ul > li.picture-content {
+	margin-top: 15%;
 }
 
 section.operatingcompany .student_container {
@@ -1843,6 +1788,9 @@ section.operatingcompany #students p.catch {
 	font-weight: 700;
 	font-family: "Raleway",sans-serif;
 	margin-bottom: 20px;
+}
+section.operatingcompany #fourth-content > ul > li.text-content > p.title {
+	line-height: 40px;
 }
 
 section.operatingcompany #students .detail ul {
