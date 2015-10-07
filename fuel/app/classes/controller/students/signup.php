@@ -34,7 +34,8 @@ class Controller_Students_Signup extends Controller_Base
 			if($val->run()){
 				$user = Model_User::find("first", [
 					"where" => [
-						["email", Input::post("email", "")]
+						["email", Input::post("email", "")],
+						["category", 1]
 					]
 				]);
 
@@ -77,11 +78,12 @@ class Controller_Students_Signup extends Controller_Base
 
 			$email = Session::get_flash("email");
 
-			
+
 				Auth::create_user($email, Session::get_flash("password"), $email, 1);
 				$user = Model_User::find("first", [
 					"where" => [
-						["email", $email]
+						["email", $email],
+						["category", 1]
 					]
 				]);
 
@@ -110,7 +112,7 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail->to($user->email);
 					$sendmail->subject("Welcome Aboard! / Game-BootCamp");
 					$sendmail->html_body(htmlspecialchars_decode($body));
-					
+
 					$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
 					if(count($documents)>0){
 						$query = Model_Document::find($documents->id);
@@ -120,13 +122,13 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail->send();
 
 				}else{
-					Response::redirect('_404_');
+					Response::redirect('/students/signup/?e=4');
 				}
 		}else{
-			Response::redirect('_404_');
+			Response::redirect('/students/signup/?e=5');
 		}
-		
-		
+
+
 		$this->template->content = View::forge('students/signup/finish');
 	}
 }
