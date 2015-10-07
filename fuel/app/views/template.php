@@ -214,6 +214,13 @@
 // 				title: 'Edit'
 // 			});
 
+			function resizeSpace() {
+				var headerSpace = $('#header-space');
+				var headerOuter = $('#header-outer').height();
+
+				headerSpace.css('height', headerOuter+13);
+			}
+
 			var memLink1 = '<?php if(Auth::check()){echo "/students"; }else{echo "/students/signup";}?>';
 			var memLink2 = '<?php if(Auth::check()){echo "/students/?logout=1"; }else{echo "/students/signin";}?>';
 
@@ -251,6 +258,7 @@
 			$(window).resize(function () {
 				addMemSettings();
 				removeDuplicate();
+				resizeSpace();
 			});
 		});
 	</script>

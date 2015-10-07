@@ -3334,8 +3334,11 @@
     margin-right: 3%;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 604px) {
   /*Parents*/
+  section.parents #content-2 #picture-parents {
+    margin-top: 0;
+  }
   section.parents #content-1 div {
     position: relative;
     width: 100%;
