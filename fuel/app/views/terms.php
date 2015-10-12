@@ -10,7 +10,7 @@
 	</ul>
 	<h3>Your Responsibilities</h3>
 	<ul>
-		<li>You must be 18 years of age or older to use this Service.</li>
+		<li>You must be 8 years of age or older to use this Service.</li>
 		<li>You must provide a valid email address, and any other required information.</li>
 		<li>You must ensure your account information remains accurate.</li>
 		<li>You are responsible for the safekeeping of your account credentials. Account activity is your responsibility, so we suggest keeping this information in a safe place.</li>
