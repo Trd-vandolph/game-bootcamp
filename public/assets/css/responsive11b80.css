@@ -3324,6 +3324,11 @@
   section.operatingcompany #content {
     width: 100%;
   }
+  /*Terms and Privacy*/
+  section.terms,
+  section.privacy {
+    width: 100% !important;
+  }
 }
 @media only screen and (max-width: 700px) {
   section.coursefee #first-section > div {

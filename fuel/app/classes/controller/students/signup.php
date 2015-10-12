@@ -122,7 +122,7 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail->send();
 
 				}else{
-					Response::redirect('/students/signup/?e=4');
+				 	Response::redirect('/students/signup/?e=4&fname='.Session::get_flash('firstname'));
 				}
 		}else{
 			Response::redirect('/students/signup/?e=5');

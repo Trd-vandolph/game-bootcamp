@@ -1,10 +1,10 @@
+<?php
+	$charge=$user->charge_html;
+?>
 <div id="contents-wrap">
 	<div id="main">
 		<? if(count($trial) != 0): ?>
 			<h3>Trial</h3>
-			<?php
-				$charge=$user->charge_html;
-			?>
 			<table class="table-base course0" width="100%" border="0" cellpadding="0" cellspacing="0" >
 				<thead>
 				<tr>

@@ -28,10 +28,16 @@
 				</div>
 				<div id="2nd-content">
 					<p>
-						Elementary course is tailored for beginners and consists of private lesson and home-study.
+						The course is tailored for beginners at the age of 8 - 15 years and consists of private lesson and home-study.
+						<br>
+						<br>
+						Experienced tutors in the Philippines conduct a private lesson.
 						<br>
 						<br>
 						Students will learn how to code games for three months by taking a lesson once a week.
+						<br>
+						<br>
+						Lesson is provided from 10:00 to 24:00 (Philippines time) Monday through Friday. Students can choose the most convenient lesson time.
 						<br>
 						<br>
 						The length of each lesson is 45 minutes.
@@ -53,7 +59,7 @@
 							<div class="game-cell">
 								<p><strong>Name: </strong> Catch The Banana</p>
 								<p><strong>Description: </strong> All you need to do is catch bananas as long as you can. Don't allow 20 bananas to reach to ground or else the game is over. </p>
-								<p><strong>Key Points: </strong></p>
+								<p><strong>Key Points: </strong> Moving object from left to right using computer's mouse, Random places of objects, Scoring.</p>
 							</div>
 						</div>
 					</div>
@@ -69,7 +75,7 @@
 							<div class="game-cell">
 								<p><strong>Name: </strong> Snow Fight</p>
 						    <p><strong>Description: </strong> Shoot white bears as long as you wanted. Don't let them hit you for over three times or else the game is over.</p>
-						    <p><strong>Key Points: </strong></p>
+						    <p><strong>Key Points: </strong> Create shooting object, Score if hit the enemy, Disappear when hit, Game over when hit by Enemy object.</p>
 							</div>
 						</div>
 					</div>
@@ -85,7 +91,7 @@
 							<div class="game-cell">
 								<p><strong>Name: </strong> Super Bear</p>
 								<p><strong>Description: </strong> The same way super mario does his thing. You should reach the finish line without falling or get hit by obstacles.</p>
-								<p><strong>Key Points: </strong></p>
+								<p><strong>Key Points: </strong> Make a running motion, Make a full width map, Game over when hit the bottom, Score base on distance trave.l</p>
 							</div>
 						</div>
 					</div>

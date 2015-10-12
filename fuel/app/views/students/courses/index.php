@@ -11,7 +11,7 @@
 			          <p class="price"><span>US$300</span>for 12 lessons</p>
 			          <? if($id != null): ?>
 			            <div class="paypal-link">
-			              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 			                <input type="hidden" name="cmd" value="_s-xclick">
 			                <input type="hidden" name="hosted_button_id" value="MKBYMTXJHVEUC">
 			                <table>
@@ -30,7 +30,7 @@
 			      	<p class="price"><span>US$110</span>every 4 lessons</p>
 			          <? if($id != null): ?>
 			            <div class="paypal-link">
-			              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 			                <input type="hidden" name="cmd" value="_s-xclick">
 			                <input type="hidden" name="hosted_button_id" value="BHGMH3ATX5ZQY ">
 			                <table>

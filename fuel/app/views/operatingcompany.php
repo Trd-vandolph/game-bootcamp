@@ -19,7 +19,7 @@
 								Game bootcamp is operated by Edoo Inc.
 							</p>
 							<p>
-								Edoo is a Japanese education company established to support neglected people and the next generation people through education around the world.
+								Edoo is a Japanese education company established to support disadvantaged people and the next generation through education around the world.
 							</p>
 							<p>
 								The management of Edoo strongly believes education can change one's life. Mission of Edoo is to realize potential of people who are passionate about learning.
@@ -41,7 +41,7 @@
 							</p>
 							<p class="bold-title"></p>
 							<p class="body-content">
-								Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of Grameen Bank, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.
+								Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of <a href="http://www.grameen.com/">Grameen Bank</a>, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.
 							</p>
 						</li>
 					</ul>
@@ -98,7 +98,7 @@
 							<div align="center">
 								<a href="http://www.olivecode.com/grameen" target="_blank">www.olivecode.com/grameen</a>
 								<div>
-									<i>Grameen Communications and Edoo executed an agreement in June 2015 on joint-initiative to grow.</i>
+									<i>Grameen Communications and Edoo executed an agreement in June 2015 on joint-initiative to raise Bangladeshi programmers.</i>
 								</div>
 							</div>
 						</li>
@@ -121,7 +121,7 @@
 								The number of students has been growing since inception of the course. The graduates of the course are hired by a software development company that is affiliated with Edoo and given job opportunities as professional programmer.
 							</p>
 							<p>
-								Edoo now supports the next generation kids with teaching programming by making the most of its expertise fostered by opearting OliveCode.
+								 Edoo now supports the next generation with teaching programming by making the most of its expertise fostered by opearting OliveCode.
 							</p>
 						</li>
 

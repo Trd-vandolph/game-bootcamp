@@ -61,9 +61,11 @@
 							<strong>[Profile of Founder]</strong>
 						</p>
 						<p>
-							When Hiroto first visited Bangladesh, one of the poorest countries in Asia in March 2014, he found so many young people were unemployed due to a lack of access to education. After the visit, he decided to support neglected people to realize their hidden potential. He established Edoo Inc. and started a job-guaranteed online programming school for young Bangladeshi in February 2015.
+							Hiroto was born in Fukuoka in the southern part of Japan. He has grown up fatherless since his father passed away when he was 13 years old. Thanks to his mother's hard work, he was able to go to a university, learned economics, and started working at a bank after graduation. Getting a job and obtaining financial expertise at a bank have paved the way for his business and private life. Looking back at his experiences in the past, he has strongly believed education has a power to change one's life.
 							<br><br>
-							He also looks to raise the next generation through computer programming so that they can leverage an ability to think and create in the 21st century.
+							He first visited Bangladesh, one of the poorest countries in Asia, in March 2014 and found so many young people were unemployed due to a lack of access to education while they were diligent and eager to learn. After the visit, he decided to support the disadvantaged people to realize their hidden potential. He founded Edoo Inc. and started a job-guaranteed online programming school for young Bangladeshi in February 2015.
+							<br><br>
+							He also looks to raise the next generation through education so that they can leverage an ability to think and create in the 21st century. He will spread his education activity for the next generation all over the world.
 							<br><br>
 							He was previously CFO and Executive Vice President at Everlife; a Japanese health supplement company, a director at CLSA Capital Partners; a Pan-Asian based private equity fund, and a director of international and investment banking division at Mizuho Financial Group in London/Tokyo.
 							<br><br>
@@ -88,18 +90,20 @@
 		function adjustHeight() {
 			recentBodyWidth = $('body').width();
 			origHeight = 1070;
-			origHeight1 = 800;
-			var diff = origBodyWidth - recentBodyWidth;
-			var sum = origHeight + diff;
-			var sum1 = origHeight1 + diff;
-			var unit = "px";
+			origHeight1 = 1100;
+			if(recentBodyWidth <= 1143) {
+				var diff = origBodyWidth - recentBodyWidth;
+				var sum = origHeight + diff;
+				var sum1 = origHeight1 + diff;
+				var unit = "px";
 
-			$('#content-1').css('min-height', sum + unit);
-			$('#content-2').css('min-height', sum1 + unit);
+				$('#content-1').css('min-height', sum + unit);
+				$('#content-2').css('min-height', sum1 + unit);
 
-			if(recentBodyWidth <= 667){
-				var sum2 = sum - 250;
-				$('#content-2').css('min-height', sum2 + unit);
+				if(recentBodyWidth <= 667){
+					var sum2 = sum - 250;
+					$('#content-2').css('min-height', sum2 + unit);
+				}
 			}
 		}
 

@@ -1521,7 +1521,7 @@ section.parents #answer-parents p{
 }
 section.parents #content-2 {
 	position: relative;
-	min-height: 800px;
+	min-height: 1100px;
 }
 section.parents #content-2 div {
 	position: absolute;
@@ -1546,6 +1546,9 @@ section.course {
 }
 section.course #content p{
 	font-size: 18px;
+}
+section.course #\32 nd-content > p {
+	font-weight: bold;
 }
 section.course #content img.img-left {
 	float: left;
@@ -2171,4 +2174,62 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 }
 .nectar-button.has-icon {
   padding: 2% 3% !important;
+}
+
+/*footer*/
+#footer-outer > nav {
+	padding: 15px 0;
+	margin: auto;
+}
+#footer-outer > nav ul {
+	list-style-type: none;
+}
+#footer-outer > nav ul li {
+	display: inline;
+	padding-left: 50px;
+	font-size: 14px;
+	font-weight: 700;
+}
+#footer-outer {
+	text-align: center;
+}
+/*Privacy and Terms*/
+#contents.privacy,
+#contents.terms {
+	width: 75%;
+	margin: 10% auto;
+}
+#contents.privacy p,
+#contents.terms p,
+#contents.terms li {
+	font-size: 17px;
+	font-family: Sans-serif;
+}
+#contents.privacy h3,
+#contents.terms h3 {
+  line-height: 120%;
+  font-family: "Lovelo",sans-serif;
+  font-size: 26px;
+  margin: 80px 0 40px 0;
+  padding-bottom: 20px;
+  border-bottom: dotted 1px #ddd;
+}
+#contents.privacy h4,
+#contents.terms h4 {
+  line-height: 120%;
+  font-family: "Lovelo",sans-serif;
+  font-size: 22px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  color: #999;
+}
+#contents.terms li {
+	margin-bottom: 3%;
+	margin: 0 0 20px 30px;
+}
+#contents.terms ul li {
+	list-style: disc;
+}
+#contents.terms ol li {
+	list-style: decimal;
 }

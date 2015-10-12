@@ -162,32 +162,14 @@
 		</div>
 	</div>
 	<div id="footer-outer">
-		<div class="row" id="copyright">
-			<div class="container">
-				<div class="col span_5">
-					<p>Game-BootCamp - Online Game Development Course
-						<br>Sikatuna St. Mandaue City
-						<br>Cebu, Philippines
-						<br>2015 Game BootCamp. All Rights Reserved.
-						<br>
-						<a href="privacy-policy/index.html">Privacy Policy</a>
-					</p>
-				</div>
-				<div class="col span_7 col_last">
-					<div class="powered">
-						<span>Operating Company:</span>
-						<a href="http://www.thesoftwareguild.com/" target="_blank"><img style="width: 102px !important;" src="assets/img/logo/edoo.png" />
-						</a>
-					</div>
-					<p class="sub-note" style="text-align: center;"><small> Game-BootCamp aim kids to learn and experience game development, kids ages 10 - 18 years old can enroll at Game-BootCamp.</small>
-					</p>
-					<ul id="social">
-						<li><a target="_blank" href="https://www.facebook.com/cspcodingbootcamp?ref=br_tf"><i class="icon-facebook"></i> </a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<nav>
+			<ul>
+				<li><a href="/students/contactforum">Contact Us</a></li>
+				<li><a href="/privacy">Privacy Policy</a></li>
+				<li><a href="/terms">Terms of Use</a></li>
+			</ul>
+		</nav>
+		<p class="copyright">© 2015 Edoo Inc. All rights reserved.</p>
 	</div>
 	<a id="to-top"><i class="icon-angle-up"></i></a>
 	<? echo Asset::js( "top.jquery.js"); ?>
