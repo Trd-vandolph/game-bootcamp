@@ -440,7 +440,7 @@ p.link-more a:hover{
     position:absolute;
     left:0;
     top:0;
-    color:#D9B146;
+    color:#FF0037;
     font-size:28px;
     vertical-align:middle;
     margin:25px 20px;
@@ -840,7 +840,8 @@ span.icon-course5{
 	color:#333;
 }
 .button.yellow{
-	background:#D9B146;
+	background:#FF0037;
+	color: #fff !important;
 }
 .button:hover{
 	filter: alpha(opacity=70);

@@ -3,7 +3,7 @@
 		$paymentLink = '/students/signup';
 	}else {
 		$paymentText = 'Go To Payment ';
-		$paymentLink = '/students/course';
+		$paymentLink = '/students/courses';
 	}
 ?>
 <section id="contents" class="coursefee">

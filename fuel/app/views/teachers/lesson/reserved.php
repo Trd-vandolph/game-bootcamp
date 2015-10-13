@@ -20,7 +20,7 @@
 					<td><?php echo Model_Lessontime::getCourse($reservation->language); ?></td>
 					<td><? echo date("M d, Y. H:i:s", $reservation->freetime_at); ?></td>
 					<td><? echo Config::get("statics.reservation_status", [])[$reservation->status]; ?></td>
-					<td><? echo Html::anchor($reservation->url,$reservation->url, ["target" => "_blank"]); ?></td>
+					<td><a href="<? echo $reservation->url,$reservation->url;?>" target="_blank">Link</a></td>
 					<td>
 						<?php if($reservation->freetime_at <= time() + 600): ?>
 						<? echo Html::anchor("teachers/lesson/edit/{$reservation->id}", 'Set hangout url', [ "style" => "height:14px; line-height:14px", "class" => "button green right"]); ?>

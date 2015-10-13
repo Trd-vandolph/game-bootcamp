@@ -92,6 +92,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
+						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -111,6 +112,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
+						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -130,6 +132,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
+						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -149,6 +152,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
+						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);

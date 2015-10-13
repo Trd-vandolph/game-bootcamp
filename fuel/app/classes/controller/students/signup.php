@@ -29,13 +29,13 @@ class Controller_Students_Signup extends Controller_Base
 		$val->add('email','Email address')->add_rule('required')->add_rule('valid_email');
 		$val->add('sex','Gender')->add_rule('required');
 		$val->add('password','password')->add_rule('required')->add_rule('password')->add_rule('min_length', 8);
+		//$val->add('google_account','Gmail address')->add_rule('required');
 
 		if(Security::check_token()){
 			if($val->run()){
 				$user = Model_User::find("first", [
 					"where" => [
-						["email", Input::post("email", "")],
-						["category", 1]
+						["email", Input::post("email", "")]
 					]
 				]);
 
@@ -82,8 +82,7 @@ class Controller_Students_Signup extends Controller_Base
 				Auth::create_user($email, Session::get_flash("password"), $email, 1);
 				$user = Model_User::find("first", [
 					"where" => [
-						["email", $email],
-						["category", 1]
+						["email", $email]
 					]
 				]);
 
@@ -122,10 +121,10 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail->send();
 
 				}else{
-				 	Response::redirect('/students/signup/?e=4&fname='.Session::get_flash('firstname'));
+					Response::redirect('_404_');
 				}
 		}else{
-			Response::redirect('/students/signup/?e=5');
+			Response::redirect('_404_');
 		}
 
 

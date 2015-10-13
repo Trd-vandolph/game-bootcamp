@@ -41,7 +41,7 @@
 							</p>
 							<p class="bold-title"></p>
 							<p class="body-content">
-								Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of <a href="http://www.grameen.com/">Grameen Bank</a>, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.
+								Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of <a href="http://www.grameen.com/" target="_blank">Grameen Bank</a>, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.
 							</p>
 						</li>
 					</ul>

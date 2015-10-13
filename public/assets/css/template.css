@@ -1158,7 +1158,7 @@ header#top > div > div > ul > li.login > a {
 }
 #fws_55b227467453e > div > a > span.signup-button:hover {
 	background: transparent;
-	border: 1px solid #003989;
+	outline: 2px solid #003989;
 	box-shadow: 0 0 0px #444;
 	color: #fff;
 }
@@ -1772,6 +1772,14 @@ section.operatingcompany #fourth-content > ul > li.picture-content > div > div {
 section.operatingcompany #fourth-content > ul > li.picture-content {
 	margin-top: 15%;
 }
+section.operatingcompany #fourth-content > ul > li.picture-content > div,
+section.operatingcompany #fourth-content > ul > li.picture-content > div > div {
+	margin-top: 3%;
+}
+section.operatingcompany #fourth-content > ul > li.picture-content > div > div {
+	text-align: left;
+	padding-left: 5%;
+}
 
 section.operatingcompany .student_container {
 	margin-bottom: 100px
@@ -2177,9 +2185,14 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 }
 
 /*footer*/
+#footer-outer {
+	color: #252525 !important;
+	background-color: #FFFFFF !important;
+}
 #footer-outer > nav {
 	padding: 15px 0;
 	margin: auto;
+	margin-top: 2%;
 }
 #footer-outer > nav ul {
 	list-style-type: none;
@@ -2189,6 +2202,9 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 	padding-left: 50px;
 	font-size: 14px;
 	font-weight: 700;
+}
+#footer-outer > nav ul li a{
+	color: #252525;
 }
 #footer-outer {
 	text-align: center;

@@ -91,7 +91,7 @@
 							<div class="game-cell">
 								<p><strong>Name: </strong> Super Bear</p>
 								<p><strong>Description: </strong> The same way super mario does his thing. You should reach the finish line without falling or get hit by obstacles.</p>
-								<p><strong>Key Points: </strong> Make a running motion, Make a full width map, Game over when hit the bottom, Score base on distance trave.l</p>
+								<p><strong>Key Points: </strong> Make a running motion, Make a full width map, Game over when hit the bottom, Score base on distance travel, Make sound effects</p>
 							</div>
 						</div>
 					</div>

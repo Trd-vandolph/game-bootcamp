@@ -81,12 +81,22 @@
 														?>
 														<li class="clearfix">
 															<p class="date"><?= Date("M d Y(D)", $lesson->freetime_at); ?> <?= Date("H", $lesson->freetime_at); ?>:00 - <?= Date("H", $lesson->freetime_at); ?>:45</p>
+
+															<? if($scheduleDay == $currentDay): ?>
+																<span class="forbid-reservation" style="color: red;"><i>You cannot book a class on this day. Book a class before your reservation day.</i></span>
+																<br>
+															<? endif; ?>
+															<? if($ex_reserve == 1): ?>
+																<span style="color: red;"><i>You still have existing reservation or your tutor did not give you feedback yet.</i></span>
+																<br>
+															<? endif; ?>
+
 															<div class="photo"><img src="/assets/img/pictures/m_<?= $lesson->teacher->getImage(); ?>" width="200" alt=""></div>
 															<div class="profile">
 																<h3><?= $lesson->teacher->firstname;?> <?= $lesson->teacher->middlename;?> <?= $lesson->teacher->lastname;?></h3>
 																<p><?= $lesson->teacher->pr;?></p>
 																<? if($reserved == null and ($user->charge_html == 1 or $course == "-1")): ?>
-																	<? if(Model_Lessontime::courseNumber_1($course) > count($pasts)): ?>
+																	<? if(Model_Lessontime::courseNumber_1($course) > count($pasts) && $currentDay != $scheduleDay && $ex_reserve != 1):?>
 																		<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
 																		<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
 																			<div class="content confirm">
@@ -99,7 +109,7 @@
 																		</div>
 																	<? endif; ?>
 																<?php elseif($user->charge_html == 11 && $course == "0"): ?>
-																	<? if(Model_Lessontime::courseNumber_2($course) > count($pasts)): ?>
+																	<? if(Model_Lessontime::courseNumber_2($course) > count($pasts) && $currentDay != $scheduleDay && $ex_reserve != 1): ?>
 																		<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
 																		<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
 																			<div class="content confirm">
@@ -112,7 +122,7 @@
 																		</div>
 																	<? endif; ?>
 																<?php elseif($user->charge_html == 111 && $course == "0"): ?>
-																	<? if(Model_Lessontime::courseNumber_3($course) > count($pasts)): ?>
+																	<? if(Model_Lessontime::courseNumber_3($course) > count($pasts) && $currentDay != $scheduleDay && $ex_reserve != 1): ?>
 																		<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
 																		<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
 																			<div class="content confirm">

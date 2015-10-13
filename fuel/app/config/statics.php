@@ -11,8 +11,7 @@ return [
 		"enchant.js",
 	],
 	'content_numbers' => [
-		24,
-		8,
+		12
 	],
 	'enchantJS' => [
 		4,
