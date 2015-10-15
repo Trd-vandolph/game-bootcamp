@@ -59,7 +59,7 @@
 							<div class="game-cell">
 								<p><strong>Name: </strong> Catch The Banana</p>
 								<p><strong>Description: </strong> All you need to do is catch bananas as long as you can. Don't allow 20 bananas to reach to ground or else the game is over. </p>
-								<p><strong>Key Points: </strong> Moving object from left to right using computer's mouse, Random places of objects, Scoring.</p>
+								<p><strong>Key Points: </strong> Moving object from left to right using computer's mouse, Random places of objects, Counting how many miscatch objects, Scoring.</p>
 							</div>
 						</div>
 					</div>

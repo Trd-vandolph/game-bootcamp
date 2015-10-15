@@ -25,7 +25,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				["deleted_at", 0],
 				["teacher_id", $this->user->id],
 				["freetime_at", ">=", time()],
-				["category", 1],
+				["status", 0],
 			],
 			"order_by" => [
 				["id", "desc"],
@@ -78,6 +78,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
 
+		$data["reservations"] = array_slice($data["reservations"], $data["pager"]->offset, $data["pager"]->per_page);
 
 		$view = View::forge("teachers/lesson/histories", $data);
 		$this->template->content = $view;
@@ -91,7 +92,6 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				["teacher_id", $this->user->id],
 				["status", "<>", 0],
 				["freetime_at", ">=", time()],
-				["category", 1],
 			],
 			"order_by" => [
 				["id", "desc"],

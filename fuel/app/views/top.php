@@ -197,7 +197,7 @@
 		<section id="wrap" class="content-wrap" style="text-align: center;">
 			<div id="choose-remodal-header">
 				<h3>Snow Fight</h3>
-				<script type="text/javascript" src="http://9leap.net/games/4608/embed.js"></script>
+				<script type="text/javascript" src="http://9leap.net/games/4614/embed.js"></script>
 			</div>
 		</section>
 	</div>
@@ -207,7 +207,7 @@
 		<section id="wrap" class="content-wrap" style="text-align: center;">
 			<div id="choose-remodal-header">
 				<h3>Super Bear</h3>
-				<script type="text/javascript" src="http://9leap.net/games/4609/embed.js"></script>
+				<script type="text/javascript" src="http://9leap.net/games/4629/embed.js"></script>
 			</div>
 		</section>
 	</div>
