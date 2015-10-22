@@ -8,71 +8,6 @@
 <? }?>
 <div id="contents-wrap">
 	<div id="main">
-	<? if(count($payment) > 0) { ?>
-		<h3>Payment</h3>
-		    <section class="paylist">	    
-		      <table class="table-base" width="100%" border="0" cellpadding="0" cellspacing="0">
-		      	<thead>
-		      		<th>Name</th>
-		      		<th>Payment Method</th>
-		      		<th>Type of Payment</th>
-		      		<th>Date</th>
-		      		<th>Action</th>
-		      	</thead>
-		      	<tbody>
-				  <? foreach($payment as $payments): ?>
-				  	<tr>
-		        		<?
-		        		$student = Model_User::find("first", [
-		        				"where" => [
-		        						["id", $payments->student_id]
-		        				],
-		        		]);
-		        		?>
-		        		<td>
-		        		<?=$student->firstname." ".$student->middlename." ".$student->lastname; ?>
-		        		<br>
-		        		<a href="http://olivecode.localhost/admin/students/detail/<?=$student->id; ?>" ><?=$student->email; ?></a>
-		        		</td>
-		        		<td>
-		        		<? 
-		        		if($payments->pay_method == 1){
-		        			echo "<strong>Home</strong> <br> Cash"; 
-		        		}elseif($payments->pay_method == 2){
-		        			echo "<strong>Home</strong> <br> Remittance <br>(Ref.no: <strong><i>".$payments->ref_no."</i></strong>)";
-		        		}elseif($payments->pay_method == 3){
-		        			echo "<strong>Home</strong> <br> Credit Card";
-		        		}elseif($payments->pay_method == 4){
-		        			echo "<strong>Grameen</strong> <br> Cash ";
-		        		}
-		        		?>
-		        		</td>
-		        		<td>
-		        			<?
-								if($payments->method == 1) {
-									echo "<strong>One-time payment</strong>";
-								}else {
-									echo "<strong>Installment:</strong><br>";
-									if(strlen($payments->paid) == 1){
-										echo "Quarter 1 (HTML/CSS Chapter 1-8)";
-									}elseif(strlen($payments->paid) == 2){
-										echo "Quarter 2 (HTML/CSS Chapter 9-16)";
-									}elseif(strlen($payments->paid) == 3){
-										echo "Quarter 3 (HTML/CSS Chapter 17-24)";
-									}elseif(strlen($payments->paid) == 4){
-										echo "Quarter 4 (JavaScript Chapter 1-8)";
-									}
-								}
-		        			?>
-		        		</td>
-		        		<td><?=date("F d, Y H:i", $payments->paid_at) ?></td>
-		        		<td><a href="/admin/payment/?id=<?=$payments->id; ?>"><button class="button yellow right">Open <i class="fa fa-eye"></i></button></a></td>
-		        	</tr>
-				  <? endforeach; ?>
-				  </tbody>
-		      </table>
-	    </section>
-	     <? } ?>
     <h3>Contact from Students</h3>
     <p class="link-more"><? echo Html::anchor('/admin/contactforum', 'See Contact <i class="fa fa-angle-right"></i>'); ?></p>
     <section class="feedback">
@@ -82,7 +17,7 @@
 		  <? endforeach; ?>
       </ul>
     </section>
-	
+
     <h3>Lesson Calender</h3>
 	<a name="cal"></a>
     <div id="calendar">
@@ -107,7 +42,7 @@
 $(function(){
 	var paid = $('#paid').val();
 	var cancelSuccess = $('#cancelSuccess').val();
-	
+
 	if(paid == 1){
 		Alert.render("Successfully confirmed student's payment.");
 	}
@@ -115,7 +50,7 @@ $(function(){
 	if(cancelSuccess == 1) {
 		Alert.render("Successfully cancelled student's payment.");
 	}
-	
+
 	$('#calendar').clndr({
 		daysOfTheWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 		startWithMonth: "<?= $ym; ?>-01",
@@ -130,11 +65,11 @@ $(function(){
 					var ymd = target.date._i.split("-");
 					location.href="/admin/reservations/?year=" + ymd[0] + "&month=" + ymd[1] + "&day=" + ymd[2];
 				}
-	
-	
+
+
 		}
 	})
-	
+
 	<?
 	$days = [];
 	for($i = 0; $i <=  date("t", strtotime($ym . "-01")); $i++){
@@ -152,7 +87,7 @@ $(function(){
 	} ?>
 	$(".calendar-day-<?= "{$ym}-$d" ?> > .day-contents").after('<div class="class-number"><?= $days[$i]; ?></div>');
 	<? endfor; ?>
-	
+
 });
 
 //custom alert
@@ -180,5 +115,5 @@ function CustomAlert(){
 }
 var Alert = new CustomAlert();
 
-//end alert	
+//end alert
 </script>

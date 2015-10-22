@@ -11,4 +11,11 @@ return array(
 			'password'   => '',
 		),
 	),
+	'shared_database' => array(
+		'connection'  => array(
+			'dsn'        => 'mysql:host=localhost;dbname=shared_database',
+			'username'   => 'root',
+			'password'   => '',
+		),
+	),
 );

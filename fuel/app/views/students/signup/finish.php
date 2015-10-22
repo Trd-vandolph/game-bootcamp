@@ -1,8 +1,12 @@
 <?
 	$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
-	$query = Model_Document::find($documents->id);
-	
-	$doc = "/contents/".$query->path;
+
+	if(count($documents) > 0) {
+		$query = Model_Document::find($documents->id);
+
+		$doc = "/contents/".$query->path;
+	}
+
 ?>
 <div id="login">
 	<div class="content-wrap_s">
@@ -47,10 +51,10 @@ function CustomAlert(){
 		document.getElementById('dialogoverlay').style.display = "none";
 
 		window.open('<?=$doc; ?>', '_blank');
-		
+
 	}
 }
 var Alert = new CustomAlert();
 
-//end alert	
+//end alert
 </script>

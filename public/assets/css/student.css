@@ -51,15 +51,15 @@ ul.curriculum li{
     white-space: nowrap;
 }
 ul.curriculum li a{
-    background: #ccc;
+    background: #8FBED2;
     font-size: 85%;
     border-radius: 20px;
     padding: 5px 20px 3px 20px;
-    color: #374249;
+    color: #F8F8F8;
     text-decoration: none;
 }
 ul.curriculum li.selected.course0 a{
-    background: #7E9E42;
+    background: #E6B122;
 }
 ul.curriculum li.selected.course1 a{
     background: #E6B122;

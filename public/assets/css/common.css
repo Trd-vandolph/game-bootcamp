@@ -140,7 +140,7 @@ header nav li a:link,header nav li a:visited{
 	background: #e6b122;
 	padding: 4px 20px;
 	border-radius: 15px;
-	color: #374249;
+	color: #0F5573;
 	font-family: Lovelo, Sans-serif;
 }
 header nav li a:hover{
@@ -412,15 +412,15 @@ p.link-more {
 	height:35px;
 }
 p.link-more a{
-    padding:4px 15px;
-    color:#374240;
-    border-radius:15px;
-    margin:0 10px 0 0;
-    background:#e6b122;
+    padding: 4px 15px;
+    color: #FFFFFF;;
+    border-radius: 15px;
+    margin: 0 10px 0 0;
+    background: #e6b122;
 }
 p.link-more a:hover{
-    text-decoration:none;
-    background:#C7E6FA;
+    text-decoration: none;
+    background: #C7E6FA;
 }
 @media screen and (max-width : 840px) {
     .content-wrap_s{
@@ -826,7 +826,7 @@ span.icon-course5{
 }
 .button{
 	padding: 12px 30px 10px 30px;
-	color: #374249!important;
+	color: #F8F8F8!important;
 	border-radius: 3px;
 	margin: 0 10px 0 0;
 	background: #E6B122;

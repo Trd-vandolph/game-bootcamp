@@ -3,7 +3,7 @@
 class Controller_Students_Signup extends Controller_Base
 {
 
-	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student');
+	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality');
 
 	public function before(){
 		$this->template = View::forge("students/template");
@@ -35,7 +35,8 @@ class Controller_Students_Signup extends Controller_Base
 			if($val->run()){
 				$user = Model_User::find("first", [
 					"where" => [
-						["email", Input::post("email", "")]
+						["email", Input::post("email", "")],
+						["category", 1]
 					]
 				]);
 
@@ -99,6 +100,7 @@ class Controller_Students_Signup extends Controller_Base
 					$user->place =  Session::get_flash("grameen");
 					$user->grameen_student =  Session::get_flash("grameen_student");
 					$user->category =  1;
+					$user->nationality = Session::get_flash("nationality");
 					$user->save();
 
 					// send mail
@@ -121,7 +123,7 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail->send();
 
 				}else{
-					Response::redirect('_404_');
+					Response::redirect('_404_/?hehe');
 				}
 		}else{
 			Response::redirect('_404_');

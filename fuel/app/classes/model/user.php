@@ -17,7 +17,7 @@ class Model_User extends \Orm\Model
 	 * @var  string  connection to use
 	 */
 	protected static $_connection = null;
-	
+
 	/**
 	 * @var  string  write connection to use
 	 */
@@ -187,6 +187,10 @@ class Model_User extends \Orm\Model
 				'default' 	  => 0,
 				'null'		  => false,
 		),
+		'nationality'      => array(
+				'default' 	  => 0,
+				'null'		  => false,
+		),
 	);
 
 	/**
@@ -320,7 +324,7 @@ class Model_User extends \Orm\Model
 
 			// set the connection this model should use
 			static::$_connection = \Config::get('simpleauth.db_connection');
-		
+
 			// set the write connection this model should use
 			static::$_connection = \Config::get('simpleauth.db_write_connection');
 
@@ -339,7 +343,7 @@ class Model_User extends \Orm\Model
 
 			// set the connection this model should use
 			static::$_connection = \Config::get('ormauth.db_connection');
-		
+
 			// set the write connection this model should use
 			static::$_connection = \Config::get('ormauth.db_write_connection');
 

@@ -92,6 +92,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				["teacher_id", $this->user->id],
 				["status", "<>", 0],
 				["freetime_at", ">=", time()],
+				["category", 1]
 			],
 			"order_by" => [
 				["id", "desc"],

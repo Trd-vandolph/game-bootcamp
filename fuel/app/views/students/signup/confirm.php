@@ -24,6 +24,12 @@
 						</div>
 					</li>
 					<li>
+						<h4>Nationality</h4>
+						<div>
+							<? echo $nationality; ?>
+						</div>
+					</li>
+					<li>
 						<h4>Gender</h4>
 						<div>
 							<?
@@ -39,37 +45,6 @@
 						<h4>Birthday</h4>
 						<div>
 							<? echo  Config::get("statics.months", [])[$month-1]; ?> <? echo $day; ?>, <? echo $year; ?>.
-
-						</div>
-					</li>
-					<li>
-						<h4>Gmail address</h4>
-						<div>
-							<? echo $google_account; ?>
-						</div>
-					</li>
-					<li>
-						<h4>Reservation email</h4>
-						<div>
-							<?
-							if($need_reservation_email == 1){
-								echo "On";
-							}else{
-								echo "Off";
-							}
-							?>
-						</div>
-					</li>
-					<li>
-						<h4>News email</h4>
-						<div>
-							<?
-							if($need_news_email == 1){
-								echo "On";
-							}else{
-								echo "Off";
-							}
-							?>
 
 						</div>
 					</li>

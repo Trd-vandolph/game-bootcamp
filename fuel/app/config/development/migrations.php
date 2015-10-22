@@ -1,10 +1,10 @@
 <?php
 return array (
-  'version' => 
+  'version' =>
   array (
-    'app' => 
+    'app' =>
     array (
-      'default' => 
+      'default' =>
       array (
         0 => '001_create_contents',
         1 => '002_create_lessons',
@@ -60,12 +60,13 @@ return array (
         51 => '065_add_category_to_contents',
         52 => '066_add_category_to_lessontimes',
         53 => '067_add_category_to_documents',
+        54 => '067_add_nationality_to_users',
       ),
     ),
-    'module' => 
+    'module' =>
     array (
     ),
-    'package' => 
+    'package' =>
     array (
     ),
   ),
