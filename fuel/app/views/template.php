@@ -8,9 +8,9 @@
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Concordia University, St. Paul | Coding Bootcamp" />
-	<meta property="og:description" content="Get the coding skills you need to succeed. In a hands-on, fast-paced coding bootcamp you will learn how to code in one of the most desired languages." />
-	<meta property="og:url" content="http://bootcamp.csp.edu/" />
-	<meta property="og:site_name" content="CSP Bootcamp" />
+	<meta property="og:description" content="GET YOUR KIDS THE MOST POWERFUL SKILL IN 21ST CENTURY" />
+	<meta property="og:url" content="http://game-bootcamp-dev.zz.mu/" />
+	<meta property="og:site_name" content="Game BootCamp" />
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/what-is-bootcamp.png" />
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/man-blue.png" />
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/success1.png" />
@@ -20,25 +20,21 @@
 	<? echo Asset::js("reum.js"); ?>
 	<? echo Asset::css("wpbakery/js_composer/assets/css/js_composer_front1ac1.css"); ?>
 	<link rel='stylesheet' id='options_typography_Open+Sans-300-css' href='https://fonts.googleapis.com/css?family=Open+Sans:300' type='text/css' media='all' />
-	<!--? echo Asset::css("plugins/contact-form-7/includes/css/styles7e2e.css"); ?-->
-	<? echo Asset::css("plugins/wp-countdown-timer/public/assets/css/public8a54.css"); ?>
 	<? echo Asset::css("rgs11b8.css"); ?>
 	<link rel='stylesheet' id='font-awesome-css' href='wp-content/themes/salient/css/font-awesome.minf39e.css?ver=4.0.1' type='text/css' media='all' />
-	<!-- <? echo Asset::css("font-awesome.minf39e.css"); ?> -->
 	<? echo Asset::css("steadysetsf39e.css"); ?>
 	<? echo Asset::css("lineconf39e.css"); ?>
 	<link rel='stylesheet' id='main-styles-css' href='wp-content/themes/salient/style11b8.css?ver=4.5' type='text/css' media='all' />
 	<? echo Asset::css("responsive11b80.css"); ?>
-	<link rel='stylesheet' id='thickbox-css' href='wp-includes/js/thickbox/thickboxf39e.css?ver=4.0.1' type='text/css' media='all' />
+	<!--link rel='stylesheet' id='thickbox-css' href='wp-includes/js/thickbox/thickboxf39e.css?ver=4.0.1' type='text/css' media='all' />
 	<script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
 	<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
-	<script type='text/javascript' src='wp-includes/js/jquery/ui/jquery.ui.core.min2c18.js?ver=1.10.4'></script>
+	<script type='text/javascript' src='wp-includes/js/jquery/ui/jquery.ui.core.min2c18.js?ver=1.10.4'></script-->
 	<script type='text/javascript' src='wp-content/themes/salient/js/modernizr61da.js?ver=2.6.2'></script>
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<? echo Asset::js("top.jquery.js"); ?>
-	<? echo Asset::js("top.GoogleAnalyticsObject.js"); ?>
 	<? echo Asset::js("bootstrap-editable.js"); ?>
 	<? echo Asset::js("bootstrap-editable.min.js"); ?>
 	<title> Game-BootCamp </title>
@@ -93,23 +89,21 @@
 
 						<nav>
 							<ul class="sf-menu">
-								<li id="menu-item-2862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862 editable"><a href="/"><? echo Session::get('menu1'); ?></a>
+								<li><a href="/"><? echo Session::get('menu1'); ?></a>
 								</li>
-								<li id="menu-item-2718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718 editable"><a href="/parents"><? echo Session::get('menu2'); ?></a>
+								<li><a href="/parents"><? echo Session::get('menu2'); ?></a>
 								</li>
-								<!-- li id="menu-item-2720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720 editable"><a href="//try"><? echo Session::get('menu3'); ?></a>
-								</li -->
-								<li id="menu-item-2722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722 editable"><a href="course"><? echo Session::get('menu4'); ?></a>
+								<li><a href="course"><? echo Session::get('menu4'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/tutor"><? echo Session::get('menu5'); ?></a>
+								<li><a href="/tutor"><? echo Session::get('menu5'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a>
+								<li><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/coursefee"><? echo Session::get('menu7'); ?></a>
+								<li><a href="/coursefee"><? echo Session::get('menu7'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/howtojoin"><? echo Session::get('menu8'); ?></a>
+								<li><a href="/howtojoin"><? echo Session::get('menu8'); ?></a>
 								</li>
-								<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721 editable"><a href="/faq"><? echo Session::get('menu9'); ?></a>
+								<li><a href="/faq"><? echo Session::get('menu9'); ?></a>
 								</li>
 							</ul>
 						</nav>
@@ -122,25 +116,23 @@
 	<div id="mobile-menu">
 		<div class="container">
 			<ul>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/"><? echo Session::get('menu1'); ?></a>
+				<li><a href="/"><? echo Session::get('menu1'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2862"><a href="/parents"><? echo Session::get('menu2'); ?></a>
+				<li><a href="/parents"><? echo Session::get('menu2'); ?></a>
 				</li>
-				<!-- li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2718"><a href="/try"><? echo Session::get('menu3'); ?></a>
-				</li -->
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2720"><a href="/course"><? echo Session::get('menu4'); ?></a>
+				<li><a href="/course"><? echo Session::get('menu4'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2722"><a href="/tutor"><? echo Session::get('menu5'); ?></a>
+				<li><a href="/tutor"><? echo Session::get('menu5'); ?></a>
 				</li>
-				<li id="menu-item-2721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a>
+				<li><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="/coursefee"><? echo Session::get('menu7'); ?></a>
+				<li><a href="/coursefee"><? echo Session::get('menu7'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="/howtojoin"><? echo Session::get('menu8'); ?></a>
+				<li><a href="/howtojoin"><? echo Session::get('menu8'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="/faq"><? echo Session::get('menu9'); ?></a>
+				<li><a href="/faq"><? echo Session::get('menu9'); ?></a>
 				</li>
-				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2721"><a href="#"><? echo Session::get('menu9'); ?></a>
+				<li><a href="#"><? echo Session::get('menu9'); ?></a>
 				</li>
 			</ul>
 		</div>
@@ -148,7 +140,7 @@
 
 	<? echo $content ?>
 
-	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section    " style="padding: 80px 102px 80px; margin-left: -102px; visibility: visible; background-color: #E60039!important;">
+	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section	" style="padding: 80px 102px 80px; margin-left: -102px; visibility: visible; background-color: #E60039!important;">
 		<div class="col span_12 light">
 			<a class="nectar-button large see-through" href="/students/signup" data-color-override="false">
 				<span>Take a Free Trial Lesson</span><br><br>
@@ -178,23 +170,16 @@
 	<script type='text/javascript' src='wp-content/themes/salient/js/sticky5152.js?ver=1.0'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/prettyPhoto11b8.js?ver=4.5'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/appear5152.js?ver=1.0'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js?ver=4.5'></script>
+	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>
 	<script type='text/javascript'>
 	/* <![CDATA[ */
-	var nectarLove = {"ajaxurl":"http:\/\/bootcamp.csp.edu\/wp-admin\/admin-ajax.php","postID":"3227","rooturl":"http:\/\/bootcamp.csp.edu","pluginPages":[],"disqusComments":"false"};
+	//var nectarLove = {"ajaxurl":"http:\/\/bootcamp.csp.edu\/wp-admin\/admin-ajax.php","postID":"3227","rooturl":"http:\/\/bootcamp.csp.edu","pluginPages":[],"disqusComments":"false"};
 	/* ]]> */
 	</script>
 	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
 
-	<script type='text/javascript' src='wp-content/plugins/wp-countdown-timer/public/assets/js/public8a54.js?ver=1.0.0'></script>
 	<script>
 		$(function() {
-// 			$('.editable').editable({
-// 				type: 'wysihtml5',
-// 				pk: 1,
-// 				url: '/post',
-// 				title: 'Edit'
-// 			});
 
 			function resizeSpace() {
 				var headerSpace = $('#header-space');
@@ -218,11 +203,11 @@
 			function removeDuplicate() {
 				var seen = {};
 				$('a.mem').each(function() {
-			    var txt = $(this).text();
-			    if (seen[txt])
-			        $(this).remove();
-			    else
-			        seen[txt] = true;
+				var txt = $(this).text();
+				if (seen[txt])
+					$(this).remove();
+				else
+					seen[txt] = true;
 				});
 			}
 
