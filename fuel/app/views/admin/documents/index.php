@@ -10,7 +10,7 @@
 							<? if(Input::get("e", 0) == 1){ ?>
 								<p class="error">Upload failed. Please check file extension.</p>
 							<? }elseif(Input::get("e", 0) == 2){?>
-								<p class="error">Upload failed. Please assign document's usage.</p>	
+								<p class="error">Upload failed. Please assign document's usage.</p>
 							<?} ?>
 							<input name="file" type="file" required>
 						</div>
@@ -62,7 +62,7 @@
 			<? endif; ?>
 			</tbody>
 		</table>
-		<h3>Home Course Information</h3>
+		<h3>Course Information</h3>
 		<table class="table-base" width="100%" border="0" cellpadding="0" cellspacing="0" >
 			<thead>
 			<tr>

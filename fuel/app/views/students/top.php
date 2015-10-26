@@ -19,11 +19,9 @@
 		<? endif; ?>
 		<section class="notice content-wrap" style="display: none" id="reservation_area">
 		</section>
-		<? if(($user->place == 1)): ?>
-			<h3>Lesson Schedule (Grameen)</h3>
-		<? else: ?>
-			<h3>Lesson Schedule (Home)</h3>
-		<? endif; ?>
+
+		<h3>Lesson Schedule</h3>
+
 		<section class="schedule">
 			<? if($reservations == null): ?>
 				<div class="content-wrap">
@@ -37,7 +35,11 @@
 					<div class="detail">
 						Tutor：<? if($reservation->teacher != null) echo $reservation->teacher->firstname; ?><br />
 						<? /* if($reservation->teacher != null) echo Html::anchor("students/teachers/detail/{$reservation->teacher_id}", $reservation->teacher->firstname); */ ?>
-						<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 24 Lessons
+						<? if($reservation->language != -1):  ?>
+							<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 12 Lessons
+						<? else: ?>
+							<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span>
+						<? endif; ?>
 					</div>
 					<?
 					$text = Model_Content::find("first", [

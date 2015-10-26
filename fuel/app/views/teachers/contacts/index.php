@@ -11,7 +11,7 @@
 						</div>
 					</li>
 					<li>
-						<h4>Body</h4>
+						<h4>Message</h4>
 						<div>
 							<textarea name="body" rows="10" cols="60"><?= Session::get_flash("body", ""); ?></textarea>
 						</div>

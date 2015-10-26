@@ -16,7 +16,7 @@
 				<th>name / email</th>
 				<th>Place registered</th>
 				<th>last login</th>
-				<th>html course</th>
+				<th>enchant.js course</th>
 				<th></th>
 			</tr>
 			</thead>

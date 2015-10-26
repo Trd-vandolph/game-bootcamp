@@ -669,7 +669,7 @@ ul.forms li select{
     border:solid 1px #bbb;
     font-size: 16px;
     border-radius: 3px;
-    max-width: 100%;
+    width: 100%;
 }
 ul.forms li textarea{
     width: 100%;

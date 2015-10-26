@@ -5,16 +5,12 @@ Dear  <?= $name; ?>,<br>
 	Hello and welcome to Game-BootCamp!<br><br>
 	Your registration has been completed.<br><br>
 	Please find attached Course Information that shows you how to take a free trial lesson.<br><br>
-	If you like to start the course, send your message to support@game-bootcamp.com.<br>
-	We will come back to you as soon as possible. <br>
 <? }else{ ?>
 	<br>
 	Hello and welcome to OliveCode!<br><br>
 	Your registration has been completed.<br><br>
 	Please find attached Course Information for further details of learning at Grameen Communications.<br><br>
 	Course Information shows you how to take a free trial lesson. <br><br>
-	If you like to start the course, send your message to support@olivecode.com.<br>
-	We will come back to you as soon as possible. <br>
 <? } ?>
 <br>
 ▼Your registration<br><br>
