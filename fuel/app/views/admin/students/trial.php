@@ -13,7 +13,7 @@
 				<th>Place registered</th>
 				<th>last login</th>
 				<th>
-					html course
+					enchant.js course
 				</th>
 				<th></th>
 			</tr>
@@ -53,11 +53,11 @@
 									if(!$("#html1_<? echo $id; ?>").is(':checked')){
 										$("#html2_<? echo $id; ?>").attr("disabled", true);
 										$("#html3_<? echo $id; ?>").attr("disabled", true);
-										$("#html4_<? echo $id; ?>").attr("disabled", true);	
+										$("#html4_<? echo $id; ?>").attr("disabled", true);
 									}
 									if($("#html1_<? echo $id; ?>").is(':checked')){
 										$("#html3_<? echo $id; ?>").attr("disabled", true);
-										$("#html4_<? echo $id; ?>").attr("disabled", true);	
+										$("#html4_<? echo $id; ?>").attr("disabled", true);
 									}
 									if($("#html2_<? echo $id; ?>").is(':checked')){
 										$("#html4_<? echo $id; ?>").attr("disabled", true);
@@ -68,14 +68,14 @@
 										$("#html1_<? echo $id; ?>").attr("disabled", true);
 										$("#html2_<? echo $id; ?>").attr("disabled", true);
 										$("#html3_<? echo $id; ?>").attr("disabled", false);
-										$("#html4_<? echo $id; ?>").attr("disabled", false);		
+										$("#html4_<? echo $id; ?>").attr("disabled", false);
 									}
 									if($("#html4_<? echo $id; ?>").is(':checked')){
 										$("#html1_<? echo $id; ?>").attr("disabled", true);
 										$("#html2_<? echo $id; ?>").attr("disabled", true);
-										$("#html3_<? echo $id; ?>").attr("disabled", true);		
+										$("#html3_<? echo $id; ?>").attr("disabled", true);
 									}
-										
+
 									$(document).ready(function(){
 										$("#html1_<? echo $id; ?>").click(function(){
 											if(!$("#html1_<? echo $id; ?>").is(':checked')){

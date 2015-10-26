@@ -14,7 +14,7 @@
 				<th>lesson progress</th>
 				<th>last login</th>
 				<th>
-					html course
+					enchant.js course
 				</th>
 				<th></th>
 			</tr>

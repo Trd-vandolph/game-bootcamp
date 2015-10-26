@@ -7,7 +7,7 @@
 					<li>
 						<h4>Title</h4>
 						<div>
-							<input type="text" name="title" value="<? echo $forum->title; ?>">
+							<input class="email-title-width" type="text" name="title" value="<? echo $forum->title; ?>">
 						</div>
 					</li>
 					<li>

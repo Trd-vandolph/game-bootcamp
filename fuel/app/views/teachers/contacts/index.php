@@ -7,7 +7,7 @@
 					<li>
 						<h4>Title</h4>
 						<div>
-							<input name="title" type="text" required value="<?= Session::get_flash("title", ""); ?>">
+							<input id="email-title-width" name="title" type="text" required value="<?= Session::get_flash("title", ""); ?>">
 						</div>
 					</li>
 					<li>
