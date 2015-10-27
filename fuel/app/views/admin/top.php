@@ -13,7 +13,21 @@
     <section class="feedback">
       <ul class="list-base">
 		  <? foreach($contacts as $contact): ?>
-        <li><a href="/admin/contactforum/detail/<?= $contact->id; ?>"><? if($contact->is_read == 0): ?><span class="icon-new">New</span><? endif; ?><?= $contact->title; ?> <strong><?= date("H:i M d, Y.", $contact->created_at); ?></strong> posted by <?= $contact->user->firstname; ?> <?= $contact->user->middlename; ?> <?= $contact->user->lastname; ?></a></li>
+        <li>
+					<a href="/admin/contactforum/detail/<?= $contact->id; ?>">
+						<? if($contact->is_read == 0): ?>
+								<span class="icon-new">New</span>
+						<? endif; ?>
+						<?= $contact->title; ?>
+						<strong>
+							<?= date("H:i M d, Y.", $contact->created_at); ?>
+						</strong>
+							posted by
+							<?= $contact->user->firstname; ?>
+							<?= $contact->user->middlename; ?>
+							<?= $contact->user->lastname; ?>
+					</a>
+				</li>
 		  <? endforeach; ?>
       </ul>
     </section>
