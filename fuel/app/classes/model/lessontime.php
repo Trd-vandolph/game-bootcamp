@@ -16,7 +16,6 @@ class Model_Lessontime extends \Orm\Model
 		'created_at',
 		'updated_at',
 		'history',
-		'category',
 	);
 
 	protected static $_observers = array(
@@ -100,7 +99,7 @@ class Model_Lessontime extends \Orm\Model
 				return Config::get("statics.enchantJS")[0];
 		}
 	}
-	
+
 	public static function courseNumber_2($id){
 		switch($id){
 			case -1:
@@ -109,7 +108,7 @@ class Model_Lessontime extends \Orm\Model
 				return Config::get("statics.enchantJS")[1];
 		}
 	}
-	
+
 	public static function courseNumber_3($id){
 		switch($id){
 			case -1:

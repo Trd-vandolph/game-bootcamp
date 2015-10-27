@@ -16,40 +16,37 @@ class Controller_Admin_Documents extends Controller_Admin
 		if(!empty($_FILES["file"]) and is_uploaded_file($_FILES["file"]["tmp_name"])){
 			$ext = explode(".", $_FILES["file"]["name"]);
 			if(strtolower($ext[1]) == "pdf" or strtolower($ext[1]) == "doc" or strtolower($ext[1]) == "docx"){
-	
+
 				$filename = str_replace("/", "", $_FILES["file"]["name"]);
 				$filepath = DOCROOT."/contents/".$filename;
-	
+
 				if(move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
 					chmod($filepath, 0644);
-	
+
 					// save
 					if(Input::post("doc_type")==1){
-						$documents = Model_Document::query()->where('type', 2)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
+						$documents = Model_Document::query()->where('type', 2)->where('deleted_at', 0)->limit(1)->get_one();
 						if(count($documents)<1){
 							$document = Model_Document::forge();
 							$document->path = $filename;
 							$document->type = Input::post("doc_type");
-							$document->category = 1;
 							$document->save();
 						}else{
 							$query = Model_Document::find($documents->id);
 							$query->path = $filename;
 							$query->type = Input::post("doc_type");
-							$document->category = 1;
 							$query->save();
 						}
-						
+
 					}else{
 						$document = Model_Document::forge();
 						$document->path = $filename;
 						$document->type = Input::post("doc_type");
-						$document->category = 1;
 						$document->save();
 					}
-					
+
 					Response::redirect("/admin/documents/");
-	
+
 				}else{
 					Response::redirect("/admin/documents/?e=1");
 				}
@@ -60,7 +57,6 @@ class Controller_Admin_Documents extends Controller_Admin
 		$where = [
 					["deleted_at", 0],
 					["type", 0],
-					["category", 1]
 		];
 
 		$data["documents"] = Model_Document::find("all", [
@@ -72,9 +68,8 @@ class Controller_Admin_Documents extends Controller_Admin
 		$where_online = [
 				["deleted_at", 0],
 				["type", 1],
-				["category", 1]
 		];
-		
+
 		$data["online"] = Model_Document::find("all", [
 				"where" => $where_online,
 				"order_by" => [

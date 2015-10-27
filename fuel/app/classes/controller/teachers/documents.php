@@ -7,8 +7,7 @@ class Controller_Teachers_Documents extends Controller_Teachers
 	{
 		$data["documents"] = Model_Document::find("all", [
 			"where" => [
-				["deleted_at", 0],
-				["category", 1]
+				["deleted_at", 0]
 			],
 			"order_by" => [
 				["created_at", "desc"],

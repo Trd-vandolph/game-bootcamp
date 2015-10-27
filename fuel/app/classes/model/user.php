@@ -147,7 +147,7 @@ class Model_User extends \Orm\Model
 			'default' 	  => 0,
 			'null'		  => false,
 		),
-		'php'      => array(
+		'enchantJS'      => array(
 			'default' 	  => 0,
 			'null'		  => false,
 		),
@@ -180,10 +180,6 @@ class Model_User extends \Orm\Model
 				'null'		  => false,
 		),
 		'grameen_student'      => array(
-				'default' 	  => 0,
-				'null'		  => false,
-		),
-		'category'      => array(
 				'default' 	  => 0,
 				'null'		  => false,
 		),

@@ -63,7 +63,6 @@
 							<p class="error">Upload failed. File already exists.</p>
 							<? endif; ?>
 							<input name="file" type="file" required>
-							<input type="text" name="category" value="1" hidden>
 						</div>
 					</li>
 				</ul>

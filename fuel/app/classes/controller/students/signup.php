@@ -35,8 +35,7 @@ class Controller_Students_Signup extends Controller_Base
 			if($val->run()){
 				$user = Model_User::find("first", [
 					"where" => [
-						["email", Input::post("email", "")],
-						["category", 1]
+						["email", Input::post("email", "")]
 					]
 				]);
 
@@ -99,7 +98,6 @@ class Controller_Students_Signup extends Controller_Base
 					$user->timezone = Session::get_flash("timezone");
 					$user->place =  Session::get_flash("grameen");
 					$user->grameen_student =  Session::get_flash("grameen_student");
-					$user->category =  1;
 					$user->nationality = Session::get_flash("nationality");
 					$user->save();
 
@@ -114,7 +112,7 @@ class Controller_Students_Signup extends Controller_Base
 					$sendmail->subject("Welcome Aboard! / Game-BootCamp");
 					$sendmail->html_body(htmlspecialchars_decode($body));
 
-					$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
+					$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->limit(1)->get_one();
 					if(count($documents)>0){
 						$query = Model_Document::find($documents->id);
 						$sendmail->attach(DOCROOT.'/contents/'.$query->path);

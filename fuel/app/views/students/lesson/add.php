@@ -63,7 +63,7 @@
 				<? for($i = 0; $i < 10; $i++): ?>
 					<td><?= Date("d", strtotime("+{$i} days")); ?>
 						<ul>
-							<? for($j = 8; $j < 24; $j++): ?>
+							<? for($j = 8; $j <= 24; $j++): ?>
 								<div  class="remodal" data-remodal-id="<?= "{$i}_{$j}"; ?>">
 									<div class="content select-teacher">
 										<ul>
@@ -155,14 +155,12 @@
 									$class = "reserved";
 									?>
 								<? else: ?>
-									<? foreach($lessons as $lesson): ?>
-										<? if(($lesson->teacher->html5 == 1 and $course == "0") or ($lesson->teacher->javascript == 1 and $course == "1")  or ($lesson->teacher->php == 1 and $course == "2") or  ($lesson->teacher->trial == 1 and $course == "-1")): ?>
+								<? foreach($lessons as $lesson): ?>
 										<? if($lesson->freetime_at == $unixtime){
 											$class = "";
 											$href = "#{$i}_{$j}";
 											break;
 										} ?>
-										<? endif; ?>
 									<? endforeach; ?>
 								<? endif; ?>
 								<li class="<?= $class; ?>"><a href="<?= $href; ?>" class="boxer"><?= $j; ?>:00</a></li>

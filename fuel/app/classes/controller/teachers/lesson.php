@@ -14,8 +14,10 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 			$reservation->teacher_id = $this->user->id;
 			$reservation->student_id = 0;
 			$reservation->status = 0;
-			$reservation->freetime_at = strtotime(Input::post("year", 0) . "-" . Input::post("month", 0) . "-" . Input::post("day", 0) . " " . Input::post("hour", 0) . ":00:00");
-			$reservation->category = 1;
+			$reservation->freetime_at = strtotime(Input::post("year", 0)
+				. "-" .Input::post("month", 0)
+				. "-" .Input::post("day", 0)
+				. " " .Input::post("hour", 0) . ":00:00");
 			$reservation->save();
 		}
 
@@ -43,8 +45,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				"where" => [
 					["teacher_id", $this->user->id],
 					["status", 1],
-					["deleted_at", 0],
-					["category", 1],
+					["deleted_at", 0]
 				]
 			]);
 
@@ -59,8 +60,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				["deleted_at", 0],
 				["teacher_id", $this->user->id],
 				["status", "<>", 0],
-				["freetime_at", "<", time()],
-				["category", 1],
+				["freetime_at", "<", time()]
 			],
 			"order_by" => [
 				//["id", "desc"],
@@ -91,8 +91,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				["deleted_at", 0],
 				["teacher_id", $this->user->id],
 				["status", "<>", 0],
-				["freetime_at", ">=", time()],
-				["category", 1]
+				["freetime_at", ">=", time()]
 			],
 			"order_by" => [
 				["id", "desc"],

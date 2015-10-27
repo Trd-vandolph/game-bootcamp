@@ -6,7 +6,7 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=olivecode',
+			'dsn'        => 'mysql:host=localhost;dbname=gb_db',
 			'username'   => 'root',
 			'password'   => '',
 		),

@@ -61,8 +61,7 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 2],
 				["language", Input::get("course", 0)],
-				["deleted_at", 0],
-				["category", 1],
+				["deleted_at", 0]
 			]
 		]);
 		$lastClass = Model_Lessontime::find("last", [
@@ -70,8 +69,7 @@ class Controller_Students_Lesson extends Controller_Students
 				["student_id", $this->user->id],
 				["status", 2],
 				["language", Input::get("course", 0)],
-				["deleted_at", 0],
-				["category", 1],
+				["deleted_at", 0]
 			]
 		]);
 		if($pasts == null){
@@ -92,7 +90,6 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
-						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -112,7 +109,6 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
-						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -132,7 +128,6 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
-						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -152,7 +147,6 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->status = 1;
 						$reserve->number = count($pasts) + 1;
 						$reserve->history = $this->user->place;
-						$reserve->category = 1;
 						$reserve->save();
 
 						Model_Lessontime::sendReservedEMail($reserve->id);
@@ -167,12 +161,8 @@ class Controller_Students_Lesson extends Controller_Students
 			case -1:
 				$course_where = ["trial", 1];
 				break;
-			case 1:
-				$course_where = ["javascript", 1];
-				break;
 			default:
-				$course_where = ["html5", 1];
-
+				$course_where = ["enchantJS", 1];
 		}
 
 		$data["lessons"] = Model_Lessontime::find("all", [
@@ -209,8 +199,7 @@ class Controller_Students_Lesson extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0],
-						["category", 1]
+						["deleted_at", 0]
 				]
 		]);
 
@@ -245,8 +234,7 @@ class Controller_Students_Lesson extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", 0)],
-						["deleted_at", 0],
-						["category", 1]
+						["deleted_at", 0]
 				]
 		]);
 
@@ -255,8 +243,7 @@ class Controller_Students_Lesson extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0],
-						["category", 1]
+						["deleted_at", 0]
 				]
 		]);
 
@@ -265,7 +252,6 @@ class Controller_Students_Lesson extends Controller_Students
 				["deleted_at", 0],
 				["student_id", $this->user->id],
 				["status", "<>", 0],
-				["category", 1],
 				["freetime_at", "<", time()],
 			],
 			"order_by" => [

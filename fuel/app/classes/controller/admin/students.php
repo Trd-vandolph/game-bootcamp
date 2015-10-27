@@ -12,12 +12,11 @@ class Controller_Admin_Students extends Controller_Admin
 	public function action_index()
 	{
 
-		$where = [["group_id", 1],["deleted_at", 0],["category", 1]];
+		$where = [["group_id", 1],["deleted_at", 0]];
 
 		$query = Model_User::query()
-	    ->where('group_id', '=', 1)
-	    ->where('deleted_at', '=', 0)
-		->where('category', '=', 1);
+			->where('group_id', '=', 1)
+			->where('deleted_at', '=', 0);
 
 		if($search_text = Input::get("search_text", ""))
 		{
@@ -71,7 +70,7 @@ class Controller_Admin_Students extends Controller_Admin
 	public function action_paid()
 	{
 
-		$where = [["group_id", 1],["deleted_at", 0],["charge_html", "!=", 0],["category", 1]];
+		$where = [["group_id", 1],["deleted_at", 0],["charge_html", "!=", 0]];
 
 		$data["users"] = Model_User::find("all", [
 				"where" => $where,
@@ -99,8 +98,8 @@ class Controller_Admin_Students extends Controller_Admin
 	public function action_trial()
 	{
 
-		$where = [["group_id", 1],["deleted_at", 0],["charge_html", 0],["category", 1]];
-		$trial_where = [["status", 2],["deleted_at",0], ["language", -1],["number", 1], ["category", 1]];
+		$where = [["group_id", 1],["deleted_at", 0],["charge_html", 0]];
+		$trial_where = [["status", 2],["deleted_at",0], ["language", -1],["number", 1]];
 
 		$data["users"] = Model_User::find("all", [
 				"where" => $where,
@@ -211,7 +210,6 @@ class Controller_Admin_Students extends Controller_Admin
 				$user->birthday = Input::post("year", 0) . "-" . Input::post("month", 0) . "-" . Input::post("day", 0);
 				$user->timezone = Input::post("timezone", "");
 				$user->place = Input::post("place", "");
-				$user->category = 1;
 				$user->save();
 
 				Response::redirect("/admin/students");

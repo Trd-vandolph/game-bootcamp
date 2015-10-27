@@ -47,11 +47,11 @@ class Controller_Admin_Contents extends Controller_Admin
 
 					if(move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
 						chmod($filepath, 0644);
-						
+
 						// save
 						$cs = Input::post("course");
 						$courses = NULL;
-						
+
 						if(null !=(Input::post("course"))){
 							foreach($cs as $course){
 								$courses = $courses.$course;
@@ -62,7 +62,6 @@ class Controller_Admin_Contents extends Controller_Admin
 							$content->number = 0;
 							$content->text_type_id = 2;
 							$content->exam = $courses;
-							$content->category = Input::post("category");
 							$content->save();
 						}else{
 							$content = Model_Content::forge();
@@ -71,7 +70,6 @@ class Controller_Admin_Contents extends Controller_Admin
 							$content->number = Input::post("number");
 							$content->text_type_id = Input::post("text_type");
 							$content->exam = NULL;
-							$content->category = Input::post("category");
 							$content->save();
 						}
 
@@ -84,7 +82,7 @@ class Controller_Admin_Contents extends Controller_Admin
 			}
 		}
 
-		$where = [["deleted_at", 0],["category", 1]];
+		$where = [["deleted_at", 0]];
 
 		if(Input::get("search_type", 0) != 0){
 			array_push($where, ["type_id" => Input::get("search_type", 0) - 1]);

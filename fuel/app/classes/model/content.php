@@ -13,7 +13,6 @@ class Model_Content extends \Orm\Model
 		'created_at',
 		'updated_at',
 		'exam',
-		'category'
 	);
 
 	protected static $_observers = array(

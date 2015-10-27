@@ -30,7 +30,7 @@
 				<td><? if($user->place == 1){echo "Grameen"; }else{echo "Online School"; } ?></td>
 				<td>
 					<?
-							$where = [["deleted_at", 0],["category", 1], ["status", 2], ["student_id", $user->id]];
+							$where = [["deleted_at", 0], ["status", 2], ["student_id", $user->id]];
 
 					  	$lesson = Model_Lessontime::find("last", [
 									"where" => $where,

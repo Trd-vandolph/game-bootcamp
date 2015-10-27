@@ -9,7 +9,6 @@ class Model_Document extends \Orm\Model
 		'created_at',
 		'updated_at',
 		'type',
-		'category'
 	);
 
 	protected static $_observers = array(

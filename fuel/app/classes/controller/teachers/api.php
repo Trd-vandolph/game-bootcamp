@@ -72,8 +72,7 @@ class Controller_Teachers_Api extends Controller_Rest
 				"where" => [
 					["teacher_id", $this->user->id],
 					["freetime_at", $unixtime],
-					["deleted_at", 0],
-					["category", 1],
+					["deleted_at", 0]
 				]
 			]);
 			if($reservation != null){
@@ -92,7 +91,6 @@ class Controller_Teachers_Api extends Controller_Rest
 				$reservation->student_id = 0;
 				$reservation->status = 0;
 				$reservation->freetime_at = $unixtime;
-				$reservation->category = 1;
 				$reservation->save();
 				$code = 200;
 			}
@@ -121,8 +119,7 @@ class Controller_Teachers_Api extends Controller_Rest
 					["teacher_id", $this->user->id],
 					["status", 1],
 					["freetime_at", "<=", time() + 600],
-					["freetime_at", ">=", time() - 3000],
-					["category", 1],
+					["freetime_at", ">=", time() - 3000]
 				]
 			]);
 

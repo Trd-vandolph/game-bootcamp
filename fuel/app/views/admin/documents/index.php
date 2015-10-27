@@ -20,7 +20,7 @@
 						<div>
 							<select name="doc_type">
 								<option value="0">Ordinary Use</option>
-								<option value="1">Online Course Information</option>
+								<option value="1">Course Information</option>
 							</select>
 						</div>
 					</li>

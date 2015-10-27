@@ -11,9 +11,9 @@ class Controller_Students_Signin extends Controller_Base
 		if(Input::post("email", null) !== null and Security::check_token()){
 			$email = Input::post('email', null);
 			$password = Input::post('password', null);
-			
-			$where = [["email", $email],["category", 1],["deleted_at", 0]];
-			
+
+			$where = [["email", $email],["deleted_at", 0]];
+
 			$gameUser = Model_User::find("all", [
 					"where"=> $where,
 			]);
@@ -24,7 +24,7 @@ class Controller_Students_Signin extends Controller_Base
 						$this->auth->remember_me();
 					}
 					$type = Input::post('type', 0);
-						
+
 					if(Input::post('pay', 0) != 1 && Input::post('doc', 0) != 1){
 						Response::redirect('/students/top');
 					}else{
@@ -39,22 +39,22 @@ class Controller_Students_Signin extends Controller_Base
 								Response::redirect('/coursefee/cash/?g=4#upload');
 							}
 						}
-						
+
 						if(Input::post('doc', 0) != 0 || Input::post('doc') != NULL) {
 							$user = Model_User::query()->where('email', $email)->where('deleted_at', 0)->limit(1)->get_one();
 							$query = Model_User::find($user->id);
-							
+
 							$place = $query->place;
-							
+
 							if($place == 1) {
 								Response::redirect('/join/?open=2');
-								
+
 							}else {
 								Response::redirect('/join/?open=1');
-								
+
 							}
 						}
-						
+
 					}
 				}else{
 					Response::redirect('/students/signin?e=1');

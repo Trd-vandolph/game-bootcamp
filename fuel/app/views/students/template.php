@@ -51,9 +51,7 @@
 							["language", 0],
 							["student_id", $this->user->id],
 							["status", 2],
-							["deleted_at", 0],
-							["category", 1]
-							
+							["deleted_at", 0]
 						],
 					]);
 					?>
@@ -66,7 +64,6 @@
 							["student_id", $this->user->id],
 							["status", 2],
 							["deleted_at", 0],
-							["category", 1]
 						],
 					]);
 					?>
@@ -78,8 +75,7 @@
 							["language", 0],
 							["student_id", $this->user->id],
 							["status", 2],
-							["deleted_at", 0],
-							["category", 1]
+							["deleted_at", 0]
 						],
 					]);
 					?>
@@ -97,7 +93,7 @@
 								["deleted_at", 0]
 						]
 				]);
-				
+
 				$donetrial = Model_Lessontime::find("all", [
 					"where" => [
 							["student_id", $this->user->id],

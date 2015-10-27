@@ -1,10 +1,12 @@
 <?
-	$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->where('category', 1)->limit(1)->get_one();
+	$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->limit(1)->get_one();
 
 	if(count($documents) > 0) {
 		$query = Model_Document::find($documents->id);
 
 		$doc = "/contents/".$query->path;
+	}else {
+		$doc = NULL;
 	}
 
 ?>
