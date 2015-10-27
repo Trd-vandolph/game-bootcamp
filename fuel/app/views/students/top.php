@@ -47,7 +47,8 @@
 							["number", $reservation->number],
 							["type_id", $reservation->language],
 							["text_type_id", 0],
-							["deleted_at", 0]
+							["deleted_at", 0],
+							["category", 1]
 						]
 					]);
 					if($text != null):
