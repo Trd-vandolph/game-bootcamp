@@ -68,7 +68,7 @@
 									<div class="content select-teacher">
 										<ul>
 											<? foreach($lessons as $lesson): ?>
-												<? if(($lesson->teacher->html5 == 1 and $course == "0") or ($lesson->teacher->javascript == 1 and $course == "1")  or ($lesson->teacher->php == 1 and $course == "2") or  ($lesson->teacher->trial == 1 and $course == "-1")): ?>
+												<? if(($lesson->teacher->enchantJS == 1 and $course == "0") or ($lesson->teacher->trial == 1 and $course == "-1")): ?>
 													<?
 													$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
 

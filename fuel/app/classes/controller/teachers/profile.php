@@ -68,9 +68,7 @@ class Controller_Teachers_Profile extends Controller_Teachers
 				$this->user->pr = Input::post("pr", "");
 				$this->user->educational_background = Input::post("educational_background", "");
 
-				$this->user->php = Input::post("php", 0);
-				$this->user->html5 = Input::post("html5", 0);
-				$this->user->javascript = Input::post("javascript", 0);
+				$this->user->enchantJS = Input::post("enchantJS", 0);
 				$this->user->trial = Input::post("trial", 0);
 
 				$this->user->save();

@@ -60,7 +60,7 @@ class Controller_Students_Textbooks extends Controller_Students
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", 0)],
-						["deleted_at", 0],]
+						["deleted_at", 0]
 				]
 		]);
 

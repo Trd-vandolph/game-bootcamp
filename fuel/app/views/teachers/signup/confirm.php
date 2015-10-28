@@ -92,44 +92,30 @@
 						</div>
 					</li>
 					<li>
-						<h4>html5</h4>
+						<h4>Trial</h4>
 						<div>
 							<?
-							if($html5 == 1){
-								echo "On";
-							}else{
-								echo "Off";
-							}
+								if($trial == 1){
+									echo "On";
+								}else{
+									echo "Off";
+								}
 							?>
-
 						</div>
 					</li>
 					<li>
-						<h4>JavaScript</h4>
+						<h4>enchant.js</h4>
 						<div>
 							<?
-							if($javascript == 1){
-								echo "On";
-							}else{
-								echo "Off";
-							}
+								if($enchantJS == 1){
+									echo "On";
+								}else{
+									echo "Off";
+								}
 							?>
 
 						</div>
 					</li>
-					<!--<li>
-						<h4>PHP</h4>
-						<div>
-							<?
-							if($php == 1){
-								echo "On";
-							}else{
-								echo "Off";
-							}
-							?>
-
-						</div>
-					</li>-->
 				</ul>
 				<p class="button-area">
 					<button name="submit" value="1" class="button">Submit <i class="fa fa-chevron-right"></i></button>

@@ -48,12 +48,6 @@
 							<?= date("M d, Y.", strtotime($user->birthday)); ?>
 						</div>
 					</li>
-					<li>
-						<h4>Gmail address</h4>
-						<div>
-							<input class="wl" name="google_account" type="text" required pattern=".{2,40}" title="must be less than 40 chars" value="<? echo Security::htmlentities(Input::post("google_account", $user->google_account)); ?>">
-						</div>
-					</li>
 				</ul>
 				<p class="button-area">
 					<button class="button" href="">Change</button>

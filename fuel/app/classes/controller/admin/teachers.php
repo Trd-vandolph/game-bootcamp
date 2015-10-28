@@ -123,9 +123,7 @@ class Controller_Admin_Teachers extends Controller_Admin
 				$user->pr = Input::post("pr", "");
 				$user->educational_background = Input::post("educational_background", "");
 
-				$user->php = Input::post("php", 0);
-				$user->html5 = Input::post("html5", 0);
-				$user->javascript = Input::post("javascript", 0);
+				$user->enchantJS = Input::post("enchantJS", 0);
 				$user->trial = Input::post("trial", 0);
 
 				$user->type = Input::post("type", 0);

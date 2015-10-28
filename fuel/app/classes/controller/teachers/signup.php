@@ -3,7 +3,7 @@
 class Controller_Teachers_Signup extends Controller_Base
 {
 
-	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','timezone','need_news_email','pr','educational_background','html5','javascript','php');
+	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','timezone','need_news_email','pr','educational_background','trial','enchantJS');
 
 	public function before(){
 		$this->template = View::forge("teachers/template");
@@ -101,10 +101,8 @@ class Controller_Teachers_Signup extends Controller_Base
 					$user->pr = Session::get_flash("pr");
 					$user->educational_background = Session::get_flash("educational_background");
 
-					$user->php = Input::post("php", 0);
-					$user->html5 = Input::post("html5", 0);
-					$user->javascript = Input::post("javascript", 0);
-					$user->trial = Input::post("trial", 0);
+					$user->trial = Session::get_flash("trial");
+					$user->enchantJS = Session::get_flash("enchantJS");
 
 					$user->save();
 

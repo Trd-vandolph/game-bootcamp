@@ -9,6 +9,7 @@ class Controller_Students_Lesson extends Controller_Students
 			$del_reserve = Model_Lessontime::find(Input::get("del_id", 0));
 			if($del_reserve != null){
 				if($del_reserve->student_id == $this->user->id){
+
 					// send mail
 					$body = View::forge("email/students/cancel_lesson");
 
@@ -29,7 +30,7 @@ class Controller_Students_Lesson extends Controller_Students
 
 					date_default_timezone_set(Config::get("timezone.timezone")[$del_reserve->teacher->timezone]);
 
-					$body->set("name", $this->user->firstname);
+					$body->set("name", $del_reserve->teacher->firstname);
 					$body->set("reservation", $del_reserve);
 					$sendmail = Email::forge("JIS");
 					$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));

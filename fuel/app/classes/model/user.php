@@ -151,6 +151,10 @@ class Model_User extends \Orm\Model
 			'default' 	  => 0,
 			'null'		  => false,
 		),
+		'php'      => array(
+			'default' 	  => 0,
+			'null'		  => false,
+		),
 		'html5'      => array(
 			'default' 	  => 0,
 			'null'		  => false,

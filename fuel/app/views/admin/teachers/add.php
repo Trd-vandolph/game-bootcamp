@@ -124,23 +124,11 @@
 						</div>
 					</li>
 					<li>
-						<h4>HTML/CSS</h4>
+						<h4>enchant.js</h4>
 						<div>
-							<input type="checkbox" name="html5" value="1" <? if(Security::htmlentities(Input::post("html5", $user->html5)) == 1) echo "checked"; ?>>
+							<input type="checkbox" name="enchantJS" value="1" <? if(Security::htmlentities(Input::post("enchantJS", $user->enchantJS)) == 1) echo "checked"; ?>>
 						</div>
 					</li>
-					<li>
-						<h4>JavaScript</h4>
-						<div>
-							<input type="checkbox" name="javascript" value="1" <? if(Security::htmlentities(Input::post("javascript", $user->javascript)) == 1) echo "checked"; ?>>
-						</div>
-					</li>
-					<!--<li>
-						<h4>PHP</h4>
-						<div>
-							<input type="checkbox" name="php" value="1" <? if(Security::htmlentities(Input::post("php", $user->php)) == 1) echo "checked"; ?>>
-						</div>
-					</li>-->
 				</ul>
 				<ul class="forms">
 					<li>
