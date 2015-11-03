@@ -17,7 +17,7 @@
 						<div class="body">
 							<div class="amount" style="text-align: center">
 								<p>
-									<strong>US$300</strong><br>
+									<strong>US$400</strong><br>
 									for 12 lessons
 								</p>
 							</div>
@@ -28,7 +28,7 @@
 						<div class="header">Installment</div>
 						<div class="body">
 							<div class="amount" align="center">
-								<p><strong>US$110</strong><br>
+								<p><strong>US$150</strong><br>
 								every 4 lessons
 							</p>
 							</div>

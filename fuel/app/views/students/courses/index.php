@@ -8,12 +8,12 @@
           <table id="course-paypal-payment">
 	          <tr>
 		          <td class="choices">
-			          <p class="price"><span>US$300</span>for 12 lessons</p>
+			          <p class="price"><span>US$400</span>for 12 lessons</p>
 			          <? if($id != null): ?>
 			            <div class="paypal-link">
 			              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 			                <input type="hidden" name="cmd" value="_s-xclick">
-			                <input type="hidden" name="hosted_button_id" value="MKBYMTXJHVEUC">
+			                <input type="hidden" name="hosted_button_id" value="VKUELYDYMMJP4">
 			                <table>
 			                  <tr><td><input type="hidden" name="on0" value="user"></td></tr><tr><td><input type="hidden" name="os0" value="<?= $id; ?>"></td></tr>
 			                </table>
@@ -27,12 +27,12 @@
 			      		<strong>OR</strong>
 			      </td>
 			      <td class="choices">
-			      	<p class="price"><span>US$110</span>every 4 lessons</p>
+			      	<p class="price"><span>US$150</span>every 4 lessons</p>
 			          <? if($id != null): ?>
 			            <div class="paypal-link">
 			              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 			                <input type="hidden" name="cmd" value="_s-xclick">
-			                <input type="hidden" name="hosted_button_id" value="BHGMH3ATX5ZQY ">
+			                <input type="hidden" name="hosted_button_id" value="3BTSSRRJF2X8C ">
 			                <table>
 			                  <tr><td><input type="hidden" name="on0" value="user"></td></tr><tr><td><input type="hidden" name="os0" value="<?= $id; ?>"></td></tr>
 			                </table>

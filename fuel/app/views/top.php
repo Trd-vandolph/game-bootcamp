@@ -34,6 +34,8 @@
 	<div class="slideshow slideshow-3"></div>
 	<div class="slideshow slideshow-4"></div>
 	<div class="slideshow slideshow-5"></div>
+	<div class="slideshow slideshow-6"></div>
+	<div class="slideshow slideshow-7"></div>
 </div>
 <div id="ajax-content-wrap">
 	<div class="container-wrap">
@@ -229,7 +231,7 @@
 		$("#header-space").css("height", $("#header-outer").height());
 
 		$(window).resize(function (){
-			$("#header-space").css("height", $("#header-outer").height());
+			$("#header-space").css("height", $("#header-outer").height() + 13);
 		});
 
 		resizeHeight();

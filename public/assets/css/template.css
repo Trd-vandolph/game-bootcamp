@@ -1244,7 +1244,7 @@ section#contents {
 /******* Slideshow ********/
 #slideshow {
     position: relative;
-    width: 103%;
+    width: 107%;
     height: auto;
     margin-left: -20px;
     margin-top: -3px;
@@ -1258,19 +1258,25 @@ section#contents {
     height: 100%;
 }
 #slideshow > div.slideshow-1 {
-    background-image: url('../img/header-image.jpg');
+	background-image: url('../img/1.jpg');
 }
 #slideshow > div.slideshow-2 {
-    background-image: url('../img/header-image1.jpg');
+	background-image: url('../img/2.jpg');
 }
 #slideshow > div.slideshow-3 {
-    background-image: url('../img/header-image2.jpg');
+	background-image: url('../img/3.jpg');
 }
 #slideshow > div.slideshow-4 {
-    background-image: url('../img/header-image3.jpg');
+	background-image: url('../img/4.jpg');
 }
 #slideshow > div.slideshow-5 {
-    background-image: url('../img/header-image4.jpg');
+	background-image: url('../img/5.jpg');
+}
+#slideshow > div.slideshow-6 {
+	background-image: url('../img/6.jpg');
+}
+#slideshow > div.slideshow-7 {
+	background-image: url('../img/7.jpg');
 }
 .wpb_text_column.wpb_content_element .wpb_wrapper {
 	border-bottom: 2px solid #fff;
