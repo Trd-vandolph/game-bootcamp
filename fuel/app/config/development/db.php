@@ -8,7 +8,7 @@ return array(
 		'connection' => array(
 			'hostname'	   => 'localhost',
 			'port'		   => '3306',
-			'database'	   => 'gb_db',
+			'database'	   => 'game-bootcamp',
 			'username'	   => 'root',
 			'password'	   => '',
 			'persistent'	=> false,

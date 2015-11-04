@@ -53,30 +53,24 @@
 							</form>
 						</div>
 					</div>
-					<div id="close"><a href="#"><span class="icon-salient-x" aria-hidden="true"></span></a>
-					</div>
+					<div id="close"><a href="#"><span class="icon-salient-x" aria-hidden="true"></span></a></div>
 				</div>
 			</div>
 		</div>
 		<header id="top">
 			<div class="container">
 				<div class="row">
-				<? if(Auth::check()): ?>
-					<ul class="member-menu">
-						<li class="signup"><a href="/students" class="editable">My Page</a>
-						</li>
-						<li class="login"><a href="/students/?logout=1" class="editable">Log Out</a>
-						</li>
-					</ul>
-				<? else: ?>
-					<ul class="member-menu">
-						<li class="signup"><a href="/students/signup" class="editable"><? echo Session::get('memSettings1'); ?></a>
-						</li>
-						<li class="login"><a href="/students/signin" class="editable"><? echo Session::get('memSettings2'); ?></a>
-						</li>
-					</ul>
-				<? endif; ?>
-
+					<? if(Auth::check()): ?>
+						<ul class="member-menu">
+							<li class="signup"><a href="/students" class="editable">My Page</a></li>
+							<li class="login"><a href="/students/?logout=1" class="editable">Log Out</a></li>
+						</ul>
+					<? else: ?>
+						<ul class="member-menu">
+							<li class="signup"><a href="/students/signup" class="editable"><? echo Session::get('memSettings1'); ?></a></li>
+							<li class="login"><a href="/students/signin" class="editable"><? echo Session::get('memSettings2'); ?></a></li>
+						</ul>
+					<? endif; ?>
 					<div class="col span_3">
 						<a id="logo" href="/">
 							<img class="" alt="CSP Bootcamp" src="assets/img/logo/logo2_c.png" />
@@ -86,7 +80,6 @@
 					</div>
 					<div class="col span_9 col_last">
 						<a href="#mobilemenu" id="toggle-nav"><i class="icon-reorder"></i></a>
-
 						<nav>
 							<ul class="sf-menu">
 								<li><a href="/"><? echo Session::get('menu1'); ?></a>
@@ -116,30 +109,19 @@
 	<div id="mobile-menu">
 		<div class="container">
 			<ul>
-				<li><a href="/"><? echo Session::get('menu1'); ?></a>
-				</li>
-				<li><a href="/parents"><? echo Session::get('menu2'); ?></a>
-				</li>
-				<li><a href="/course"><? echo Session::get('menu4'); ?></a>
-				</li>
-				<li><a href="/tutor"><? echo Session::get('menu5'); ?></a>
-				</li>
-				<li><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a>
-				</li>
-				<li><a href="/coursefee"><? echo Session::get('menu7'); ?></a>
-				</li>
-				<li><a href="/howtojoin"><? echo Session::get('menu8'); ?></a>
-				</li>
-				<li><a href="/faq"><? echo Session::get('menu9'); ?></a>
-				</li>
-				<li><a href="#"><? echo Session::get('menu9'); ?></a>
-				</li>
+				<li><a href="/"><? echo Session::get('menu1'); ?></a></li>
+				<li><a href="/parents"><? echo Session::get('menu2'); ?></a></li>
+				<li><a href="/course"><? echo Session::get('menu4'); ?></a></li>
+				<li><a href="/tutor"><? echo Session::get('menu5'); ?></a></li>
+				<li><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a></li>
+				<li><a href="/coursefee"><? echo Session::get('menu7'); ?></a></li>
+				<li><a href="/howtojoin"><? echo Session::get('menu8'); ?></a></li>
+				<li><a href="/faq"><? echo Session::get('menu9'); ?></a></li>
+				<li><a href="#"><? echo Session::get('menu9'); ?></a></li>
 			</ul>
 		</div>
 	</div>
-
 	<? echo $content ?>
-
 	<div id="fws_55b227467453e" class="wpb_row vc_row-fluid full-width-section standard_section	" style="padding: 80px 102px 80px; margin-left: -102px; visibility: visible; background-color: #E60039!important;">
 		<div class="col span_12 light">
 			<a class="nectar-button large see-through" href="/students/signup" data-color-override="false">
@@ -171,14 +153,11 @@
 	<script type='text/javascript' src='wp-content/themes/salient/js/prettyPhoto11b8.js?ver=4.5'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/appear5152.js?ver=1.0'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>
-
 	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
-
 	<script>
 		window.onscroll = function (e) {
 			$('#header-outer, div#search-outer').attr('style', 'background-color: #014099 !important');
 		}
-
 		var $win = $(window);
 		$win.scroll(function () {
 			if ($win.scrollTop() == 0) {
@@ -189,7 +168,6 @@
 				//alert('Scrolled to Page Bottom');
 			}
 		});
-
 		$(function() {
 			// var lastScrollTop = 0;
 			// $(window).scroll(function(event){
