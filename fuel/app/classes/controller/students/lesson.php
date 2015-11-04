@@ -96,6 +96,24 @@ class Controller_Students_Lesson extends Controller_Students
 						Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						/*------- save to shared db --------*/
+
+						//DB::query('UPDATE `users` SET `group_id` = 8 WHERE `id` = 1')->execute('shared_database');
+						// prepare an insert statement
+						$query = DB::insert('reservation');
+						// Set the columns
+						$query->columns(array(
+							'teacher_id',
+							'freetime_at',
+							'deleted_at',
+						));
+						// Set the values
+						$query->values(array(
+							'John',
+							'14141',
+							'0',
+						))->execute('shared');
 					}
 				}
 			}
