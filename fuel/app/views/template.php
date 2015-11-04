@@ -40,9 +40,9 @@
 	<title> Game-BootCamp </title>
 </head>
 
-<body class="home page page-id-3227 page-template-default wpb-js-composer js-comp-ver-3.7.3 vc_responsive" data-ajax-transitions="false" data-loading-animation="none" data-bg-header="true" data-ext-responsive="true" data-header-resize="1" data-header-color="custom" data-smooth-scrolling="1" data-responsive="1">
+<body class="home page page-id-3227 page-template-default wpb-js-composer js-comp-ver-3.7.3 vc_responsive" data-smooth-scrolling="1" data-responsive="1">
 	<!-- <div id="header-space"></div> -->
-	<div id="header-outer" data-transparent-header="false" class="transparent" data-cart="false" data-transparency-option="" data-shrink-num="6" data-full-width="false" data-using-secondary="0" data-using-logo="1" data-logo-height="82" data-padding="15" data-header-resize="1">
+	<div id="header-outer" data-transparent-header="false" class="transparent" data-full-width="false" data-using-secondary="0" data-using-logo="1" data-logo-height="82" data-header-resize="1">
 		<div id="search-outer" class="nectar">
 			<div id="search">
 				<div class="container">
@@ -167,7 +167,7 @@
 	<? echo Asset::js( "top.jquery.js"); ?>
 	<script type='text/javascript' src='wp-content/themes/salient/js/superfishb493.js?ver=1.4.8'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/nicescrolle248.js?ver=3.5.4'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/sticky5152.js?ver=1.0'></script>
+	<!--script type='text/javascript' src='wp-content/themes/salient/js/sticky5152.js?ver=1.0'></script-->
 	<script type='text/javascript' src='wp-content/themes/salient/js/prettyPhoto11b8.js?ver=4.5'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/appear5152.js?ver=1.0'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>
@@ -176,12 +176,19 @@
 
 	<script>
 		window.onscroll = function (e) {
-			alert();
-			if (document.getElementByTagName('body').scrollTop != 0){
-				alert();
-				//$('#header-outer').css('background-color', 'rgb(1, 64, 153, 0.9) !important');
-			}
+			$('#header-outer, div#search-outer').attr('style', 'background-color: #014099 !important');
 		}
+
+		var $win = $(window);
+		$win.scroll(function () {
+			if ($win.scrollTop() == 0) {
+				//alert('Scrolled to Page Top');
+				$('#header-outer, div#search-outer').attr('style', 'background-color: rgba(1, 64, 153, 0.1) !important');
+			} else if ($win.height() + $win.scrollTop()
+				== $(document).height()) {
+				//alert('Scrolled to Page Bottom');
+			}
+		});
 
 		$(function() {
 			// var lastScrollTop = 0;
