@@ -41,7 +41,7 @@
 </head>
 
 <body class="home page page-id-3227 page-template-default wpb-js-composer js-comp-ver-3.7.3 vc_responsive" data-ajax-transitions="false" data-loading-animation="none" data-bg-header="true" data-ext-responsive="true" data-header-resize="1" data-header-color="custom" data-smooth-scrolling="1" data-responsive="1">
-	<div id="header-space"></div>
+	<!-- <div id="header-space"></div> -->
 	<div id="header-outer" data-transparent-header="false" class="transparent" data-cart="false" data-transparency-option="" data-shrink-num="6" data-full-width="false" data-using-secondary="0" data-using-logo="1" data-logo-height="82" data-padding="15" data-header-resize="1">
 		<div id="search-outer" class="nectar">
 			<div id="search">
@@ -79,7 +79,7 @@
 
 					<div class="col span_3">
 						<a id="logo" href="/">
-							<img class="" alt="CSP Bootcamp" src="assets/img/logo/logo2_b.png" />
+							<img class="" alt="CSP Bootcamp" src="assets/img/logo/logo2_c.png" />
 							<img class="starting-logo " alt="CSP Bootcamp" src="assets/img/logo/logo2-trans.png" />
 							<img class="starting-logo dark-version " alt="CSP Bootcamp" src="assets/img/logo/logo2_b.png" />
 						</a>
@@ -171,22 +171,36 @@
 	<script type='text/javascript' src='wp-content/themes/salient/js/prettyPhoto11b8.js?ver=4.5'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/appear5152.js?ver=1.0'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>
-	<script type='text/javascript'>
-	/* <![CDATA[ */
-	//var nectarLove = {"ajaxurl":"http:\/\/bootcamp.csp.edu\/wp-admin\/admin-ajax.php","postID":"3227","rooturl":"http:\/\/bootcamp.csp.edu","pluginPages":[],"disqusComments":"false"};
-	/* ]]> */
-	</script>
+
 	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
 
 	<script>
-		$(function() {
-
-			function resizeSpace() {
-				var headerSpace = $('#header-space');
-				var headerOuter = $('#header-outer').height();
-
-				headerSpace.css('height', headerOuter+13);
+		window.onscroll = function (e) {
+			alert();
+			if (document.getElementByTagName('body').scrollTop != 0){
+				alert();
+				//$('#header-outer').css('background-color', 'rgb(1, 64, 153, 0.9) !important');
 			}
+		}
+
+		$(function() {
+			// var lastScrollTop = 0;
+			// $(window).scroll(function(event){
+			// 	var st = $(this).scrollTop();
+			// 	if (st > lastScrollTop){
+			// 		alert("down");
+			// 	} else {
+			// 		alert("up");
+			// 	}
+			// 	lastScrollTop = st;
+			// });
+
+			// function resizeSpace() {
+			// 	var headerSpace = $('#header-space');
+			// 	var headerOuter = $('#header-outer').height();
+			//
+			// 	headerSpace.css('height', headerOuter+13);
+			// }
 
 			var memLink1 = '<?php if(Auth::check()){echo "/students"; }else{echo "/students/signup";}?>';
 			var memLink2 = '<?php if(Auth::check()){echo "/students/?logout=1"; }else{echo "/students/signin";}?>';
@@ -225,7 +239,7 @@
 			$(window).resize(function () {
 				addMemSettings();
 				removeDuplicate();
-				resizeSpace();
+				//resizeSpace();
 			});
 		});
 	</script>

@@ -409,7 +409,7 @@ body .col:not(#post-area):not(.span_12):not(#sidebar):hover a [class*=" icon-"].
 
 #header-outer,
 #search-outer {
-    background-color: #014099!important;
+	background-color: rgba(1, 64, 153, 0.1) !important
 }
 
 header#top nav > ul > li > a,
@@ -825,7 +825,7 @@ body #page-header-bg .icon-salient-heart-2 {
     }
 }
 #header-outer {
-    opacity: .9;
+		opacity: .9;
 }
 
 #menu-item-2675 a {}
@@ -1248,7 +1248,7 @@ section#contents {
     height: auto;
     margin-left: -20px;
     margin-top: -3px;
-    height: 900px;
+    height: 700px;
     background-color: #f7f7f7;
     overflow: hidden;
 }

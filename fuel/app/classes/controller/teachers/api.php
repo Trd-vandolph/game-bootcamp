@@ -75,6 +75,22 @@ class Controller_Teachers_Api extends Controller_Rest
 					["deleted_at", 0]
 				]
 			]);
+
+			//$query = DB::query("INSERT INTO `reservation` (`teacher_id`, `freetime_at`, `deleted_at`) VALUES ($this->user->id, $unixtime, 0)")->execute('shared');
+			$query = DB::insert('reservation');
+
+			$query->columns(array(
+				'teacher_id',
+				'freetime_at',
+				'deleted_at',
+			));
+
+			$query->values(array(
+				$this->user->id,
+				$unixtime,
+				0,
+			));
+
 			if($reservation != null){
 				if($reservation->status == 0){
 					$reservation->deleted_at = time();
