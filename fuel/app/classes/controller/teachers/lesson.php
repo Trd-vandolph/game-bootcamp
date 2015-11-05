@@ -12,6 +12,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 			// save
 			$reservation = Model_Lessontime::forge();
 			$reservation->teacher_id = $this->user->id;
+			$reservation->teacher_email = $this->user->email;
 			$reservation->student_id = 0;
 			$reservation->status = 0;
 			$reservation->freetime_at = strtotime(Input::post("year", 0)

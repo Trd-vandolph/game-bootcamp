@@ -77,6 +77,31 @@ class Controller_Students_Lesson extends Controller_Students
 			$pasts = [];
 		}
 
+		//send data to shared database
+		function for_shared_db() {
+			$id = Input::get("id", 0);
+			$reserve = Model_Lessontime::find($id);
+			
+			// prepare an insert statement
+			$query = DB::insert('reservation');
+
+			// Set the columns
+			$query->columns(array(
+				'tutor_account',
+				'freetime_at',
+				'deleted_at',
+				'status',
+			));
+
+			// Set the values
+			$query->values(array(
+				$reserve->teacher->email,
+				$reserve->freetime_at,
+				0,
+				1,
+			))->execute('shared');
+		}
+
 		$data["studentplace"] = Model_User::find("all");
 
 		$id = Input::get("id", 0);
@@ -93,27 +118,11 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
 
-						/*------- save to shared db --------*/
-
-						//DB::query('UPDATE `users` SET `group_id` = 8 WHERE `id` = 1')->execute('shared_database');
-						// prepare an insert statement
-						$query = DB::insert('reservation');
-						// Set the columns
-						$query->columns(array(
-							'teacher_id',
-							'freetime_at',
-							'deleted_at',
-						));
-						// Set the values
-						$query->values(array(
-							'John',
-							'14141',
-							'0',
-						))->execute('shared');
+						for_shared_db();
 					}
 				}
 			}
@@ -130,9 +139,11 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						for_shared_db();
 					}
 				}
 			}
@@ -149,9 +160,11 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						for_shared_db();
 					}
 				}
 			}
@@ -168,9 +181,11 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						for_shared_db();
 					}
 				}
 			}

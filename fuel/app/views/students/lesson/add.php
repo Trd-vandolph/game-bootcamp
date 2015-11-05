@@ -145,9 +145,23 @@
 									</div>
 								</div>
 								<?
+								$id = '';
 								$class = "unavailable";
 								$href = "#";
 								$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
+
+								// check if time is reserved from any website
+								//reserved from shared start
+								$reserved_from_shared = DB::select()
+															->from('reservation')
+															->where('deleted_at', 0)
+															->execute('shared');
+								foreach ($reserved_from_shared as $shared) {
+									if ($shared['freetime_at'] == $unixtime):
+										$href = "#reserved";
+										$id = "shared-reserved";
+									endif;
+								}
 
 								if($reserved != null and $reserved->freetime_at == $unixtime): ?>
 									<?
@@ -163,7 +177,7 @@
 										} ?>
 									<? endforeach; ?>
 								<? endif; ?>
-								<li class="<?= $class; ?>"><a href="<?= $href; ?>" class="boxer"><?= $j; ?>:00</a></li>
+								<li id="<?= $id; ?>" class="<?= $class; ?>"><a href="<?= $href; ?>" class="boxer"><?= $j; ?>:00</a></li>
 							<? endfor; ?>
 						</ul>
 					</td>
@@ -172,6 +186,19 @@
 			</tr>
 			</tbody>
 		</table>
+
+		<?
+
+		$reserved_from_shared = DB::select()
+									->from('reservation')
+									->where('deleted_at', 0)
+									->execute('shared');
+		foreach ($reserved_from_shared as $shared) {
+			//echo $shared['tutor_account']. '<br>';
+			echo $shared['freetime_at']. '<br>';
+		}
+
+		?>
 		<? if($reserved != null): ?>
 			<div  class="remodal" data-remodal-id="reserved">
 				<div class="content select-teacher">
