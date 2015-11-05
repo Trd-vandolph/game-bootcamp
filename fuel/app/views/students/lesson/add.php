@@ -149,7 +149,17 @@
 								$href = "#";
 								$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
 
-								if($reserved != null and $reserved->freetime_at == $unixtime): ?>
+								//select if this student have reservation
+								$query1 = DB::select()
+									->from('reservation')
+									->where('freetime_at', $unixtime)
+									->where('gmail_account', $user->email)
+									->where('status', 1)
+									->where('deleted_at',0)
+									->execute('shared');
+
+										print_r(count($query1));
+								if($reserved != null and $reserved->freetime_at == $unixtime and count($query1) > 0): ?>
 									<?
 									$href = "#reserved";
 									$class = "reserved";

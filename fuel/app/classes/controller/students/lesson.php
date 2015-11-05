@@ -93,7 +93,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
 
@@ -102,17 +102,19 @@ class Controller_Students_Lesson extends Controller_Students
 						//DB::query('UPDATE `users` SET `group_id` = 8 WHERE `id` = 1')->execute('shared_database');
 						// prepare an insert statement
 						$query = DB::insert('reservation');
-						// Set the columns
+						//Set the columns
 						$query->columns(array(
-							'teacher_id',
+							'gmail_account',
 							'freetime_at',
 							'deleted_at',
+							'status'
 						));
-						// Set the values
+						//Set the values
 						$query->values(array(
-							'John',
-							'14141',
-							'0',
+							$this->user->email,
+							$reserve->freetime_at,
+							0,
+							1,
 						))->execute('shared');
 					}
 				}

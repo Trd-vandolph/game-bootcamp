@@ -16,7 +16,7 @@
 					<div class="detail">
 						Student：<? if($reservation->student != null) echo $reservation->student->firstname; ?><br />
 						<? /* if($reservation->student != null) echo Html::anchor("teachers/students/detail/{$reservation->student_id}", $reservation->student->firstname); */ ?>
-						<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 24 Lessons
+							<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><? if($reservation->language != -1): ?><?= $reservation->number; ?>/ 12 Lessons<? endif; ?>
 					</div>
 					<?
 					$text = Model_Content::find("first", [

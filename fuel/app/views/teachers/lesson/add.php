@@ -85,7 +85,7 @@
 							weekday[5] = "Fri";
 							weekday[6] = "Sat";
 
-							var n = weekday[d.getDay()]; 
+							var n = weekday[d.getDay()];
 
 						$("#schedule_date").html(date.getDate() + " " + months[date.getMonth()] + " " +
 							"" + date.getFullYear() +
@@ -108,10 +108,9 @@
 			}
 		})
 
-
 		<? foreach($reservations as $reservation): ?>
 		<? if($reservation->student_id != 0): ?>
-		$(".calendar-day-<?= Date("Y-m-d", $reservation->freetime_at); ?>").addClass("booked");
+			$(".calendar-day-<?= Date("Y-m-d", $reservation->freetime_at); ?>").addClass("booked");
 		<? endif; ?>
 		<? endforeach; ?>
 
