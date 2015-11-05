@@ -11,7 +11,6 @@ class Controller_Admin_contactforum extends Controller_Admin
 	{
 
 		$where = [["deleted_at", 0]];
-
 		$data["forum"] = Model_Contactforum::find("all", [
 			"where" => $where,
 			"order_by" => [
@@ -28,9 +27,7 @@ class Controller_Admin_contactforum extends Controller_Admin
 		);
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
-
 		$data["news"] = array_slice($data["forum"], $data["pager"]->offset, $data["pager"]->per_page);
-
 		$view = View::forge("admin/contacts/forum/index", $data);
 		$this->template->content = $view;
 	}

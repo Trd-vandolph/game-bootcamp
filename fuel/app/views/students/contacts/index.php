@@ -4,14 +4,12 @@
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li>
-						<h4>Title</h4>
+					<li><h4>Title</h4>
 						<div>
 							<input id="email-title-width" name="title" type="text" required value="<?= Session::get_flash("title", ""); ?>">
 						</div>
 					</li>
-					<li>
-						<h4>Message</h4>
+					<li><h4>Message</h4>
 						<div>
 							<textarea name="body" rows="10" cols="60"><?= Session::get_flash("body", ""); ?></textarea>
 						</div>
@@ -23,7 +21,6 @@
 			<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</form>
 		</section>
-
 	</div>
 	<? echo View::forge("students/_menu")->set($this->get()); ?>
 </div>

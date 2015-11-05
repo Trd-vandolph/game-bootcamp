@@ -2,24 +2,19 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-
-  <meta name="keywords" content="OliveCode,Online Computer Programming Course,Job Guaranteed,WordPress,HTML,CSS,Programming,Git,JavaScript,Bangladesh,Private Lesson,Edoo" />
-  <meta name="description" content="OliveCode is the job guaranteed online computer programming course for Bangladeshi. It is a private lesson in English for 4 months, followed by 2-month internship at an IT company." />
-
-  <link rel="shortcut icon" href="/assets/img/common/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
-
-  <meta property="og:title" content="Olive code | Job Guaranteed Online Computer Programming Course for Bangladeshi">
-  <meta property="og:description" content="OliveCode is the job guaranteed online computer programming course for Bangladeshi. It is a private lesson in English for 4 months, followed by 2-month internship at an IT company.">
-  <meta property="og:url" content="http://www.olivecode.com/">
-  <meta property="og:image" content="http://www.olivecode.com/assets/img/front/logo_front.png?1423213936">
-  <meta property="og:site_name" content="Game-BootCamp">
-
+	<meta name="keywords" content="OliveCode,Online Computer Programming Course,Job Guaranteed,WordPress,HTML,CSS,Programming,Git,JavaScript,Bangladesh,Private Lesson,Edoo" />
+	<meta name="description" content="OliveCode is the job guaranteed online computer programming course for Bangladeshi. It is a private lesson in English for 4 months, followed by 2-month internship at an IT company." />
+	<link rel="shortcut icon" href="/assets/img/common/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<meta property="og:title" content="Olive code | Job Guaranteed Online Computer Programming Course for Bangladeshi">
+	<meta property="og:description" content="OliveCode is the job guaranteed online computer programming course for Bangladeshi. It is a private lesson in English for 4 months, followed by 2-month internship at an IT company.">
+	<meta property="og:url" content="http://www.olivecode.com/">
+	<meta property="og:image" content="http://www.olivecode.com/assets/img/front/logo_front.png?1423213936">
+	<meta property="og:site_name" content="Game-BootCamp">
 	<?= Asset::css("common.css"); ?>
 	<?= Asset::css("student.css"); ?>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!--[if IE]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<?= Asset::css("jquery.remodal.css"); ?>
 	<title><? echo $title; ?> | Game-BootCamp | Get Your Kids the Most Powerful Skill in 21st Century</title>
@@ -93,7 +88,6 @@
 								["deleted_at", 0]
 						]
 				]);
-
 				$donetrial = Model_Lessontime::find("all", [
 					"where" => [
 							["student_id", $this->user->id],
@@ -119,22 +113,20 @@
 <?php echo Asset::js('base.js'); ?>
 <script type="text/javascript">
 $(function(){
-  $("header .toggle").click(function(){
-    $("header nav ul").slideToggle();
-    return false;
-  });
-  $(window).resize(function(){
-    var win = $(window).width();
-    var p = 640;
-    if(win > p){
-      $("header nav ul").show();
-    } else {
-      $("header nav ul").hide();
-    }
-  });
+	$("header .toggle").click(function(){
+		$("header nav ul").slideToggle();
+		return false;
+	});
+	$(window).resize(function(){
+		var win = $(window).width();
+		var p = 640;
+		if(win > p){
+			$("header nav ul").show();
+		} else {
+			$("header nav ul").hide();
+		}
+	});
 });
-
-
 </script>
 </body>
 </html>

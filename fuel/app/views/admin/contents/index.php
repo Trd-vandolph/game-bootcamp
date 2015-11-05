@@ -12,7 +12,6 @@
 								<?
 								$content_types = Config::get("statics.content_types", []);
 								$i = 0;
-
 								foreach($content_types as $content_type):?>
 									<option value="<? echo $i++; ?>"><? echo $content_type; ?></option>
 								<? endforeach; ?>
@@ -40,7 +39,6 @@
 						<div>
 							<select name="number">
 								<?
-
 								for($i = 1; $i < 13; $i++):
 									?>
 									<option value="<?= $i; ?>"><?= $i; ?></option>
@@ -106,83 +104,80 @@
 					<td><? echo date("M d, Y. H:i:s", $content->created_at); ?></td>
 					<td><? echo $content->path; ?></td>
 					<td>
-					<script>
-					$(function(){
-						var ttype = $('#type_<? echo $content->id ?>');
-						var ttextType = $('#text_type_<? echo $content->id ?>');
-						var caption = $('#caption_<? echo $content->id ?>');
-						var exam = $('#exam_<? echo $content->id ?>');
-						var c_exam = $('#exam_caption_<? echo $content->id ?>');
-						var lesNo = $('#lesNo_<? echo $content->id ?>');
-						var examOpt = $('#exam_option_<? echo $content->id ?>');
-						var idOpt = $('#id_option_<? echo $content->id ?>');
-
-						$('#type_<? echo $content->id ?> > option:nth-child(4)').css('display','none');
-						if (ttype.val() == 3) {
-							ttextType.css('display','none');
-							caption.css('display','flex');
-							lesNo.css('display','none');
-							exam.css('display','flex');
-							c_exam.css('display','flex');
-							examOpt.css('display','flex');
-						}else{
-							ttextType.css('display','flex');
-							caption.css('display','none');
-							lesNo.css('display','block');
-							exam.css('display','none');
-							c_exam.css('display','none');
-							examOpt.css('display','none');
-						}
-
-						ttype.on("change", function(){
+						<script>
+						$(function(){
+							var ttype = $('#type_<? echo $content->id ?>');
+							var ttextType = $('#text_type_<? echo $content->id ?>');
+							var caption = $('#caption_<? echo $content->id ?>');
+							var exam = $('#exam_<? echo $content->id ?>');
+							var c_exam = $('#exam_caption_<? echo $content->id ?>');
+							var lesNo = $('#lesNo_<? echo $content->id ?>');
+							var examOpt = $('#exam_option_<? echo $content->id ?>');
+							var idOpt = $('#id_option_<? echo $content->id ?>');
+							$('#type_<? echo $content->id ?> > option:nth-child(4)').css('display','none');
 							if (ttype.val() == 3) {
+								ttextType.css('display','none');
+								caption.css('display','flex');
+								lesNo.css('display','none');
 								exam.css('display','flex');
 								c_exam.css('display','flex');
-								lesNo.css('display','none');
 								examOpt.css('display','flex');
 							}else{
+								ttextType.css('display','flex');
+								caption.css('display','none');
+								lesNo.css('display','block');
 								exam.css('display','none');
 								c_exam.css('display','none');
-								lesNo.css('display','flex');
 								examOpt.css('display','none');
-								idOpt.attr('selected','selected');
 							}
+							ttype.on("change", function(){
+								if (ttype.val() == 3) {
+									exam.css('display','flex');
+									c_exam.css('display','flex');
+									lesNo.css('display','none');
+									examOpt.css('display','flex');
+								}else{
+									exam.css('display','none');
+									c_exam.css('display','none');
+									lesNo.css('display','flex');
+									examOpt.css('display','none');
+									idOpt.attr('selected','selected');
+								}
+							});
 						});
-					});
-					</script>
-					<? if(strlen($content->exam)>0){$f_exam="disabled"; }else{$f_exam="";} ?>
-					<select id="type_<? echo $content->id;?>" onchange="changeContentType(<? echo $content->id;
-					?>)">
-							<option value="-1">Trial</option>
-							<? $i = 0; foreach($content_types as $content_type): ?>
-							<? if($content->type_id != 3){ ?>
-							<option <? if($content->type_id == $i){ echo "selected";}if($i == 3){echo ""; } ?>  value="<? echo $i++; ?>"><? echo $content_type; ?></option>
-							<? }else{ ?>
-							<option <? if($content->type_id == $i){ echo "selected";} ?>  value="<? echo $i++;?>"><? echo $content_type; ?></option>
-							 <? }endforeach; ?>
-
-					</select>
-					<br>
-					<form action="" method="post" id="text_type_<? echo $content->id; ?>">
-						<input type="hidden" name="t_id" value="<? echo $content->id; ?>">
-						<select
-						name="text_type_id" id="text_type_<? echo $content->id; ?>" onchange="$('#text_type_<? echo $content->id; ?>').submit();">
-							<? $i = 0; foreach($content_text_types as $content_text_type): ?>
-								<? if($content_text_type=="Exam"){ ?>
-									<option id="exam_option_<? echo $content->id; ?>" <? if($content->text_type_id == $i) echo "selected" ?>  value="<? echo $i++;
-									?>"><? echo $content_text_type; ?></option>
-								<? }elseif($content_text_type=="Text"){?>
-									<option id="id_option_<? echo $content->id; ?>" <? if($content->text_type_id == $i) echo "selected" ?>  value="<? echo $i++;
-									?>"><? echo $content_text_type; ?></option>
-								<?php }else{?>
-								 	<option <? if($content->text_type_id == $i) echo "selected" ?>  value="<? echo $i++;
-									?>"><? echo $content_text_type; ?></option>
-								<?php }endforeach; ?>
-						</select>
-					</form>
-					<input id="caption_<? echo $content->id ?>" value=" Exam" readonly style="width: 91px;">
-						<li>
-							<b id="exam_caption_<? echo $content->id; ?>">Exam For:</b>
+						</script>
+						<? if(strlen($content->exam)>0){$f_exam="disabled"; }else{$f_exam="";} ?>
+						<select id="type_<? echo $content->id;?>" onchange="changeContentType(<? echo $content->id;
+							?>)">
+								<option value="-1">Trial</option>
+								<? $i = 0; foreach($content_types as $content_type): ?>
+								<? if($content->type_id != 3){ ?>
+								<option <? if($content->type_id == $i){ echo "selected";}if($i == 3){echo ""; } ?>  value="<? echo $i++; ?>"><? echo $content_type; ?></option>
+								<? }else{ ?>
+								<option <? if($content->type_id == $i){ echo "selected";} ?>  value="<? echo $i++;?>"><? echo $content_type; ?></option>
+								 <? }endforeach; ?>
+							 </select>
+							 <br>
+						<form action="" method="post" id="text_type_<? echo $content->id; ?>">
+							<input type="hidden" name="t_id" value="<? echo $content->id; ?>">
+							<select
+								name="text_type_id" id="text_type_<? echo $content->id; ?>" onchange="$('#text_type_<? echo $content->id; ?>').submit();">
+									<? $i = 0; foreach($content_text_types as $content_text_type): ?>
+									<? if($content_text_type=="Exam"){ ?>
+										<option id="exam_option_<? echo $content->id; ?>" <? if($content->text_type_id == $i) echo "selected" ?>  value="<? echo $i++;
+										?>"><? echo $content_text_type; ?></option>
+									<? }elseif($content_text_type=="Text"){?>
+										<option id="id_option_<? echo $content->id; ?>" <? if($content->text_type_id == $i) echo "selected" ?>  value="<? echo $i++;
+										?>"><? echo $content_text_type; ?></option>
+									<?php }else{?>
+									 	<option <? if($content->text_type_id == $i) echo "selected" ?>  value="<? echo $i++;
+										?>"><? echo $content_text_type; ?></option>
+									<?php }endforeach; ?>
+							</select>
+						</form>
+						<input id="caption_<? echo $content->id ?>" value=" Exam" readonly style="width: 91px;">
+							<li>
+								<b id="exam_caption_<? echo $content->id; ?>">Exam For:</b>
 							<form action="" method="post" id="exam_<? echo $content->id; ?>">
 								<input type="hidden" name="e_id" value="<? echo $content->id; ?>">
 								<? 	$cs = $content->exam;
@@ -224,13 +219,11 @@
 									}else{
 										var php="";
 									}
-
 									var course_val=html+js+php;
 									$("#course_val_<? echo $content->id; ?>").attr("value",course_val);
-
 									$(document).ready(function(){
-									    $("#html_<? echo $content->id; ?>").on("click", function(){
-									        if($('#html_<? echo $content->id; ?>').is(':checked')){
+										$("#html_<? echo $content->id; ?>").on("click", function(){
+											if($('#html_<? echo $content->id; ?>').is(':checked')){
 												var html="0";
 											}else{
 												var html="";
@@ -245,13 +238,12 @@
 											}else{
 												var php="";
 											}
-
 											var course_val=html+js+php;
 											$("#course_val_<? echo $content->id; ?>").attr("value",course_val);
 											$('#exam_<? echo $content->id; ?>').submit();
-									    });
-									    $("#js_<? echo $content->id; ?>").on("click", function(){
-									        if($('#html_<? echo $content->id; ?>').is(':checked')){
+										});
+										$("#js_<? echo $content->id; ?>").on("click", function(){
+											if($('#html_<? echo $content->id; ?>').is(':checked')){
 												var html="0";
 											}else{
 												var html="";
@@ -266,13 +258,12 @@
 											}else{
 												var php="";
 											}
-
 											var course_val=html+js+php;
 											$("#course_val_<? echo $content->id; ?>").attr("value",course_val);
 											$('#exam_<? echo $content->id; ?>').submit();
-									    });
-									    $("#php_<? echo $content->id; ?>").on("click", function(){
-									        if($('#html_<? echo $content->id; ?>').is(':checked')){
+										});
+										$("#php_<? echo $content->id; ?>").on("click", function(){
+											if($('#html_<? echo $content->id; ?>').is(':checked')){
 												var html="0";
 											}else{
 												var html="";
@@ -292,24 +283,25 @@
 											var course_val=html+js+php;
 											$("#course_val_<? echo $content->id; ?>").attr("value",course_val);
 											$('#exam_<? echo $content->id; ?>').submit();
-									    });
+										});
 									});
 								</script>
-								</form>
-								<div id="lesNo_<? echo $content->id; ?>">
-								<form action="" method="post" id="number_<? echo $content->id; ?>">
-									<input type="hidden" name="n_id" value="<? echo $content->id; ?>">
-										<select name="number"  onchange="$('#number_<? echo $content->id; ?>').submit();">
-										<? for($i = 1; $i < 13; $i++): ?>
-											<option <? if($content->number == $i) echo "selected" ?> value="<?= $i; ?>"><?= $i; ?></option>
-										<? endfor; ?>
-										</select>
-								</form>
-								</div>
+							</form>
+						<div id="lesNo_<? echo $content->id; ?>">
+							<form action="" method="post" id="number_<? echo $content->id; ?>">
+								<input type="hidden" name="n_id" value="<? echo $content->id; ?>">
+									<select name="number"  onchange="$('#number_<? echo $content->id; ?>').submit();">
+									<? for($i = 1; $i < 13; $i++): ?>
+										<option <? if($content->number == $i) echo "selected" ?> value="<?= $i; ?>"><?= $i; ?></option>
+									<? endfor; ?>
+									</select>
+							</form>
+						</div>
 					</td>
 					<td><button class="button gray right" onclick="deleteContent(<? echo $content->id; ?>)"><i
 								class="fa fa-times"></i>
-							Delete</button></td>
+							Delete</button>
+					</td>
 				</tr>
 				<? endforeach; ?>
 			<? endif; ?>

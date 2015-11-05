@@ -13,8 +13,6 @@ class Controller_Teachers_Documents extends Controller_Teachers
 				["created_at", "desc"],
 			]
 		]);
-
-
 		$view = View::forge("teachers/documents", $data);
 		$this->template->content = $view;
 	}

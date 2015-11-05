@@ -10,7 +10,6 @@
 	<? $i = 0; foreach(Config::get("timezone.zone") as $zone): ?>
 	zone[<?= $i++; ?>] = ["<?= implode('","' ,array_keys(Config::get("timezone.{$zone}"))); ?>"];
 	<? endforeach; ?>
-
 	function changeZone(){
 		var list = $("#timezone");
 		list.empty();
@@ -18,7 +17,6 @@
 			list.append('<option>' + zone[$("#zone").val()][i] + '</option>');
 		}
 	}
-
 	function changeTimeZone(timezone){
 		for(var i = 0; i < zone.length; i++){
 			var index = zone[i].indexOf(timezone);

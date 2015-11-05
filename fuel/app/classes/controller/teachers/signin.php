@@ -20,8 +20,6 @@ class Controller_Teachers_Signin extends Controller_Base
 				Response::redirect('/teachers/signin?e=1');
 			}
 		}
-
-
 		$view = View::forge("teachers/signin");
 		$this->template->title = "Signin";
 		$this->template->auth_status = false;

@@ -11,7 +11,6 @@ class Controller_Admin_Reservations extends Controller_Admin
 
 	public function action_index()
 	{
-
 		// add
 		if(Input::post("teacher_id", null) != null and Security::check_token()){
 
@@ -54,9 +53,7 @@ class Controller_Admin_Reservations extends Controller_Admin
 		);
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
-
 		$data["reservations"] = array_slice($data["reservations"], $data["pager"]->offset, $data["pager"]->per_page);
-
 		$data["teachers"] = Model_User::find("all", [
 			"where" => [
 				["group_id", 10],
@@ -67,8 +64,6 @@ class Controller_Admin_Reservations extends Controller_Admin
 			]
 
 		]);
-
-
 		$view = View::forge("admin/reservations/index", $data);
 		$this->template->content = $view;
 	}
@@ -159,8 +154,6 @@ class Controller_Admin_Reservations extends Controller_Admin
 			]
 
 		]);
-
-
 		$view = View::forge("admin/reservations/edit", $data);
 		$this->template->content = $view;
 	}

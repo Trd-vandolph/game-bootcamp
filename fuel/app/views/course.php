@@ -1,54 +1,33 @@
 <section id="contents" class="course">
 	<div class="course-content content-text">
 		<div id="content">
-			<br>
-			<br>
+			<br><br>
 			<img class="no-shadow" src="../assets/img/front/months.png" /><br>
 			<div id="under-timeline">
 				<div id="1st-content">
 					<table>
-						<tr>
-							<td>
-								<p class="lesson-content">
-									Lesson 1 ~ 4
-								</p>
-							</td>
-							<td>
-								<p class="lesson-content">
-									Lesson 5 ~ 8
-								</p>
-							</td>
-							<td>
-								<p class="lesson-content">
-									Lesson 9 ~ 12
-								</p>
-							</td>
+						<tr><td><p class="lesson-content">Lesson 1 ~ 4</p></td>
+							<td><p class="lesson-content">Lesson 5 ~ 8</p></td>
+							<td><p class="lesson-content">Lesson 9 ~ 12</p></td>
 						</tr>
 					</table>
 				</div>
 				<div id="2nd-content">
-					<p>
-						The course is tailored for beginners at the age of 8 - 15 years and consists of private lesson and home-study.
-						<br>
-						<br>
+					<p>The course is tailored for beginners at the age of 8 - 15 years and consists of private lesson and home-study.
+						<br><br>
 						Experienced tutors in the Philippines conduct a private lesson.
-						<br>
-						<br>
+						<br><br>
 						Students will learn how to code games for three months by taking a lesson once a week.
-						<br>
-						<br>
+						<br><br>
 						Lesson is provided from 10:00 to 24:00 (Philippines time) Monday through Friday. Students can choose the most convenient lesson time.
-						<br>
-						<br>
+						<br><br>
 						The length of each lesson is 45 minutes.
-						<br>
-						<br>
+						<br><br>
 						Original textbooks are made by our experienced engineers.
 					</p>
 				</div>
 			</div>
 			<div id="games-container">
-
 				<div id="1st-game">
 					<p class="p-left game-title" id="p-1st">1st month - Catch The Banana</p>
 					<div class="game-table">
@@ -64,7 +43,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div id="2nd-game">
 					<p class="p-left game-title" id="p-2nd">2nd month - Snow Fight</p>
 					<div class="game-table">
@@ -74,13 +52,12 @@
 							</div>
 							<div class="game-cell">
 								<p><strong>Name: </strong> Snow Fight</p>
-						    <p><strong>Description: </strong> Shoot white bears as long as you wanted. Don't let them hit you for over three times or else the game is over.</p>
-						    <p><strong>Key Points: </strong> Create shooting object, Score if hit the enemy, Disappear when hit, Game over when hit by Enemy object.</p>
+								<p><strong>Description: </strong> Shoot white bears as long as you wanted. Don't let them hit you for over three times or else the game is over.</p>
+								<p><strong>Key Points: </strong> Create shooting object, Score if hit the enemy, Disappear when hit, Game over when hit by Enemy object.</p>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div id="3rd-game">
 					<p class="p-left game-title" id="p-3rd">3rd month - Super Bear</p>
 					<div class="game-table">
@@ -96,9 +73,7 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 			<div id="enchantJS">
 				<p class="p-left"><a href="http://enchantjs.com/" target="_blank">Enchant JS</a></p>
 				<div class="1st-content">
@@ -111,7 +86,6 @@
 					<a href="http://enchantjs.com/" target="_blank"><img src="../assets/img/front/enchant_logo.png" alt="enchant.js" /></a>
 				</div>
 			</div>
-
 			<div id="9leap">
 				<p class="p-left"><a href="http://9leap.net/info/about?sessionLang=en" target="_blank">9leap</a></p>
 				<div class="1st-content">
@@ -126,21 +100,16 @@
 </section>
 <script>
 	$(function (){
-
 		exchange();
-
 		function exchange() {
 			var first = $('#enchantJS .1st-content');
 			var last = $('#enchantJS .2nd-content');
-
 			if($('body').width() <= 500) {
 				last.after(first);
 			}
 		}
-
 		$(window).resize(function (){
 			exchange();
 		});
-
 	});
 </script>

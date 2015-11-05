@@ -23,7 +23,6 @@ class Controller_Teachers_Signup extends Controller_Base
 
 		$val = Validation::forge();
 		$val->add_callable('passwordvalidation');
-
 		$val->add('firstname','Firstname')->add_rule('required');
 		$val->add('lastname','Lastname')->add_rule('required');
 		$val->add('email','Email address')->add_rule('required')->add_rule('valid_email');
@@ -100,12 +99,9 @@ class Controller_Teachers_Signup extends Controller_Base
 					$user->timezone = Session::get_flash("timezone");
 					$user->pr = Session::get_flash("pr");
 					$user->educational_background = Session::get_flash("educational_background");
-
 					$user->trial = Session::get_flash("trial");
 					$user->enchantJS = Session::get_flash("enchantJS");
-
 					$user->save();
-
 					// send mail
 					$body = View::forge("email/teachers/signup");
 					$body->set("name", $user->firstname);

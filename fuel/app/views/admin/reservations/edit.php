@@ -5,8 +5,7 @@
 			<?= $error ?>
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li>
-						<h4>Teacher</h4>
+					<li><h4>Teacher</h4>
 						<div>
 							<select name="teacher_id" size="10">
 								<? foreach($teachers as $teacher): ?>
@@ -15,8 +14,7 @@
 							</select>
 						</div>
 					</li>
-					<li>
-						<h4>Student</h4>
+					<li><h4>Student</h4>
 						<div>
 							<select name="student_id" size="10">
 								<option value="0">None</option>
@@ -26,16 +24,12 @@
 							</select>
 						</div>
 					</li>
-					<li>
-						<h4>Time</h4>
+					<li><h4>Time</h4>
 						<div>
 							<select name="month" id="month" onchange="dateChange()">
 								<?
-
 								$datetime = explode("-", date("Y-m-d-H-i", $reservation->freetime_at));
-
 								$months = Config::get("statics.months", []);
-
 								for($i = 1; $i <= 12; $i++): ?>
 									<option <? if($i == $datetime[1]) echo "selected"; ?> value="<? echo $i; ?>"><? echo $months[$i - 1]; ?></option>
 								<? endfor; ?>
@@ -57,8 +51,7 @@
 							</select>:00
 						</div>
 					</li>
-					<li>
-						<h4>Language</h4>
+					<li><h4>Language</h4>
 						<div>
 							<select name="language">
 								<option value="-1" <? if($reservation->language == -1) echo "selected";?>>Trial</option>
@@ -68,22 +61,20 @@
 							</select>
 						</div>
 					</li>
-					<li>
-						<h4>Status</h4>
+					<li><h4>Status</h4>
 						<div>
 							<? echo Config::get("statics.reservation_status", [])[$reservation->status]; ?>
 						</div>
 					</li>
-					<li>
-						<h4>Hangout url</h4>
+					<li><h4>Hangout url</h4>
 						<div>
 							<input type="text" name="url" value="<? echo $reservation->url; ?>">
 						</div>
 					</li>
 				</ul>
-			<p class="button-area">
-				<button class="button" href="">Submit <i class="fa fa-chevron-right"></i></button>
-			</p>
+				<p class="button-area">
+					<button class="button" href="">Submit <i class="fa fa-chevron-right"></i></button>
+				</p>
 			<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</form>
 		</section>

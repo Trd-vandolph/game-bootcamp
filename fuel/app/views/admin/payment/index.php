@@ -35,7 +35,7 @@
 											["deleted_at", 0]
 										],
 									]);
-				
+
 									$javascript = Model_Lessontime::count([
 										"where" => [
 											["language", 1],
@@ -56,7 +56,7 @@
 											["deleted_at", 0]
 										],
 									]);
-				
+
 									$javascript = Model_Lessontime::count([
 										"where" => [
 											["language", 1],
@@ -77,7 +77,7 @@
 											["deleted_at", 0]
 										],
 									]);
-				
+
 									$javascript = Model_Lessontime::count([
 										"where" => [
 											["language", 1],
@@ -98,7 +98,7 @@
 											["deleted_at", 0]
 										],
 									]);
-				
+
 									$javascript = Model_Lessontime::count([
 										"where" => [
 											["language", 1],
@@ -115,7 +115,7 @@
 							</td>
 						</tr>
 					</tbody>
-				</table>	
+				</table>
 			</fieldset>
 			<br>
 			<fieldset>
@@ -129,17 +129,17 @@
 						<tr>
 							<td><strong>Payment Method:</strong></td>
 							<td>
-								<? 
-					        		if($payments->pay_method == 1){
-					        			echo "<i>Home</i> | Cash"; 
-					        		}elseif($payments->pay_method == 2){
-					        			echo "<i>Home</i> | Remittance";
-					        		}elseif($payments->pay_method == 3){
-					        			echo "<i>Home</i> | Credit Card";
-					        		}elseif($payments->pay_method == 4){
-					        			echo "<i>Grameen</i> | Cash ";
-					        		}
-				        		?>
+								<?
+									if($payments->pay_method == 1){
+										echo "<i>Home</i> | Cash";
+									}elseif($payments->pay_method == 2){
+										echo "<i>Home</i> | Remittance";
+									}elseif($payments->pay_method == 3){
+										echo "<i>Home</i> | Credit Card";
+									}elseif($payments->pay_method == 4){
+										echo "<i>Grameen</i> | Cash ";
+									}
+								?>
 							</td>
 						</tr>
 						<tr>
@@ -160,7 +160,7 @@
 											echo "Quarter 4 (JavaScript Chapter 1-8)";
 										}
 									}
-			        			?>
+								?>
 							</td>
 						</tr>
 						<? if($payments->pay_method != 2) { ?>
@@ -193,11 +193,10 @@
 					</tbody>
 				</table>
 			</fieldset>
-			
 		<? endforeach; ?>
 		</section>
-<?= Asset::js("base.js"); ?>
-<?= Asset::js("jquery.remodal.js"); ?>
+		<?= Asset::js("base.js"); ?>
+		<?= Asset::js("jquery.remodal.js"); ?>
 	<div class="remodal" data-remodal-id="deny">
 		<div class="modal-event">
 			<section class="content-wrap" style="text-align: center;">

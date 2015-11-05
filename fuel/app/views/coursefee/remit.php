@@ -1,4 +1,4 @@
-<? 
+<?
 if (Input::get('g', 0) == 2) {
 	$g = "Home | Remittance";
 }
@@ -63,13 +63,13 @@ if(isset($student)) {
 	<div class="remodal" data-remodal-id="done" style="max-width: 900px;">
 		<div class="modal-event">
 			<section class="content-wrap" style="text-align: center;">
-				
+
 				<? $studentID = $student->id; ?>
 				<? $paymethod = Input::get('g', 0); ?>
 				<? $now = date("Y-m-d H:i:s") ?>
 				<? $paid = $student->charge_html."1"; ?>
 				<? if($student->charge_html != NULL && $student->charge_html != 0){$method = 2;}else{$method=1;} ?>
-				
+
 				<form action="" method="post" enctype="multipart/form-data">
 					<? if($method == 1) { ?>
 						Choose which type of payment (Click below)
@@ -150,17 +150,16 @@ if(isset($student)) {
 <? } ?>
 <div id="dialogoverlay"></div>
 <div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
+	<div>
+		<div id="dialogboxhead"></div>
+		<div id="dialogboxbody"></div>
+		<div id="dialogboxfoot"></div>
+	</div>
 </div>
 <script>
 
-
 $(function(e){
-	
+
 	var border = $('.bordered');
 	var firstLeft = $('.first-left');
 	var firstRight = $('.first-right');
@@ -188,9 +187,9 @@ $(function(e){
 	sub.click(function(){
 		Confirm.render("Are you sure you want to submit this payment information?", 2);
 	});
-	
+
 	digit.keyup(function() {
-		if(refno1.val().length > 0) { 
+		if(refno1.val().length > 0) {
 			refno2.removeAttr("disabled");
 			refno2.focus();
 		}else{
@@ -202,7 +201,7 @@ $(function(e){
 		}else{
 			refno3.attr("disabled", true);
 		}
-		if(refno3.val().length > 0) { 
+		if(refno3.val().length > 0) {
 			refno4.removeAttr("disabled");
 			refno4.focus();
 		}else{
@@ -220,13 +219,13 @@ $(function(e){
 		}else {
 			refno6.attr("disabled", true);
 		}
-		if(refno6.val().length > 0) { 
+		if(refno6.val().length > 0) {
 			refno7.removeAttr("disabled");
 			refno7.focus();
 		}else{
 			refno7.attr("disabled", true);
 		}
-		if(refno7.val().length > 0) { 
+		if(refno7.val().length > 0) {
 			refno8.removeAttr("disabled");
 			refno8.focus();
 		}else{
@@ -241,15 +240,15 @@ $(function(e){
 		}
 	});
 	submit.click(function(e){
-			if(refno.val().length != 8) {
-	 			if(payMethod.val().length < 1) {
-	 	 			Alert.render("You need to select a type of payment.");
-	 	 			return false;
-	 			}else {
-				Alert.render("You must enter 8 digits to proceed.");
+		if(refno.val().length != 8) {
+			if(payMethod.val().length < 1) {
+				Alert.render("You need to select a type of payment.");
 				return false;
-	 			}
-	 		}
+			}else {
+			Alert.render("You must enter 8 digits to proceed.");
+			return false;
+			}
+		}
 	});
 
 	if(check == "1111") {
@@ -260,15 +259,15 @@ $(function(e){
 		Alert.render("There's already a pending payment on this quarter. Kindly wait for the admin to confirmed it. Thank you.");
 		window.location="/students/top";
 	}
-	 <? if(!Auth::check()) {?>
+	<? if(!Auth::check()) {?>
 		pay.click(function(){
-	 		pay.removeAttr('data-remodal-target href');
+			pay.removeAttr('data-remodal-target href');
 			var yes =  Confirm.render("You must log-in first to your account before continuing.", 1);
 		});
 <? 	}?>
 
 	button.click(function(){button.css('color','black')})
-	
+
 	firstLeft.click(function(){
 		payMethod.val("1");
 		firstLeft.css({
@@ -285,27 +284,27 @@ $(function(e){
 		firstLeft.css({'borderColor' : '#f7f7f7' ,})
 	});
 
-	
+
 	$('#signup-button').css('display','none');
 });
 
 //custom alert
 
 function CustomAlert(){
-    this.render = function(dialog){
-        var winW = window.innerWidth;
-        var winH = window.innerHeight;
-        var dialogoverlay = document.getElementById('dialogoverlay');
-        var dialogbox = document.getElementById('dialogbox');
-        dialogoverlay.style.display = "block";
-        dialogoverlay.style.height = winH+"px";
-        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-        dialogbox.style.top = "100px";
-        dialogbox.style.display = "block";
-        document.getElementById('dialogboxhead').innerHTML = "<strong>Message</strong>";
-        document.getElementById('dialogboxbody').innerHTML = dialog;
-        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
-    }
+	this.render = function(dialog){
+		var winW = window.innerWidth;
+		var winH = window.innerHeight;
+		var dialogoverlay = document.getElementById('dialogoverlay');
+		var dialogbox = document.getElementById('dialogbox');
+		dialogoverlay.style.display = "block";
+		dialogoverlay.style.height = winH+"px";
+		dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+		dialogbox.style.top = "100px";
+		dialogbox.style.display = "block";
+		document.getElementById('dialogboxhead').innerHTML = "<strong>Message</strong>";
+		document.getElementById('dialogboxbody').innerHTML = dialog;
+		document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+	}
 	this.ok = function(){
 		document.getElementById('dialogbox').style.display = "none";
 		document.getElementById('dialogoverlay').style.display = "none";
@@ -313,23 +312,23 @@ function CustomAlert(){
 }
 var Alert = new CustomAlert();
 
-//end alert	
+//end alert
 
 //custom confirm
 function CustomConfirm(){
 	this.render = function(dialog,id){
 		var winW = window.innerWidth;
-	    var winH = window.innerHeight;
+		var winH = window.innerHeight;
 		var dialogoverlay = document.getElementById('dialogoverlay');
-	    var dialogbox = document.getElementById('dialogbox');
+		var dialogbox = document.getElementById('dialogbox');
 		dialogoverlay.style.display = "block";
-	    dialogoverlay.style.height = winH+"px";
+		dialogoverlay.style.height = winH+"px";
 		dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-	    dialogbox.style.top = "100px";
-	    dialogbox.style.display = "block";
-		
+		dialogbox.style.top = "100px";
+		dialogbox.style.display = "block";
+
 		document.getElementById('dialogboxhead').innerHTML = "<strong>Confirm your action</strong>";
-	    document.getElementById('dialogboxbody').innerHTML = dialog;
+		document.getElementById('dialogboxbody').innerHTML = dialog;
 		document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Confirm.yes(\''+id+'\')">Yes</button> <button onclick="Confirm.no()">Cancel</button>';
 	}
 	this.no = function(){
@@ -337,7 +336,7 @@ function CustomConfirm(){
 		document.getElementById('dialogoverlay').style.display = "none";
 	}
 	this.yes = function(id){
-		
+
 		if(id == 1) {
 			window.location="/students/signin/?p=1&g=" + <?= Input::get('g', 0); ?>
 		}else if(id == 2) {

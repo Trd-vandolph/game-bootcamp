@@ -7,14 +7,12 @@
 		<form action="" method="post">
 			<div class="login-area">
 				<ul class="forms">
-					<li>
-						<h4>E-Mail</h4>
+					<li><h4>E-Mail</h4>
 						<div>
 							<input name="email" type="email" required>
 						</div>
 					</li>
-					<li>
-						<h4>Password</h4>
+					<li><h4>Password</h4>
 						<div>
 							<input name="password" type="password" required>
 						</div>
@@ -34,12 +32,6 @@
 					<p>Sign up for a free trial lesson</p>
 					<? echo Html::anchor("students/signup", 'Signup <i class="fa fa-chevron-right"></i>',array('class' => 'button')); ?>
 				</div>
-				<!-- p>Or signup with your social account</p>
-				<ul class="social-signup clearfix">
-					<li class="fb"><!--? echo Html::anchor("students/auth/oauth/facebook", '<i class="fa fa-facebook-square"></i> Facebook'); ?></li>
-					<li class="tw"><!--? echo Html::anchor("students/auth/oauth/twitter", '<i class="fa fa-twitter"></i> twitter'); ?></li>
-					<li class="gp"><!--? echo Html::anchor("students/auth/oauth/google", '<i class="fa fa-google-plus"></i> Google+'); ?></li>
-				</ul -->
 				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 				<input type="text" value="<?=$pay; ?>" name="pay" hidden>
 				<input type="text" value="<?=$method; ?>" name="method" hidden>

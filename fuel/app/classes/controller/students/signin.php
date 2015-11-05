@@ -64,7 +64,6 @@ class Controller_Students_Signin extends Controller_Base
 			}
 		}
 
-
 		$view = View::forge("students/signin");
 		$this->template->content = $view;
 		$this->template->title = "Signin";

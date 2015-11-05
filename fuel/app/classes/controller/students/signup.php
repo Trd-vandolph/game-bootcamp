@@ -23,7 +23,6 @@ class Controller_Students_Signup extends Controller_Base
 
 		$val = Validation::forge();
 		$val->add_callable('passwordvalidation');
-
 		$val->add('firstname','Firstname')->add_rule('required');
 		$val->add('lastname','Lastname')->add_rule('required');
 		$val->add('email','Email address')->add_rule('required')->add_rule('valid_email');

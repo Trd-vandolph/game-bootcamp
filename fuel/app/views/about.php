@@ -10,7 +10,7 @@
 		<p>After you passed a final test of the course, we guarantee online 2-month internship at an IT company and job opportunity for you.</p>
 		<p>We look forward to seeing you on the course.</p>
 		<div class="ceo">
-			<p class="name">Hiroto Ihara  </p>
+			<p class="name">Hiroto Ihara</p>
 			<p class="edoo">Chief Executive Officer<br>Edoo Inc.<br><a href="http://edoo.co.jp" class="blank"><img src="/assets/img/front/about_edoo_logo.png" alt="Edoo inc"></a></p>
 		</div>
 	</div>

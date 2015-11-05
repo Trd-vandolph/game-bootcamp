@@ -30,11 +30,8 @@ class Controller_Teachers_News extends Controller_Teachers
 		);
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
-
 		$data["news"] = array_slice($data["news"], $data["pager"]->offset, $data["pager"]->per_page);
-
 		$data["user"] = $this->user;
-
 		$view = View::forge("teachers/news/index", $data);
 		$this->template->content = $view;
 	}
@@ -66,7 +63,6 @@ class Controller_Teachers_News extends Controller_Teachers
 		}
 
 		$data["user"] = $this->user;
-
 		$view = View::forge("teachers/news/detail", $data);
 		$this->template->content = $view;
 	}

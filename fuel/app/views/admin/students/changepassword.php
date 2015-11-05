@@ -3,7 +3,6 @@
 		<h3>Change password</h3>
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
-
 				<ul class="forms">
 					<li>
 						<h4>Password</h4>

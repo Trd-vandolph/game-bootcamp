@@ -161,7 +161,6 @@
 		var $win = $(window);
 		$win.scroll(function () {
 			if ($win.scrollTop() == 0) {
-				//alert('Scrolled to Page Top');
 				$('#header-outer, div#search-outer').attr('style', 'background-color: rgba(1, 64, 153, 0.1) !important');
 			} else if ($win.height() + $win.scrollTop()
 				== $(document).height()) {

@@ -20,7 +20,7 @@ class Controller_Students_News extends Controller_Students
 				["id", "desc"],
 			],
 		]);
-		
+
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -29,7 +29,7 @@ class Controller_Students_News extends Controller_Students
 						["deleted_at", 0]
 				]
 		]);
-		
+
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -48,11 +48,8 @@ class Controller_Students_News extends Controller_Students
 		);
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
-
 		$data["news"] = array_slice($data["news"], $data["pager"]->offset, $data["pager"]->per_page);
-
 		$data["user"] = $this->user;
-
 		$view = View::forge("students/news/index", $data);
 		$this->template->content = $view;
 	}
@@ -64,7 +61,7 @@ class Controller_Students_News extends Controller_Students
 				["for_students", 1]
 			],
 		]);
-		
+
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -73,7 +70,7 @@ class Controller_Students_News extends Controller_Students
 						["deleted_at", 0]
 				]
 		]);
-		
+
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],

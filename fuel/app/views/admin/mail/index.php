@@ -9,42 +9,42 @@
 					<th>Date Sent</th>
 					<th></th>
 				</thead>
-					<? foreach($mail as $new): ?>
-						<? if ($new->deleted_at == 0): ?>
-							<tr id="mail_<?php echo $new->id?>">
-								<td>
-									<?php if($new->status == 0): ?>
-										<a href="/admin/mail/edit/<?= $new->id; ?>" title="View Email Message">
-											<strong><?= $new->title; ?></strong>
-										</a>
-									<?php else: ?>
-										<a href="/admin/mail/message/<?= $new->id; ?>" title="View Email Message">
-											<strong><?= $new->title; ?></strong>
-										</a>
-									<?php endif; ?>
-								</td>
-								<td>
-									<?php if($new->updated_at == NULL && $new->status == 0):?>
-										<strong><?php echo 'Not yet Sent'; ?></strong>
-									<?php elseif($new->updated_at != NULL && $new->status == 0): ?>
-										<strong><?php echo 'Not yet Sent'; ?></strong>
-									<?php elseif($new->updated_at == NULL && $new->status == 1): ?>
-										<strong><?php echo date('H:i:s l d, F Y',$new->created_at); ?></strong>
-									<?php elseif($new->updated_at != NULL && $new->status == 1): ?>
-										<strong><?php echo date('H:i:s l d, F Y',$new->updated_at); ?></strong>
-									<?php endif; ?>
-								</td>
-								<td>
-									<button class="button gray right" onclick="deleteMail(<? echo $new->id; ?>)">
-										<i class="fa fa-times"></i> Remove from List
-									</button>
-									<?php if($new->status == 0): ?>
-										<? echo Html::anchor("admin/mail/edit/{$new->id}", '<i class="fa fa-cog"></i> Edit Draft', [  "class" => "button green right draft-button"]); ?>
-									<?php endif; ?>
-								</td>
-							</tr>
-						<? endif; ?>
-					<? endforeach; ?>
+				<? foreach($mail as $new): ?>
+					<? if ($new->deleted_at == 0): ?>
+						<tr id="mail_<?php echo $new->id?>">
+							<td>
+								<?php if($new->status == 0): ?>
+									<a href="/admin/mail/edit/<?= $new->id; ?>" title="View Email Message">
+										<strong><?= $new->title; ?></strong>
+									</a>
+								<?php else: ?>
+									<a href="/admin/mail/message/<?= $new->id; ?>" title="View Email Message">
+										<strong><?= $new->title; ?></strong>
+									</a>
+								<?php endif; ?>
+							</td>
+							<td>
+								<?php if($new->updated_at == NULL && $new->status == 0):?>
+									<strong><?php echo 'Not yet Sent'; ?></strong>
+								<?php elseif($new->updated_at != NULL && $new->status == 0): ?>
+									<strong><?php echo 'Not yet Sent'; ?></strong>
+								<?php elseif($new->updated_at == NULL && $new->status == 1): ?>
+									<strong><?php echo date('H:i:s l d, F Y',$new->created_at); ?></strong>
+								<?php elseif($new->updated_at != NULL && $new->status == 1): ?>
+									<strong><?php echo date('H:i:s l d, F Y',$new->updated_at); ?></strong>
+								<?php endif; ?>
+							</td>
+							<td>
+								<button class="button gray right" onclick="deleteMail(<? echo $new->id; ?>)">
+									<i class="fa fa-times"></i> Remove from List
+								</button>
+								<?php if($new->status == 0): ?>
+									<? echo Html::anchor("admin/mail/edit/{$new->id}", '<i class="fa fa-cog"></i> Edit Draft', [  "class" => "button green right draft-button"]); ?>
+								<?php endif; ?>
+							</td>
+						</tr>
+					<? endif; ?>
+				<? endforeach; ?>
 			</table>
 			<? echo $pager ?>
 		</section>

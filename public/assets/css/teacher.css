@@ -7,149 +7,149 @@
 	background: -webkit-linear-gradient(268deg,#83B7CD,#FFFFFF);
 }
 #user-data .reserve a{
-    color:#606060;
+	color:#606060;
 }
 #user-data .reserve a:hover{
-    color:#FE0036;
+	color:#FE0036;
 }
 #user-data ul {
-    margin-top: 10px
+	margin-top: 10px
 }
 #user-data ul li{
-    float: left;
-    margin-right: 40px;
+	float: left;
+	margin-right: 40px;
 }
 #user-data ul li h3{
-    font-size: 100%;
-    color: #888;
+	font-size: 100%;
+	color: #888;
 }
 #user-data ul li span{
-    font-weight: 700;
-    font-size: 16px;
+	font-weight: 700;
+	font-size: 16px;
 }
 #user-data .name span{
-    margin-left: 20px;
-    font-size: 16px;
+	margin-left: 20px;
+	font-size: 16px;
 }
 #user-data .name span i{
-    color:#FFDF4E;
-    font-size: 20px;
+	color:#FFDF4E;
+	font-size: 20px;
 }
 #topic-path{
-    background:#D87C60;
+	background:#D87C60;
 }
 #topic-path ul li:after{
-    color:#B45734;
+	color:#B45734;
 }
 #topic-path ul li a:hover{
-    color:#7F3C25;
+	color:#7F3C25;
 }
 
 @media screen and (min-width : 680px) {
-    #user-data .reserve a:after{
-        content:"Schedule Lesson";
-    }
+	#user-data .reserve a:after{
+		content:"Schedule Lesson";
+	}
 
-    #user-data .reserve{
-        -webkit-box-ordinal-group: 3;
-        -moz-box-ordinal-group: 3;
-    }
-    #user-data .profile{
-        -webkit-box-ordinal-group: 2;
-        -moz-box-ordinal-group: 2;
-    }
+	#user-data .reserve{
+		-webkit-box-ordinal-group: 3;
+		-moz-box-ordinal-group: 3;
+	}
+	#user-data .profile{
+		-webkit-box-ordinal-group: 2;
+		-moz-box-ordinal-group: 2;
+	}
 }
 @media screen and (max-width : 680px) {
-    #user-data{
-        display: block;
-    }
-    #user-data figure{
-        float: left;
-    }
-    #user-data .reserve{
-        float: right;
-    }
-    #user-data .profile{
-        padding: 110px 10px 20px;
-    }
+	#user-data{
+		display: block;
+	}
+	#user-data figure{
+		float: left;
+	}
+	#user-data .reserve{
+		float: right;
+	}
+	#user-data .profile{
+		padding: 110px 10px 20px;
+	}
 }
 .input_url {
-    width:100%;
+	width:100%;
 }
 .input_url p{
-    float:none;
+	float:none;
 }
 .input_url .url input{
-    padding:7px;
-    max-width:100%;
-    max-width : -webkit-calc(100% - 14px) ;
-    max-width : calc(100% - 14px) ;
-    margin:1px 0 10px 0;
-    border:solid 1px #bbb;
+	padding:7px;
+	max-width:100%;
+	max-width : -webkit-calc(100% - 14px) ;
+	max-width : calc(100% - 14px) ;
+	margin:1px 0 10px 0;
+	border:solid 1px #bbb;
 }
 .input_url .inform{
 }
 .input_url a{
-    padding:6px 30px 4px 30px;
-    margin:0 0 0 10px;
-    float:none;
+	padding:6px 30px 4px 30px;
+	margin:0 0 0 10px;
+	float:none;
 }
 @media screen and (min-width : 800px) {
-    .input_url .url{
-        float:left;
-    }
-    .input_url .inform{
-        float:left;
-    }
+	.input_url .url{
+		float:left;
+	}
+	.input_url .inform{
+		float:left;
+	}
 }
 
 
 /* calender */
 p.calender-notice span{
-    color: #fff;
-    padding: 3px 10px;
-    margin-right: 10px;
-    font-size: 12px;
+	color: #fff;
+	padding: 3px 10px;
+	margin-right: 10px;
+	font-size: 12px;
 }
 p.calender-notice span.reserved{
-    background: #FE0036;
+	background: #FE0036;
 }
 p.calender-notice span.selected{
-    background: #0F5573;
+	background: #0F5573;
 }
 .clndr-controls .month{
-    font-size: 18px;
+	font-size: 18px;
 }
 .lesson-time h3{
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 .lesson-time ul {
-    margin: 40px 0;
+	margin: 40px 0;
 }
 .lesson-time ul li{
-    float: left;
-    width: 30%;
-    margin-right: 3%;
-    padding: 10px 0;
-    margin-bottom:10px;
-    background: #eee;
+	float: left;
+	width: 30%;
+	margin-right: 3%;
+	padding: 10px 0;
+	margin-bottom:10px;
+	background: #eee;
 }
 .lesson-time ul li:hover{
-    background: #FE0036;
-    color: #fff;
+	background: #FE0036;
+	color: #fff;
 }
 .lesson-time ul li.selected{
-    background: #0F5573;
-    color: #fff;
+	background: #0F5573;
+	color: #fff;
 }
 .lesson-time ul li.selected:hover{
-    background: #eee;
-    color: #333;
+	background: #eee;
+	color: #333;
 }
 .lesson-time ul li.reserved{
-    background: #FE0036!important;
-    color: #fff!important;
+	background: #FE0036!important;
+	color: #fff!important;
 }
 .lesson-time .button-area{
-    margin: 20px 0;
+	margin: 20px 0;
 }

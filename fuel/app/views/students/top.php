@@ -19,9 +19,7 @@
 		<? endif; ?>
 		<section class="notice content-wrap" style="display: none" id="reservation_area">
 		</section>
-
 		<h3>Lesson Schedule</h3>
-
 		<section class="schedule">
 			<? if($reservations == null): ?>
 				<div class="content-wrap">
@@ -59,18 +57,6 @@
 			</ul>
 			<? endif; ?>
 		</section>
-		<!--<h3>Feedback from Teacher</h3>
-		<p class="link-more"><a href="#">See More <i class="fa fa-angle-right"></i></a></p>
-		<section class="feedback">
-			<ul class="list-base">
-				<li><a href="#"><span class="icon-course1">Markup Engineer</span><span class="icon-new">NEW</span><strong>20:00 18 AUG</strong> posted by YukikoCho</a></li>
-				<li><a href="#"><span class="icon-course2">PHPer</span><span class="icon-new">NEW</span><strong>20:00 18 AUG</strong> posted by YukikoCho</a></li>
-				<li><a href="#"><span class="icon-course3">course3</span><span class="icon-new">NEW</span><strong>20:00 18 AUG</strong> posted by YukikoCho</a></li>
-				<li><a href="#"><span class="icon-course4">course4</span><strong>20:00 18 AUG</strong> posted by YukikoCho</a></li>
-				<li><a href="#"><span class="icon-course5">course5</span><strong>20:00 18 AUG</strong> posted by YukikoCho</a></li>
-			</ul>
-		</section>
--->
 		<h3>Information</h3>
 		<p class="link-more"><a href="/students/news">See More <i class="fa fa-angle-right"></i></a></p>
 		<section class="feedback">
@@ -85,7 +71,8 @@
 							]
 						]);
 						if($is_read == null): ?><span class="icon-new">NEW</span>
-						<? endif; ?><strong><?= $new->title; ?></strong></a></li>
+						<? endif; ?><strong><?= $new->title; ?></strong></a>
+				</li>
 				<? endforeach; ?>
 			</ul>
 		</section>
@@ -94,30 +81,29 @@
 </div>
 <div id="dialogoverlay"></div>
 <div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
+	<div>
+		<div id="dialogboxhead"></div>
+		<div id="dialogboxbody"></div>
+		<div id="dialogboxfoot"></div>
+	</div>
 </div>
 <script type="text/javascript">
 	//custom alert
-
 	function CustomAlert(){
-	    this.render = function(dialog){
-	        var winW = window.innerWidth;
-	        var winH = window.innerHeight;
-	        var dialogoverlay = document.getElementById('dialogoverlay');
-	        var dialogbox = document.getElementById('dialogbox');
-	        dialogoverlay.style.display = "block";
-	        dialogoverlay.style.height = winH+"px";
-	        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-	        dialogbox.style.top = "100px";
-	        dialogbox.style.display = "block";
-	        document.getElementById('dialogboxhead').innerHTML = "<strong>Acknowledge This Message</strong>";
-	        document.getElementById('dialogboxbody').innerHTML = dialog;
-	        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
-	    }
+		this.render = function(dialog){
+			var winW = window.innerWidth;
+			var winH = window.innerHeight;
+			var dialogoverlay = document.getElementById('dialogoverlay');
+			var dialogbox = document.getElementById('dialogbox');
+			dialogoverlay.style.display = "block";
+			dialogoverlay.style.height = winH+"px";
+			dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+			dialogbox.style.top = "100px";
+			dialogbox.style.display = "block";
+			document.getElementById('dialogboxhead').innerHTML = "<strong>Acknowledge This Message</strong>";
+			document.getElementById('dialogboxbody').innerHTML = dialog;
+			document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+		}
 		this.ok = function(){
 			document.getElementById('dialogbox').style.display = "none";
 			document.getElementById('dialogoverlay').style.display = "none";
@@ -126,42 +112,29 @@
 	}
 	var Alert = new CustomAlert();
 
-	//end alert
-
 	$(function(){
-
-
 		getReservation();
-
 		setInterval("getReservation()",10000);
-
 		var paySuccess = $('#pay').val();
 		var confirm = $('#confirm').val();
-
 		if(paySuccess == 1) {
 			Alert.render("Successfully sent payment information. Once we confirm your photo of receipt, you can now book a lesson.");
 		} else if(paySuccess == 2) {
 			Alert.render("Thank you for your payment. Once we confirm money comes to our account, you can book a lesson.");
 		}
-
 		if(confirm == 1) {
 			Alert.render("Payment of this account is already completed. Thank you.");
 		}
 	});
-
 	function getReservation(){
-
 		$.ajax({
 			url: '/students/api/getreservation.json',
 			type: 'POST',
 			data: {
 			},
-
 			success: function(res) {
-
 				$("#reservation_area").empty();
 				$("#reservation_area").hide();
-
 				if(res.reservation != ""){
 					if(res.reservation.is_ready == true){
 						$("#reservation_area").append('<p><i class="fa fa-exclamation-circle"></i>Your teacher is ready. Please click the right button.</p><a class="button yellow right" href="' + res.reservation.url + '" target="_blank" id="lesson_btn"><i class="fa fa-pencil"></i> Go To Lesson Room</a>');

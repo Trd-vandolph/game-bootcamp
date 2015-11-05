@@ -4,7 +4,7 @@
 		<section class="feedback">
 			<ul class="list-base">
 				<? foreach($news as $new): ?>
-				<li><a href="/students/news/detail/<?= $new->id; ?>">
+					<li><a href="/students/news/detail/<?= $new->id; ?>">
 						<?
 						$is_read = Model_Readnews::find("first", [
 							"where" => [
@@ -13,12 +13,12 @@
 							]
 						]);
 						if($is_read == null): ?><span class="icon-new">NEW</span>
-						<? endif; ?><strong><?= $new->title; ?></strong></a></li>
+						<? endif; ?><strong><?= $new->title; ?></strong></a>
+					</li>
 				<? endforeach; ?>
 			</ul>
 			<? echo $pager ?>
 		</section>
 	</div>
-
 	<? echo View::forge("teachers/_menu"); ?>
 </div>

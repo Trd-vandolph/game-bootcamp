@@ -33,9 +33,7 @@
 	<? echo View::forge("admin/_menu"); ?>
 </div>
 <script>
-
 	function deleteNews(id){
-
 		if(confirm('Do you want to delete it?')){
 			$.ajax({
 				url: '/admin/api/delnews.json',

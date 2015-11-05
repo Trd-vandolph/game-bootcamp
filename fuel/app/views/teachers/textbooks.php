@@ -12,14 +12,14 @@
 				</tr>
 				</thead>
 				<tbody>
-				<? foreach($trial as $content): ?>
-					<tr id="content_<? echo $content->id; ?>">
-						<td class="number"><?= $content->number; ?></td>
-						<td><i class="fa fa-file-pdf-o"></i> <? echo Html::anchor("contents/{$content->path}", "$content->path", ["target" => "_blank"]); ?></td>
-						<td><?= Config::get("statics.content_text_types")[$content->text_type_id]; ?></td>
-						<td><? echo date("M d, Y. H:i:s", $content->created_at); ?></td>
-					</tr>
-				<? endforeach; ?>
+					<? foreach($trial as $content): ?>
+						<tr id="content_<? echo $content->id; ?>">
+							<td class="number"><?= $content->number; ?></td>
+							<td><i class="fa fa-file-pdf-o"></i> <? echo Html::anchor("contents/{$content->path}", "$content->path", ["target" => "_blank"]); ?></td>
+							<td><?= Config::get("statics.content_text_types")[$content->text_type_id]; ?></td>
+							<td><? echo date("M d, Y. H:i:s", $content->created_at); ?></td>
+						</tr>
+					<? endforeach; ?>
 				</tbody>
 			</table>
 		<? endif; ?>

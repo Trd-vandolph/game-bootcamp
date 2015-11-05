@@ -43,7 +43,6 @@
 							<select name="month" id="month" onchange="dateChange()">
 								<?
 								$months = Config::get("statics.months", []);
-
 								for($i = 1; $i <= 12; $i++): ?>
 									<option <? if(Session::get_flash("month", 0) == $i) echo "selected"; ?> value="<? echo $i; ?>"><? echo $months[$i - 1]; ?></option>
 								<? endfor; ?>
@@ -116,12 +115,6 @@
 							<input type="checkbox" name="javascript" value="1" <? if(Session::get_flash("javascript", "") == 1) echo "checked"; ?>>
 						</div>
 					</li>
-					<!--<li>
-						<h4>PHP</h4>
-						<div>
-							<input type="checkbox" name="php" value="1" <? if(Session::get_flash("php", "") == 1) echo "checked"; ?>>
-						</div>
-					</li>-->
 				</ul>
 				<p class="button-area">
 					<button class="button" name="confirm" value="1">Submit <i class="fa fa-chevron-right"></i></button>
@@ -132,11 +125,9 @@
 	</div>
 </div>
 <script>
-
 	$(document).ready(function(){
 		dateChange();
 	});
-
 	function dateChange(){
 		var date = new Date($("#year").val(), $("#month").val(), 0);
 		var selected_day = $("#day").val();

@@ -20,8 +20,6 @@
 				</div>
 			</div>
 			<!-- モーダルウインドウここまで -->
-
-
 		</div>
 	</div>
 	<? echo View::forge("teachers/_menu"); ?>
@@ -35,7 +33,6 @@
 	$(function(){
 		$('.tiles').tiles(4,'div'); //.tilesの中のdiv
 		$('ul.tiles').tiles(4); //ul.tilesの中のli
-
 		var modal = $('[data-remodal-id=lesson_time]').remodal();
 		$(document).on('opened', '[data-remodal-id=lesson_time]', function (){
 			if($("#schedule_date").html() == ""){
@@ -44,7 +41,6 @@
 		});
 		var target_date = "";
 		var lock = false;
-
 		var cal = $('#calendar').clndr({
 			daysOfTheWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 			events: [
@@ -55,11 +51,9 @@
 			],
 			clickEvents: {
 				click: function(target) {
-
 					if(new Date(target.date._i) - (new Date('<?= Date("Y-m-d"); ?>')) >= 0){
 						$(".lesson-time ul li").removeClass("reserved");
 						$(".lesson-time ul li").removeClass("selected");
-
 						var date = new Date(target.date._i);
 						var months = [
 							"Jan",
@@ -74,7 +68,6 @@
 							"Oct",
 							"Nov",
 							"Dec"];
-
 							var d = new Date(target.date._i);
 							var weekday = new Array(7);
 							weekday[0]=  "Sun";
@@ -84,39 +77,29 @@
 							weekday[4] = "Thu";
 							weekday[5] = "Fri";
 							weekday[6] = "Sat";
-
-							var n = weekday[d.getDay()]; 
-
+							var n = weekday[d.getDay()];
 						$("#schedule_date").html(date.getDate() + " " + months[date.getMonth()] + " " +
 							"" + date.getFullYear() +
 							" " + "("  + weekday[d.getDay()] + ")");
-
 						for(var i = 0; i < target.events.length; i++){
 							if(target.events[i].status == 1){
 								$("#time_" + target.events[i].hour).addClass("reserved");
 							}else{
 								$("#time_" + target.events[i].hour).addClass("selected");
 							}
-
 						}
-
 						target_date = target.date._i;
-
 						modal.open();
 					}
 				}
 			}
 		})
-
-
 		<? foreach($reservations as $reservation): ?>
-		<? if($reservation->student_id != 0): ?>
-		$(".calendar-day-<?= Date("Y-m-d", $reservation->freetime_at); ?>").addClass("booked");
-		<? endif; ?>
+			<? if($reservation->student_id != 0): ?>
+				$(".calendar-day-<?= Date("Y-m-d", $reservation->freetime_at); ?>").addClass("booked");
+			<? endif; ?>
 		<? endforeach; ?>
-
 		$(".lesson-time ul li").click(function () {
-
 			var button = $(this);
 			if(!button.hasClass("reserved") && lock == false){
 				lock = true;
@@ -127,17 +110,14 @@
 						"date": target_date,
 						"hour": button.html().split(":")[0]
 					},
-
 					complete: function(){
-
 					},
 					success: function(res) {
 						if(res.code == 200){
 							button.addClass("selected");
 							cal.addEvents([
 								{date: target_date, status: 0, hour: button.html().split(":")[0]}
-								]
-							);
+							]);
 						}else if(res.code == 201){
 							button.removeClass("selected");
 							cal.removeEvents(function(event){
@@ -149,11 +129,7 @@
 					}
 				})
 			}
-
 			lock = false;
 		});
-
-
 	});
-
 </script>

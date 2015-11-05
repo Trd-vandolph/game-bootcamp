@@ -2,8 +2,6 @@
 	<div id="main">
 		<h3>Forum</h3>
 		<p class="link-more"><? echo Html::anchor("admin/forum/edit", '<i class="fa fa-plus-circle"></i> Create new topic'); ?></p>
-
-
 		<ul class="forum-list">
 			<? if($news != null): ?>
 			<? foreach($forum as $obj): ?>
@@ -20,10 +18,6 @@
 			<? endforeach; ?>
 			<? endif; ?>
 		</ul>
-
-
-
-
 		<? echo $pager ?>
 	</div>
 	<? echo View::forge("admin/_menu"); ?>

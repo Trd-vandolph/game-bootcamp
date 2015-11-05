@@ -4,8 +4,7 @@
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li>
-						<h4>Body</h4>
+					<li><h4>Body</h4>
 						<div>
 							<textarea name="body" rows="20" cols="100"><? echo $comment->body; ?></textarea>
 						</div>

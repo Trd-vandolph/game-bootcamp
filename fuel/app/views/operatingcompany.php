@@ -11,19 +11,12 @@
 							</div>
 						</li>
 						<li class="text-content">
-							<p class="title">
-								Edoo
-							</p>
+							<p class="title">Edoo</p>
 							<p class="bold-title"></p>
 							<p class="body-content">
-								Game bootcamp is operated by Edoo Inc.
-							</p>
-							<p>
-								Edoo is a Japanese education company established to support disadvantaged people and the next generation through education around the world.
-							</p>
-							<p>
-								The management of Edoo strongly believes education can change one's life. Mission of Edoo is to realize potential of people who are passionate about learning.
-							</p>
+								Game bootcamp is operated by Edoo Inc.</p>
+							<p>Edoo is a Japanese education company established to support disadvantaged people and the next generation through education around the world.</p>
+							<p>The management of Edoo strongly believes education can change one's life. Mission of Edoo is to realize potential of people who are passionate about learning.</p>
 						</li>
 					</ul>
 				</li>
@@ -36,40 +29,37 @@
 							</div>
 						</li>
 						<li class="text-content">
-							<p class="title">
-								OliveCode
-							</p>
+							<p class="title">OliveCode</p>
 							<p class="bold-title"></p>
 							<p class="body-content">
-								Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of <a href="http://www.grameen.com/" target="_blank">Grameen Bank</a>, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.
-							</p>
+								Edoo launched OliveCode, a job-guaranteed online programming school for young Bangladeshi jointly with Grameen Communications, one of the group companies of <a href="http://www.grameen.com/" target="_blank">Grameen Bank</a>, a Nobel Peace Prize-winning micro-finance organization in Bangladesh.</p>
 						</li>
 					</ul>
 				</li>
 				<li class="student_container content-company">
 					<div id="students">
-					<p class="catch">Students</p>
-					<div class="detail">
-						<ul>
-							<li class="student01">
-								<img src="/assets/img/front/mazed.png" alt="photo" height="180" width="180">
-								<p class="name">Mazedur Rahman</p>
-								<h4><strong>"Learning programming enhances my logical thinking and also helps me make a right decision".</strong></h4>
-								<div class="read">
-									<a href="http://www.olivecode.com/voice1" target="_blank"><span><strong>Read More</strong></span></a>
-								</div>
-							</li>
-							<li class="student02">
-								<img src="/assets/img/front/sakib.png" alt="photo" height="180" width="180">
-								<p class="name">Sakib Hasan</p>
-								<h4><strong>"Learning the basics of how to code on OliveCode has improved my problem solving skills".</strong></h4>
-								<div class="read">
-									<a href="http://www.olivecode.com/voice2" target="_blank"><span><strong>Read More</strong></span></a>
-								</div>
-							</li>
-						</ul>
+						<p class="catch">Students</p>
+						<div class="detail">
+							<ul>
+								<li class="student01">
+									<img src="/assets/img/front/mazed.png" alt="photo" height="180" width="180">
+									<p class="name">Mazedur Rahman</p>
+									<h4><strong>"Learning programming enhances my logical thinking and also helps me make a right decision".</strong></h4>
+									<div class="read">
+										<a href="http://www.olivecode.com/voice1" target="_blank"><span><strong>Read More</strong></span></a>
+									</div>
+								</li>
+								<li class="student02">
+									<img src="/assets/img/front/sakib.png" alt="photo" height="180" width="180">
+									<p class="name">Sakib Hasan</p>
+									<h4><strong>"Learning the basics of how to code on OliveCode has improved my problem solving skills".</strong></h4>
+									<div class="read">
+										<a href="http://www.olivecode.com/voice2" target="_blank"><span><strong>Read More</strong></span></a>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
 				</li>
 				<li id="third-content" class="content-company">
 					<ul>
@@ -80,13 +70,10 @@
 							</div>
 						</li>
 						<li class="text-content">
-							<p class="title">
-								Grameen<br style="display: none;"> Communications
-							</p>
+							<p class="title">Grameen<br style="display: none;"> Communications</p>
 							<p class="bold-title"></p>
 							<p class="body-content">
-								Grameen Communications is a leading IT company in Bangladesh specializing in micro-finance software solutions. gBanker, a flagship software product for micro-finance is adopted by more than 70 national and international organizations all over the world.
-							</p>
+								Grameen Communications is a leading IT company in Bangladesh specializing in micro-finance software solutions. gBanker, a flagship software product for micro-finance is adopted by more than 70 national and international organizations all over the world.</p>
 						</li>
 					</ul>
 				</li>
@@ -103,10 +90,7 @@
 							</div>
 						</li>
 						<li class="text-content">
-							<p class="title">
-								Grameen Communications &<br>
-								OliveCode
-							</p>
+							<p class="title">Grameen Communications &<br>OliveCode</p>
 							<p class="bold-title"></p>
 							<p class="body-content">
 								Grameen communications values a curriculum of OliveCode and collaborates with Edoo to operate the first job-guaranteed online programming school in Bangladesh.
@@ -124,7 +108,6 @@
 								 Edoo now supports the next generation with teaching programming by making the most of its expertise fostered by opearting OliveCode.
 							</p>
 						</li>
-
 					</ul>
 				</li>
 			</ul>

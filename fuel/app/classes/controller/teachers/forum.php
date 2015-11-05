@@ -19,7 +19,6 @@ class Controller_Teachers_Forum extends Controller_Teachers
 		}
 
 		$where = [["deleted_at", 0]];
-
 		$data["forum"] = Model_Forum::find("all", [
 			"where" => $where,
 			"order_by" => [
@@ -36,7 +35,6 @@ class Controller_Teachers_Forum extends Controller_Teachers
 		);
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
-
 		$data["news"] = array_slice($data["forum"], $data["pager"]->offset, $data["pager"]->per_page);
 		$data["user"] = $this->user;
 		$view = View::forge("teachers/forum/index", $data);
@@ -50,10 +48,8 @@ class Controller_Teachers_Forum extends Controller_Teachers
 		if($data["forum"] == null){
 			$data["forum"] = Model_Forum::forge();
 		}
-
 		// add
 		if(Input::post("title", "") != "" and Security::check_token()){
-
 			// save
 			$data["forum"]->title = Input::post("title", "");
 			$data["forum"]->body = Input::post("body", "");
@@ -70,11 +66,9 @@ class Controller_Teachers_Forum extends Controller_Teachers
 	public function action_comment($id = 0)
 	{
 		$data["comment"] = Model_Comment::find($id);
-
 		if($data["comment"] == null){
 			Response::redirect("/teachers/forum/");
 		}
-
 		// add
 		if(Input::post("body", "") != "" and Security::check_token()){
 

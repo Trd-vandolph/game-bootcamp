@@ -34,7 +34,6 @@
 <script>
 	$(function(){
 		var message = $('.feedback > p');
-
 		message.css({
 			'maxWidth':'1400px',
 			'wordWrap':'break-word'

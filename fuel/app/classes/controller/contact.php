@@ -65,7 +65,6 @@ class Controller_Contact extends Controller_Base
 			$sendmail->to(Config::get("statics.info_email"));
 			$sendmail->subject("We got contact/ OliveCode");
 			$sendmail->body($body);
-
 			$sendmail->send();
 		}
 

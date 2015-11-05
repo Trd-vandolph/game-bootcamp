@@ -1,7 +1,6 @@
 <div id="contents-wrap">
 	<div id="main">
 		<h3>Teacher's fee</h3>
-
 		<div>
 			<div style="float: right; margin: 10px;">
 				<form action="" method="get" id="search_form">
@@ -40,7 +39,6 @@
 			<tbody>
 			<? foreach($teachers as $teacher): ?>
 				<?
-
 				if($teacher->fee == null){
 					$teacher->fee = Model_Fee::forge();
 					$teacher->fee->user_id = $teacher->id;
@@ -48,7 +46,6 @@
 					$teacher->fee->month = $month;
 					$teacher->fee->save();
 				}
-
 				?>
 				<tr>
 					<td><?= $teacher->firstname; ?> <?= $teacher->middlename; ?> <?= $teacher->lastname; ?></td>
@@ -99,7 +96,6 @@
 </div>
 <script>
 	function changeFee(id){
-
 		if(confirm('Do you want to change the data?')){
 			$.ajax({
 				url: '/admin/api/changefee.json',
@@ -110,18 +106,14 @@
 					"fulltime": $("#fulltime_" + id).val(),
 					"is_paid": $("#is_paid_" + id).val()
 				},
-
 				complete: function(){
-
 				},
 				success: function(res) {
 				}
 			})
 		}
 	}
-
 	var grade = [<?= $grade->grade_1;?>,<?= $grade->grade_2;?>,<?= $grade->grade_3;?>,<?= $grade->grade_4;?>,<?= $grade->grade_5;?>];
-
 	function changePrice(id, count){
 		$("#price_" + id).html(count * grade[$("#grade_" + id).val() - 1]);
 	}

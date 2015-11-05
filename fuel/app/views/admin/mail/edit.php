@@ -4,52 +4,45 @@
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/mime">
 				<ul class="forms">
-					<li>
-						<h4>To All</h4>
+					<li><h4>To All</h4>
 						<div>
 							<input class="off" type="checkbox" name="for_all" value="1" <? if($mail->for_all == 1) echo "checked"; ?>>
 							<label for="slideThree"></label>
 						</div>
 					</li>
-					<li>
-						<h4>To Teachers</h4>
+					<li><h4>To Teachers</h4>
 						<div>
 							<input class="off" type="checkbox" name="for_teachers" value="1" <? if($mail->for_teachers == 1) echo "checked"; ?>>
 						</div>
 					</li>
-					<li>
-						<h4>To Students</h4>
+					<li><h4>To Students</h4>
 						<div>
 							<input class="off" type="checkbox" name="for_students" value="1" <? if($mail->for_students == 1) echo "checked"; ?>>
 						</div>
 					</li>
-					<li>
-						<h4>Mail Title</h4>
+					<li><h4>Mail Title</h4>
 						<div>
 							<input type="text" name="title" value="<? echo $mail->title; ?>" required>
 						</div>
 					</li>
-					<li>
-						<h4>Message</h4>
+					<li><h4>Message</h4>
 						<div>
 							<textarea name="body" rows="40" cols="100" novalidate><? echo $mail->body; ?></textarea>
 						</div>
 					</li>
-					<li>
-						<h4>status</h4>
+					<li><h4>status</h4>
 						<div>
 							<input type="checkbox" name="status" <? echo "checked"; ?>>
 						</div>
 					</li>
 				</ul>
-			<p class="button-area">
-				<button class="button" name="action" value="draft"> <i class="fa fa-chevron-left"></i> Save as Draft</button>
-				<button class="button" name="action" value="confirm">Send <i class="fa fa-chevron-right"></i></button>
-			</p>
-			<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
+				<p class="button-area">
+					<button class="button" name="action" value="draft"> <i class="fa fa-chevron-left"></i> Save as Draft</button>
+					<button class="button" name="action" value="confirm">Send <i class="fa fa-chevron-right"></i></button>
+				</p>
+				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</form>
 		</section>
-
 	</div>
 	<? echo View::forge("admin/_menu"); ?>
 </div>
@@ -108,7 +101,7 @@
 				$('.students').remove();
 			}
 		});
-		
+
 		//same width for title box and message box
 		titleBox.css({
 			'maxWidth' : '100%',
@@ -126,7 +119,7 @@
 
 		//setting status value
 		$('#main li:nth-child(6)').css('display','none');
-		
+
 		draft.on('click', function(){
 			status.val(0);
 		});
@@ -136,29 +129,14 @@
 
 		//auto complete
 		title.attr('autocomplete','off');
-
-		//check if user selected recipient
-/* 		recipient.on('click',function(){
-			if (recipient.is(':checked')){
-				recipient.attr('class','on')
-			} else {
-				recipient.attr('class','off')
-			}
-		});
-		send.on('click', function(){
-			if(recipient.hasClass('off')){
-				alert('Please specify at least one recipient.');
-				return false;
-			}
-		}); */
-
+		
 		//bigger checkbox
  		checkbox.css({
 			'transform' : 'scale(1.5)',
 			'-webkit-transform' : 'scale(1.5)',
 			'-ms-transform' : 'scale(1.5)'
 		});
-		
+
 	});
 
 	//wysiwyg plugin

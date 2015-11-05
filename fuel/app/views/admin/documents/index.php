@@ -25,10 +25,10 @@
 						</div>
 					</li>
 				</ul>
-			<p class="button-area">
-				<button class="button" href="">Upload  <i class="fa fa-upload"></i></button>
-			</p>
-			<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
+				<p class="button-area">
+					<button class="button" href="">Upload  <i class="fa fa-upload"></i></button>
+				</p>
+				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</form>
 		</section>
 		<h3>Ordinary Use</h3>

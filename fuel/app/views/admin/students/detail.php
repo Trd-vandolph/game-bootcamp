@@ -4,62 +4,52 @@
 		<p class="link-more"><? echo Html::anchor("admin/students/add?id={$user->id}", '<i class="fa fa-plus-circle"></i>Edit'); ?></p>
 		<section class="content-wrap">
 				<ul class="forms">
-					<li>
-						<h4>Name</h4>
+					<li><h4>Name</h4>
 						<div>
 							<?= $user->firstname; ?> <?= $user->middlename; ?> <?= $user->lastname; ?>
 						</div>
 					</li>
-					<li>
-						<h4>Email address</h4>
+					<li><h4>Email address</h4>
 						<div>
 							<? echo $user->email ?>
 						</div>
 					</li>
-					<li>
-						<h4>Image</h4>
+					<li><h4>Image</h4>
 						<div>
 							<? if($user->img_path != "") echo '<img src="/assets/img/pictures/s_'.$user->img_path.'">';?>
 						</div>
 					</li>
-					<li>
-						<h4>Gender</h4>
+					<li><h4>Gender</h4>
 						<div>
 							<? echo Config::get("statics.sex", [])[$user->sex]; ?>
 						</div>
 					</li>
-					<li>
-						<h4>Birthday</h4>
+					<li><h4>Birthday</h4>
 						<div>
 							<? echo date("M d, Y.", strtotime($user->birthday)); ?>
 						</div>
 					</li>
-					<li>
-						<h4>Gmail address</h4>
+					<li><h4>Gmail address</h4>
 						<div>
 							<? echo $user->google_account ?>
 						</div>
 					</li>
-					<li>
-						<h4>Reservation email</h4>
+					<li><h4>Reservation email</h4>
 						<div>
 							<? echo Config::get("statics.on_off", [])[$user->need_reservation_email]; ?>
 						</div>
 					</li>
-					<li>
-						<h4>News email</h4>
+					<li><h4>News email</h4>
 						<div>
 							<? echo Config::get("statics.on_off", [])[$user->need_news_email]; ?>
 						</div>
 					</li>
-					<li>
-						<h4>Timezone</h4>
+					<li><h4>Timezone</h4>
 						<div>
 							<? echo $user->timezone; ?>
 						</div>
 					</li>
-					<li>
-						<h4>Place of Learning</h4>
+					<li><h4>Place of Learning</h4>
 						<div>
 							<? echo ($user->place == 1) ? "Grameen Course" : "Online School"; ?>
 						</div>

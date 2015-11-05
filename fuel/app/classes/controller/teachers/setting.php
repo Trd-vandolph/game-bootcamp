@@ -16,7 +16,6 @@ class Controller_Teachers_Setting extends Controller_Teachers
 		if(Input::post("firstname", null) != null and Security::check_token()){
 
 			$email = Input::post("email", null);
-
 			if($email != $this->user->email){
 				$check_user = Model_User::find("first", [
 					"where" => [
@@ -45,17 +44,14 @@ class Controller_Teachers_Setting extends Controller_Teachers
 				$this->user->timezone = Input::post("timezone");
 				$this->user->pr = Input::post("pr", "");
 				$this->user->educational_background = Input::post("educational_background", "");
-
 				$this->user->php = Input::post("php", 0);
 				$this->user->html5 = Input::post("html5", 0);
 				$this->user->javascript = Input::post("javascript", 0);
 				$this->user->trial = Input::post("trial", 0);
 				$this->user->save();
-
 				Response::redirect("teachers");
 			}
 		}
-
 		$view = View::forge("teachers/setting_new", $data);
 		$this->template->content = $view;
 	}
@@ -69,7 +65,6 @@ class Controller_Teachers_Setting extends Controller_Teachers
 
 			$this->user->timezone = Input::post("timezone", "");
 			$this->user->save();
-
 			$is_chenged = true;
 		}
 
@@ -77,9 +72,7 @@ class Controller_Teachers_Setting extends Controller_Teachers
 
 			$this->user->need_reservation_email = Input::post("need_reservation_email", 1);
 			$this->user->need_news_email = Input::post("need_news_email", 1);
-
 			$this->user->save();
-
 			$is_chenged = true;
 		}
 
@@ -92,7 +85,6 @@ class Controller_Teachers_Setting extends Controller_Teachers
 
 			if($val->run()){
 				$this->user->password = Auth::instance()->hash_password(Input::post('password', ""));
-
 				$this->user->save();
 				$is_chenged = true;
 
@@ -103,7 +95,6 @@ class Controller_Teachers_Setting extends Controller_Teachers
 
 		$data["user"] = $this->user;
 		$data["is_chenged"] = $is_chenged;
-
 		$view = View::forge("teachers/setting",$data);
 		$this->template->content = $view;
 	}

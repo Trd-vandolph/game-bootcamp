@@ -8,44 +8,42 @@
 <? }?>
 <div id="contents-wrap">
 	<div id="main">
-    <h3>Contact from Students</h3>
-    <p class="link-more"><? echo Html::anchor('/admin/contactforum', 'See Contact <i class="fa fa-angle-right"></i>'); ?></p>
-    <section class="feedback">
-      <ul class="list-base">
-		  <? foreach($contacts as $contact): ?>
-        <li>
-					<a href="/admin/contactforum/detail/<?= $contact->id; ?>">
-						<? if($contact->is_read == 0): ?>
-								<span class="icon-new">New</span>
-						<? endif; ?>
-						<?= $contact->title; ?>
-						<strong>
-							<?= date("H:i M d, Y.", $contact->created_at); ?>
-						</strong>
-							posted by
-							<?= $contact->user->firstname; ?>
-							<?= $contact->user->middlename; ?>
-							<?= $contact->user->lastname; ?>
-					</a>
-				</li>
-		  <? endforeach; ?>
-      </ul>
-    </section>
-
-    <h3>Lesson Calender</h3>
-	<a name="cal"></a>
-    <div id="calendar">
-    </div>
+		<h3>Contact from Students</h3>
+		<p class="link-more"><? echo Html::anchor('/admin/contactforum', 'See Contact <i class="fa fa-angle-right"></i>'); ?></p>
+		<section class="feedback">
+			<ul class="list-base">
+				<? foreach($contacts as $contact): ?>
+					<li>
+						<a href="/admin/contactforum/detail/<?= $contact->id; ?>">
+							<? if($contact->is_read == 0): ?>
+									<span class="icon-new">New</span>
+							<? endif; ?>
+							<?= $contact->title; ?>
+							<strong>
+								<?= date("H:i M d, Y.", $contact->created_at); ?>
+							</strong>
+								posted by
+								<?= $contact->user->firstname; ?>
+								<?= $contact->user->middlename; ?>
+								<?= $contact->user->lastname; ?>
+						</a>
+					</li>
+				<? endforeach; ?>
+			</ul>
+		</section>
+		<h3>Lesson Calender</h3>
+		<a name="cal"></a>
+		<div id="calendar"></div>
 	</div>
 	<? echo View::forge("admin/_menu"); ?>
 </div>
 <div id="dialogoverlay"></div>
 <div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
+	<div>
+		<div id="dialogboxhead"></div>
+		<div id="dialogboxbody"></div>
+		<div id="dialogboxfoot"></div>
+	</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 <?= Asset::js("base.js"); ?>
@@ -69,18 +67,16 @@ $(function(){
 		daysOfTheWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
 		startWithMonth: "<?= $ym; ?>-01",
 		clickEvents: {
-				nextMonth: function(month){
-					location.href="/admin/top/?ym=<?= date("Y-m", strtotime($ym . "-01 +1 month")); ?>#cal";
-				},
-				previousMonth: function(month){
-					location.href="/admin/top/?ym=<?= date("Y-m", strtotime($ym . "-01 -1 month")); ?>#cal";
-				},
-				click: function(target){
-					var ymd = target.date._i.split("-");
-					location.href="/admin/reservations/?year=" + ymd[0] + "&month=" + ymd[1] + "&day=" + ymd[2];
-				}
-
-
+			nextMonth: function(month){
+				location.href="/admin/top/?ym=<?= date("Y-m", strtotime($ym . "-01 +1 month")); ?>#cal";
+			},
+			previousMonth: function(month){
+				location.href="/admin/top/?ym=<?= date("Y-m", strtotime($ym . "-01 -1 month")); ?>#cal";
+			},
+			click: function(target){
+				var ymd = target.date._i.split("-");
+				location.href="/admin/reservations/?year=" + ymd[0] + "&month=" + ymd[1] + "&day=" + ymd[2];
+			}
 		}
 	})
 
@@ -110,17 +106,17 @@ function CustomAlert(){
 	this.render = function(dialog){
 		var winW = window.innerWidth;
 		var winH = window.innerHeight;
-        var dialogoverlay = document.getElementById('dialogoverlay');
-        var dialogbox = document.getElementById('dialogbox');
-        dialogoverlay.style.display = "block";
-        dialogoverlay.style.height = winH+"px";
-        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-        dialogbox.style.top = "100px";
-        dialogbox.style.display = "block";
-        document.getElementById('dialogboxhead').innerHTML = "<strong>Acknowledge This Message</strong>";
-        document.getElementById('dialogboxbody').innerHTML = dialog;
-        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
-    }
+		var dialogoverlay = document.getElementById('dialogoverlay');
+		var dialogbox = document.getElementById('dialogbox');
+		dialogoverlay.style.display = "block";
+		dialogoverlay.style.height = winH+"px";
+		dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+		dialogbox.style.top = "100px";
+		dialogbox.style.display = "block";
+		document.getElementById('dialogboxhead').innerHTML = "<strong>Acknowledge This Message</strong>";
+		document.getElementById('dialogboxbody').innerHTML = dialog;
+		document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+	}
 	this.ok = function(){
 		document.getElementById('dialogbox').style.display = "none";
 		document.getElementById('dialogoverlay').style.display = "none";

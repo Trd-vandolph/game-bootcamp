@@ -19,11 +19,8 @@ class Controller_Teachers_Profile extends Controller_Teachers
 			$this->user->bank->save();
 		}
 
-
 		if(Input::post("firstname", null) != null and Security::check_token()){
-
 			$email = Input::post("email", null);
-
 			if($email != $this->user->email){
 				$check_user = Model_User::find("first", [
 					"where" => [
@@ -67,12 +64,9 @@ class Controller_Teachers_Profile extends Controller_Teachers
 				$this->user->google_account = Input::post("google_account", "");
 				$this->user->pr = Input::post("pr", "");
 				$this->user->educational_background = Input::post("educational_background", "");
-
 				$this->user->enchantJS = Input::post("enchantJS", 0);
 				$this->user->trial = Input::post("trial", 0);
-
 				$this->user->save();
-
 				$this->user->bank->name = Input::post("bank_name", "");
 				$this->user->bank->branch = Input::post("bank_branch", "");
 				$this->user->bank->account = Input::post("bank_account", "");
@@ -80,15 +74,12 @@ class Controller_Teachers_Profile extends Controller_Teachers
 				$this->user->bank->etc = Input::post("bank_etc", "");
 				$this->user->bank->type = Input::post("bank_type", 0);
 				$this->user->bank->save();
-
 				$is_chenged = true;
 			}
 		}
 
-
 		$data["user"] = $this->user;
 		$data["is_chenged"] = $is_chenged;
-
 		$view = View::forge("teachers/profile",$data);
 		$this->template->content = $view;
 	}

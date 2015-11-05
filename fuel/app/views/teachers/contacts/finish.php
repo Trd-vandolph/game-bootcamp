@@ -7,7 +7,6 @@
 				<? echo Html::anchor("/teachers/", "top", ["class" => "button"]); ?>
 			</p>
 		</section>
-
 	</div>
 	<? echo View::forge("teachers/_menu"); ?>
 </div>

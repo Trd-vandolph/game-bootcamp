@@ -22,7 +22,6 @@ class Controller_Students_Lesson extends Controller_Students
 					$sendmail->to($this->user->email);
 					$sendmail->subject("Cancellation of Lesson / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
-
 					$sendmail->send();
 
 					// send mail
@@ -37,7 +36,6 @@ class Controller_Students_Lesson extends Controller_Students
 					$sendmail->to($del_reserve->teacher->email);
 					$sendmail->subject("Cancellation of Lesson / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
-
 					$sendmail->send();
 
 					date_default_timezone_set(Config::get("timezone.timezone")[$this->user->timezone]);

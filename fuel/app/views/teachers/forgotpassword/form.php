@@ -3,11 +3,8 @@
 		<form action="" method="post">
 			<p>Please input your new password.</p>
 			<ul class="forms">
-				<li>
-					<h4>Password</h4>
-					<div>
-						<input name="password" type="password" required>
-					</div>
+				<li><h4>Password</h4>
+					<div><input name="password" type="password" required></div>
 				</li>
 			</ul>
 			<p class="button-area">

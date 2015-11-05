@@ -4,8 +4,7 @@
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li>
-						<h4>Tutors</h4>
+					<li><h4>Tutors</h4>
 						<div>
 							<select name="teacher_id" size="5">
 								<? foreach($teachers as $teacher): ?>
@@ -14,8 +13,7 @@
 							</select>
 						</div>
 					</li>
-					<li>
-						<h4>Time</h4>
+					<li><h4>Time</h4>
 						<div>
 							<select name="month" id="month" onchange="dateChange()">
 								<?
@@ -43,10 +41,10 @@
 						</div>
 					</li>
 				</ul>
-			<p class="button-area">
-				<button class="button" href="">Submit <i class="fa fa-chevron-right"></i></button>
-			</p>
-			<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
+				<p class="button-area">
+					<button class="button" href="">Submit <i class="fa fa-chevron-right"></i></button>
+				</p>
+				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</form>
 		</section>
 		<div>
@@ -57,7 +55,6 @@
 						<? foreach($teachers as $teacher): ?>
 							<option <? if($teacher->id == Input::get("search_teacher", 0)) echo "selected"; ?> value="<? echo $teacher->id; ?>"><? echo $teacher->firstname; ?></option>
 						<? endforeach; ?>
-
 					</select>
 				</form>
 			</div>
@@ -87,15 +84,15 @@
 		</div>
 		<table class="table-base" width="100%" border="0" cellpadding="0" cellspacing="0" >
 			<thead>
-			<tr>
-				<th>ID</th>
-				<th>Name</th>
-				<th>Lesson at</th>
-				<th>lesson</th>
-				<th>Status</th>
-				<th>Hangout</th>
-				<th></th>
-			</tr>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Lesson at</th>
+					<th>lesson</th>
+					<th>Status</th>
+					<th>Hangout</th>
+					<th></th>
+				</tr>
 			</thead>
 			<tbody>
 			<? if($reservations != null): ?>
@@ -110,7 +107,7 @@
 					<td>
 						<?
 							if($reservation->number != 0):
-								echo $reservation->number."/12 enchant.js"; 
+								echo $reservation->number."/12 enchant.js";
 							endif;
 						?>
 					</td>

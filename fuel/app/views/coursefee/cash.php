@@ -1,9 +1,9 @@
-<? 
+<?
 if (Input::get('g', 0) == 1) {
 	$g = "Home Course | Cash";
 }elseif (Input::get('g', 0) == 4) {
 	$g = "Grameen Course | Cash";
-} 
+}
 
 if (Input::get('e', 0) == 2) {
 	$e = 1;
@@ -16,12 +16,12 @@ if(isset($student)) {
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(23.802838, 90.361081),
-    zoom: 18,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	var mapProp = {
+		center:new google.maps.LatLng(23.802838, 90.361081),
+		zoom: 18,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
@@ -32,27 +32,27 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	<h3 style="border: none;"><?=$g; ?></h3>
 	<div class="pay-steps first">
 		<h4>Choose one-time or installment payment</h4>
-			<table>
-				<tr>
-					<td width="40%" style="border: none;"><p class="firstOpt"><strong>One-Time</strong><br> BDT 16,000</p></td>
-					<td width="60%" style="border: none;">
-						<p>
-						<strong>Installment</strong>
-						</p>
-						<p style="text-align: left; margin-left: 10px">
+		<table>
+			<tr>
+				<td width="40%" style="border: none;"><p class="firstOpt"><strong>One-Time</strong><br> BDT 16,000</p></td>
+				<td width="60%" style="border: none;">
+					<p>
+					<strong>Installment</strong>
+					</p>
+					<p style="text-align: left; margin-left: 10px">
 						BDT 4,000   before booking lesson 1 / HTML&CSS<br>
 						BDT 4,000   before booking lesson 8 / HTML&CSS<br>
 						BDT 4,000   before booking lesson 16 / HTML&CSS<br>
 						BDT 4,000   before booking lesson 1 / JavaScript<br>
-						</p>
-					</td>
-				</tr>
-			</table>
+					</p>
+				</td>
+			</tr>
+		</table>
 	</div>
 	<div class="pay-steps second">
 		<h4>Call Training Help Desk of Grameen Communications for appointment.</h4>
-			<p>Training Help Desk Tel:+88-01713-371-440 <br>
-			Attention: Mr. Md Safat Noor</p>
+		<p>Training Help Desk Tel:+88-01713-371-440 <br>
+		Attention: Mr. Md Safat Noor</p>
 	</div>
 	<div class="pay-steps third">
 		<h4>Bring cash to Grameen Communications.  </h4>
@@ -83,7 +83,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					<? $now = date("Y-m-d H:i:s") ?>
 					<? $paid = $student->charge_html."1"; ?>
 					<? if($student->charge_html != NULL && $student->charge_html != 0){$method = 2;}else{$method=1;} ?>
-				
+
 					<?
 						if($student->charge_html == 0) {
 							$installment = "Quarter 1 (HTML/CSS Chapter 1-8)";
@@ -97,13 +97,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							$installment = "Nothing to display";
 						}
 					?>
-					
+
 					<input type="text" name="date" value="<?=strtotime($now); ?>" hidden />
 					<input type="text" name="studentId" value="<?=$studentID; ?>" hidden />
 					<input type="text" name="paymethod" value="<?=$paymethod; ?>" hidden />
 					<input type="text" name="quarter" value="<?=$paid; ?>" hidden />
 					<input type="text" name="g" value="<?=Input::get('g',0); ?>" hidden />
-					
+
 					Choose a type of payment
 					<select name="method">
 						<option
@@ -111,7 +111,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 								echo "selected";
 							}else {
 								echo 'style="display: none;"';
-							} 
+							}
 						?> value="1" >One-time</option>
 						<optgroup label="Installment">
 							<option
@@ -137,16 +137,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <div id="dialogoverlay"></div>
 <div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
+	<div>
+		<div id="dialogboxhead"></div>
+		<div id="dialogboxbody"></div>
+		<div id="dialogboxfoot"></div>
+	</div>
 </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(function(){
-	
 	var border = $('.bordered');
 	var firstLeft = $('.first-left');
 	var firstRight = $('.first-right');
@@ -157,7 +156,6 @@ $(function(){
 	var submit = $('#submit');
 	var sub = $('#sub');
 	var file = $('#file');
-
 	sub.click(function(){
 		if(file.val() == ""){
 			Alert.render("You need to upload the receipt", 2);
@@ -175,16 +173,16 @@ $(function(){
 	 <? if(!Auth::check()) {?>
 	 		pay.click(function(){
 		 		pay.removeAttr('data-remodal-target href');
-  				var yes =  Confirm.render("You must log-in first to your account before continuing.", 1);
-  			});
+				var yes =  Confirm.render("You must log-in first to your account before continuing.", 1);
+			});
 	<? 	}?>
-	
+
 	firstLeft.mouseenter(function(){firstLeft.css({'cursor' : 'pointer' ,})});
-	
+
 	firstRight.mouseenter(function(){firstRight.css({'cursor' : 'pointer' ,})});
-	
+
 	button.click(function(){button.css('color','black')})
-	
+
 	firstLeft.click(function(){
 		firstLeft.css({
 			'borderColor' : '#7aae2a' ,
@@ -212,19 +210,19 @@ $(function(){
 		this.render = function(dialog,id){
 			var winW = window.innerWidth;
 			var winH = window.innerHeight;
-	        var dialogoverlay = document.getElementById('dialogoverlay');
-	        var dialogbox = document.getElementById('dialogbox');
-	        dialogoverlay.style.display = "block";
-	        dialogoverlay.style.height = winH+"px";
-	        dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-	        dialogbox.style.top = "100px";
-	        dialogbox.style.display = "block";
-	        document.getElementById('dialogboxhead').innerHTML = "<strong>Message</strong>";
-	        document.getElementById('dialogboxbody').innerHTML = dialog;
-	        document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok(\''+id+'\')">OK</button>';
-	    }
+			var dialogoverlay = document.getElementById('dialogoverlay');
+			var dialogbox = document.getElementById('dialogbox');
+			dialogoverlay.style.Sdisplay = "block";
+			dialogoverlay.style.height = winH+"px";
+			dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+			dialogbox.style.top = "100px";
+			dialogbox.style.display = "block";
+			document.getElementById('dialogboxhead').innerHTML = "<strong>Message</strong>";
+			document.getElementById('dialogboxbody').innerHTML = dialog;
+			document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok(\''+id+'\')">OK</button>';
+		}
 		this.ok = function(id){
-			document.getElementById('dialogbox').style.display = "none";
+			document.getElementById('dialogbox').style.displayS = "none";
 			document.getElementById('dialogoverlay').style.display = "none";
 
 			if(id == 1) {
@@ -232,28 +230,28 @@ $(function(){
 			}else{
 				return false;
 			}
-			
+
 		}
 	}
 	var Alert = new CustomAlert();
 
-//end alert	
+//end alert
 
 //custom confirm
 	function CustomConfirm(){
 		this.render = function(dialog,id){
 			var winW = window.innerWidth;
-		    var winH = window.innerHeight;
+			var winH = window.innerHeight;
 			var dialogoverlay = document.getElementById('dialogoverlay');
-		    var dialogbox = document.getElementById('dialogbox');
+			var dialogbox = document.getElementById('dialogbox');
 			dialogoverlay.style.display = "block";
-		    dialogoverlay.style.height = winH+"px";
+			dialogoverlay.style.height = winH+"px";
 			dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-		    dialogbox.style.top = "100px";
-		    dialogbox.style.display = "block";
-			
+			dialogbox.style.top = "100px";
+			dialogbox.style.display = "block";
+
 			document.getElementById('dialogboxhead').innerHTML = "<strong>Confirm your action</strong>";
-		    document.getElementById('dialogboxbody').innerHTML = dialog;
+			document.getElementById('dialogboxbody').innerHTML = dialog;
 			document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Confirm.yes(\''+id+'\')">Yes</button> <button onclick="Confirm.no()">Cancel</button>';
 		}
 		this.no = function(){

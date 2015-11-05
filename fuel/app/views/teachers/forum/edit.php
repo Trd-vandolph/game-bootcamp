@@ -4,17 +4,11 @@
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li>
-						<h4>Title</h4>
-						<div>
-							<input type="text" name="title" value="<? echo $forum->title; ?>">
-						</div>
+					<li><h4>Title</h4>
+						<div><input type="text" name="title" value="<? echo $forum->title; ?>"></div>
 					</li>
-					<li>
-						<h4>Body</h4>
-						<div>
-							<textarea name="body" rows="20" cols="100"><? echo $forum->body; ?></textarea>
-						</div>
+					<li><h4>Body</h4>
+						<div><textarea name="body" rows="20" cols="100"><? echo $forum->body; ?></textarea></div>
 					</li>
 				</ul>
 			<p class="button-area">

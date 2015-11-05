@@ -17,7 +17,6 @@ class Controller_Base extends Controller_Template
 			$this->auth->logout();
 			Response::redirect('/');
 		}
-
 		// check login
 		if(Auth::check()){
 			$this->auth_status = true;
@@ -31,8 +30,6 @@ class Controller_Base extends Controller_Template
 					date_default_timezone_set($timezone[$this->user->timezone]);
 				}
 			}
-
-
 		}else{
 
 		}

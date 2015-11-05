@@ -25,7 +25,6 @@ class Controller_withdraw extends Controller_Base
 	public function action_done()
 	{
 		$this->auth->logout();
-
 		$this->user->email = sha1($this->user->email . time());
 		$this->user->username = sha1($this->user->username . time());
 		$this->user->deleted_at = time();
