@@ -194,7 +194,7 @@
 									->where('deleted_at', 0)
 									->execute('shared');
 		foreach ($reserved_from_shared as $shared) {
-			//echo $shared['tutor_account']. '<br>';
+			//echo $shared['teacher_email']. '<br>';
 			echo $shared['freetime_at']. '<br>';
 		}
 
