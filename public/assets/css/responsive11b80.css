@@ -1885,12 +1885,14 @@
     width: 98%;
   }
 }
+/*
 @media only screen and (min-width : 1px) and (max-width : 690px) {
-  /**Template - header**/
+  *Template - header*
   ul.member-menu {
     display: none;
   }
 }
+*/
 @media only screen and (min-width : 1px) and (max-width : 662px)  {
   #fws_55b227467453e > div > a {
     border: none !important;

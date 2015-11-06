@@ -49,7 +49,7 @@
                 $elem.css("-ms-transition-delay") ||
                 0;
 
-        return (parseFloat(duration) + parseFloat(delay)) * 1000;
+        return (parseFloat(duration) + parseFloat(delay)) * 5000;
     }
 
     /**

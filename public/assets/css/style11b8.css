@@ -818,6 +818,7 @@ body:not(.ascend) #boxed .cart-menu {
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
 	-moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
 	-webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+	height: 150px!important;
 }
 
 body[data-transparent-nav="1"][data-header-color="light"] #header-outer {
