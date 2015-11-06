@@ -6,7 +6,7 @@ class Model_Lessontime extends \Orm\Model
 		'id',
 		'student_id',
 		'teacher_id',
-		'teacher_email',
+		'edoo_tutor',
 		'freetime_at',
 		'status',
 		'number' => array('default' => 0),

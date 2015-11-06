@@ -77,31 +77,6 @@ class Controller_Students_Lesson extends Controller_Students
 			$pasts = [];
 		}
 
-		//send data to shared database
-		function for_shared_db() {
-			$id = Input::get("id", 0);
-			$reserve = Model_Lessontime::find($id);
-			
-			// prepare an insert statement
-			$query = DB::insert('reservation');
-
-			// Set the columns
-			$query->columns(array(
-				'tutor_account',
-				'freetime_at',
-				'deleted_at',
-				'status',
-			));
-
-			// Set the values
-			$query->values(array(
-				$reserve->teacher->email,
-				$reserve->freetime_at,
-				0,
-				1,
-			))->execute('shared');
-		}
-
 		$data["studentplace"] = Model_User::find("all");
 
 		$id = Input::get("id", 0);
@@ -122,7 +97,9 @@ class Controller_Students_Lesson extends Controller_Students
 
 						$reserved = $reserve;
 
-						for_shared_db();
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}
@@ -143,7 +120,9 @@ class Controller_Students_Lesson extends Controller_Students
 
 						$reserved = $reserve;
 
-						for_shared_db();
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}
@@ -164,7 +143,9 @@ class Controller_Students_Lesson extends Controller_Students
 
 						$reserved = $reserve;
 
-						for_shared_db();
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}
@@ -185,7 +166,9 @@ class Controller_Students_Lesson extends Controller_Students
 
 						$reserved = $reserve;
 
-						for_shared_db();
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}

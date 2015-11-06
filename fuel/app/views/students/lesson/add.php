@@ -145,23 +145,9 @@
 									</div>
 								</div>
 								<?
-								$id = '';
 								$class = "unavailable";
 								$href = "#";
 								$unixtime = strtotime(Date("Y-m-d {$j}:00:00", strtotime("+{$i} days")));
-
-								// check if time is reserved from any website
-								//reserved from shared start
-								$reserved_from_shared = DB::select()
-															->from('reservation')
-															->where('deleted_at', 0)
-															->execute('shared');
-								foreach ($reserved_from_shared as $shared) {
-									if ($shared['freetime_at'] == $unixtime):
-										$href = "#reserved";
-										$id = "shared-reserved";
-									endif;
-								}
 
 								if($reserved != null and $reserved->freetime_at == $unixtime): ?>
 									<?
@@ -177,7 +163,7 @@
 										} ?>
 									<? endforeach; ?>
 								<? endif; ?>
-								<li id="<?= $id; ?>" class="<?= $class; ?>"><a href="<?= $href; ?>" class="boxer"><?= $j; ?>:00</a></li>
+								<li class="<?= $class; ?>"><a href="<?= $href; ?>" class="boxer"><?= $j; ?>:00</a></li>
 							<? endfor; ?>
 						</ul>
 					</td>
@@ -188,16 +174,30 @@
 		</table>
 
 		<?
+		//select from lessontimes
+		$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->execute();
 
-		$reserved_from_shared = DB::select()
-									->from('reservation')
-									->where('deleted_at', 0)
-									->execute('shared');
-		foreach ($reserved_from_shared as $shared) {
-			//echo $shared['teacher_email']. '<br>';
-			echo $shared['freetime_at']. '<br>';
+		//select from shared database
+		$reserved_from_shared = DB::select()->from('reservation')->where('status', 1)->execute('shared');
+
+		//check all student
+		$check_all_student = DB::select('*')->from('reservation')->where('status', 1)->execute('shared');
+		foreach ($check_all_student as $student) {
+			$check_student = DB::select()->from('users')->where('id', $student['student_id'])->execute();
+			if (!count($check_student) == 1) {
+				foreach ($reserved_from_lessontimes as $lessontimes) {
+					foreach ($reserved_from_shared as $shared) {
+						if ($lessontimes['freetime_at'] == $shared['freetime_at'] && $lessontimes['edoo_tutor'] == $shared['edoo_tutor']) {
+							echo $student['student_id'] . '<br>';
+							$query = DB::update('lessontimes')->set(array(
+							    'status' => 111,
+							    'student_id' => 111,
+							))->where('freetime_at', $shared['freetime_at'])->where('edoo_tutor', $shared['edoo_tutor'])->execute();
+						}
+					}
+				}
+			}
 		}
-
 		?>
 		<? if($reserved != null): ?>
 			<div  class="remodal" data-remodal-id="reserved">
