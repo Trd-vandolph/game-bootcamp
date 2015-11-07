@@ -173,30 +173,47 @@
 			</tbody>
 		</table>
 		<?
-		//select from lessontimes
-		$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->execute();
-
-		//select from shared database
-		$reserved_from_shared = DB::select()->from('reservation')->where('status', 1)->execute('shared');
-
-		//check all student
-		$check_all_student = DB::select('*')->from('reservation')->where('status', 1)->execute('shared');
-		foreach ($check_all_student as $student) {
-			$check_student = DB::select()->from('users')->where('id', $student['student_id'])->execute();
-			if (!count($check_student) == 1) {
-				foreach ($reserved_from_lessontimes as $lessontimes) {
-					foreach ($reserved_from_shared as $shared) {
-						if ($lessontimes['freetime_at'] == $shared['freetime_at'] && $lessontimes['edoo_tutor'] == $shared['edoo_tutor']) {
-							echo $student['student_id'] . '<br>';
-							$query = DB::update('lessontimes')->set(array(
-							    'status' => 111,
-							    'student_id' => 111,
-							))->where('freetime_at', $shared['freetime_at'])->where('edoo_tutor', $shared['edoo_tutor'])->execute();
+			$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->execute(); //select from lessontimes
+			$reserved_from_shared = DB::select()->from('reservation')->where('status', 1)->execute('shared'); //select from shared database
+			$check_all_student = DB::select('*')->from('reservation')->where('status', 1)->execute('shared'); //check all student
+			foreach ($check_all_student as $student) {
+				$check_student = DB::select()->from('users')->where('id', $student['student_id'])->where('email', $student['student_email'])->execute();
+				if (!count($check_student) == 1) {
+					foreach ($reserved_from_lessontimes as $lessontimes) {
+						foreach ($reserved_from_shared as $shared) {
+							if ($lessontimes['freetime_at'] == $shared['freetime_at'] && $lessontimes['edoo_tutor'] == $shared['edoo_tutor']) {
+								echo $student['student_id'] . '<br>';
+								$query = DB::update('lessontimes')->set(array(
+								    'status' => 3,
+								    'student_id' => -$student['student_id'],
+								))->where('freetime_at', $shared['freetime_at'])->where('edoo_tutor', $shared['edoo_tutor'])->execute();
+							}
 						}
 					}
 				}
 			}
-		}
+
+			//for cancel
+			//cancel booking for other website's database
+			$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 3)->execute(); //select from lessontimes
+			$reserved_from_shared = DB::select()->from('reservation')->where('status', 0)->execute('shared'); //select from shared database
+			$check_all_student = DB::select('*')->from('reservation')->where('status', 0)->execute('shared'); //check all student
+			foreach ($check_all_student as $student) {
+				$check_student = DB::select()->from('users')->where('id', $student['student_id'])->where('email', $student['student_email'])->execute();
+				if (!count($check_student) == 1) {
+					foreach ($reserved_from_lessontimes as $lessontimes) {
+						foreach ($reserved_from_shared as $shared) {
+							if ($lessontimes['freetime_at'] == $shared['freetime_at'] && $lessontimes['edoo_tutor'] == $shared['edoo_tutor']) {
+								echo $student['student_id'] . '<br>';
+								$query = DB::update('lessontimes')->set(array(
+									'status' => 0,
+									'student_id' => 0,
+								))->where('freetime_at', $shared['freetime_at'])->where('edoo_tutor', $shared['edoo_tutor'])->where('student_id', -$student['student_id'])->execute();
+							}
+						}
+					}
+				}
+			}
 		?>
 		<? if($reserved != null): ?>
 			<div  class="remodal" data-remodal-id="reserved">
