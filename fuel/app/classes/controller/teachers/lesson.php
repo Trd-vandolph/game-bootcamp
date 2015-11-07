@@ -12,6 +12,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 			// save
 			$reservation = Model_Lessontime::forge();
 			$reservation->teacher_id = $this->user->id;
+			$reservation->edoo_tutor = $this->user->google_account;
 			$reservation->student_id = 0;
 			$reservation->status = 0;
 			$reservation->freetime_at = strtotime(Input::post("year", 0)
@@ -160,6 +161,14 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 			$data["reservation"]->feedback = Input::post("feedback", "");
 			$data["reservation"]->status = 2;
 			$data["reservation"]->save();
+
+			$query = DB::update('reservation')->set(array(
+				'status' => 2,
+			))
+			->where('edoo_tutor', $data["reservation"]->edoo_tutor)
+			->where('freetime_at', $data["reservation"]->freetime_at)
+			->where('student_id', $data["reservation"]->student_id)
+			->execute('shared');
 
 			Response::redirect("/teachers/lesson/histories");
 		}

@@ -22,6 +22,7 @@ class Controller_Students_Lesson extends Controller_Students
 					$sendmail->to($this->user->email);
 					$sendmail->subject("Cancellation of Lesson / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
+
 					$sendmail->send();
 
 					// send mail
@@ -36,6 +37,7 @@ class Controller_Students_Lesson extends Controller_Students
 					$sendmail->to($del_reserve->teacher->email);
 					$sendmail->subject("Cancellation of Lesson / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
+
 					$sendmail->send();
 
 					date_default_timezone_set(Config::get("timezone.timezone")[$this->user->timezone]);
@@ -43,6 +45,10 @@ class Controller_Students_Lesson extends Controller_Students
 					$del_reserve->student_id = 0;
 					$del_reserve->status = 0;
 					$del_reserve->save();
+
+					//cancel booking for shared db (set the status to 0)
+					//send data to shared db
+					$query = DB::update('reservation')->value('status', 0)->where('student_id', $this->user->id)->where('edoo_tutor', $del_reserve->teacher->email)->execute('shared');
 				}
 			}
 		}
@@ -91,9 +97,13 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}
@@ -113,6 +123,10 @@ class Controller_Students_Lesson extends Controller_Students
 						Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}
@@ -129,9 +143,13 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						Model_Lessontime::sendReservedEMail($reserve->id);
+						//Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}
@@ -151,6 +169,10 @@ class Controller_Students_Lesson extends Controller_Students
 						Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
+
+						//send data to shared db
+						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 					}
 				}
 			}

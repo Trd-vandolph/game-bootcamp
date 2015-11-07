@@ -84,12 +84,14 @@
 				</div>
 				<div class="2nd-content">
 					<a href="http://enchantjs.com/" target="_blank"><img src="../assets/img/front/enchant_logo.png" alt="enchant.js" /></a>
+					<p class="course-link"><a href="http://enchantjs.com/" target="_blank">http://enchantjs.com</a></p>
 				</div>
 			</div>
 			<div id="9leap">
 				<p class="p-left"><a href="http://9leap.net/info/about?sessionLang=en" target="_blank">9leap</a></p>
 				<div class="1st-content">
 					<a href="http://9leap.net/info/about?sessionLang=en" target="_blank"><img src="../assets/img/front/9leap_logo.jpg" alt="9leap"/></a>
+					<p class="course-link"><a href="http://9leap.net/info/about?sessionLang=en" target="_blank">http://9leap.net/info/about?sessionLang=en</a></p>
 				</div>
 				<div class="2nd-content">
 					<p>9leap is a game sharing site not only for posting games kids have made but for playing games others have posted. There are over 1,000 games posted on the site.</p>

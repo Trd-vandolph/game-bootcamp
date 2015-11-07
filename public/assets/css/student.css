@@ -1,4 +1,13 @@
 @charset "utf-8";
+
+/*testing only*/
+#shared-reserved {
+	background-color: brown;
+}
+#shared-reserved a {
+	color: white !important;
+}
+
 #user-data {
 	background: -webkit-linear-gradient(268deg,#83B7CD,#FFFFFF);
 }

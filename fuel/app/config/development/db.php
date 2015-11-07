@@ -1,9 +1,9 @@
 <?php
 /**
- * The development database settings. These get merged with the global settings.
- */
+* The development database settings. These get merged with the global settings.
+*/
 return array(
- 	'default' => array(
+	'default' => array(
 		'type' => 'mysqli',
 		'connection' => array(
 			'hostname'	   => 'localhost',
@@ -14,6 +14,12 @@ return array(
 			'persistent'	=> false,
 			'compress'	   => false,
 		),
+		'identifier'	 => '`',
+		'table_prefix'   => '',
+		'charset'		=> 'utf8',
+		'enable_cache'   => true,
+		'profiling'	  => false,
+		'readonly'	   => false,
 	),
 	'shared' => array(
 		'type' => 'mysqli',
@@ -25,6 +31,12 @@ return array(
 			'password'	   => '',
 			'persistent'	 => false,
 			'compress'	   => false,
- 		),
- 	),
- );
+		),
+		'identifier'	 => '`',
+		'table_prefix'   => '',
+		'charset'		=> 'utf8',
+		'enable_cache'   => true,
+		'profiling'	  => false,
+		'readonly'	   => false,
+	),
+);

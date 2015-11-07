@@ -41,7 +41,7 @@
 </head>
 
 <body class="home page page-id-3227 page-template-default wpb-js-composer js-comp-ver-3.7.3 vc_responsive" data-smooth-scrolling="1" data-responsive="1">
-	<!-- <div id="header-space"></div> -->
+	<div id="header-space"></div>
 	<div id="header-outer" data-transparent-header="false" class="transparent" data-full-width="false" data-using-secondary="0" data-using-logo="1" data-logo-height="82" data-header-resize="1">
 		<div id="search-outer" class="nectar">
 			<div id="search">
@@ -109,15 +109,22 @@
 	<div id="mobile-menu">
 		<div class="container">
 			<ul>
-				<li><a href="/"><? echo Session::get('menu1'); ?></a></li>
-				<li><a href="/parents"><? echo Session::get('menu2'); ?></a></li>
-				<li><a href="/course"><? echo Session::get('menu4'); ?></a></li>
-				<li><a href="/tutor"><? echo Session::get('menu5'); ?></a></li>
-				<li><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a></li>
-				<li><a href="/coursefee"><? echo Session::get('menu7'); ?></a></li>
-				<li><a href="/howtojoin"><? echo Session::get('menu8'); ?></a></li>
-				<li><a href="/faq"><? echo Session::get('menu9'); ?></a></li>
-				<li><a href="#"><? echo Session::get('menu9'); ?></a></li>
+				<li><a href="/"><? echo Session::get('menu1'); ?></a>
+				</li>
+				<li><a href="/parents"><? echo Session::get('menu2'); ?></a>
+				</li>
+				<li><a href="/course"><? echo Session::get('menu4'); ?></a>
+				</li>
+				<li><a href="/tutor"><? echo Session::get('menu5'); ?></a>
+				</li>
+				<li><a href="/operatingcompany"><? echo Session::get('menu6'); ?></a>
+				</li>
+				<li><a href="/coursefee"><? echo Session::get('menu7'); ?></a>
+				</li>
+				<li><a href="/howtojoin"><? echo Session::get('menu8'); ?></a>
+				</li>
+				<li><a href="/faq"><? echo Session::get('menu9'); ?></a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -155,36 +162,38 @@
 	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
 	<script>
-		window.onscroll = function (e) {
+		var baseURL = window.location.origin + "/";
+		var currentURL = window.location.href;
+
+		if (baseURL == currentURL) {
+			$('#header-space').css('display', 'none');
+			window.onscroll = function (e) {
+				$('#header-outer, div#search-outer').attr('style', 'background-color: #014099 !important');
+			}
+
+			var $win = $(window);
+			$win.scroll(function () {
+				if ($win.scrollTop() == 0) {
+					//alert('Scrolled to Page Top');
+					$('#header-outer, div#search-outer').attr('style', 'background-color: rgba(1, 64, 153, 0.1) !important');
+				} else if ($win.height() + $win.scrollTop()
+					== $(document).height()) {
+					//alert('Scrolled to Page Bottom');
+				}
+			});
+		} else {
 			$('#header-outer, div#search-outer').attr('style', 'background-color: #014099 !important');
 		}
-		var $win = $(window);
-		$win.scroll(function () {
-			if ($win.scrollTop() == 0) {
-				$('#header-outer, div#search-outer').attr('style', 'background-color: rgba(1, 64, 153, 0.1) !important');
-			} else if ($win.height() + $win.scrollTop()
-				== $(document).height()) {
-				//alert('Scrolled to Page Bottom');
-			}
-		});
-		$(function() {
-			// var lastScrollTop = 0;
-			// $(window).scroll(function(event){
-			// 	var st = $(this).scrollTop();
-			// 	if (st > lastScrollTop){
-			// 		alert("down");
-			// 	} else {
-			// 		alert("up");
-			// 	}
-			// 	lastScrollTop = st;
-			// });
 
-			// function resizeSpace() {
-			// 	var headerSpace = $('#header-space');
-			// 	var headerOuter = $('#header-outer').height();
-			//
-			// 	headerSpace.css('height', headerOuter+13);
-			// }
+		$(function() {
+			function resizeSpace() {
+				if(baseURL == currentURL) {
+					var headerSpace = $('#header-space');
+					var headerOuter = $('#header-outer').height();
+
+					headerSpace.css('height', headerOuter);
+				}
+			}
 
 			var memLink1 = '<?php if(Auth::check()){echo "/students"; }else{echo "/students/signup";}?>';
 			var memLink2 = '<?php if(Auth::check()){echo "/students/?logout=1"; }else{echo "/students/signin";}?>';
@@ -197,6 +206,7 @@
 
 			addMemSettings();
 			removeDuplicate();
+			resizeSpace();
 
 			function removeDuplicate() {
 				var seen = {};
@@ -223,7 +233,7 @@
 			$(window).resize(function () {
 				addMemSettings();
 				removeDuplicate();
-				//resizeSpace();
+				resizeSpace();
 			});
 		});
 	</script>

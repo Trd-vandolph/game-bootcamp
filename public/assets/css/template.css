@@ -8,7 +8,7 @@ body a {
 	position: fixed !important;
 }
 #header-space {
-	display: block !important;
+	display: block;
 }
 header#top nav ul li a:hover,
 header#top nav .sf-menu li.sfHover > a,
@@ -1455,6 +1455,9 @@ header#top {
 	width: 90% !important;
 	margin: auto;
 }
+#mobile-menu {
+	background-color: #E2DBB7 !important;
+}
 /******* Parents **********/
 section.parents#contents {
 	margin-top: 5% !important;
@@ -1675,6 +1678,11 @@ section.course #game-container .game-row {
 }
 section.course #game-container .game-cell {
 	display: table-cell;
+}
+section.course p.course-link {
+	text-align: center;
+	font-family: Verdana;
+	font-size: 15px !important;
 }
 /******* Tutors **********/
 section.tutor {
@@ -2186,6 +2194,17 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 }
 #mobile-menu > div > ul > li > a {
 	text-align: center;
+	color: #000;
+}
+#mobile-menu > div > ul > li {
+	border-bottom: 1px dashed #C0BCA8;
+}
+#mobile-menu > div > ul > li:last-child {
+	border: none;
+}
+#mobile-menu > div > ul > li > a:hover {
+	color: #FD1A4B;
+	cursor: pointer;
 }
 .nectar-button.has-icon {
   padding: 2% 3% !important;
