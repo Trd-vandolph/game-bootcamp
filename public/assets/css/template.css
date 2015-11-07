@@ -1097,14 +1097,14 @@ ul.mc_list li {
 }
 .member-menu li.signup a{
 	background: #E60039;
-	padding: 0.5em 0.8em !important;
+	padding: 0.7em 1.8em !important;
 	border-radius: 7px;
 	-webkit-border-radius: 7px;
 	margin: 20px 15px 46px 0;
 }
 .member-menu li.login a{
 	background: #014099;
-	padding: 10px !important;
+	padding: 0.7em 1.8em !important;
 	border-radius: 7px;
 	margin: 20px 15px 46px 0;
 }
@@ -1125,10 +1125,6 @@ header#top > div > div > ul > li > a {
 	border: #fff solid;
 	color: #fff;
 	font-size: 1.5vw !important;
-}
-header#top > div > div > ul > li.login > a {
-	border: white solid;
-	padding: 0.5em 0.8em !important
 }
 
 /******* Free Trial Lesson Button **********/
@@ -1217,8 +1213,9 @@ ul.member-menu {
 	text-align: right;
 	font-family: Lovelo, Sans-serif;
 	font-size: 15px;
-	width: 28%;
+	width: 35%;
   	float: right;
+    margin-right: 7px;
 }
 ul.member-menu li {
 	display: inline-block;
@@ -1279,6 +1276,22 @@ section#contents {
 #slideshow > div.slideshow-7 {
 	background-image: url('../img/7.jpg');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .wpb_text_column.wpb_content_element .wpb_wrapper {
 	border-bottom: 2px solid #fff;
 	border-top: 2px solid #fff;
@@ -1286,6 +1299,120 @@ section#contents {
 	width: 90%;
 	margin: auto;
 }
+*/
+.wpb_text_column.wpb_content_element .wpb_wrapper {
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+    padding: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -48px;
+}
+
+#ajax-content-wrap {
+    margin-top: -160px!important;
+}
+
+.container-wrap {
+    padding-top: 0px!important; 
+}
+
+@media only screen and (max-width:1000px) {
+    #ajax-content-wrap {
+        margin-top: -142px!important;
+    }
+    .col.span_12.light.left {
+        margin-top: 26%!important;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    #ajax-content-wrap {
+        margin-top: -206px!important;
+    }
+    .member-menu li.login a{
+        padding: 1.2em 2.5em !important;
+    }
+    .member-menu li.signup a{
+        padding: 1.2em 2.5em !important;
+    }
+    ul.member-menu {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    #ajax-content-wrap {
+        margin-top: -316px!important;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #ajax-content-wrap {
+        margin-top: -373px!important;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    #ajax-content-wrap {
+        margin-top: -400px!important;
+    }
+    .member-menu li.signup a {
+        margin: 20px 15px 29px 0;
+    }
+}
+@media only screen and (max-width:450px) {
+    .nectar-button {
+        top: 18px!important;
+    }
+    body.home .wpb_wrapper h1 {
+        font-size: 4.8vw!important;
+    }
+}
+
+@media only screen and (max-width:400px) {
+    #ajax-content-wrap {
+        margin-top: -480px!important;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    #ajax-content-wrap {
+        margin-top: -517px!important;
+    }
+    .main-content {
+        padding: 0 31px 0 13px;
+    }
+    #top-about-content ul li {
+        padding: 10px 0 0 30px!important;
+    }
+    ul.member-menu {
+        width: 27%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .col.span_12.light.left {
 	display: block !important;
 	position: absolute;
@@ -2274,4 +2401,38 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 }
 #contents.terms ol li {
 	list-style: decimal;
+}
+
+#slideshow > div.slideshow {
+    margin-top: -80px;
+}
+
+@media only screen and (min-width:1px) and (max-width:845px) {
+    #slideshow > div.slideshow {
+        margin-top: -120px;
+    }   
+}
+
+@media only screen and (min-width:1px) and (max-width:700px) {
+    #slideshow > div.slideshow {
+        margin-top: -180px;
+    }   
+}
+
+@media only screen and (min-width:1px) and (max-width:575px) {
+    #slideshow > div.slideshow {
+        margin-top: -200px;
+    }   
+}
+
+@media only screen and (min-width:1px) and (max-width:455px) {
+    #slideshow > div.slideshow {
+        margin-top: -240px;
+    }   
+}
+
+@media only screen and (min-width:1px) and (max-width:360px) {
+    #slideshow > div.slideshow {
+        margin-top: -260px;
+    }   
 }
