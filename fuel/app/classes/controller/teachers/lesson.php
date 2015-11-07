@@ -162,6 +162,14 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 			$data["reservation"]->status = 2;
 			$data["reservation"]->save();
 
+			$query = DB::update('reservation')->set(array(
+				'status' => 2,
+			))
+			->where('edoo_tutor', $data["reservation"]->edoo_tutor)
+			->where('freetime_at', $data["reservation"]->freetime_at)
+			->where('student_id', $data["reservation"]->student_id)
+			->execute('shared');
+
 			Response::redirect("/teachers/lesson/histories");
 		}
 

@@ -182,7 +182,7 @@
 					foreach ($reserved_from_lessontimes as $lessontimes) {
 						foreach ($reserved_from_shared as $shared) {
 							if ($lessontimes['freetime_at'] == $shared['freetime_at'] && $lessontimes['edoo_tutor'] == $shared['edoo_tutor']) {
-								echo $student['student_id'] . '<br>';
+								//echo $student['student_id'] . '<br>';
 								$query = DB::update('lessontimes')->set(array(
 								    'status' => 3,
 								    'student_id' => -$student['student_id'],

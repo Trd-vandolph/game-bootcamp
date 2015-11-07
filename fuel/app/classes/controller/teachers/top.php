@@ -15,7 +15,6 @@ class Controller_Teachers_Top extends Controller_Teachers
 			Response::redirect("teachers/setting/new");
 		}
 
-
 		$data["reservations"] = Model_Lessontime::find("all", [
 			"where" => [
 				["deleted_at", 0],
