@@ -96,7 +96,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						//Model_Lessontime::sendReservedEMail($reserve->id);
+						Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
 
@@ -142,7 +142,7 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserve->history = $this->user->place;
 						$reserve->save();
 
-						//Model_Lessontime::sendReservedEMail($reserve->id);
+						Model_Lessontime::sendReservedEMail($reserve->id);
 
 						$reserved = $reserve;
 
