@@ -174,27 +174,14 @@
 						</div>
 						<ul>
 							<li class="clearfix">
-								<div class="photo"><img src="/assets/img/pictures/m_<?= $reserved->teacher->getImage(); ?>"
-														width="200" alt=""></div>
+								<div class="photo"><img src="/assets/img/pictures/m_<?= $reserved->teacher->getImage(); ?>" width="200" alt=""></div>
 								<div class="profile">
-									<h3><?= $reserved->teacher->firstname;?> <?= $reserved->teacher->middlename;?> <?=
-										$reserved->teacher->lastname;?></h3>
+									<h3><?= $reserved->teacher->firstname;?> <?= $reserved->teacher->middlename;?> <?= $reserved->teacher->lastname;?></h3>
 									<p><?= $reserved->teacher->pr;?></p>
 									<p class="button-area"><a class="button" href="#confirm">Cancel</a></p>
 								</div>
 							</li>
 						</ul>
-					</td>
-				<? endfor; ?>
-			</tr>
-			</tbody>
-		</table>
-		<? if($reserved != null): ?>
-			<div  class="remodal" data-remodal-id="reserved">
-				<div class="content select-teacher">
-					<div class="confirm">
-						<p>Your booking is as follows:</p>
-						<p class="time"><?= Date("M d Y(D)", $reserved->freetime_at); ?> <?= Date("H", $reserved->freetime_at); ?>:00 - <?= Date("H", $reserved->freetime_at); ?>:45</p>
 					</div>
 				</div>
 				<div  class="remodal" data-remodal-id="confirm">
