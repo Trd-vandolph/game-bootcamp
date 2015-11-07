@@ -46,8 +46,7 @@ class Controller_Students_Lesson extends Controller_Students
 					$del_reserve->status = 0;
 					$del_reserve->save();
 
-					//cancel booking for shared db (set the status to 0)
-					//send data to shared db
+					//cancel booking for shared db (set the status to 0) and send data to shared db
 					$query = DB::update('reservation')->value('status', 0)->where('student_id', $this->user->id)->where('edoo_tutor', $del_reserve->teacher->email)->execute('shared');
 				}
 			}

@@ -4,6 +4,7 @@
 	$feed_2 = 'https://www.google.com/calendar/feeds/en.bd%23holiday%40group.v.calendar.google.com/public/basic';
 	$rss_2 = simplexml_load_file($feed_2);
 ?>
+
 <div id="loading">
 	<p><?php echo Html::anchor('/students/',Asset::img('logo/icon_b.png', array('width'=> '200','alt'=> 'OliveCode'))); ?></p>
 	<img src="/assets/img/loading.gif">
@@ -183,6 +184,17 @@
 								</div>
 							</li>
 						</ul>
+					</td>
+				<? endfor; ?>
+			</tr>
+			</tbody>
+		</table>
+		<? if($reserved != null): ?>
+			<div  class="remodal" data-remodal-id="reserved">
+				<div class="content select-teacher">
+					<div class="confirm">
+						<p>Your booking is as follows:</p>
+						<p class="time"><?= Date("M d Y(D)", $reserved->freetime_at); ?> <?= Date("H", $reserved->freetime_at); ?>:00 - <?= Date("H", $reserved->freetime_at); ?>:45</p>
 					</div>
 				</div>
 				<div  class="remodal" data-remodal-id="confirm">
