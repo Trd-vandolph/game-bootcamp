@@ -172,7 +172,6 @@
 			</tr>
 			</tbody>
 		</table>
-
 		<?
 		//select from lessontimes
 		$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->execute();
