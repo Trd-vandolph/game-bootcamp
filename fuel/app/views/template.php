@@ -40,7 +40,7 @@
 	<title> Game-BootCamp </title>
 </head>
 
-<body class="home page page-id-3227 page-template-default wpb-js-composer js-comp-ver-3.7.3 vc_responsive" data-smooth-scrolling="1" data-responsive="1">
+<body class="home page page-id-3227 page-template-default wpb-js-composer js-comp-ver-3.7.3 vc_responsive" data-responsive="1">
 	<div id="header-space"></div>
 	<div id="header-outer" data-transparent-header="false" class="transparent" data-full-width="false" data-using-secondary="0" data-using-logo="1" data-logo-height="82" data-header-resize="1">
 		<div id="search-outer" class="nectar">
@@ -156,7 +156,7 @@
 	<? echo Asset::js( "top.jquery.js"); ?>
 	<script type='text/javascript' src='wp-content/themes/salient/js/superfishb493.js?ver=1.4.8'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/nicescrolle248.js?ver=3.5.4'></script>
-	<!--script type='text/javascript' src='wp-content/themes/salient/js/sticky5152.js?ver=1.0'></script-->
+	<script type='text/javascript' src='wp-content/themes/salient/js/sticky5152.js?ver=1.0'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/prettyPhoto11b8.js?ver=4.5'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/appear5152.js?ver=1.0'></script>
 	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>

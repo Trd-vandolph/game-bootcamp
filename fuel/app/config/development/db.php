@@ -24,11 +24,11 @@ return array(
 	'shared' => array(
 		'type' => 'mysqli',
 		'connection' => array(
-			'hostname'	   => 'shared-database.c1pl9kfl7exm.ap-southeast-1.rds.amazonaws.com',
+			'hostname'	   => 'localhost',
 			'port'		   => '3306',
 			'database'	   => 'shared_database',
-			'username'	   => 'shared_database',
-			'password'	   => 'shared_database',
+			'username'	   => 'root',
+			'password'	   => '',
 			'persistent'	 => false,
 			'compress'	   => false,
 		),
