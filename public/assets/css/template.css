@@ -222,7 +222,11 @@ div.wpcf7-validation-errors {
 .gallery a:hover img {
 	border-color: #E60039!important;
 }
-
+@media only screen and (min-width:768px) and (max-width:1024px) {
+	#header-outer {
+		padding-bottom: 2% !important;
+	}
+}
 @media only screen and (min-width:1px) and (max-width:1000px) {
 	body #featured article .post-title > a {
 		background-color: #ffb30d;
@@ -2211,6 +2215,7 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 }
 #mobile-menu > div > ul > li:last-child {
 	border: none;
+	padding-bottom: 0 !important;
 }
 #mobile-menu > div > ul > li > a:hover {
 	color: #FD1A4B;

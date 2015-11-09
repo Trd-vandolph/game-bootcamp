@@ -97,28 +97,26 @@
 			<tbody>
 			<? if($reservations != null): ?>
 				<? foreach($reservations as $reservation): ?>
-					<? if($reservation->status < 3): ?>
-						<tr id="reservation_<? echo $reservation->id; ?>" <? if($reservation->status > 0) echo 'class="reserved"';?>>
-							<th class="number"><? echo $reservation->id; ?></th>
-							<td class="name">
-								<p>Tutor : <span><? echo "{$reservation->teacher->firstname} {$reservation->teacher->middlename} {$reservation->teacher->lastname}"; ?></span></p>
-								<p>Student : <span><? if($reservation->student != null) echo "{$reservation->student->firstname} {$reservation->student->middlename} {$reservation->student->lastname}"; ?></span></p>
-							</td>
-							<td><? echo date("M d, Y. H:i:s", $reservation->freetime_at); ?></td>
-							<td>
-								<?
-									if($reservation->number != 0):
-										echo $reservation->number."/12 enchant.js";
-									endif;
-								?>
-							</td>
-							<td class="status"><? echo Config::get("statics.reservation_status", [])[$reservation->status]; ?></td>
-							<td class="hangout"><a href="<? echo $reservation->url; ?>"><? if($reservation->url != ""){echo "Link"; } ?></a></td>
-							<td><button class="button gray right" onclick="deleteReservation(<? echo $reservation->id; ?>)"><i
-										class="fa fa-times"></i>
-									Delete</button><? echo Html::anchor("admin/reservations/edit/{$reservation->id}", '<i class="fa fa-cog"></i> Edit', [ "style" => "height:14px; line-height:14px", "class" => "button green right"]); ?></td>
-						</tr>
-					<? endif; ?>
+				<tr id="reservation_<? echo $reservation->id; ?>" <? if($reservation->status > 0) echo 'class="reserved"';?>>
+					<th class="number"><? echo $reservation->id; ?></th>
+					<td class="name">
+						<p>Tutor : <span><? echo "{$reservation->teacher->firstname} {$reservation->teacher->middlename} {$reservation->teacher->lastname}"; ?></span></p>
+						<p>Student : <span><? if($reservation->student != null) echo "{$reservation->student->firstname} {$reservation->student->middlename} {$reservation->student->lastname}"; ?></span></p>
+					</td>
+					<td><? echo date("M d, Y. H:i:s", $reservation->freetime_at); ?></td>
+					<td>
+						<?
+							if($reservation->number != 0):
+								echo $reservation->number."/12 enchant.js";
+							endif;
+						?>
+					</td>
+					<td class="status"><? echo Config::get("statics.reservation_status", [])[$reservation->status]; ?></td>
+					<td class="hangout"><a href="<? echo $reservation->url; ?>"><? if($reservation->url != ""){echo "Link"; } ?></a></td>
+					<td><button class="button gray right" onclick="deleteReservation(<? echo $reservation->id; ?>)"><i
+								class="fa fa-times"></i>
+							Delete</button><? echo Html::anchor("admin/reservations/edit/{$reservation->id}", '<i class="fa fa-cog"></i> Edit', [ "style" => "height:14px; line-height:14px", "class" => "button green right"]); ?></td>
+				</tr>
 				<? endforeach; ?>
 			<? endif; ?>
 			</tbody>

@@ -1,9 +1,7 @@
 <div id="contents-wrap">
 	<div id="main">
 		<h3><? if(Input::get("id", 0) == 0){
-				echo "Add";
-			}else{
-				echo "Edit";
+				$add = 1;
 			} ?> teacher</h3>
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
@@ -116,33 +114,33 @@
 				<ul class="forms">
 					<li><h4>Bank name</h4>
 						<div>
-							<input name="bank_name" type="text" value="<? echo Input::post("bank_name", $user->bank->name); ?>">
+							<input name="bank_name" type="text" <?if($add != 1) {?> value="<? echo Input::post("bank_name", $user->bank->name);?>" <? } ?>>
 						</div>
 					</li>
 					<li><h4>Bank branch</h4>
 						<div>
-							<input name="bank_branch" type="text" value="<? echo Input::post("bank_branch", $user->bank->branch); ?>">
+							<input name="bank_branch" type="text" <?if($add != 1) {?> value="<? echo Input::post("bank_branch", $user->bank->branch); ?>" <? } ?>>
 						</div>
 					</li>
 					<li><h4>Bank account</h4>
 						<div>
-							<input name="bank_account" type="text" value="<? echo Input::post("bank_account", $user->bank->account); ?>">
+							<input name="bank_account" type="text" <?if($add != 1) {?> value="<? echo Input::post("bank_account", $user->bank->account); ?>" <? } ?>>
 						</div>
 					</li>
 					<li><h4>Account type</h4>
 						<div>
-							<input <? if(Input::post("bank_type", $user->bank->type) == 0) echo "checked" ?> name="bank_type" type="radio" value="0">ordinary
-							<input <? if(Input::post("bank_type", $user->bank->type) == 1) echo "checked" ?> name="bank_type" type="radio" value="1">current
+							<input <?if($add != 1) {?> <? if(Input::post("bank_type", $user->bank->type) == 0) echo "checked" ?> <? } ?> name="bank_type" type="radio" value="0">ordinary
+							<input <?if($add != 1) {?> <? if(Input::post("bank_type", $user->bank->type) == 1) echo "checked" ?> <? } ?> name="bank_type" type="radio" value="1">current
 						</div>
 					</li>
 					<li><h4>Number</h4>
 						<div>
-							<input name="bank_number" type="text" value="<? echo Input::post("bank_number", $user->bank->number); ?>">
+							<input name="bank_number" type="text" <?if($add != 1) {?> value="<? echo Input::post("bank_number", $user->bank->number); ?>" <? } ?>>
 						</div>
 					</li>
 					<li><h4>etc</h4>
 						<div>
-							<input name="bank_etc" type="text" value="<? echo Input::post("bank_etc", $user->bank->etc); ?>">
+							<input name="bank_etc" type="text" <?if($add != 1) {?> value="<? echo Input::post("bank_etc", $user->bank->etc); ?>" <? } ?>>
 						</div>
 					</li>
 				</ul>

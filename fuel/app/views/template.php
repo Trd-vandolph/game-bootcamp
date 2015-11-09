@@ -165,6 +165,20 @@
 		var baseURL = window.location.origin + "/";
 		var currentURL = window.location.href;
 
+		var toggleNav = document.getElementById("toggle-nav");
+		var space = document.getElementById("header-space");
+		var count = 0;
+
+
+		toggleNav.addEventListener("click", function() {
+			space.style.display = "block";
+			alert(count);
+			count++;
+		})
+
+		window.addEventListener('resize', function() {
+		})
+
 		if (baseURL == currentURL) {
 			$('#header-space').css('display', 'none');
 			window.onscroll = function (e) {
@@ -235,6 +249,7 @@
 				removeDuplicate();
 				resizeSpace();
 			});
+
 		});
 	</script>
 </body>

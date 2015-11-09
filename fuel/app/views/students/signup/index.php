@@ -44,15 +44,19 @@
 					<li>
 						<h4>Nationality</h4>
 						<div>
-							<input list="nationalities" name="nationality" placeholder="e.g. Singaporean">
+							<!-- <input list="nationalities" name="nationality" placeholder="e.g. Singaporean">
 							<datalist id="nationalities">
+
+							</datalist> -->
+							<select name="nationality">
+								<option value="0">---Select Nationality---</option>
 								<?
 								$nationalities = Config::get("statics.nationalities", []);
 
 								foreach($nationalities as $nationality):?>
-									<option value="<? echo $nationality; ?>">
+									<option value="<? echo $nationality; ?>"><?= $nationality; ?></option>
 								<? endforeach; ?>
-							</datalist>
+							</select>
 						</div>
 					</li>
 					<li>

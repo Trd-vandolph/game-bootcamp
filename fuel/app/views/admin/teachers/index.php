@@ -2,7 +2,7 @@
 	<div id="main">
 		<h3>Teachers</h3>
 		<div class="search-table">
-			<p class="link-more table-top"><? echo Html::anchor("admin/teachers/add", '<i class="fa fa-plus-circle"></i> Add'); ?></p>
+			<p class="link-more table-top"><? echo Html::anchor("admin/teachers/add?id=0", '<i class="fa fa-plus-circle"></i> Add'); ?></p>
 			<form action="" method="get" id="search_form">
 				<input name="search_text" type="text" value="<? echo Input::get("search_text", ""); ?>"/>
 			</form>
