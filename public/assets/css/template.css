@@ -1214,15 +1214,18 @@ img.feature3-image {
 /******* Navigation Bar **********/
 ul.member-menu {
 	margin-top: 10px;
-	text-align: right;
+	text-align: right!important;
 	font-family: Lovelo, Sans-serif;
 	font-size: 15px;
-	width: 35%;
+	width: 285px;
   	float: right;
-    margin-right: 7px;
+    margin-right: 2%;
 }
 ul.member-menu li {
 	display: inline-block;
+	display: -moz-inline-stack;
+	display: inline-block;
+	display: inline;
 }
 /******* Games Panel **********/
 #fws_55b22746735ec > div {
@@ -1333,6 +1336,7 @@ section#contents {
 #top-about-content ul li {
 	list-style: none;
 	padding: 15px;
+	text-align: justify;
 }
 #top-about-content ul li:before {
 	font-family: 'FontAwesome';
@@ -1472,6 +1476,7 @@ header#top {
 #mobile-menu {
 	background-color: #E2DBB7 !important;
 }
+
 /******* Parents **********/
 section.parents#contents {
 	margin-top: 5% !important;
@@ -1814,7 +1819,7 @@ section.operatingcompany .student_container {
 	margin-bottom: 100px
 }
 section.operatingcompany #students {
-	padding: 40px 60px;
+	padding: 40px 29px;
 	margin-bottom: 100px;
 	border: solid 4px #7AAE2A;
 	background: #fff;
@@ -1841,6 +1846,10 @@ section.operatingcompany #fourth-content > ul > li.text-content > p.title {
 section.operatingcompany #students .detail ul {
 	width: 100%;
   	display: inline-flex;
+	display: -webkit-inline-box;
+	display: -moz-inline-box;
+	display: -ms-inline-flexbox;
+	display: -webkit-inline-flex;
 }
 section.operatingcompany #students ul li.student01 {
 	width: 50%;
@@ -2289,6 +2298,10 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 }
 #contents.terms ol li {
 	list-style: decimal;
+}
+
+#mobile-menu div.container ul {
+	margin-bottom: 0;
 }
 /*
 #slideshow > div.slideshow {
