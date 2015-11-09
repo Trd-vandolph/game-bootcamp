@@ -567,7 +567,6 @@ jQuery(document).ready(function($){
 			
 		}
 	});*/
-
 	
 	function addOrRemoveSF(){
 		
@@ -3326,6 +3325,8 @@ function searchFieldCenter(){
 		$(this).parent().parent().find('> ul').stop(true,true).slideToggle();
 		return false;
 	});
+
+	$('#mobile-menu').css('position','fixed');
 	
 
 

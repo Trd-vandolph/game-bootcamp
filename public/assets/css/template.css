@@ -611,10 +611,6 @@ header#top .sf-menu > li.sfHover > ul {
 	height: 13px;
 }
 
-#header-space {
-	height: 145px;
-}
-
 body[data-smooth-scrolling="1"] #full_width_portfolio .project-title.parallax-effect {
 	top: 138px;
 }
@@ -1193,9 +1189,15 @@ img.feature3-image {
 }
 #fws_55b08d66d9865 > div > div > div > div > div > p > img {
 	margin: 0 !important;
+	height: auto!important;
 }
 #fws_55b08d66da11c > div > div > div > div > div > p > img {
-	margin: 0 !important;
+/*	margin: 0 !important; */
+	margin-left: auto!important;
+	margin-right: auto!important;
+	margin-top: -5px!important;
+	height: 7em!important;
+	width: auto!important;
 }
 
 #fws_55b08d66d8a64 > div > div > div > div > div > h2 {
@@ -1203,12 +1205,13 @@ img.feature3-image {
 }
 #fws_55b08d66d8ede > div > div > div > div > div > p > img {
 	margin: auto !important;
+	height: auto!important;
 }
 #fws_55b08d66d8a64 > div > div > div > div > div > p > a {
 	color: #D50D43 !important;
 }
 #fws_55b08d66d8a64 > div > div > div > div > div {
-	margin-left: 10%;
+	/* margin-left: 10%; */
 	padding-top: 0;
 }
 /******* Navigation Bar **********/
@@ -1395,7 +1398,7 @@ section#contents {
 	margin-bottom: 15% !important;
 }
 #top-person-influence > div:nth-child(2){
-	float: right;
+	/* float: right; */
 }
 #top-person-influence img {
 	margin: 20px 0;
@@ -2302,6 +2305,33 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 
 #mobile-menu div.container ul {
 	margin-bottom: 0;
+}
+
+#mobile-menu {
+	position: fixed!important;
+	top: 95px!important;
+	display: none;
+	background-color: #1F1F1F;
+ 	padding: 0px;
+    z-index: 100000;
+    max-width: 1100px;
+    width: 100%;
+}
+
+header#top nav > ul > li > a {
+	padding-bottom: 16px!important;
+}
+.container-wrap {
+	padding-top: 36px!important;
+}
+#slideshow {
+    margin-top: 0!important;
+}
+#slideshow .slideshow {
+	background-position:center top!important;
+}
+#header-space {
+	height: 0!important;
 }
 /*
 #slideshow > div.slideshow {
