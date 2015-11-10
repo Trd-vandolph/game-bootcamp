@@ -1624,7 +1624,7 @@ header#top #toggle-nav i, header#top #mobile-cart-link i {
 
 
 #mobile-menu {
-	position: relative;
+	position: fixed!important;
 	top: 0px;
 	display: none;
 	background-color: #1F1F1F;
