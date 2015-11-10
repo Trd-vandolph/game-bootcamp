@@ -95,7 +95,7 @@
 			}
 		})
 		<? foreach($reservations as $reservation): ?>
-			<? if($reservation->student_id != 0): ?>
+			<? if($reservation->status == 1): ?>
 				$(".calendar-day-<?= Date("Y-m-d", $reservation->freetime_at); ?>").addClass("booked");
 			<? endif; ?>
 		<? endforeach; ?>

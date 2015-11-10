@@ -28,7 +28,7 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 				["deleted_at", 0],
 				["teacher_id", $this->user->id],
 				["freetime_at", ">=", time()],
-				["status", 0],
+				//["status", 0],
 			],
 			"order_by" => [
 				["id", "desc"],

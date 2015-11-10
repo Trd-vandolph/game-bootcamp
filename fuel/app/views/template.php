@@ -16,6 +16,19 @@
 	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/success1.png" />
 	<link rel="shortcut icon" href="/assets/img/common/favicon.ico">
 
+	<!-- <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/rgs11b8.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/steadysetsf39e.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/lineconf39e.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/responsive11b80.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/wpbakery/js_composer/assets/css/js_composer_front1ac1.css" />
+	<script type='text/javascript' src='/assets/js/reum.js'></script>
+	<script type='text/javascript' src='/assets/js/top.jquery.js'></script>
+	<script type='text/javascript' src='/assets/js/bootstrap-editable.js'></script>
+	<script type='text/javascript' src='/assets/js/bootstrap-editable.min.js'></script> -->
+
+
 	<? echo Asset::css("template.css"); ?>
 	<? echo Asset::js("reum.js"); ?>
 	<? echo Asset::css("wpbakery/js_composer/assets/css/js_composer_front1ac1.css"); ?>
@@ -172,7 +185,6 @@
 
 		toggleNav.addEventListener("click", function() {
 			space.style.display = "block";
-			alert(count);
 			count++;
 		})
 
