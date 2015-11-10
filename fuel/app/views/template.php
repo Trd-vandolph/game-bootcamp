@@ -172,7 +172,7 @@
 
 		toggleNav.addEventListener("click", function() {
 			space.style.display = "block";
-			alert(count);
+			//alert(count);
 			count++;
 		})
 
