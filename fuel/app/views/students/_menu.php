@@ -42,7 +42,7 @@
 	</nav>
 </div>
 <?
-	$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->execute(); //select from lessontimes
+	$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->where('deleted_at', 0)->execute(); //select from lessontimes
 	$reserved_from_shared = DB::select()->from('reservation')->where('status', 1)->execute('shared'); //select from shared database
 	$check_all_student = DB::select('*')->from('reservation')->where('status', 1)->execute('shared'); //check all student
 	foreach ($check_all_student as $student) {
@@ -63,7 +63,7 @@
 
 	//for cancel
 	//cancel booking for other website's database
-	$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 3)->execute(); //select from lessontimes
+	$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 3)->where('deleted_at', 0)->execute(); //select from lessontimes
 	$reserved_from_shared = DB::select()->from('reservation')->where('status', 0)->execute('shared'); //select from shared database
 	$check_all_student = DB::select('*')->from('reservation')->where('status', 0)->execute('shared'); //check all student
 	foreach ($check_all_student as $student) {

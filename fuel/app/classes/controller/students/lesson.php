@@ -101,8 +101,15 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserved = $reserve;
 
 						//send data to shared db
-						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						$check_exist = DB::select()->from('reservation')->where('student_id', $this->user->id)->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->where('freetime_at', $reserve->freetime_at)->where('status', 1)->execute('shared'); //select from shared database
+						if (count($check_exist) == 1) {
+							echo 'e';
+							$query = DB::update('reservation')->value('status', 1)->where('student_id', $this->user->id)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
+						} else {
+							echo 'n';
+							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						}
 					}
 				}
 			}
@@ -124,8 +131,13 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserved = $reserve;
 
 						//send data to shared db
-						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						$check_exist = DB::select()->from('reservation')->where('student_id', $this->user->id)->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->where('freetime_at', $reserve->freetime_at)->where('status', 1)->execute('shared'); //select from shared database
+						if (count($check_exist) == 1) {
+							$query = DB::update('reservation')->value('status', 1)->where('student_id', $this->user->id)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
+						} else {
+							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						}
 					}
 				}
 			}
@@ -147,8 +159,13 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserved = $reserve;
 
 						//send data to shared db
-						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						$check_exist = DB::select()->from('reservation')->where('student_id', $this->user->id)->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->where('freetime_at', $reserve->freetime_at)->where('status', 1)->execute('shared'); //select from shared database
+						if (count($check_exist) == 1) {
+							$query = DB::update('reservation')->value('status', 1)->where('student_id', $this->user->id)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
+						} else {
+							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						}
 					}
 				}
 			}
@@ -170,8 +187,13 @@ class Controller_Students_Lesson extends Controller_Students
 						$reserved = $reserve;
 
 						//send data to shared db
-						$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-						$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						$check_exist = DB::select()->from('reservation')->where('student_id', $this->user->id)->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->where('freetime_at', $reserve->freetime_at)->where('status', 1)->execute('shared'); //select from shared database
+						if (count($check_exist) == 1) {
+							$query = DB::update('reservation')->value('status', 1)->where('student_id', $this->user->id)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
+						} else {
+							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
+							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
+						}
 					}
 				}
 			}
