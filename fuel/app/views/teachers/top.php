@@ -1,6 +1,24 @@
 <div id="contents-wrap">
 	<div id="main">
 		<section class="notice content-wrap" style="display: none" id="reservation_area"></section>
+		<? if($feedbacks != null): ?>
+		<h3>Feedback Notification</h3>
+			<section class="feedback-notification">
+				<div class="content-wrap">
+					<? foreach($feedbacks as $feedback): ?>
+						<? if(time() > $feedback->freetime_at+3600): ?>
+							<div class="non-feedback">
+								<div class="feedback-message">
+									<i class="fa fa-exclamation-circle"></i>
+									Please provide feedback on <b><? echo $feedback->student->firstname; ?>'s</b> class that was scheduled on <b><? echo date("G:i ~ G:45, j M Y", $feedback->freetime_at); ?></b>.
+								</div>
+								<p><? echo Html::anchor("/teachers/lesson/feedback/{$feedback->id}", '<i class="fa fa-pencil-square-o"></i> Add feedback now', array('class' => 'feedback-button')); ?></p>
+							</div>
+						<? endif; ?>
+					<? endforeach; ?>
+				</div>
+			</section>
+		<? endif; ?>
 		<h3>Lesson Schedule</h3>
 		<section class="schedule">
 			<? if($reservations == null): ?>

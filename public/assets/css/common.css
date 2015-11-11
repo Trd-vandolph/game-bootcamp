@@ -1479,3 +1479,26 @@ button.cancel:hover {
 	border: none;
 	white-space: nowrap;
 }
+.feedback-notification .content-wrap {
+	padding: 20px 20px 0 20px;
+}
+.non-feedback {
+	margin: 20px 0 0;
+	padding: 0 0 20px 0;
+	border-bottom: dashed 1px #eee;
+	width: 100%;
+	display: -webkit-box;
+	display: -moz-box;
+}
+.non-feedback .feedback-message {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+}
+.non-feedback .feedback-button {
+	background: #FF0037;
+	border-radius: 20px;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+}
