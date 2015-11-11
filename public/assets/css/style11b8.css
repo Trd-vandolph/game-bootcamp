@@ -1650,7 +1650,7 @@ header#top #toggle-nav i, header#top #mobile-cart-link i {
     font-size: 12px;
     display: block;
     position: relative;
-    padding: 16px 0 !important;
+    padding: 10px 0 !important;
 }
 
 #mobile-menu ul li a .sf-sub-indicator i {

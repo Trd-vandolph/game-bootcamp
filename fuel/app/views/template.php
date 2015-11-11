@@ -211,6 +211,16 @@
 			$('#header-outer, div#search-outer').attr('style', 'background-color: #014099 !important');
 		}
 
+
+/*
+		var a = $( window ).width();
+		
+		if(a < 1045 ) {
+			$('#mobile-menu').appendTo('#header-outer');
+		}
+*/
+			
+
 		$(function() {
 			function resizeSpace() {
 				if(baseURL == currentURL) {
@@ -256,11 +266,16 @@
 				}
 			}
 
+
 			$(window).resize(function () {
 				addMemSettings();
 				removeDuplicate();
 				resizeSpace();
+				
 			});
+
+
+
 
 		});
 	</script>
