@@ -228,6 +228,9 @@
 					var headerOuter = $('#header-outer').height();
 
 					headerSpace.css('height', headerOuter);
+				}else {
+					var otherpage = $('#fws_55b227467453e');
+					otherpage.css('padding','80px 2px!important');
 				}
 			}
 
@@ -266,15 +269,12 @@
 				}
 			}
 
-
 			$(window).resize(function () {
 				addMemSettings();
 				removeDuplicate();
 				resizeSpace();
 				
 			});
-
-
 
 
 		});
