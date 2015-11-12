@@ -54,15 +54,14 @@
 						$query = DB::update('lessontimes')->set(array(
 							'status' => 3,
 							'student_id' => -$student['student_id'],
-						))->where('freetime_at', $shared['freetime_at'])->where('edoo_tutor', $shared['edoo_tutor'])->execute();
+						))->where('freetime_at', $lessontimes['freetime_at'])->where('edoo_tutor', $lessontimes['edoo_tutor'])->execute();
 					}
 				}
 			}
 		}
 	}
 
-	//for cancel
-	//cancel booking for other website's database
+	//cancel booking for all website's database
 	$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 3)->where('deleted_at', 0)->execute(); //select from lessontimes
 	$reserved_from_shared = DB::select()->from('reservation')->where('status', 0)->execute('shared'); //select from shared database
 	$check_all_student = DB::select('*')->from('reservation')->where('status', 0)->execute('shared'); //check all student
@@ -75,7 +74,7 @@
 						$query = DB::update('lessontimes')->set(array(
 							'status' => 0,
 							'student_id' => 0,
-						))->where('freetime_at', $shared['freetime_at'])->where('edoo_tutor', $shared['edoo_tutor'])->where('student_id', -$student['student_id'])->execute();
+						))->where('freetime_at', $lessontimes['freetime_at'])->where('edoo_tutor', $lessontimes['edoo_tutor'])->execute();
 					}
 				}
 			}
