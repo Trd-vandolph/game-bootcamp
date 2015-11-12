@@ -10,8 +10,11 @@
 			<div data-remodal-id="lesson_time">
 				<div class="content lesson-time">
 					<h3>Schedule of <span id="schedule_date"></span></h3>
-					<p class="calender-notice"><span class="reserved">Lesson is booked</span><span
-						class="selected">Lesson is available</span></p>
+					<p class="calender-notice">
+						<span class="reserved">Lesson is booked</span>
+						<span class="selected">Lesson is available</span>
+						<span class="disabled">Time is not available</span>
+					</p>
 					<ul class="clearfix">
 						<? for($i = 8; $i < 24; $i++): ?>
 						<li id="time_<?= $i; ?>"><?= $i; ?>:00 - <?= $i; ?>:45</li>
@@ -84,7 +87,9 @@
 						for(var i = 0; i < target.events.length; i++){
 							if(target.events[i].status == 1){
 								$("#time_" + target.events[i].hour).addClass("reserved");
-							}else{
+							}else if(target.events[i].status == 3){
+								$("#time_" + target.events[i].hour).addClass("disabled");
+							}else {
 								$("#time_" + target.events[i].hour).addClass("selected");
 							}
 						}
@@ -101,7 +106,7 @@
 		<? endforeach; ?>
 		$(".lesson-time ul li").click(function () {
 			var button = $(this);
-			if(!button.hasClass("reserved") && lock == false){
+			if(!button.hasClass("reserved") && !button.hasClass("disabled") && lock == false){
 				lock = true;
 				$.ajax({
 					url: '/teachers/api/reservation.json',

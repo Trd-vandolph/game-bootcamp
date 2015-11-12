@@ -32,6 +32,7 @@ class Controller_Teachers_Top extends Controller_Teachers
 				["deleted_at", 0],
 				["teacher_id", $this->user->id],
 				["status", "<>", 0],
+				["status", "<>", 3],
 				["feedback", ""],
 				["freetime_at", "<=", time()],
 			],
