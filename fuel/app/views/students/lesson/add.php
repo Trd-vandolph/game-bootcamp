@@ -6,7 +6,7 @@
 ?>
 
 <div id="loading">
-	<p><?php echo Html::anchor('/students/',Asset::img('logo/icon_b.png', array('width'=> '200','alt'=> 'OliveCode'))); ?></p>
+	<p><?php echo Html::anchor('/students/',Asset::img('logo/icon_b.png', array('width'=> '200','alt'=> 'Game-bootcamp'))); ?></p>
 	<img src="/assets/img/loading.gif">
 </div>
 <div id="contents-wrap">

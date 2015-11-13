@@ -100,7 +100,7 @@ class Controller_Admin_News extends Controller_Admin
 						$sendmail = Email::forge("JIS");
 						$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 						$sendmail->to($teacher->email);
-						$sendmail->subject("{$news->title} / OliveCode");
+						$sendmail->subject("{$news->title} / Game-bootcamp");
 						$sendmail->html_body("Dear {$teacher->firstname},<br><br>". htmlspecialchars_decode($body) . "If you are no longer interested, you can " . "<a href=". Uri::base() . "?" . md5('id') . "={$teacher->id}/unsubscribe=" . md5($teacher->email) .">Unsubscribe.</a>");
 
 						$sendmail->send();
@@ -122,7 +122,7 @@ class Controller_Admin_News extends Controller_Admin
 						$sendmail = Email::forge("JIS");
 						$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 						$sendmail->to($student->email);
-						$sendmail->subject("{$news->title} / OliveCode");
+						$sendmail->subject("{$news->title} / Game-bootcamp");
 						$sendmail->html_body("Dear {$student->firstname},<br><br>". htmlspecialchars_decode($body) . "If you are no longer interested, you can " . "<a href=". Uri::base() . "?" . md5('id') . "={$student->id}/unsubscribe=" . md5($student->email) .">Unsubscribe.</a>");
 
 						$sendmail->send();

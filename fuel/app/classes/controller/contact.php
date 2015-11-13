@@ -63,7 +63,7 @@ class Controller_Contact extends Controller_Base
 			$sendmail = Email::forge("JIS");
 			$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 			$sendmail->to(Config::get("statics.info_email"));
-			$sendmail->subject("We got contact/ OliveCode");
+			$sendmail->subject("We got contact/ Game-bootcamp");
 			$sendmail->body($body);
 			$sendmail->send();
 		}

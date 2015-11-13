@@ -6,8 +6,8 @@
   <link rel="shortcut icon" href="/assets/img/common/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
 
-	<meta name="keywords" content="OliveCode,Programming,Bangladesh,Job,E-Learning,Edoo" />
-	<meta name="description" content="Learning Changes Your Life - Job Guaranteed Online Computer Programming Course for Bangladeshi" />
+	<meta name="keywords" content="Game-bootcamp, Online Computer Programming Course, Kids Programming, enchantJS, Online School, Javascript kids , Programming,JavaScript, Japan, Singapore, Private Lesson, Edoo, Olivecode" />
+	<meta name="description" content="Game Bootcamp is a 3-month online programming course for 8 to 15-year-old children." />
 
 	<meta property="og:title" content="">
 	<meta property="og:type" content="article">
@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <!--[if IE]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	
+
 	<? echo Asset::js("tinymce/tinymce.min.js"); ?>
 	<title><? echo $title; ?> | Game-BootCamp</title>
 </head>

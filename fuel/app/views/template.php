@@ -4,46 +4,28 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-	<meta name="description" content="Get the coding skills you need to succeed. In a hands-on, fast-paced coding bootcamp you will learn how to code in one of the most desired languages." />
+	<meta name="keywords" content="Game-bootcamp, Online Computer Programming Course, Kids Programming, enchantJS, Online School, Javascript kids , Programming,JavaScript, Japan, Singapore, Private Lesson, Edoo, Olivecode" />
+	<meta name="description" content="Game Bootcamp is a 3-month online programming course for 8 to 15-year-old children." />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Concordia University, St. Paul | Coding Bootcamp" />
+	<meta property="og:title" content="Game Bootcamp" />
 	<meta property="og:description" content="GET YOUR KIDS THE MOST POWERFUL SKILL IN 21ST CENTURY" />
-	<meta property="og:url" content="http://game-bootcamp-dev.zz.mu/" />
+	<meta property="og:url" content="http://www.game-bootcamp.com/">
 	<meta property="og:site_name" content="Game BootCamp" />
-	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/what-is-bootcamp.png" />
-	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/man-blue.png" />
-	<meta property="og:image" content="http://bootcamp.csp.edu/assets/img/success1.png" />
+	<meta property="og:image" content="http://game-bootcamp.com/assets/img/logo/logo2_b.png">
 	<link rel="shortcut icon" href="/assets/img/common/favicon.ico">
-
-	<!-- <link rel="stylesheet" type="text/css" href="/assets/css/template.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/rgs11b8.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/steadysetsf39e.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/lineconf39e.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/responsive11b80.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/wpbakery/js_composer/assets/css/js_composer_front1ac1.css" />
-	<script type='text/javascript' src='/assets/js/reum.js'></script>
-	<script type='text/javascript' src='/assets/js/top.jquery.js'></script>
-	<script type='text/javascript' src='/assets/js/bootstrap-editable.js'></script>
-	<script type='text/javascript' src='/assets/js/bootstrap-editable.min.js'></script> -->
-
 
 	<? echo Asset::css("template.css"); ?>
 	<? echo Asset::js("reum.js"); ?>
-	<? echo Asset::css("wpbakery/js_composer/assets/css/js_composer_front1ac1.css"); ?>
+	<? echo Asset::css("js_composer_front1ac1.css"); ?>
 	<link rel='stylesheet' id='options_typography_Open+Sans-300-css' href='https://fonts.googleapis.com/css?family=Open+Sans:300' type='text/css' media='all' />
 	<? echo Asset::css("rgs11b8.css"); ?>
-	<link rel='stylesheet' id='font-awesome-css' href='wp-content/themes/salient/css/font-awesome.minf39e.css?ver=4.0.1' type='text/css' media='all' />
+	<? echo Asset::css("font-awesome.minf39e.css"); ?>
 	<? echo Asset::css("steadysetsf39e.css"); ?>
 	<? echo Asset::css("lineconf39e.css"); ?>
-	<link rel='stylesheet' id='main-styles-css' href='wp-content/themes/salient/style11b8.css?ver=4.5' type='text/css' media='all' />
+	<? echo Asset::css("style11b8.css"); ?>
 	<? echo Asset::css("responsive11b80.css"); ?>
-	<!--link rel='stylesheet' id='thickbox-css' href='wp-includes/js/thickbox/thickboxf39e.css?ver=4.0.1' type='text/css' media='all' />
-	<script type='text/javascript' src='wp-includes/js/jquery/jquery90f9.js?ver=1.11.1'></script>
-	<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min1576.js?ver=1.2.1'></script>
-	<script type='text/javascript' src='wp-includes/js/jquery/ui/jquery.ui.core.min2c18.js?ver=1.10.4'></script-->
-	<script type='text/javascript' src='wp-content/themes/salient/js/modernizr61da.js?ver=2.6.2'></script>
+	<? echo Asset::js("modernizr61da.js"); ?>
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -167,13 +149,14 @@
 	</div>
 	<a id="to-top"><i class="icon-angle-up"></i></a>
 	<? echo Asset::js( "top.jquery.js"); ?>
-	<script type='text/javascript' src='wp-content/themes/salient/js/superfishb493.js?ver=1.4.8'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/nicescrolle248.js?ver=3.5.4'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/sticky5152.js?ver=1.0'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/prettyPhoto11b8.js?ver=4.5'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/appear5152.js?ver=1.0'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/js/init11b8.js'></script>
-	<script type='text/javascript' src='wp-content/themes/salient/nectar/love/js/nectar-love5152.js?ver=1.0'></script>
+	<? echo Asset::js( "superfishb493.js"); ?>
+	<? echo Asset::js( "nicescrolle248.js"); ?>
+	<? echo Asset::js( "sticky5152.js"); ?>
+	<? echo Asset::js( "prettyPhoto11b8.js"); ?>
+	<? echo Asset::js( "appear5152.js"); ?>
+	<? echo Asset::js( "init11b8.js"); ?>
+	<? echo Asset::js( "nectar-love5152.js"); ?>
+
 	<script>
 		var baseURL = window.location.origin + "/";
 		var currentURL = window.location.href;
@@ -214,12 +197,12 @@
 
 /*
 		var a = $( window ).width();
-		
+
 		if(a < 1045 ) {
 			$('#mobile-menu').appendTo('#header-outer');
 		}
 */
-			
+
 
 		$(function() {
 			function resizeSpace() {
@@ -268,15 +251,11 @@
 					$( "#mem2" ).detach();
 				}
 			}
-
 			$(window).resize(function () {
 				addMemSettings();
 				removeDuplicate();
 				resizeSpace();
-				
 			});
-
-
 		});
 	</script>
 </body>

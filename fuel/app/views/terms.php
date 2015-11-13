@@ -1,5 +1,5 @@
 <section id="contents" class="terms">
-	<p>By using the olivecode.com website ("Service"), or any services of Edoo Inc. (“Edoo”), you agree to be bound by the following terms and conditions ("Terms of Use").</p>
+	<p>By using the game-BootCamp.com website ("Service"), or any services of Edoo Inc. (“Edoo”), you agree to be bound by the following terms and conditions ("Terms of Use").</p>
 	<h3>Our Relationship</h3>
 	<ul>
 		<li>By accessing and using our products and services, you agree to comply with the Terms of Use listed here as well as our Privacy Policy.</li>
@@ -36,14 +36,14 @@
 	</ol>
 	<h3>Cancellation</h3>
 	<ol>
-		<li>You are responsible for properly canceling your service. You can do so at any time by sending your message to us through Contact of your account on the olivecode.com website.</li>
+		<li>You are responsible for properly canceling your service. You can do so at any time by sending your message to us through Contact of your account on the game-bootcamp.com website.</li>
 		<li>If you cancel the service, we will refund your last payment. However, if you have completed more than 25% of a course, we reserve the right to decline a refund. </li>
 		<li>Edoo, in its sole discretion, has the right to suspend or terminate your account and refuse any and all current or future use of the Service, or any other Edoo service, for any reason at any time. Such termination of the Service will result in the deactivation or deletion of your Account or your access to your Account. Edoo reserves the right to refuse service to anyone for any reason at any time.</li>
 	</ol>
 	<h3>Modifications to the Service and Prices</h3>
 	<ol>
 		<li>Edoo reserves the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Service (or any part thereof) with or without notice. For instance, the Service may temporarily be disabled for occasional maintenance.</li>
-		<li>Prices of all Services are subject to change with 30 days notice from Edoo. Such notice may be provided at any time by posting the changes to the olivecode.com website or via email.</li>
+		<li>Prices of all Services are subject to change with 30 days notice from Edoo. Such notice may be provided at any time by posting the changes to the game-bootcamp.com website or via email.</li>
 		<li>Edoo shall not be liable to you or to any third party for any modification, price change, suspension or discontinuance of the Service.</li>
 	</ol>
 	<h3>Promotions</h3>
@@ -70,6 +70,6 @@
 			(1) the service will meet your specific requirements, (2) the service will be uninterrupted, timely, secure, or error-free, (3) the results that may be obtained from the use of the service will be accurate or reliable, (4) the quality of any products, services, information, or other material purchased or obtained by you through the service will meet your expectations, and (5) any errors in the Service will be corrected.</li>
 		<li>You expressly understand and agree that Edoo shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including, damages for loss of profits, goodwill, use, data or other intangible losses (even if Edoo has been advised of the possibility of such damages), resulting from: (1) the use or the inability to use the service; (2) the cost of procurement of substitute goods and services resulting from any goods, data, information or services purchased or obtained, or messages received or transactions entered into through or from the service; (3) unauthorized access to or alteration of your transmissions or data; (4) statements or conduct of any third party on the service; (5) or any other matter relating to the service.</li>
 		<li>The failure of Edoo to exercise or enforce any right or provision of the Terms of Service shall not constitute a waiver of such right or provision. The Terms of Service constitutes the entire agreement between you and Edoo and governs your use of the Service, superseding any prior agreements between you and Edoo (including any prior versions of the Terms of Service). You agree that these Terms of Service and Your use of the Service are governed under Japanese law.</li>
-		<li>Questions about the Terms of Service should be sent to <a href="tel:support@olivecode.com">support@olivecode.com</a>.</li>
+		<li>Questions about the Terms of Service should be sent to <a href="tel:support@game-bootCamp.com">support@game-bootCamp.com</a>.</li>
 	</ol>
 </section>

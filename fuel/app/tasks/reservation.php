@@ -32,7 +32,7 @@ class Reservation
 		foreach($reservations as $reservation){
 
 			// for teacher
-			$url = "http://olivecode.com/teachers/top";
+			$url = "http://game-bootcamp.com/teachers/top";
 
 			$body = \View::forge("email/teachers/reminder_soon",["url" => $url]);
 			$sendmail = \Email::forge("JIS");
@@ -44,7 +44,7 @@ class Reservation
 			$sendmail->send();
 
 			// for student
-			$url = "http://olivecode.com/students/top";
+			$url = "http://game-bootcamp.com/students/top";
 
 			$body = \View::forge("email/students/reminder_soon",["url" => $url]);
 			$sendmail = \Email::forge("JIS");
@@ -72,7 +72,7 @@ class Reservation
 		foreach($reservations as $reservation){
 
 			// for teacher
-			$url = "http://olivecode.com/teachers/top";
+			$url = "http://game-bootcamp.com/teachers/top";
 
 			$body = \View::forge("email/teachers/reminder_1hour",["url" => $url]);
 			$sendmail = \Email::forge("JIS");
@@ -84,7 +84,7 @@ class Reservation
 			$sendmail->send();
 
 			// for student
-			$url = "http://olivecode.com/students/top";
+			$url = "http://game-bootcamp.com/students/top";
 
 			$body = \View::forge("email/students/reminder_1hour",["url" => $url]);
 			$sendmail = \Email::forge("JIS");
@@ -97,4 +97,3 @@ class Reservation
 		}
 	}
 }
-

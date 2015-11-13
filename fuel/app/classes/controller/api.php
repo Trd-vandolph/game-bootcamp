@@ -20,7 +20,7 @@ class Controller_Api extends Controller_Rest
 			$sendmail = Email::forge("JIS");
 			$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 			$sendmail->to($mail->email);
-			$sendmail->subject("Thanks for your interest in our classroom. / OliveCode");
+			$sendmail->subject("Thanks for your interest in our classroom. / Game-bootcamp");
 			$sendmail->html_body(htmlspecialchars_decode($body));
 
 			$sendmail->send();

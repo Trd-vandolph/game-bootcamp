@@ -7,7 +7,7 @@ Dear  <?= $name; ?>,<br>
 	Please find attached Course Information that shows you how to take a free trial lesson.<br><br>
 <? }else{ ?>
 	<br>
-	Hello and welcome to OliveCode!<br><br>
+	Hello and welcome to Game-BootCamp!<br><br>
 	Your registration has been completed.<br><br>
 	Please find attached Course Information for further details of learning at Grameen Communications.<br><br>
 	Course Information shows you how to take a free trial lesson. <br><br>

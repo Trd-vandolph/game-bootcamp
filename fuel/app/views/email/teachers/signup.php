@@ -1,6 +1,6 @@
 Dear  <?= $name; ?>,<br>
 <br>
-Hello and welcome to OliveCode!<br>
+Hello and welcome to Game-bootcamp!<br>
 Your registration has been completed.<br>
 <br>
 ▼Your registration<br>

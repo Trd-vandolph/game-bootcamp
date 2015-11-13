@@ -63,7 +63,7 @@ class Model_Lessontime extends \Orm\Model
 		$sendmail = Email::forge("JIS");
 		$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 		$sendmail->to($reservation->teacher->email);
-		$sendmail->subject("Lesson Booking Confirmation / OliveCode");
+		$sendmail->subject("Lesson Booking Confirmation / Game-bootcamp");
 		$sendmail->html_body(htmlspecialchars_decode($body));
 
 		$sendmail->send();
@@ -79,7 +79,7 @@ class Model_Lessontime extends \Orm\Model
 		$sendmail = Email::forge("JIS");
 		$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 		$sendmail->to($reservation->student->email);
-		$sendmail->subject("Lesson Booking Confirmation / OliveCode");
+		$sendmail->subject("Lesson Booking Confirmation / Game-bootcamp");
 		$sendmail->html_body(htmlspecialchars_decode($body));
 
 		$sendmail->send();

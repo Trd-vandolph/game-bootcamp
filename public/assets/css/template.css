@@ -595,7 +595,7 @@ body #header-secondary-outer nav > ul > li:hover > a span.sf-sub-indicator [clas
 	height: 82px;
 }
 
-header#top nav > ul > li > a {
+header#top nav .sf-menu a {
 	padding-bottom: 59px;
 	padding-top: 31px;
 }
@@ -1119,20 +1119,20 @@ ul.mc_list li {
 /*A font fabric font - http://fontfabric.com/lovelo-font/ */
 @font-face {
 	font-family: 'Lovelo';
-	src: url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.eot');
-	src: url('../../wp-content/themes/salient/css/fonts/Lovelo_Blackd41d.eot?#iefix') format('embedded-opentype'), url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.woff') format('woff'), url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.html') format('truetype'), url('../../wp-content/themes/salient/css/fonts/Lovelo_Black.svg#loveloblack') format('svg');
+	src: url('fonts/Lovelo_Black.eot');
+	src: url('fonts/Lovelo_Blackd41d.eot?#iefix') format('embedded-opentype'), url('fonts/Lovelo_Black.woff') format('woff'), url('fonts/Lovelo_Black.html') format('truetype'), url('fonts/Lovelo_Black.svg#loveloblack') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: Montserrat;
-	src: url('../../wp-content/themes/salient/css/fonts/Montserrat-Regular.ttf.woff') format('woff');
+	src: url('fonts/Montserrat-Regular.ttf.woff') format('woff');
 }
 /******* Header *************/
 header#top .member-menu li a {
 	border: #fff solid;
 	color: #fff;
-	font-size: 100% !important; 
+	font-size: 100% !important;
 }
 
 /******* Free Trial Lesson Button **********/
@@ -1489,7 +1489,7 @@ header#top {
 
 /******* Parents **********/
 section.parents#contents {
-	margin-top: 16% !important; 
+	margin-top: 16% !important;
 }
 section.parents #content {
 	width: 90%;
@@ -1586,7 +1586,7 @@ section.parents #ihara-descriptions p#ihara-desc-title {
 }
 /******* Course **********/
 section.course {
-	 margin-top: 5% !important; 
+	 margin-top: 5% !important;
 }
 section.course #content p{
 	font-size: 18px;
@@ -1778,7 +1778,7 @@ ul.tutors_list_l li div.text {
 }
 /******* Operating Company **********/
 section.operatingcompany {
-	 margin-top: 10% !important; 
+	 margin-top: 10% !important;
 }
 section.operatingcompany .content-operating-company #content p{
 	font-size: 18px;
@@ -1896,7 +1896,7 @@ section.operatingcompany div ul .student02 h4 {
 
 /******* Course Fee **********/
 section.coursefee {
-	 margin-top: 10% !important; 
+	 margin-top: 10% !important;
 }
 section.coursefee #cf-illustration {
 	border: 1px solid #CED1D6;
@@ -2081,7 +2081,7 @@ section.coursefee #content > p:nth-child(5) {
 
 /******* How to Join **********/
 section.how {
-	 margin-top: 7% !important; 
+	 margin-top: 7% !important;
 }
 section.how p.sub-catch {
 	font-size: 36px;
@@ -2555,7 +2555,7 @@ body #mobile-menu ul li a {
     }
 }
 
-	
+
 /*
 #slideshow > div.slideshow {
     margin-top: -80px;
