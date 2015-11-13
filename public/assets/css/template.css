@@ -1155,7 +1155,7 @@ header#top .member-menu li a {
 	background: #003989;
 	padding: 25px !important;
 	border-radius: 7px;
-	margin: 20px 15px 46px 0;
+	margin: 20px 0 0 0;
 	color: #C3D9F6;
 	text-decoration: none;
 	box-shadow: 0 0 10px #444;
@@ -1489,7 +1489,7 @@ header#top {
 
 /******* Parents **********/
 section.parents#contents {
-	margin-top: 5% !important;
+	margin-top: 16% !important; 
 }
 section.parents #content {
 	width: 90%;
@@ -1525,7 +1525,7 @@ section.parents #picture-parents #picture-enclose img {
 }
 section.parents #picture-parents #picture-caption {
 	width: 100%;
-	margin: auto;
+	margin: 22px 0 0 0;
 	bottom: 0;
 	color: #393333;
 	position: relative;
@@ -1539,7 +1539,7 @@ section.parents p.picture-caption-desc {
 }
 section.parents #content-1 {
 	position: relative;
-	min-height: 1070px;
+	min-height: 1887px;
 }
 section.parents #content-1 div {
 	position: absolute;
@@ -1557,10 +1557,11 @@ section.parents #answer-parents {
 	border-left: 2px solid #E81A4D;
 }
 section.parents #answer-parents p{
+	text-align: justify;
 }
 section.parents #content-2 {
 	position: relative;
-	min-height: 1100px;
+	min-height: 1663px;
 }
 section.parents #content-2 div {
 	position: absolute;
@@ -1578,10 +1579,14 @@ section.parents #content-2 #ihara-descriptions {
 section.parents #content-2 #ihara-descriptions p {
 	line-height: 30px;
 	font-size: 16px;
+	text-align: justify;
+}
+section.parents #ihara-descriptions p#ihara-desc-title {
+	text-align: center;
 }
 /******* Course **********/
 section.course {
-	margin-top: 5% !important;
+	 margin-top: 5% !important; 
 }
 section.course #content p{
 	font-size: 18px;
@@ -1660,7 +1665,8 @@ section.course #\32 nd-content {
 }
 section.course #enchantJS {
 	position: relative;
-	min-height: 800px;
+	/*min-height: 800px;*/
+	min-height: 691px;
 }
 section.course #enchantJS > div {
 	position: absolute;
@@ -1772,7 +1778,7 @@ ul.tutors_list_l li div.text {
 }
 /******* Operating Company **********/
 section.operatingcompany {
-	margin-top: 10% !important;
+	 margin-top: 10% !important; 
 }
 section.operatingcompany .content-operating-company #content p{
 	font-size: 18px;
@@ -1890,7 +1896,7 @@ section.operatingcompany div ul .student02 h4 {
 
 /******* Course Fee **********/
 section.coursefee {
-	margin-top: 10% !important;
+	 margin-top: 10% !important; 
 }
 section.coursefee #cf-illustration {
 	border: 1px solid #CED1D6;
@@ -2075,7 +2081,7 @@ section.coursefee #content > p:nth-child(5) {
 
 /******* How to Join **********/
 section.how {
-	margin-top: 7% !important;
+	 margin-top: 7% !important; 
 }
 section.how p.sub-catch {
 	font-size: 36px;
@@ -2260,7 +2266,7 @@ body > div.col.span_12.light.left > div > div > div > div > p > a > span {
 #footer-outer > nav ul li {
 	display: inline;
 	padding-left: 4%;
-	font-size: 18px;
+	font-size: 2vw;
 	font-weight: 700;
 }
 #footer-outer > nav ul li a{
@@ -2340,7 +2346,11 @@ header#top nav > ul > li > a {
 #header-space {
 	height: 0!important;
 }
+
 @media only screen and (max-width:900px) {
+	section.parents#contents {
+		margin-top: 13%!important;
+	}
    .container-wrap .container{
    		margin-top: -70px!important;
    }
@@ -2372,12 +2382,22 @@ header#top nav > ul > li > a {
 	#mobile-menu {
 		top: 62px!important;
 	}
-	
+	section.parents #content-1 {
+		min-height: 1887px!important;
+	}
+	section.parents #content-2 #ihara-descriptions p {
+		line-height: 25px;
+	}
 }
 @media only screen and (max-width:650px) {
 	header#top .member-menu li a {
 		font-size: 60% !important;
 	}
+	#footer-outer > nav ul li,
+	#footer-outer p {
+		font-size: 4vw;
+	}
+
 }
 @media only screen and (max-width:600px) {
 	#mobile-menu {
@@ -2423,6 +2443,9 @@ header#top nav > ul > li > a {
 	.container-wrap .container {
    		margin-top: -100px!important;
    }
+   section.parents #content-2 {
+   	min-height: 1351px!important;
+   }
 }
 @media only screen and (max-width:500px) {
 	header#top .member-menu li a {
@@ -2438,6 +2461,17 @@ header#top nav > ul > li > a {
 	#fws_55b22746735ec .dark .one-fourths div:hover p {
 		left: 130px;
 	}
+	section.parents#contents {
+		margin-top: 16%!important;
+    }
+    section.parents > div.letter > .letter-content p,
+    section.parents #content-2 #ihara-descriptions p {
+    	font-size: 3vw;
+    }
+    section.parents #content-2 #ihara-descriptions p {
+		line-height: 20px;
+	}
+
 }
 @media only screen and (max-width:450px) {
 	body.home #header-outer header#top #logo img {
@@ -2453,7 +2487,9 @@ header#top nav > ul > li > a {
 	body.home #header-outer {
 		height: 60px!important;
 	}
-
+ 	section.parents #content-1 {
+		min-height: 1411px!important;
+	}
 }
 @media only screen and (max-width:400px) {
     .container-wrap .container {
@@ -2462,6 +2498,12 @@ header#top nav > ul > li > a {
    #fws_55b22746735ec .dark .one-fourths div:hover p {
 		left: 65px;
 	}
+	section.parents #content-1 {
+		min-height: 1111px!important;
+	}
+	section.parents#contents {
+		margin-top: 22%!important;
+    }
 }
 
 .vc_span4:last-child .wpb_text_column.wpb_content_element .wpb_wrapper  {
@@ -2472,7 +2514,8 @@ header#top nav > ul > li > a {
 	width: 50%!important;
 }
 #fws_55b22746735ec > h3 {
-	font-size: 3vw;
+	font-size: 5.2vw;
+	line-height: 52px;
 }
 body #mobile-menu ul li a {
 	padding: 10px 0 !important;
@@ -2494,9 +2537,6 @@ body #mobile-menu ul li a {
     	font-size: 4vw;
     	padding-left: 0;
     }
-    #fws_55b227467453e {
-    	padding: 63px 2px 200px!important;
-    }
     #fws_55b227467453e > div > a > span {
     	line-height: 1.2;
     }
@@ -2505,6 +2545,13 @@ body #mobile-menu ul li a {
     }
     .container-wrap .row > .wpb_row:last-child {
     	padding: 80px 2px 14px!important;
+    }
+    section.parents #content-2 {
+    	min-height: 1100px!important;
+    }
+    #fws_55b227467453e {
+    	padding: 80px 2px 200px!important;
+    	margin-left: 0!important;
     }
 }
 
@@ -2568,11 +2615,7 @@ body #mobile-menu ul li a {
     }
 }
 
-@media only screen and (max-width:700px) {
-    #ajax-content-wrap {
-        margin-top: -316px!important;
-    }
-}
+
 
 @media only screen and (max-width:600px) {
     #ajax-content-wrap {
