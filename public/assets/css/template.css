@@ -1244,7 +1244,7 @@ ul.member-menu li {
 /******* Global Setup **********/
 section#contents {
 	min-height: 500px;
-	margin-top: 170px;
+	margin-top: 16%;
 	padding: 20px;
 }
 #content {
@@ -1488,9 +1488,9 @@ header#top {
 }
 
 /******* Parents **********/
-section.parents#contents {
+/*section.parents#contents {
 	margin-top: 16% !important; 
-}
+}*/
 section.parents #content {
 	width: 90%;
 	margin: auto;
@@ -1539,7 +1539,7 @@ section.parents p.picture-caption-desc {
 }
 section.parents #content-1 {
 	position: relative;
-	min-height: 1887px;
+/*	min-height: 1887px;*/
 }
 section.parents #content-1 div {
 	position: absolute;
@@ -1585,9 +1585,9 @@ section.parents #ihara-descriptions p#ihara-desc-title {
 	text-align: center;
 }
 /******* Course **********/
-section.course {
+/*section.course {
 	 margin-top: 5% !important; 
-}
+}*/
 section.course #content p{
 	font-size: 18px;
 }
@@ -1720,9 +1720,9 @@ section.course p.course-link {
 	font-size: 15px !important;
 }
 /******* Tutors **********/
-section.tutor {
+/*section.tutor {
 	margin-top: 5% !important;
-}
+}*/
 section.tutor div.content-tutor {
 	font-family: 'OpenSansRegular';
 	max-width: 980px;
@@ -1777,9 +1777,9 @@ ul.tutors_list_l li div.text {
 	margin: 0 0 60px 0;
 }
 /******* Operating Company **********/
-section.operatingcompany {
+/*section.operatingcompany {
 	 margin-top: 10% !important; 
-}
+}*/
 section.operatingcompany .content-operating-company #content p{
 	font-size: 18px;
 }
@@ -1895,10 +1895,10 @@ section.operatingcompany div ul .student02 h4 {
 }
 
 /******* Course Fee **********/
-section.coursefee {
+/*section.coursefee {
 	 margin-top: 10% !important; 
 }
-section.coursefee #cf-illustration {
+*/section.coursefee #cf-illustration {
 	border: 1px solid #CED1D6;
 	border-radius: 10px;
 	min-height: 410px;
@@ -2080,9 +2080,9 @@ section.coursefee #content > p:nth-child(5) {
 }
 
 /******* How to Join **********/
-section.how {
+/*section.how {
 	 margin-top: 7% !important; 
-}
+}*/
 section.how p.sub-catch {
 	font-size: 36px;
 	font-family: Lovelo, sans-serif;
@@ -2382,9 +2382,9 @@ header#top nav > ul > li > a {
 	#mobile-menu {
 		top: 62px!important;
 	}
-	section.parents #content-1 {
+	/*section.parents #content-1 {
 		min-height: 1887px!important;
-	}
+	}*/
 	section.parents #content-2 #ihara-descriptions p {
 		line-height: 25px;
 	}
@@ -2444,7 +2444,10 @@ header#top nav > ul > li > a {
    		margin-top: -100px!important;
    }
    section.parents #content-2 {
-   	min-height: 1351px!important;
+   		min-height: 1351px!important;
+   }
+   section.parents #content-1 {
+   		min-height: 1400px!important;
    }
 }
 @media only screen and (max-width:500px) {
@@ -2488,7 +2491,7 @@ header#top nav > ul > li > a {
 		height: 60px!important;
 	}
  	section.parents #content-1 {
-		min-height: 1411px!important;
+		min-height: 1064px!important;
 	}
 }
 @media only screen and (max-width:400px) {
@@ -2497,9 +2500,6 @@ header#top nav > ul > li > a {
    }
    #fws_55b22746735ec .dark .one-fourths div:hover p {
 		left: 65px;
-	}
-	section.parents #content-1 {
-		min-height: 1111px!important;
 	}
 	section.parents#contents {
 		margin-top: 22%!important;
@@ -2553,112 +2553,8 @@ body #mobile-menu ul li a {
     	padding: 80px 2px 200px!important;
     	margin-left: 0!important;
     }
+    section.parents #content-1 {
+		min-height: 982px!important;
+	}
 }
 
-	
-/*
-#slideshow > div.slideshow {
-    margin-top: -80px;
-}
-
-@media only screen and (min-width:1px) and (max-width:845px) {
-    #slideshow > div.slideshow {
-        margin-top: -120px;
-    }
-}
-
-@media only screen and (min-width:1px) and (max-width:700px) {
-    #slideshow > div.slideshow {
-        margin-top: -180px;
-    }
-}
-
-@media only screen and (min-width:1px) and (max-width:575px) {
-    #slideshow > div.slideshow {
-        margin-top: -200px;
-    }
-}
-
-@media only screen and (min-width:1px) and (max-width:455px) {
-    #slideshow > div.slideshow {
-        margin-top: -240px;
-    }
-}
-
-@media only screen and (min-width:1px) and (max-width:360px) {
-    #slideshow > div.slideshow {
-        margin-top: -260px;
-    }
-}
-
-@media only screen and (max-width:1000px) {
-    #ajax-content-wrap {
-        margin-top: -142px!important;
-    }
-    .col.span_12.light.left {
-        margin-top: 26%!important;
-    }
-}
-
-@media only screen and (max-width:800px) {
-    #ajax-content-wrap {
-        margin-top: -206px!important;
-    }
-    .member-menu li.login a{
-        padding: 1.2em 2.5em !important;
-    }
-    .member-menu li.signup a{
-        padding: 1.2em 2.5em !important;
-    }
-    ul.member-menu {
-        width: 45%;
-    }
-}
-
-
-
-@media only screen and (max-width:600px) {
-    #ajax-content-wrap {
-        margin-top: -373px!important;
-    }
-}
-
-@media only screen and (max-width:500px) {
-    #ajax-content-wrap {
-        margin-top: -400px!important;
-    }
-    .member-menu li.signup a {
-        margin: 20px 15px 29px 0;
-    }
-}
-@media only screen and (max-width:450px) {
-    .nectar-button {
-        top: 18px!important;
-    }
-    body.home .wpb_wrapper h1 {
-        font-size: 4.8vw!important;
-    }
-}
-
-@media only screen and (max-width:320px) {
-    #ajax-content-wrap {
-        margin-top: -517px!important;
-    }
-    .main-content {
-        padding: 0 31px 0 13px;
-    }
-    #top-about-content ul li {
-        padding: 10px 0 0 30px!important;
-    }
-    ul.member-menu {
-        width: 27%;
-    }
-
-}*/
-/*#ajax-content-wrap {
-    margin-top: -160px!important;
-}
-
-.container-wrap {
-    padding-top: 0px!important;
-}*/
