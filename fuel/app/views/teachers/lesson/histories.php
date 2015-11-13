@@ -27,3 +27,13 @@
 	</div>
 	<? echo View::forge("teachers/_menu"); ?>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+		var del = $('.feedback > a:nth-child(3)');
+		del.on('click', function(){
+			var con = confirm('Are you sure you want to delete this?');
+			if(con){ return true; } else { return false; }
+		});
+	});
+</script>

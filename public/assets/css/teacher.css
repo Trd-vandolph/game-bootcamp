@@ -117,6 +117,9 @@ p.calender-notice span.reserved{
 p.calender-notice span.selected{
 	background: #0F5573;
 }
+.disabled{
+    background: #9C998F;
+}
 .clndr-controls .month{
 	font-size: 18px;
 }
@@ -152,4 +155,8 @@ p.calender-notice span.selected{
 }
 .lesson-time .button-area{
 	margin: 20px 0;
+}
+.lesson-time ul li.disabled{
+	background: #9C998F!important;
+	color: #fff!important;
 }
