@@ -1477,7 +1477,7 @@ section#contents {
 	margin-top: 152px !important;
 }
 .row > div.span_9 > nav > ul > li > a {
-	font-size: 18px !important;
+	font-size: 14px !important;
 }
 header#top {
 	width: 90% !important;
@@ -1586,9 +1586,12 @@ section.parents #ihara-descriptions p#ihara-desc-title {
 
 section.course #content p{
 	font-size: 18px;
+	text-align: justify;
 }
+
 section.course #\32 nd-content > p {
 	font-weight: bold;
+	text-align: justify;
 }
 section.course #content img.img-left {
 	float: left;
@@ -1740,6 +1743,7 @@ section.tutor div.content-tutor ul.clearfix {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+	text-align: justify;
 }
 section.tutor div.content-tutor ul.tutors_list_l li {
 	float: left;
@@ -1801,6 +1805,7 @@ section.operatingcompany .content-company > ul > li.text-content {
 	display: inline-block;
 	width: 50%;
 	margin-left: 3%;
+	text-align: justify;
 }
 section.operatingcompany .content-company > ul > li.picture-content > a > img {
 	display: inline;
@@ -2095,6 +2100,7 @@ section.how .howjoin li {
 section.how .howjoin li p{
 	font-family: 'OpenSansLight';
 	font-size: 20px;
+	text-align: justify;
 }
 section.how .howjoin li:nth-child(1) h3 {
 	background: url(../img/front/signup.png) no-repeat left top;
@@ -2171,6 +2177,7 @@ section.faq #expList > li.collapsed.expanded > ul,
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	color: #333;
+	text-align: justify;
 }
 section.faq #expList > li.collapsed.expanded > ul > li {
 	margin-left: 5%;
@@ -2458,11 +2465,33 @@ header#top nav > ul > li > a {
 		margin-top: 16%!important;
     }
     section.parents > div.letter > .letter-content p,
-    section.parents #content-2 #ihara-descriptions p {
+    section.parents #content-2 #ihara-descriptions p,
+    section.course #\32 nd-content > p,
+    section.course #content p,
+    ul.tutors_list_l li div.text,
+    section.operatingcompany .content-operating-company #content p,
+    section.coursefee #content p {
     	font-size: 3vw;
+    }
+    section.how .howjoin li p,
+    section.faq #expList li.collapsed.expanded ul li p {
+    	font-size: 4vw;
+    }
+    section.faq #expList p {
+    	font-size: 6vw;
+    }
+    #content div ol li:nth-child(2) p {
+    	margin: 60px 0 10px;
+    }
+    #content div ol li:nth-child(1) p {
+    	margin: -43px 0 10px;
     }
     section.parents #content-2 #ihara-descriptions p {
 		line-height: 20px;
+	}
+	section.course #enchantJS,
+	section.course #\39 leap {
+		margin-top: -81px;
 	}
 
 }
