@@ -44,7 +44,7 @@ class Controller_Admin_Top extends Controller_Admin
 			],
 			"limit" => 5,
 		]);
-		
+
 		$data["payment"] = Model_Payment::find("all", [
 				"where" => [
 						["status", 0]
@@ -61,6 +61,7 @@ class Controller_Admin_Top extends Controller_Admin
 				["freetime_at", ">=", strtotime($data["ym"] . "-01")],
 				["freetime_at", "<", strtotime($data["ym"] . "-01 +1 month")],
 				["status", ">", 0],
+				["status", "<>", 3],
 			],
 			"order_by" => [
 				["freetime_at", "asc"],

@@ -85,17 +85,19 @@ $(function(){
 	for($i = 0; $i <=  date("t", strtotime($ym . "-01")); $i++){
 		$days[$i] = 0;
 	}
+
 	foreach($reservations as $reservation){
 		$days[date("j", $reservation->freetime_at)]++;
 	}
 	?>
 	<? for($i = 1; $i <=  date("t", strtotime($ym . "-01")); $i++): ?>
-	<? if($i < 10){
-		$d = "0{$i}";
-	}else{
-		$d = $i;
-	} ?>
-	$(".calendar-day-<?= "{$ym}-$d" ?> > .day-contents").after('<div class="class-number"><?= $days[$i]; ?></div>');
+	<?  if($i < 10){
+			$d = "0{$i}";
+		}else{
+			$d = $i;
+		} 
+	?>
+		$(".calendar-day-<?= "{$ym}-$d" ?> > .day-contents").after('<div class="class-number"><?= $days[$i]; ?></div>');
 	<? endfor; ?>
 
 });

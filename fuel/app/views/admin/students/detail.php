@@ -19,6 +19,11 @@
 							<? if($user->img_path != "") echo '<img src="/assets/img/pictures/s_'.$user->img_path.'">';?>
 						</div>
 					</li>
+					<li><h4>Nationality</h4>
+						<div>
+							<? echo $user->nationality; ?>
+						</div>
+					</li>
 					<li><h4>Gender</h4>
 						<div>
 							<? echo Config::get("statics.sex", [])[$user->sex]; ?>
