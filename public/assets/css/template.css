@@ -1341,18 +1341,17 @@ section#contents {
 #top-about-content ul {
 	width: 90%;
 	margin: auto;
-	padding-left: 31px;
 }
 #top-about-content ul li {
 	list-style: none;
-	padding: 0;
+	padding: 0 0 0 8%;
+	margin: 0 0 4% 0;
 	text-align: justify;
+	background: url('../img/icons/marker.png') no-repeat left center;
+	background-size: 5%;
 }
-#top-about-content ul li:before {
-	font-family: 'FontAwesome';
-	content: '\f046';
-	margin:0 5px 0 -37px;
-	color: #E20D3D;
+#top-about-content ul li:last-child {
+	margin-bottom: 0;
 }
 #fws_55b08d66d8a64 > div > div p {
 	text-align: left;
@@ -1537,7 +1536,7 @@ section.parents p.picture-caption-desc {
 }
 section.parents #content-1 {
 	position: relative;
-/*	min-height: 1887px;*/
+	min-height: 1170px;
 }
 section.parents #content-1 div {
 	position: absolute;
@@ -1559,7 +1558,7 @@ section.parents #answer-parents p{
 }
 section.parents #content-2 {
 	position: relative;
-	min-height: 1663px;
+	min-height: 1220px;
 }
 section.parents #content-2 div {
 	position: absolute;

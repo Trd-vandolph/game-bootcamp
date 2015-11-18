@@ -67,8 +67,11 @@
 					var sum2 = sum - 250;
 					$('#content-2').css('min-height', sum2 + unit);
 				}
+			}else {
+				$('#content-2').css('min-height', '1220px');
 			}
 		}
+
 		$(window).resize(function() {
 			adjustHeight();
 		});
