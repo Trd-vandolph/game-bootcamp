@@ -57,6 +57,7 @@
 					if(new Date(target.date._i) - (new Date('<?= Date("Y-m-d"); ?>')) >= 0){
 						$(".lesson-time ul li").removeClass("reserved");
 						$(".lesson-time ul li").removeClass("selected");
+						$(".lesson-time ul li").removeClass("disabled");
 						var date = new Date(target.date._i);
 						var months = [
 							"Jan",
