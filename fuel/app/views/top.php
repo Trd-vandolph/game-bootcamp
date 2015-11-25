@@ -48,7 +48,7 @@
 						<div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
 							<div>
 								<img src="../assets/img/front/game1.gif" alt="catch the banana">
-								<a data-remodal-target="choose1" href="#"><p>Click to Play</p></a>
+								<!-- <a data-remodal-target="choose1" href="#"><p>Click to Play</p></a> -->
 							</div>
 							<h3>Catch the Banana</h3>
 							<a class="nectar-button medium accent-color" href="/course#1st-game" data-color-override="false"><span>View Game Info</span> </a>
@@ -56,7 +56,7 @@
 						<div class="col span_3 centered-text one-fourths right-edge" data-animation="" data-delay="0">
 							<div>
 								<img src="../assets/img/front/game2.gif" alt="snow fight">
-								<a data-remodal-target="choose2" href="#"><p>Click to Play</p></a>
+								<!-- <a data-remodal-target="choose2" href="#"><p>Click to Play</p></a> -->
 							</div>
 							<h3>Snow Fight</h3>
 							<a class="nectar-button medium accent-color" href="/course#2nd-game" data-color-override="false"><span>View Game Info</span> </a>
@@ -64,7 +64,7 @@
 						<div class="col span_3 centered-text one-fourths clear-both" data-animation="" data-delay="0">
 							<div>
 								<img src="../assets/img/front/game3.gif" alt="superbear">
-								<a data-remodal-target="choose3" href="#"><p>Click to Play</p></a>
+								<!-- <a data-remodal-target="choose3" href="#"><p>Click to Play</p></a> -->
 							</div>
 							<h3>Super Bear</h3>
 							<a class="nectar-button medium accent-color" href="/course#3rd-game" data-color-override="false"><span>View Game Info</span> </a>

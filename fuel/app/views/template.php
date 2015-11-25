@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<html lang="en-US" prefix="og: //ogp.me/ns#">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,15 +10,15 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Game Bootcamp" />
 	<meta property="og:description" content="GET YOUR KIDS THE MOST POWERFUL SKILL IN 21ST CENTURY" />
-	<meta property="og:url" content="http://www.game-bootcamp.com/">
+	<meta property="og:url" content="//www.game-bootcamp.com/">
 	<meta property="og:site_name" content="Game BootCamp" />
-	<meta property="og:image" content="http://game-bootcamp.com/assets/img/logo/logo2_b.png">
+	<meta property="og:image" content="//game-bootcamp.com/assets/img/logo/logo2_b.png">
 	<link rel="shortcut icon" href="/assets/img/common/favicon.ico">
 
 	<? echo Asset::css("template.css"); ?>
 	<? echo Asset::js("reum.js"); ?>
 	<? echo Asset::css("js_composer_front1ac1.css"); ?>
-	<link rel='stylesheet' id='options_typography_Open+Sans-300-css' href='https://fonts.googleapis.com/css?family=Open+Sans:300' type='text/css' media='all' />
+	<link rel='stylesheet' id='options_typography_Open+Sans-300-css' href='//fonts.googleapis.com/css?family=Open+Sans:300' type='text/css' media='all' />
 	<? echo Asset::css("rgs11b8.css"); ?>
 	<? echo Asset::css("font-awesome.minf39e.css"); ?>
 	<? echo Asset::css("steadysetsf39e.css"); ?>
@@ -27,7 +27,7 @@
 	<? echo Asset::css("responsive11b80.css"); ?>
 	<? echo Asset::js("modernizr61da.js"); ?>
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<? echo Asset::js("top.jquery.js"); ?>
 	<? echo Asset::js("bootstrap-editable.js"); ?>
@@ -53,7 +53,7 @@
 				<div class="container">
 					<div id="search-box">
 						<div class="col span_12">
-							<form action="http://bootcamp.csp.edu/" method="GET">
+							<form action="//bootcamp.csp.edu/" method="GET">
 								<input type="text" name="s" value="Start Typing..." data-placeholder="Start Typing..." />
 							</form>
 						</div>
