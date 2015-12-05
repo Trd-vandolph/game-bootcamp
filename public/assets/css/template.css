@@ -1429,10 +1429,10 @@ section#contents {
 	max-width: 60%;
 }
 #fws_55b22746735ec > div > div img:hover {
-	box-shadow: 0 0 20px #444;
+	/*box-shadow: 0 0 20px #444;
 	border: 1px solid #1852A2;
 	cursor: pointer;
-	opacity: 0.5;
+	opacity: 0.5;*/
 }
 #fws_55b22746735ec > div > div > div p {
 	position: absolute;
@@ -2532,7 +2532,7 @@ header#top nav > ul > li > a {
 	width: 50%!important;
 }
 #fws_55b22746735ec > h3 {
-	font-size: 5.2vw;
+	font-size: 40px;
 	line-height: 52px;
 }
 body #mobile-menu ul li a {
