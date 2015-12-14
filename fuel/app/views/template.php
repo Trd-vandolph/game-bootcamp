@@ -4,8 +4,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-	<meta name="keywords" content="Game-bootcamp, Online Computer Programming Course, Kids Programming, enchantJS, Online School, Javascript kids , Programming,JavaScript, Japan, Singapore, Private Lesson, Edoo, Olivecode" />
-	<meta name="description" content="Game Bootcamp is a 3-month online programming course for 8 to 15-year-old children." />
+	<meta name="keywords" content="Kids programming, JavaScript, Education, Creativity, Logical Thinking, Edoo, OliveCode, E-Learning" />
+	<meta name="description" content="Game Bootcamp is an online programming course that teaches kids not only programming but also creativity and logical thinking through game development." />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Game Bootcamp" />
@@ -32,7 +32,7 @@
 	<? echo Asset::js("top.jquery.js"); ?>
 	<? echo Asset::js("bootstrap-editable.js"); ?>
 	<? echo Asset::js("bootstrap-editable.min.js"); ?>
-	<title> Game-BootCamp </title>
+	<title>Game Bootcamp | Online kids programming course through game development</title>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
