@@ -368,3 +368,30 @@ hr {
 	border-radius: 3px;
 	max-width: 100%;
 }
+
+/* for group class */
+p.group-title {
+    background-color: white;
+    border: 1px solid #EEE;
+    padding: 10px;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+button.group-button-confirm {
+    padding: 10px 25px;
+    font-size: large;
+}
+button.group-yes {
+    margin-right: 20px;
+}
+button.group-no {
+    position: static;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+}
+button.group-no:after {
+    display: none;
+}

@@ -241,7 +241,16 @@ class Controller_Students_Lesson extends Controller_Students
 				["freetime_at", "asc"],
 			]
 		]);
-
+        
+        $data["groups"] = Model_lessontime::find("all", [
+           "where" => [
+                ["deleted_at", 0],
+                ["status", 1],
+                ["freetime_at", ">=", time()],
+                ["freetime_at", "<", time() + 864000],
+           ] 
+        ]);
+        
 		$data['status'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
