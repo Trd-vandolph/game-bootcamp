@@ -78,7 +78,7 @@ class Controller_Schools_Top extends Controller_Schools
 
 		$data["user"] = $this->user;
 
-		$view = View::forge("students/top", $data);
+		$view = View::forge("schools/top", $data);
 		$this->template->content = $view;
 	}
 }

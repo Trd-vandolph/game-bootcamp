@@ -25,12 +25,12 @@
 					<button class="button" href="">Login <i class="fa fa-chevron-right"></i></button>
 					<p><label for="remember"><input id="remember" name="remember_me" value="1" type="checkbox"> Remember me</label></p>
 				</div>
-				<p class="forgotpassword"><? echo Html::anchor("students/forgotpassword", '<i class="fa fa-angle-right"></i> Forget Password ?'); ?></p>
+				<p class="forgotpassword"><? echo Html::anchor("schools/forgotpassword", '<i class="fa fa-angle-right"></i> Forget Password ?'); ?></p>
 			</div>
 			<div class="signup-area">
 				<div class="signup">
-					<p>Sign up for a free trial lesson</p>
-					<? echo Html::anchor("students/signup", 'Signup <i class="fa fa-chevron-right"></i>',array('class' => 'button')); ?>
+					<p>Sign up as school</p>
+					<? echo Html::anchor("schools/signup", 'Signup <i class="fa fa-chevron-right"></i>',array('class' => 'button')); ?>
 				</div>
 				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 				<input type="text" value="<?=$pay; ?>" name="pay" hidden>
