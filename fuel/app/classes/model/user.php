@@ -191,6 +191,9 @@ class Model_User extends \Orm\Model
 				'default' 	  => 0,
 				'null'		  => false,
 		),
+        'school_name'      => array(
+				'null'		  => true,
+		),
 	);
 
 	/**
