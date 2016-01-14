@@ -13,7 +13,7 @@ class Controller_Students_Documents extends Controller_Students
 				["created_at", "desc"],
 			]
 		]);
-
+		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -22,7 +22,7 @@ class Controller_Students_Documents extends Controller_Students
 						["deleted_at", 0]
 				]
 		]);
-
+		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -31,7 +31,6 @@ class Controller_Students_Documents extends Controller_Students
 						["deleted_at", 0]
 				]
 		]);
-
 		$data['user'] = $this->user;
 		$view = View::forge("students/documents", $data);
 		$this->template->content = $view;

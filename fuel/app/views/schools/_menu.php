@@ -9,17 +9,27 @@
 		<ul>
 			<? if(isset($donetrial) && count($donetrial) < 1  && count($pasts) < 1): ?>
 				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
+				<? else: ?>
+					<li><? echo Html::anchor('/students/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
 				<? endif; ?>
-			<? elseif(isset($donetrial) && count($donetrial) == 1 && count($pasts) >= 0 && count($pasts) <= 12): ?>
+			<? elseif(isset($donetrial) && count($donetrial) == 1 && count($pasts) >= 0 && count($pasts) <= 23): ?>
 				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
+				<? else: ?>
+					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
+				<? endif; ?>
+			<? elseif(isset($donetrial) && count($pasts) >= 24 && count($pasts) <= 32): ?>
+				<? if($user->place == 0): ?>
+					<li><? echo Html::anchor('/students/lesson/add?course=1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
+				<? else: ?>
+					<li><? echo Html::anchor('/students/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
 				<? endif; ?>
 			<? else: ?>
 				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Home Course)</span>'); ?></li>
 				<? else: ?>
-					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
+					<li><? echo Html::anchor('/students/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span><br><span>(Grameen Course)</span>'); ?></li>
 				<? endif; ?>
 			<? endif; ?>
 
@@ -35,13 +45,14 @@
 			<li><? echo Html::anchor('/students/teachers', '<i class="fa fa-fw fa-search"></i> Tutors'); ?></li>
 			<li><? echo Html::anchor('/students/documents', '<i class="fa fa-fw fa-file"></i> Documents'); ?></li>
 			<li><? echo Html::anchor('/students/news', '<i class="fa fa-fw fa-info-circle"></i> Information'); ?></li>
-			<!-- li><? echo Html::anchor('/students/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li-->
+			<li><? echo Html::anchor('/students/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li>
 			<li><? echo Html::anchor('/students/contactforum', '<i class="fa fa-fw fa-envelope"></i> Contact'); ?></li>
 			<li><? echo Html::anchor('/faq', '<i class="fa fa-fw fa-question-circle"></i> FAQ', array('class' => 'blank')); ?></li>
 		</ul>
 	</nav>
 </div>
 <?
+	//reservation for all website's database
 	$reserved_from_lessontimes = DB::select()->from('lessontimes')->where('status', 0)->where('deleted_at', 0)->execute(); //select from lessontimes
 	$reserved_from_shared = DB::select()->from('reservation')->where('status', 1)->execute('shared'); //select from shared database
 	$check_all_student = DB::select('*')->from('reservation')->where('status', 1)->execute('shared'); //check all student

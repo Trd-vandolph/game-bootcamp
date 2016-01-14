@@ -9,7 +9,6 @@ class Controller_Students_Lesson extends Controller_Students
 			$del_reserve = Model_Lessontime::find(Input::get("del_id", 0));
 			if($del_reserve != null){
 				if($del_reserve->student_id == $this->user->id){
-
 					// send mail
 					$body = View::forge("email/students/cancel_lesson");
 
@@ -20,7 +19,7 @@ class Controller_Students_Lesson extends Controller_Students
 					$sendmail = Email::forge("JIS");
 					$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 					$sendmail->to($this->user->email);
-					$sendmail->subject("Cancellation of Lesson / Game-bootcamp");
+					$sendmail->subject("Cancellation of Lesson / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
 
 					$sendmail->send();
@@ -30,12 +29,12 @@ class Controller_Students_Lesson extends Controller_Students
 
 					date_default_timezone_set(Config::get("timezone.timezone")[$del_reserve->teacher->timezone]);
 
-					$body->set("name", $del_reserve->teacher->firstname);
+					$body->set("name", $this->user->firstname);
 					$body->set("reservation", $del_reserve);
 					$sendmail = Email::forge("JIS");
 					$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 					$sendmail->to($del_reserve->teacher->email);
-					$sendmail->subject("Cancellation of Lesson / Game-bootcamp");
+					$sendmail->subject("Cancellation of Lesson / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
 
 					$sendmail->send();
@@ -68,23 +67,27 @@ class Controller_Students_Lesson extends Controller_Students
 				["deleted_at", 0]
 			]
 		]);
-		$lastClass = Model_Lessontime::find("last", [
-			"where" => [
-				["student_id", $this->user->id],
-				["status", 2],
-				["language", Input::get("course", 0)],
-				["deleted_at", 0]
-			]
-		]);
 		if($pasts == null){
 			$pasts = [];
+		}
+
+		$model_courseNumber = '';
+		$course_value = Input::get("course", 0);
+		if (count($pasts) >= 0 and count($pasts) <= 7){
+			$model_courseNumber = Model_Lessontime::courseNumber_1($course_value);
+		} elseif ($course_value == '0' and (count($pasts) >= 8 and count($pasts) <= 15)){
+			$model_courseNumber = Model_Lessontime::courseNumber_2($course_value);
+		} elseif($course_value == '0' and (count($pasts) >= 16 and count($pasts) <= 23)) {
+			$model_courseNumber = Model_Lessontime::courseNumber_3($course_value);
+		} else {
+			$model_courseNumber = Model_Lessontime::courseNumber_4($course_value);
 		}
 
 		$data["studentplace"] = Model_User::find("all");
 
 		$id = Input::get("id", 0);
 		if($id != 0 and $reserved == null and($this->user->charge_html == 1 or Input::get("course", 0) == -1)){
-			if(Model_Lessontime::courseNumber_1(Input::get("course", 0)) > count($pasts)){
+			if($model_courseNumber > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
 
@@ -115,8 +118,8 @@ class Controller_Students_Lesson extends Controller_Students
 					}
 				}
 			}
-		} elseif ($this->user->charge_html == 11 or Input::get("course", 0) == 0){
-			if(Model_Lessontime::courseNumber_2(Input::get("course", 0)) > count($pasts)){
+		} elseif ($this->user->charge_html == 11/* or Input::get("course", 0) == 0*/){
+			if($model_courseNumber > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
 
@@ -147,8 +150,8 @@ class Controller_Students_Lesson extends Controller_Students
 					}
 				}
 			}
-		} elseif ($this->user->charge_html == 111 or Input::get("course", 0) == 0){
-			if(Model_Lessontime::courseNumber_3(Input::get("course", 0)) > count($pasts)){
+		} elseif ($this->user->charge_html == 111/* or Input::get("course", 0) == 0*/){
+			if($model_courseNumber > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
 
@@ -179,8 +182,8 @@ class Controller_Students_Lesson extends Controller_Students
 					}
 				}
 			}
-		} elseif ($this->user->charge_html == 1111 or Input::get("course", 0) == 1){
-			if(Model_Lessontime::courseNumber_4(Input::get("course", 0)) > count($pasts)){
+		} elseif ($this->user->charge_html == 1111/* or Input::get("course", 0) == 1*/){
+			if($model_courseNumber > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
 				if($reserve != null){
 
@@ -217,9 +220,20 @@ class Controller_Students_Lesson extends Controller_Students
 			case -1:
 				$course_where = ["trial", 1];
 				break;
+			case 1:
+				$course_where = ["javascript", 1];
+				break;
 			default:
-				$course_where = ["enchantJS", 1];
+				$course_where = ["html5", 1];
+
 		}
+		$data['status'] = Model_Lessontime::find("all", [
+				"where" => [
+						["student_id", $this->user->id],
+						["deleted_at", 0],
+						["status", 1],
+				]
+		]);
 
 		$data["lessons"] = Model_Lessontime::find("all", [
 			"where" => [
@@ -240,14 +254,6 @@ class Controller_Students_Lesson extends Controller_Students
 			"order_by" => [
 				["freetime_at", "asc"],
 			]
-		]);
-
-		$data['status'] = Model_Lessontime::find("all", [
-				"where" => [
-						["student_id", $this->user->id],
-						["deleted_at", 0],
-						["status", 1],
-				]
 		]);
 
 		$data["donetrial"] = Model_Lessontime::find("all", [
@@ -274,10 +280,10 @@ class Controller_Students_Lesson extends Controller_Students
 
 		$data['eventdetails'] = $eventdetails;
 		$data["pasts"] = $pasts;
-		$data["lastClass"] = $lastClass;
 		$data["reserved"] = $reserved;
 		$data["user"] = $this->user;
 		$data["course"] = Input::get("course", 0);
+		$data["model_courseNumber"] = $model_courseNumber;
 
 		$view = View::forge("students/lesson/add", $data);
 		$this->template->content = $view;

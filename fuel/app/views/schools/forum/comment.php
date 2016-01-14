@@ -11,11 +11,11 @@
 						</div>
 					</li>
 				</ul>
-				<p class="button-area">
-					<button class="button" name="action" value="confirm">Submit <i class="fa
-					fa-chevron-right"></i></button>
-				</p>
-				<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
+			<p class="button-area">
+				<button class="button" name="action" value="confirm">Submit <i class="fa
+				fa-chevron-right"></i></button>
+			</p>
+			<? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
 			</form>
 		</section>
 	</div>

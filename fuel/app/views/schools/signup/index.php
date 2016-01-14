@@ -2,7 +2,7 @@
 	<div id="main">
 	<? $g=Input::GET('g',0); ?>
 		<?php echo Uri::segment(3); ?>
-		<h3>Signup<h3>
+        <h3>Signup <font style="color: red">(School)</font><h3>
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<input type="hidden" id="id" value="<? echo Input::get("id", ""); ?>" />
@@ -10,7 +10,7 @@
 					<li>
 						<h4>School Name</h4>
 						<div>
-							<input placeholder="School Name" name="school_name" type="text" required pattern=".{2,255}" style="width: 500px" title="must be less than 255 chars" value="<? echo Session::get_flash("school_name", ""); ?>">
+							<input placeholder="School Name" name="schoolname" type="text" required pattern=".{2,100}" style="width: 450px" title="must be less than 100 chars" value="<? echo Session::get_flash("schoolname", ""); ?>">
 						</div>
 					</li>
 					<li>
@@ -39,14 +39,14 @@
 							<span id="pass-message"></span>
 						</div>
 					</li>
+					<input type="text" hidden value="1" name="need_reservation_email" />
+					<input type="text" hidden value="1" name="need_news_email" />
 					<li>
 						<h4>Timezone</h4>
 						<div>
 							<?= View::forge("_timezone",["user" => ""]); ?>
 						</div>
 					</li>
-					<input type="text" name="grameen" value="<?= ($g==1) ? '1' : '0'; ?>" hidden/>
-					<input type="text" name="grameen_student" value="<?= ($g==1) ? '1' : '0'; ?>" hidden/>
 				</ul>
 				<p class="button-area">
 					<button class="button" id="button-submit" name="confirm" value="1">Submit <i class="fa fa-chevron-right"></i></button>
@@ -59,8 +59,6 @@
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script>
 	$(document).ready(function(){
-		dateChange();
-
 		var password = $('input#pass');
 		var cpassword = $('input#cpass');
 		var message = $('span#pass-message');
@@ -91,20 +89,6 @@
 				}
 			}else {
 				message.text(" ");
-			}
-		}
-
-		function dateChange(){
-			var date = new Date($("#year").val(), $("#month").val(), 0);
-			var selected_day = $("#day").val();
-			var day_max = date.getDate();
-			$("#day").empty();
-			for(var i = 1; i <= day_max; i++){
-				if(i == selected_day){
-					$("#day").append('<option value="' + i + '" selected>' + i + '</option>');
-				}else{
-					$("#day").append('<option value="' + i + '">' + i + '</option>');
-				}
 			}
 		}
 	});

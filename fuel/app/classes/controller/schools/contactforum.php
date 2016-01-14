@@ -99,7 +99,7 @@ class Controller_Students_Contactforum extends Controller_Students
 			$data["forum"]->save();
 			Response::redirect("/students/contactforum/");
 		}
-		$data["user"] = $this->user;
+		$data['user'] = $this->user;
 		$view = View::forge("students/contacts/forum/edit", $data);
 		$this->template->content = $view;
 	}

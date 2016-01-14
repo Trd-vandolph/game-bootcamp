@@ -11,7 +11,7 @@
 	<div class="content-wrap_s">
 		<p class="notice-text">Thank you. You have successfully signed up as a user.</p>
 		<p class="button-area">
-			<? echo Html::anchor("/schools/", 'Top <i class="fa fa-chevron-right"></i>', ["class" => "button"]); ?>
+			<? echo Html::anchor("/students/", 'Top <i class="fa fa-chevron-right"></i>', ["class" => "button"]); ?>
 		</p>
 	</div>
 </div>

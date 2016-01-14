@@ -35,7 +35,9 @@
 	<? echo View::forge("students/_menu")->set($this->get()); ?>
 </div>
 <script>
+
 	function deleteForum(id){
+
 		if(confirm('Do you want to delete it?')){
 			$.ajax({
 				url: '/admin/api/delforum.json',
@@ -43,7 +45,9 @@
 				data: {
 					"id": id
 				},
+
 				complete: function(){
+
 				},
 				success: function(res) {
 					$("#forum_" + id).hide();

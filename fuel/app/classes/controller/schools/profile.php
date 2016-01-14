@@ -57,13 +57,14 @@ class Controller_Students_Profile extends Controller_Students
 				$this->user->firstname = Input::post("firstname", "");
 				$this->user->middlename = Input::post("middlename", "");
 				$this->user->lastname = Input::post("lastname", "");
+				$this->user->google_account = Input::post("google_account", "");
 
 				$this->user->save();
 
 				$is_chenged = true;
 			}
 		}
-
+		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],
@@ -72,7 +73,7 @@ class Controller_Students_Profile extends Controller_Students
 						["deleted_at", 0]
 				]
 		]);
-
+		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
 						["student_id", $this->user->id],

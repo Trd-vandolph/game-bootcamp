@@ -19,5 +19,6 @@
 			<? echo $pager ?>
 		</section>
 	</div>
+
 	<? echo View::forge("students/_menu")->set($this->get()); ?>
 </div>

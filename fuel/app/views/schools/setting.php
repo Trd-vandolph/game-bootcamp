@@ -5,11 +5,39 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 		<? if($is_chenged): ?>
 			<p>Update success.</p>
 		<? endif; ?>
+		
+		<h3>Place of Learning</h3>
+		<section class="content-wrap">
+			<form action="" method="post" enctype="multipart/form-data">
+				<ul class="forms">
+					<li>
+						<h4>Study at</h4>
+						<select id="place" name="place" <?= ($user->charge_html != 0) ? 'disabled' : 'enabled'; ?> >
+							<option <? if(Input::post("place", $user->place) == 0) echo "selected" ?> value="0">Online School</option>
+							<option <? if(Input::post("place", $user->place) == 1) echo "selected" ?> value="1">Grameen Course</option>
+						</select>
+						<select id="grameen_student" name="grameen_student" hidden>
+							<option <? if(Input::post("grameen_student", $user->grameen_student) == 0) echo "selected" ?> value="0">No</option>
+							<option <? if(Input::post("grameen_student", $user->grameen_student) == 1) echo "selected" ?> value="1">Yes</option>
+						</select>
+					</li>
+				</ul>
+				<? if($user->charge_html == 0): ?>
+					<p class="button-area">
+						<button class="button" href="">Change</button>
+					</p>
+				<? else: ?>
+					<p class="disable-message">If you want to change your Place of Learning, contact us at support@olivecode.com</p>
+				<? endif; ?>
+				<? echo $token; ?>
+			</form>
+		</section>
 		<h3>Email</h3>
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li><h4>Reservation email</h4>
+					<li>
+						<h4>Reservation email</h4>
 						<div>
 							<label for="reservation-on">
 							<input <? if(Input::post("need_reservation_email", $user->need_reservation_email) == 1) echo "checked" ?> id="reservation-on" name="need_reservation_email" type="radio" value="1">On
@@ -19,7 +47,8 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 							</label>
 						</div>
 					</li>
-					<li><h4>News email</h4>
+					<li>
+						<h4>News email</h4>
 						<div>
 							<label for="news-on">
 							<input <? if(Input::post("need_news_email", $user->need_news_email) == 1) echo "checked" ?> id="news-on" name="need_news_email" type="radio" value="1">On
@@ -40,7 +69,8 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li><h4>Timezone</h4>
+					<li>
+						<h4>Timezone</h4>
 						<div>
 							<?= View::forge("_timezone",["user" => $user]); ?>
 						</div>
@@ -59,13 +89,15 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 			<? endif; ?>
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li><h4>New password</h4>
+					<li>
+						<h4>New password</h4>
 						<div>
 							<input name="password" type="password" required pattern="(?=.*\d+.*)(?=.*[a-zA-Z]+.*)+.{8,}" title="must be greater than 7 characters including alphabet and number">
 							<aside>greater than 7 characters including alphabet and number</aside>
 						</div>
 					</li>
-					<li><h4>Confirm</h4>
+					<li>
+						<h4>Confirm</h4>
 						<div>
 							<input name="password2" type="password" required pattern="(?=.*\d+.*)(?=.*[a-zA-Z]+.*)+.{8,}" title="must be greater than 7 characters including alphabet and number">
 						</div>
@@ -85,9 +117,11 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 		var place = $('#place');
 		var gs = $('#grameen_student');
 		var dm = $('.disable-message');
+		
 		place.on('change', function(){
 			gs.val(place.val());
 		});
+			
 		dm.css('textAlign','center');
 	});
 </script>

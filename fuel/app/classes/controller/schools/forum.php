@@ -99,7 +99,7 @@ class Controller_Students_Forum extends Controller_Students
 			$data["forum"]->save();
 			Response::redirect("/students/forum/");
 		}
-		$data["user"] = $this->user;
+		$data['user'] = $this->user;
 		$view = View::forge("students/forum/edit", $data);
 		$this->template->content = $view;
 	}
@@ -138,7 +138,6 @@ class Controller_Students_Forum extends Controller_Students
 			$data["comment"]->save();
 			Response::redirect("/students/forum/detail/{$data["comment"]->forum_id}");
 		}
-		$data["user"] = $this->user;
 		$view = View::forge("students/forum/comment", $data);
 		$this->template->content = $view;
 	}

@@ -6,5 +6,6 @@
 			<?= nl2br($news->body); ?>
 		</section>
 	</div>
+
 	<? echo View::forge("students/_menu")->set($this->get()); ?>
 </div>

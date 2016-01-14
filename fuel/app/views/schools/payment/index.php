@@ -1,27 +1,27 @@
 <? $type = Input::get('type', 0); ?>
 <form action="" method="post" enctype="multipart/form-data">
-	<? foreach($student as $students): ?>
-		<script>
-		$(function(){
-			<?
-				$paid = $students->charge_html;
-				if($paid != 0) {?>
-					<? if (strlen($paid) > 0 and strlen($paid) < 4) { ?>
-							//alert();
-							$('#method option:nth-child(1)').css('display', 'none');
-							$('#method option:nth-child(2)').attr('selected','selected');
-
-					<?} else {?>
-							alert("We can't redirect you to payment page because you already paid full.");
-							window.location.href = "/students/top";
-					<?} ?>
-			<? }?>
-		});
-		</script>
-
-	<div id="contents-wrap">
-		<div id="main">
-			<h3>Payment</h3>
+<? foreach($student as $students): ?>
+<script>
+$(function(){
+	<?	
+		$paid = $students->charge_html; 
+		if($paid != 0) {?>
+			<? if (strlen($paid) > 0 and strlen($paid) < 4) { ?>
+					//alert();
+					$('#method option:nth-child(1)').css('display', 'none');
+					$('#method option:nth-child(2)').attr('selected','selected');
+				
+			<?} else {?>
+					alert("We can't redirect you to payment page because you already paid full.");
+					window.location.href = "/students/top";
+			<?} ?>
+	<? }?>
+});
+</script>
+	
+<div id="contents-wrap">
+	<div id="main">
+		<h3>Payment</h3>
 			<div class="pay-content">
 				<div id="first-block">
 					<div id="first-left">
@@ -31,24 +31,26 @@
 					</div>
 					<div id="first-right">
 						<p>
-							<?
-								$now = date("Y-m-d H:i:s");
-								echo date('F d, Y') ;
-							?>
+						<?
+							$now = date("Y-m-d H:i:s");
+							echo date('F d, Y') ;
+						?>
 						</p>
 						<p><?=$students->firstname." ".$students->middlename." ".$students->lastname; ?></p>
 						<p>
-							<?
-								if($students->place == 1){
-									echo "Grameen Communication";
-								}else {
-									echo "Home";
-								}
-							?>
+						<?
+							if($students->place == 1){
+								echo "Grameen Communication";
+							}else {
+								echo "Home";
+							}
+						?>
 						</p>
+						
 						<!-- Hidden values -->
 						<input type="text" name="date" value="<?=strtotime($now); ?>" hidden />
 						<input type="text" name="studentId" value="<?=$students->id; ?>" hidden />
+					
 					</div>
 				</div>
 				<div id="second-block">
@@ -76,6 +78,7 @@
 						<?
 							$count = strlen($paid);
 							$q1 = 0; $q2 = 0; $q3 = 0; $q4 = 0;
+							
 							if($paid != 0 && $count > 0) {
 								if($count == 1) {
 									$q1 = 1;
@@ -113,22 +116,23 @@
 				<p class="button-area">
 					<button name="action" value="submit" class="button" href="">Submit <i class="fa fa-upload"></i></button>
 				</p>
-			</div>
-		</div>
-	<? endforeach; ?>
-</form>
-		<? echo View::forge("students/_menu")->set($this->get()); ?>
+			</div>		
 	</div>
+<? endforeach; ?>
+</form>
+	<? echo View::forge("students/_menu")->set($this->get()); ?>
+</div>
 <script>
 	$(function(){
 		var method = $('#method');
-		var quarter = $('.quarter');
-
+		var quarter = $('.quarter');		
+		
 		if(methodVal != 1) {
 			quarter.css('display', 'block');
 		}else {
 			quarter.css('display', 'none');
 		}
+		
 		method.on('change', function(){
 			var methodVal = $('#method').val();
 			if(methodVal != 1) {
@@ -137,6 +141,8 @@
 				quarter.css('display', 'none');
 			}
 		});
+
 		 $('#second-right').on('keydown', '#amount', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
+			
 	});
 </script>

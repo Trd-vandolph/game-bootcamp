@@ -38,7 +38,8 @@
 		<section class="replay">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li><h4>Comment</h4>
+					<li>
+						<h4>Comment</h4>
 						<div>
 							<textarea name="body" rows="10" cols="100"></textarea>
 						</div>
