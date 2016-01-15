@@ -45,7 +45,7 @@
 					->where('status', 1)
 					->execute('shared');
 
-				//if(count($check_shared) > 0) {
+				if(count($check_shared) > 0) {
 				?>
 					<li class="course1">
 						<p class="date"><? echo date("d ", $reservation->freetime_at); echo Config::get("statics.months", [])[(int)date("m ", $reservation->freetime_at) - 1];?><span><? echo date("H:i", $reservation->freetime_at); ?></span></p>
@@ -70,7 +70,7 @@
 					</li>
 				<? } endforeach; ?>
 			</ul>
-			<? //endif;?>
+			<? endif;?>
 		</section>
 		<h3>Information</h3>
 		<p class="link-more"><a href="/teachers/news">See More <i class="fa fa-angle-right"></i></a></p>
