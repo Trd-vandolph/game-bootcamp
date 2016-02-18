@@ -3,7 +3,7 @@
 class Controller_Students_Signup extends Controller_Base
 {
 
-	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality');
+	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality', 'contact_no');
 
 	public function before(){
 		$this->template = View::forge("students/template");
@@ -98,6 +98,7 @@ class Controller_Students_Signup extends Controller_Base
 					$user->place =  Session::get_flash("grameen");
 					$user->grameen_student =  Session::get_flash("grameen_student");
 					$user->nationality = Session::get_flash("nationality");
+                    $user->contact_no = Session::get_flash("contact_no");
 					$user->save();
 
 					// send mail

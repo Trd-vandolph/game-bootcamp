@@ -191,6 +191,10 @@ class Model_User extends \Orm\Model
 				'default' 	  => 0,
 				'null'		  => false,
 		),
+        'contact_no'      => array(
+				'default' 	  => NULL,
+				'null'		  => true,
+		),
 	);
 
 	/**

@@ -11,9 +11,9 @@ class Controller_Schools_Top extends Controller_Schools
 
 	public function action_index()
 	{
-		if($this->user->birthday == "0000-00-00"){
-			Response::redirect("schools/setting/new");
-		}
+//		if($this->user->birthday == "0000-00-00"){
+//			Response::redirect("schools/setting/new");
+//		}
 
 		$data["reservations"] = Model_Lessontime::find("all", [
 			"where" => [
