@@ -7,24 +7,11 @@
 	<h3>LESSON</h3>
 	<nav>
 		<ul>
-			<? if(isset($donetrial) && count($donetrial) < 1  && count($pasts) < 1): ?>
-				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/schools/lesson/add?course=-1', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
-				<? endif; ?>
-			<? elseif(isset($donetrial) && count($donetrial) == 1 && count($pasts) >= 0 && count($pasts) <= 12): ?>
-				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/schools/lesson/add?course=0', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
-				<? endif; ?>
-			<? else: ?>
-				<? if($user->place == 0): ?>
-					<li><? echo Html::anchor('/schools/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
-				<? else: ?>
-					<li><? echo Html::anchor('/schools/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
-				<? endif; ?>
-			<? endif; ?>
 
+            <li><? echo Html::anchor('/schools/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?></li>
 			<li><? echo Html::anchor('/schools/lesson/histories', '<i class="fa fa-fw fa-history"></i> Learning History'); ?></li>
 			<li><? echo Html::anchor('/schools/textbooks', '<i class="fa fa-fw fa-book"></i> Textbook'); ?></li>
+			<li><? echo Html::anchor('/schools/classroom', '<i class="fa fa-fw fa-users"></i> Classroom'); ?></li>
 			<?php /* <li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i> How to Take Lesson</a></li> */ ?>
 		</ul>
 	</nav>

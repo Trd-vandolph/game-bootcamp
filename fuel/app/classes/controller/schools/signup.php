@@ -3,7 +3,7 @@
 class Controller_Schools_Signup extends Controller_Base
 {
 
-	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality');
+	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality','contact_no','school_name');
 
 	public function before(){
 		$this->template = View::forge("schools/template");
@@ -23,10 +23,10 @@ class Controller_Schools_Signup extends Controller_Base
 
 		$val = Validation::forge();
 		$val->add_callable('passwordvalidation');
-		$val->add('firstname','Firstname')->add_rule('required');
-		$val->add('lastname','Lastname')->add_rule('required');
+		//$val->add('firstname','Firstname')->add_rule('required');
+		//$val->add('lastname','Lastname')->add_rule('required');
 		$val->add('email','Email address')->add_rule('required')->add_rule('valid_email');
-		$val->add('sex','Gender')->add_rule('required');
+		$val->add('contact_no','Contact Number')->add_rule('required');
 		$val->add('password','password')->add_rule('required')->add_rule('password')->add_rule('min_length', 8);
 		//$val->add('google_account','Gmail address')->add_rule('required');
 
@@ -98,6 +98,7 @@ class Controller_Schools_Signup extends Controller_Base
 					$user->place =  Session::get_flash("grameen");
 					$user->grameen_student =  Session::get_flash("grameen_student");
 					$user->nationality = Session::get_flash("nationality");
+                    $user->contact_no = Session::get_flash("contact_no");
 					$user->save();
 
 					// send mail

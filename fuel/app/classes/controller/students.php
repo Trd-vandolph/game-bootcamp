@@ -24,7 +24,9 @@ class Controller_Students extends Controller_Base
 				Response::redirect('teachers/');
 			}else if($this->user->group_id == 00){
 				Response::redirect('grameencom/');
-			}else{
+			}else if($this->user->group_id == 50) {
+                Response::redirect('schools/');
+            }else{
 				$this->template->name = $this->user->firstname;
 			}
 		}else{
