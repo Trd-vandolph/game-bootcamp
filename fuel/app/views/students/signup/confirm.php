@@ -17,6 +17,9 @@
 					<li><h4>Nationality</h4>
 						<div><? echo $nationality; ?></div>
 					</li>
+					<li><h4>Contact Number</h4>
+						<div><? echo $contact_no; ?></div>
+					</li>
 					<li><h4>Gender</h4>
 						<div>
 							<?

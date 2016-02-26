@@ -62,7 +62,7 @@
 					<li>
 						<h4>Contact Number/s</h4>
 						<div>
-							<input type="text" required name="contact_no" id="contact_no"/>							
+							<input type="text" required name="contact_no" id="contact_no" pattern="[0-9()-+#]{6,25}"/>							
 						</div>
 					</li>
 					<li>
@@ -128,7 +128,6 @@
 		var message = $('span#pass-message');
 		var button = $('button#button-submit');
 		var buttonHover = $('#button-submit:hover');
-        var contact = $('#contact_no');
 
 		button.css('display', 'none');
 
@@ -136,9 +135,6 @@
 				confirmPass();
 		});
         
-        contact.on('keydown', function () {
-           validateNumber(); 
-        });
 
 		function confirmPass() {
 			var origVal = password.val();
@@ -174,14 +170,5 @@
 				}
 			}
 		}
-        function validateNumber() {
-            var number = $('#contact_no');
-            var regex = /^[\d+#()-]*$/;
-            
-            if(!number.val().match(regex)) {
-                alert();
-                number.val('');
-            }
-        }
 	});
 </script>
