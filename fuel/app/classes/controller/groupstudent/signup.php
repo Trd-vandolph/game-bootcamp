@@ -1,12 +1,12 @@
 <?php
 
-class Controller_Schools_Signup extends Controller_Base
+class Controller_GroupStudent_Signup extends Controller_Base
 {
 
-	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality','contact_no','school_name');
+	private $fields = array('firstname','middlename','lastname','email','password','sex','year','month','day','nickname','google_account','need_reservation_email','need_news_email', 'timezone','grameen','grameen_student', 'nationality', 'school_admitted', 'contact_no');
 
 	public function before(){
-		$this->template = View::forge("schools/template");
+		$this->template = View::forge("groupstudent/template");
 		$this->template->title = "signup";
 		$this->template->auth_status = null;
 	}
@@ -23,10 +23,10 @@ class Controller_Schools_Signup extends Controller_Base
 
 		$val = Validation::forge();
 		$val->add_callable('passwordvalidation');
-		//$val->add('firstname','Firstname')->add_rule('required');
-		//$val->add('lastname','Lastname')->add_rule('required');
+		$val->add('firstname','Firstname')->add_rule('required');
+		$val->add('lastname','Lastname')->add_rule('required');
 		$val->add('email','Email address')->add_rule('required')->add_rule('valid_email');
-		$val->add('contact_no','Contact Number')->add_rule('required');
+		$val->add('sex','Gender')->add_rule('required');
 		$val->add('password','password')->add_rule('required')->add_rule('password')->add_rule('min_length', 8);
 		//$val->add('google_account','Gmail address')->add_rule('required');
 
@@ -39,7 +39,7 @@ class Controller_Schools_Signup extends Controller_Base
 				]);
 
 				if($user == null){
-					Response::redirect("schools/signup/confirm");
+					Response::redirect("groupstudent/signup/confirm");
 				}else{
 					$errors = ["This email is already in use."];
 				}
@@ -47,9 +47,15 @@ class Controller_Schools_Signup extends Controller_Base
 				$errors = $val->error();
 			}
 		}
+        
+        $data['schools'] = Model_User::find("all", [
+           "where" => [
+               ["group_id", 50]               
+           ] 
+        ]);
 
 		$data["errors"] = $errors;
-		$view = View::forge("schools/signup/index", $data);
+		$view = View::forge("groupstudent/signup/index", $data);
 		$this->template->content = $view;
 	}
 
@@ -63,7 +69,7 @@ class Controller_Schools_Signup extends Controller_Base
 			Session::keep_flash($field);
 		}
 
-		$this->template->content = View::forge('schools/signup/confirm',$data);
+		$this->template->content = View::forge('groupstudent/signup/confirm',$data);
 	}
 
 	public function action_submit()
@@ -78,7 +84,7 @@ class Controller_Schools_Signup extends Controller_Base
 			$email = Session::get_flash("email");
 
 
-				Auth::create_user($email, Session::get_flash("password"), $email, 50);
+				Auth::create_user($email, Session::get_flash("password"), $email, 1);
 				$user = Model_User::find("first", [
 					"where" => [
 						["email", $email]
@@ -87,7 +93,6 @@ class Controller_Schools_Signup extends Controller_Base
 
 				if($user != null){
 					$user->sex = Session::get_flash("sex");
-                    $user->school_name= Session::get_flash("school_name");
 					$user->firstname = Session::get_flash("firstname");
 					$user->middlename = Session::get_flash("middlename");
 					$user->lastname = Session::get_flash("lastname");
@@ -99,11 +104,13 @@ class Controller_Schools_Signup extends Controller_Base
 					$user->place =  Session::get_flash("grameen");
 					$user->grameen_student =  Session::get_flash("grameen_student");
 					$user->nationality = Session::get_flash("nationality");
+                    $user->group_id = 75;
                     $user->contact_no = Session::get_flash("contact_no");
+                    $user->school_admitted = Session::get_flash("school_admitted");
 					$user->save();
 
 					// send mail
-					$body = View::forge("email/schools/signup");
+					$body = View::forge("email/groupstudent/signup");
 					$body->set("name", $user->firstname);
 					$body->set("user", $user);
 					$body->set("ymd", explode("-", $user->birthday));
@@ -113,7 +120,7 @@ class Controller_Schools_Signup extends Controller_Base
 					$sendmail->subject("Welcome Aboard! / Game-BootCamp");
 					$sendmail->html_body(htmlspecialchars_decode($body));
 
-					$documents = Model_Document::query()->where('type', 50)->where('deleted_at', 0)->limit(1)->get_one();
+					$documents = Model_Document::query()->where('type', 1)->where('deleted_at', 0)->limit(1)->get_one();
 					if(count($documents)>0){
 						$query = Model_Document::find($documents->id);
 						$sendmail->attach(DOCROOT.'/contents/'.$query->path);
@@ -122,13 +129,13 @@ class Controller_Schools_Signup extends Controller_Base
 					$sendmail->send();
 
 				}else{
-					Response::redirect('_404_/?hehe');
+					Response::redirect('_404_');
 				}
 		}else{
 			Response::redirect('_404_');
 		}
 
 
-		$this->template->content = View::forge('schools/signup/finish');
+		$this->template->content = View::forge('groupstudent/signup/finish');
 	}
 }

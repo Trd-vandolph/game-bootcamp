@@ -1,19 +1,19 @@
 <?php
 
-class Controller_Students extends Controller_Base
+class Controller_Groupstudent extends Controller_Base
 {
 
 	public function before(){
 
 		parent::before();
 
-		$this->template = View::forge("students/template");
+		$this->template = View::forge("groupstudent/template");
 
 		$this->auth = Auth::instance();
 		// logout
 		if((int)Input::get("logout", 0) == 1){
 			$this->auth->logout();
-			Response::redirect('students/signin');
+			Response::redirect('groupstudent/signin');
 		}
 
 		// check login
@@ -24,25 +24,21 @@ class Controller_Students extends Controller_Base
 				Response::redirect('teachers/');
 			}else if($this->user->group_id == 00){
 				Response::redirect('grameencom/');
-			}else if($this->user->group_id == 50) {
-                Response::redirect('schools/');
-            }else if($this->user->group_id == 75) {
-                Response::redirect('groupstudent/');
-            }else{
+			}else{
 				$this->template->name = $this->user->firstname;
 			}
 		}else{
-			Response::redirect('students/signin');
+			Response::redirect('groupstudent/signin');
 		}
 
 		$this->template->user = $this->user;
 		$this->template->auth_status = $this->auth_status;
-		$this->template->title = "Students";
+		$this->template->title = "Schools";
 	}
 
 	public function action_index()
 	{
-		Response::redirect('students/top');
+		Response::redirect('groupstudent/top');
 	}
 
 }

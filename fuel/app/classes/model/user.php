@@ -197,7 +197,14 @@ class Model_User extends \Orm\Model
 		),
         'school_name'      => array(
 				'default' 	  => 0,
-				'null'		  => false,
+				'null'		  => true,
+		),
+        'school_admitted'      => array(
+				'default' 	  => 0,
+				'null'		  => true,
+		),
+        'classroom_id'      => array(
+				'default' 	  => 0,
 		),
 	);
 

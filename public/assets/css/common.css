@@ -846,6 +846,9 @@ span.icon-course5{
 	background:#FF0037;
 	color: #fff !important;
 }
+.button.blue {
+    background: #0F5573;
+}
 .button:hover{
 	filter: alpha(opacity=70);
 	-moz-opacity:0.70;
@@ -1501,4 +1504,44 @@ button.cancel:hover {
 	font-size: 16px;
 	color: #fff;
 	text-decoration: none;
+}
+/*Classroom*/
+#classroom-action {
+    max-width: 330px;
+}
+.classroom-add-student {
+    opacity: 0;
+    position: absolute;   
+}
+
+.classroom-add-student, .classroom-add-student-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.classroom-add-student-label, {
+    position: relative;
+}
+
+.classroom-add-student + .classroom-add-student-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.classroom-add-student:checked + .classroom-add-student-label:before {
+    background: #0F5573;
+}
+
+.classroom-add-student:focus + .classroom-add-student-label {
+  outline: 1px solid #ddd; /* focus style */
 }
