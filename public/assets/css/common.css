@@ -1545,3 +1545,6 @@ button.cancel:hover {
 .classroom-add-student:focus + .classroom-add-student-label {
   outline: 1px solid #ddd; /* focus style */
 }
+#classroom-action a {
+    color: white;
+}

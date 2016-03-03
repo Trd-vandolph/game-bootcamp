@@ -49,7 +49,7 @@ class Controller_Schools_Classroom extends Controller_Schools
             ]
         ]);
         
-        $data["classroom"] = Model_Classroom::find($id);
+        $data["classroom"] = $classroom;
 
         if($data["classroom"] == null){
             $data["classroom"] = Model_Classroom::forge();
@@ -61,34 +61,68 @@ class Controller_Schools_Classroom extends Controller_Schools
             
             $studs = implode(",", $students);
             
-            $check_class = Model_Classroom::find("first", [
-                "where" => [
-                    ["classname", $classname]
-                ]
-            ]);
-            
-            if(count($check_class) > 0) {
-                $data['error'] = 'This Classroom Name already exist. It must be unique.';
-            }
-            
-            if(!isset($data["error"])){
+            if(Input::get("id", 0) != 0) {
+                
+                $find_stud = Model_User::find("all", [
+                   "where" => [
+                       ["classroom_id", Input::get("id", 0)]
+                   ] 
+                ]);
+                
                 $classroom = $data['classroom'];
-				$classroom->classname = $classname;
+                $classroom->classname = $classname;
                 $classroom->students_id = $studs;
-                $classroom->school_id = $this->user->id;
                 $classroom->updated_at = time();
-				$classroom->save();
+                $classroom->save();
                 
-                $id = $classroom->id;
-                
-                foreach($students as $stud) {
-                    $edit = Model_User::find($stud);
-                    $edit->classroom_id = $id;
-                    $edit->save();
+                foreach($find_stud as $found) {
+                    if(!in_array($found->id, $students)) {
+                        $found->classroom_id = 0;
+                        $found->save();
+                    }            
                 }
+            
+                foreach($students as $each_stud) {
+                    $edit_stud = Model_User::find($each_stud);
+                    $edit_stud->classroom_id = $classroom->id;
+                    $edit_stud->save();
+                }  
+                
+                Response::redirect("/schools/classroom/");
+                
+            } else {
+                
+               $check_class = Model_Classroom::find("first", [
+                    "where" => [
+                        ["classname", $classname],
+                        ["deleted_at", 0]
+                    ]
+                ]);
 
-				Response::redirect("/schools/classroom");
-			}
+                if($check_class != NULL) {
+                    $data['error'] = 'This Classroom Name already exist. It must be unique.';
+                } 
+                
+                if(!isset($data["error"])){
+                    $classroom = $data['classroom'];
+                    $classroom->classname = $classname;
+                    $classroom->students_id = $studs;
+                    $classroom->school_id = $this->user->id;
+                    $classroom->updated_at = time();
+                    $classroom->save();
+
+                    $id = $classroom->id;
+
+                    foreach($students as $stud) {
+                        $edit = Model_User::find($stud);
+                        $edit->classroom_id = $id;
+                        $edit->save();
+                    }
+                    Response::redirect("/schools/classroom/");
+                }else {
+                     Response::redirect("/schools/classroom/add/?e=1&id=".$id);
+                }
+            }
         }
         
         if($classroom == null){

@@ -1,3 +1,6 @@
+<?
+    $e= Input::get("e", "");
+?>
 <div id="contents-wrap">
 	<div id="main">
 		<h3><? if(Input::get("id", 0) == 0){
@@ -12,6 +15,7 @@
                     <li>
                         <h4>Classroom Name</h4>
                         <input placeholder="Classroom Name" name="classname" type="text" required pattern=".{2,50}" title="must be less than 50 chars" value="<? echo Security::htmlentities(Input::post("classname", $classroom->classname)); ?>">
+                        <span class="message" style="color: red"><? if($e>0){echo "This Classroom Name already exist. It must be unique.";} ?></span>
                     </li>
                     <li>
                         <h4>Students</h4>
@@ -28,6 +32,11 @@
                                 </tr>
                             </thead>
                             <tbody>
+                               <? 
+                                if(Input::get("id", 0) != 0):
+                                    getStudent(Input::get("id", 0));
+                                endif; 
+                                ?>
                                 <? foreach($students as $stud): ?>
                                     <tr>
                                         <td><? echo $stud->id; ?></td>
@@ -39,12 +48,13 @@
                                             <label for="class<?=$stud->id; ?>" class="classroom-add-student-label">Add</label>
                                         </td>
                                     </tr>
-                                <? endforeach; ?>
+                                <? endforeach; ?>                                
                             </tbody>
                         </table>
                     </li>
                     <li>
                         <button class="button">Save</button>
+                        <button class="button">Delete Classroom</button>
                     </li>
                 </ul>
                 <? echo Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_token()); ?>
@@ -55,9 +65,33 @@
 </div>
 <!-- PHP Functions here -->
 <?
-    function getAge($bd) {
-        $age = floor((time() - strtotime($bd)) / 31556926);
+    function getStudent($id) {
+        $st = Model_Classroom::find($id)->students_id;
+        $each = explode(",", $st);
         
+
+        foreach($each as $ind) {
+            $student = Model_User::find("first", [
+                "where" => [
+                    ["id", $ind],
+                   
+                ]       
+            ]);
+            
+            echo "<tr>";
+            echo "<td>".$student->id."</td>";
+            echo "<td><a href=detail/?id='".$student->id."'>".$student->firstname." ".$student->lastname."</a></td>";
+            echo "<td>".date("M. d, Y", $student->created_at)."</td>";
+            echo "<td>".floor((time() - strtotime($student->birthday)) / 31556926)."</td>";
+            echo "<td style='text-align: center;'>";
+            echo "<input id='class".$student->id."' class='classroom-add-student' type='checkbox' value=".$student->id." name='add[]' checked />";
+            echo "<label for='class".$student->id."' class='classroom-add-student-label'>Add</label>";
+            echo "</td>";
+            echo "</tr>";
+        }
+    }
+    function getAge($bd) {
+        $age = floor((time() - strtotime($bd)) / 31556926);        
         echo $age;
     }
 ?>

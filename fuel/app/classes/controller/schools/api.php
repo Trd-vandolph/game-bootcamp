@@ -27,7 +27,7 @@ class Controller_Schools_Api extends Controller_Rest
 		}
 
 	}
-
+    
 	public function post_getreservation(){
 
 		$code = 0;
