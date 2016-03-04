@@ -5,13 +5,14 @@ class Controller_Schools_Lesson extends Controller_Schools
 
 	public function action_add()
 	{
+		//Cancellation ************************************************************************************************
 		if(Input::get("del_id", 0) != 0){
 			$del_reserve = Model_Lessontime::find(Input::get("del_id", 0));
 			if($del_reserve != null){
 				if($del_reserve->student_id == $this->user->id){
 
 					// send mail
-					$body = View::forge("email/schools/cancel_lesson");
+					$body = View::forge("email/students/cancel_lesson");
 
 					date_default_timezone_set(Config::get("timezone.timezone")[$del_reserve->student->timezone]);
 
@@ -50,19 +51,31 @@ class Controller_Schools_Lesson extends Controller_Schools
 					$query = DB::update('reservation')->value('status', 0)->where('student_id', $this->user->id)->where('edoo_tutor', $del_reserve->teacher->email)->where('freetime_at', $del_reserve->freetime_at)->execute('shared');
 				}
 			}
+
 		}
+		//End Cancellation ********************************************************************************************
+
+		//Booking *****************************************************************************************************
+
+		$class_id = Input::get("class", 0);
+
+		$stID = Model_Classroom::find($class_id);
+		$studID = $stID->students_id;
+
+		$studIDS = explode(",", $studID);
+
+		$countStud = count($studIDS);
 
 		$reserved = Model_Lessontime::find("first", [
 			"where" => [
-				["student_id", $this->user->id],
+				["student_id", $studIDS[0]],
 				["status", 1],
 				["deleted_at", 0],
 			]
 		]);
-
 		$pasts = Model_Lessontime::find("all", [
 			"where" => [
-				["student_id", $this->user->id],
+				["student_id", $studIDS[0]],
 				["status", 2],
 				["language", Input::get("course", 0)],
 				["deleted_at", 0]
@@ -70,148 +83,30 @@ class Controller_Schools_Lesson extends Controller_Schools
 		]);
 		$lastClass = Model_Lessontime::find("last", [
 			"where" => [
-				["student_id", $this->user->id],
+				["student_id", $studIDS[0]],
 				["status", 2],
 				["language", Input::get("course", 0)],
 				["deleted_at", 0]
 			]
 		]);
-		if($pasts == null){
-			$pasts = [];
-		}
-
-		$data["studentplace"] = Model_User::find("all");
 
 		$id = Input::get("id", 0);
-		if($id != 0 and $reserved == null and($this->user->charge_html == 1 or Input::get("course", 0) == -1)){
+
+		if($id !=0 and $reserved == null){
 			if(Model_Lessontime::courseNumber_1(Input::get("course", 0)) > count($pasts)){
 				$reserve = Model_Lessontime::find($id);
-				if($reserve != null){
-
+				if($reserve != null) {
 					if($reserve->status == 0 and $reserve->student_id == 0){
-						$reserve->student_id = $this->user->id;
-						$reserve->language = Input::get("course", 0);
-						$reserve->status = 1;
-						$reserve->number = count($pasts) + 1;
-						$reserve->history = $this->user->place;
-						$reserve->save();
-
-						Model_Lessontime::sendReservedEMail($reserve->id);
-
-						$reserved = $reserve;
-
-						//send data to shared db
-						$check_exist = DB::select()->from('reservation')->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared'); //select from shared database
-						if (count($check_exist) == 1) {
-							$query = DB::update('reservation')->set(array(
-								'student_id' => $this->user->id,
-								'status' => 1,
-								'freetime_at' => $reserve->freetime_at,
-							))->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
-						} else {
-							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
-						}
-					}
-				}
-			}
-		} elseif ($this->user->charge_html == 11 or Input::get("course", 0) == 0){
-			if(Model_Lessontime::courseNumber_2(Input::get("course", 0)) > count($pasts)){
-				$reserve = Model_Lessontime::find($id);
-				if($reserve != null){
-
-					if($reserve->status == 0 and $reserve->student_id == 0){
-						$reserve->student_id = $this->user->id;
-						$reserve->language = Input::get("course", 0);
-						$reserve->status = 1;
-						$reserve->number = count($pasts) + 1;
-						$reserve->history = $this->user->place;
-						$reserve->save();
-
-						Model_Lessontime::sendReservedEMail($reserve->id);
-
-						$reserved = $reserve;
-
-						//send data to shared db
-						$check_exist = DB::select()->from('reservation')->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared'); //select from shared database
-						if (count($check_exist) == 1) {
-							$query = DB::update('reservation')->set(array(
-								'student_id' => $this->user->id,
-								'status' => 1,
-								'freetime_at' => $reserve->freetime_at,
-							))->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
-						} else {
-							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
-						}
-					}
-				}
-			}
-		} elseif ($this->user->charge_html == 111 or Input::get("course", 0) == 0){
-			if(Model_Lessontime::courseNumber_3(Input::get("course", 0)) > count($pasts)){
-				$reserve = Model_Lessontime::find($id);
-				if($reserve != null){
-
-					if($reserve->status == 0 and $reserve->student_id == 0){
-						$reserve->student_id = $this->user->id;
-						$reserve->language = Input::get("course", 0);
-						$reserve->status = 1;
-						$reserve->number = count($pasts) + 1;
-						$reserve->history = $this->user->place;
-						$reserve->save();
-
-						Model_Lessontime::sendReservedEMail($reserve->id);
-
-						$reserved = $reserve;
-
-						//send data to shared db
-						$check_exist = DB::select()->from('reservation')->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared'); //select from shared database
-						if (count($check_exist) == 1) {
-							$query = DB::update('reservation')->set(array(
-								'student_id' => $this->user->id,
-								'status' => 1,
-								'freetime_at' => $reserve->freetime_at,
-							))->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
-						} else {
-							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
-						}
-					}
-				}
-			}
-		} elseif ($this->user->charge_html == 1111 or Input::get("course", 0) == 1){
-			if(Model_Lessontime::courseNumber_4(Input::get("course", 0)) > count($pasts)){
-				$reserve = Model_Lessontime::find($id);
-				if($reserve != null){
-
-					if($reserve->status == 0 and $reserve->student_id == 0){
-						$reserve->student_id = $this->user->id;
-						$reserve->language = Input::get("course", 0);
-						$reserve->status = 1;
-						$reserve->number = count($pasts) + 1;
-						$reserve->history = $this->user->place;
-						$reserve->save();
-
-						Model_Lessontime::sendReservedEMail($reserve->id);
-
-						$reserved = $reserve;
-
-						//send data to shared db
-						$check_exist = DB::select()->from('reservation')->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared'); //select from shared database
-						if (count($check_exist) == 1) {
-							$query = DB::update('reservation')->set(array(
-								'student_id' => $this->user->id,
-								'status' => 1,
-								'freetime_at' => $reserve->freetime_at,
-							))->where('student_email', $this->user->email)->where('edoo_tutor', $reserve->teacher->email)->execute('shared');
-						} else {
-							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
-							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
-						}
+						//Stop here 82309509340968039409573017502-3482-983409127350730485701347601374-5173-475-31475374
+						//What missing?
+						//Plan how to save all students in lessontimes
 					}
 				}
 			}
 		}
+
+		//End Booking *************************************************************************************************
+
 		$course_where = null;
 		switch(Input::get("course", 0)){
 			case -1:
@@ -220,6 +115,14 @@ class Controller_Schools_Lesson extends Controller_Schools
 			default:
 				$course_where = ["enchantJS", 1];
 		}
+
+		//Data Needed *************************************************************************************************
+
+		$data["studentplace"] = Model_User::find("all");
+		$data["user"] = $this->user;
+		$data["reserved"] = $reserved;
+		$data["pasts"] = $pasts;
+		$data["lastClass"] = $lastClass;
 
 		$data["lessons"] = Model_Lessontime::find("all", [
 			"where" => [
@@ -243,91 +146,37 @@ class Controller_Schools_Lesson extends Controller_Schools
 		]);
 
 		$data['status'] = Model_Lessontime::find("all", [
-				"where" => [
-						["student_id", $this->user->id],
-						["deleted_at", 0],
-						["status", 1],
-				]
+			"where" => [
+				["student_id", $this->user->id],
+				["deleted_at", 0],
+				["status", 1],
+			]
 		]);
 
 		$data["donetrial"] = Model_Lessontime::find("all", [
-				"where" => [
-						["student_id", $this->user->id],
-						["status", 2],
-						["language", Input::get("course", -1)],
-						["deleted_at", 0]
-				]
+			"where" => [
+				["student_id", $this->user->id],
+				["status", 2],
+				["language", Input::get("course", -1)],
+				["deleted_at", 0]
+			]
 		]);
 
-		$eventdetails = Model_Events::find("all", [
-				"where" => [
-						["deleted_at", 0],
-				]
+		$data["eventdetails"] = Model_Events::find("all", [
+			"where" => [
+				["deleted_at", 0],
+			]
 		]);
 
-		if(Input::post("place", null) !== null and Security::check_token()){
-
-			$this->user->place = Input::post("place", 1);
-
-			$this->user->save();
-		}
-
-		$data['eventdetails'] = $eventdetails;
-		$data["pasts"] = $pasts;
-		$data["lastClass"] = $lastClass;
-		$data["reserved"] = $reserved;
-		$data["user"] = $this->user;
-		$data["course"] = Input::get("course", 0);
+		//End Data Needed *********************************************************************************************
 
 		$view = View::forge("schools/lesson/add", $data);
 		$this->template->content = $view;
 	}
 
-	public function action_histories(){
-
-		$data['pasts'] = Model_Lessontime::find("all", [
-				"where" => [
-						["student_id", $this->user->id],
-						["status", 2],
-						["language", Input::get("course", 0)],
-						["deleted_at", 0]
-				]
-		]);
-
-		$data["donetrial"] = Model_Lessontime::find("all", [
-				"where" => [
-						["student_id", $this->user->id],
-						["status", 2],
-						["language", Input::get("course", -1)],
-						["deleted_at", 0]
-				]
-		]);
-
-		$data["reservations"] = Model_Lessontime::find("all", [
-			"where" => [
-				["deleted_at", 0],
-				["student_id", $this->user->id],
-				["status", "<>", 0],
-				["freetime_at", "<", time()],
-			],
-			"order_by" => [
-				["updated_at", "desc"],
-			]
-		]);
-
-		$config=array(
-			'pagination_url'=>"",
-			'uri_segment'=>"p",
-			'num_links'=>9,
-			'per_page'=>20,
-			'total_items'=>count($data["reservations"]),
-		);
-
-		$data["pager"] = Pagination::forge('mypagination', $config);
+	public function action_histories()
+	{
 
 
-		$data["user"] = $this->user;
-		$view = View::forge("schools/lesson/histories", $data);
-		$this->template->content = $view;
 	}
 }

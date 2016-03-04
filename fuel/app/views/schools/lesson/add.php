@@ -1,3 +1,10 @@
+<?php
+	$class_id = Input::get('class', 0);
+
+	$classInfo = Model_Classroom::find($class_id);
+
+	$course = Input::get("course", '');
+?>
 <div id="loading">
 	<p><?php echo Html::anchor('/schools/',Asset::img('logo/icon_b.png', array('width'=> '200','alt'=> 'Game-bootcamp'))); ?></p>
 	<img src="/assets/img/loading.gif">
@@ -68,16 +75,18 @@
 								<? for($j = 8; $j <= 24; $j++): ?>
 									<div  class="remodal" data-remodal-id="<?= "{$i}_{$j}"; ?>">
 										<div class="content select-teacher">
+											<!-- Area for deleted codes -->
+
 											<ul>
 												<? foreach($lessons as $lesson): ?>
 													<? if(($lesson->teacher->enchantJS == 1 and $course == "0") or ($lesson->teacher->trial == 1 and $course == "-1")): ?>
-														<?
-														$unixtime = strtotime(Date("Y-m-d {$j}:{$minutes}:00", strtotime("+{$i} days")));
+														<? $unixtime = strtotime(Date("Y-m-d {$j}:{$minutes}:00", strtotime("+{$i} days")));
 														$currentDay = strtotime(Date("Y-m-d {$j}:{$minutes}:00"));
 														$scheduleDay = strtotime(Date("Y-m-d {$j}:{$minutes}:00", $lesson->freetime_at));
 														(count($status) == 1 || count($status) > 1) ? $ex_reserve = 1 : $ex_reserve = 0;
-														if($lesson->freetime_at == $unixtime):
-															?>
+
+														if($lesson->freetime_at == $unixtime): ?>
+
 															<li class="clearfix">
 																<p class="date"><?= Date("M d Y(D)", $lesson->freetime_at); ?> <?= Date("H", $lesson->freetime_at); ?>:00 - <?= Date("H", $lesson->freetime_at); ?>:45</p>
 																<? if($scheduleDay == $currentDay): ?>
@@ -90,47 +99,20 @@
 																<? endif; ?>
 																<div class="photo"><img src="/assets/img/pictures/m_<?= $lesson->teacher->getImage(); ?>" width="200" alt=""></div>
 																<div class="profile">
-																	<h3><?= $lesson->teacher->firstname;?> <?= $lesson->teacher->middlename;?> <?= $lesson->teacher->lastname;?></h3>
-																	<p><?= $lesson->teacher->pr;?></p>
-																	<? if($reserved == null and ($user->charge_html == 1 or $course == "-1")): ?>
-																		<? if(Model_Lessontime::courseNumber_1($course) > count($pasts) && $currentDay != $scheduleDay && $ex_reserve != 1):?>
-																			<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																			<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																				<div class="content confirm">
-																					<p>Do you want to book this lesson?</p>
-																					<div class="button-area">
-																						<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																						<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																					</div>
+																	<h3>Tutor: <span><?= $lesson->teacher->firstname;?> <?= $lesson->teacher->middlename;?> <?= $lesson->teacher->lastname;?></span></h3>
+																	<h3>Class: <span><?= $classInfo->classname; ?></span></h3>
+
+																	<? if($currentDay != $scheduleDay && $ex_reserve != 1): ?>
+																		<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
+																		<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
+																			<div class="content confirm">
+																				<p>Do you want to book this lesson?</p>
+																				<div class="button-area">
+																					<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
+																					<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>&class=<?=$class_id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
 																				</div>
 																			</div>
-																		<? endif; ?>
-																	<?php elseif($user->charge_html == 11 && $course == "0"): ?>
-																		<? if(Model_Lessontime::courseNumber_2($course) > count($pasts) && $currentDay != $scheduleDay && $ex_reserve != 1): ?>
-																			<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																			<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																				<div class="content confirm">
-																					<p>Do you want to book this lesson?</p>
-																					<div class="button-area">
-																						<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																						<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																					</div>
-																				</div>
-																			</div>
-																		<? endif; ?>
-																	<?php elseif($user->charge_html == 111 && $course == "0"): ?>
-																		<? if(Model_Lessontime::courseNumber_3($course) > count($pasts) && $currentDay != $scheduleDay && $ex_reserve != 1): ?>
-																			<p class="button-area"><a class="button right" href="#confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">Booking</a></p>
-																			<div  class="remodal" data-remodal-id="confirm<?= "{$i}_{$j}"; ?>_<?= $lesson->id; ?>">
-																				<div class="content confirm">
-																					<p>Do you want to book this lesson?</p>
-																					<div class="button-area">
-																						<a href="#<?= "{$i}_{$j}"; ?>" class="button gray">Cancel <i class="fa fa-times"></i></a>
-																						<a href="add?course=<?= $course; ?>&id=<?= $lesson->id; ?>" class="button center">Done <i class="fa fa-check"></i></a>
-																					</div>
-																				</div>
-																			</div>
-																		<? endif; ?>
+																		</div>
 																	<? endif; ?>
 																</div>
 															</li>
@@ -139,6 +121,8 @@
 													<? endif; ?>
 												<? endforeach; ?>
 											</ul>
+
+											<!-- Area for deleted codes -->
 										</div>
 									</div>
 									<?

@@ -37,7 +37,7 @@
 	<section id="user-data">
 		<figure><img src="/assets/img/pictures/s_<?= $user->getImage(); ?>" alt="<?= $name; ?>"></figure>
 		<div class="profile">
-			<p class="name"><? echo $name; ?></p>
+			<p class="name"><? echo $user->school_name; ?></p>
 			<p class="enrolled">
 				<? if($user->charge_html == 1): ?>
 					<?

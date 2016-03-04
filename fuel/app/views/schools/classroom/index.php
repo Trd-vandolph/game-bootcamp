@@ -19,9 +19,9 @@
                             <td><? echo $class->classname; ?></td>
                             <td><? echo date("F j, Y", $class->created_at)."<br>".date("h:i A", $class->created_at); ?></td>
                             <td><? echo getStudent($class->students_id); ?></td>
-                            <td><? echo $class->number; ?>/12</td>
+                            <td><? echo $class->number; ?>/12<br>Status: </td>
                             <td id="classroom-action">
-                                <button class="button classroom"><i class="fa fa-calendar"></i> Book</button>
+                                <button class="button classroom"><a href="/schools/lesson/add/?class=<?=$class->id; ?>"><i class="fa fa-calendar"></i> Book</a></button>
                                 <button class="button classroom blue"><a href="/schools/classroom/add/?id=<?=$class->id; ?>"><i class="fa fa-cog"></i> Edit</a></button>
                                 <button class="button classroom gray right"><a id="del_class" href="/schools/classroom/?del=<?=$class->id; ?>"><i class="fa fa-times"></i> Delete</button>
                            </td>
