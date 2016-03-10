@@ -374,3 +374,28 @@ hr {
 	border-radius: 3px;
 	max-width: 100%;
 }
+/* Classroom Index */
+#classroom-table .button {
+    display: block;
+    margin: 10px auto;
+    width: 115px;
+}
+.classroom-remodal-header {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+.classroom-remodal-content {
+    text-align: left;
+    padding: 10px;
+}
+.classroom-student-list {
+    background-color: rgba(208, 114, 114, 0.5);
+    padding: 4px;
+    border-radius: 5px;
+    margin-left: 5px;
+    color: #093679;
+}
+.classroom-remodal-action {
+    text-align: right;
+}

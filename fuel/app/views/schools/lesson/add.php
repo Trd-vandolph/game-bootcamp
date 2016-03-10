@@ -76,7 +76,6 @@
 									<div  class="remodal" data-remodal-id="<?= "{$i}_{$j}"; ?>">
 										<div class="content select-teacher">
 											<!-- Area for deleted codes -->
-
 											<ul>
 												<? foreach($lessons as $lesson): ?>
 													<? if(($lesson->teacher->enchantJS == 1 and $course == "0") or ($lesson->teacher->trial == 1 and $course == "-1")): ?>
@@ -84,9 +83,7 @@
 														$currentDay = strtotime(Date("Y-m-d {$j}:{$minutes}:00"));
 														$scheduleDay = strtotime(Date("Y-m-d {$j}:{$minutes}:00", $lesson->freetime_at));
 														(count($status) == 1 || count($status) > 1) ? $ex_reserve = 1 : $ex_reserve = 0;
-
 														if($lesson->freetime_at == $unixtime): ?>
-
 															<li class="clearfix">
 																<p class="date"><?= Date("M d Y(D)", $lesson->freetime_at); ?> <?= Date("H", $lesson->freetime_at); ?>:00 - <?= Date("H", $lesson->freetime_at); ?>:45</p>
 																<? if($scheduleDay == $currentDay): ?>

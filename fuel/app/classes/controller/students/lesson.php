@@ -35,7 +35,7 @@ class Controller_Students_Lesson extends Controller_Students
 					$sendmail = Email::forge("JIS");
 					$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 					$sendmail->to($del_reserve->teacher->email);
-					$sendmail->subject("Cancellation of Lesson / OliveCode");
+					$sendmail->subject("Cancellation of Lesson / Game-bootcamp");
 					$sendmail->html_body(htmlspecialchars_decode($body));
 
 					$sendmail->send();

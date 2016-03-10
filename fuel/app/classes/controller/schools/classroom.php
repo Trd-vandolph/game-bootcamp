@@ -14,6 +14,22 @@ class Controller_Schools_Classroom extends Controller_Schools
                 ["created_at", "desc"],
             ]
         ]);
+
+        if(Input::get("del_reserve", 0) != 0){
+            $del_reserve = Model_Lessontime::find(Input::get("del_reserve", 0));
+            if($del_reserve != null){
+                $del_reserve->student_id = 0;
+                $del_reserve->status = 0;
+                $del_reserve->save();
+
+                //cancel booking for shared db (set the status to 0) and send data to shared db
+                $query = DB::update('reservation')->value('status', 0)->where('student_id', $this->user->id)->where('edoo_tutor', $del_reserve->teacher->email)->where('freetime_at', $del_reserve->freetime_at)->execute('shared');
+
+                Response::redirect("/schools/classroom/");
+            }else {
+                Response::redirect("/schools/classroom/?error=huhu");
+            }
+        }
         
         $config=array(
 			'pagination_url'=>"?",

@@ -14,6 +14,11 @@
 							<? echo $user->email ?>
 						</div>
 					</li>
+					<li><h4>Phone Number/s</h4>
+						<div>
+							<? echo $user->contact_no; ?>
+						</div>
+					</li>
 					<li><h4>Image</h4>
 						<div>
 							<? if($user->img_path != "") echo '<img src="/assets/img/pictures/s_'.$user->img_path.'">';?>

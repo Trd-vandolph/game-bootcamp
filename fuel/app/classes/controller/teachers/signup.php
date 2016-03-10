@@ -110,7 +110,7 @@ class Controller_Teachers_Signup extends Controller_Base
 					$sendmail = Email::forge("JIS");
 					$sendmail->from(Config::get("statics.info_email"),Config::get("statics.info_name"));
 					$sendmail->to($user->email);
-					$sendmail->subject("Welcome Aboard! / Game-bootcamp");
+					$sendmail->subject("Welcome Aboard! / OliveCode");
 					$sendmail->html_body(htmlspecialchars_decode($body));
 
 					$sendmail->send();

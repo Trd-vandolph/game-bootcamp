@@ -17,6 +17,7 @@ class Model_Lessontime extends \Orm\Model
 		'created_at',
 		'updated_at',
 		'history',
+		'for_group',
 	);
 
 	protected static $_observers = array(

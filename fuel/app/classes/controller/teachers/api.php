@@ -72,10 +72,9 @@ class Controller_Teachers_Api extends Controller_Rest
 				"where" => [
 					["teacher_id", $this->user->id],
 					["freetime_at", $unixtime],
-					["deleted_at", 0]
+					["deleted_at", 0],
 				]
 			]);
-
 			if($reservation != null){
 				if($reservation->status == 0){
 					$reservation->deleted_at = time();
@@ -121,7 +120,7 @@ class Controller_Teachers_Api extends Controller_Rest
 					["teacher_id", $this->user->id],
 					["status", 1],
 					["freetime_at", "<=", time() + 600],
-					["freetime_at", ">=", time() - 3000]
+					["freetime_at", ">=", time() - 3000],
 				]
 			]);
 
