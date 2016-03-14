@@ -72,7 +72,7 @@ class Controller_Teachers_Auth extends Controller {
 					$user_hash = \Session::get('auth-strategy.user', array());
 
 					$name = $user_hash['name'];
-					$email =time().sha1($name).'@olivecode.com';
+					$email =time().sha1($name).'@game-bootcamp.com';
 					$password = sha1("aaaa2ht".time());
 
 					$id = Auth::create_user($email, $password, $email, $group = 10);

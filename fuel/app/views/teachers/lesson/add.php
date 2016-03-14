@@ -119,21 +119,21 @@
 					complete: function(){
 					},
 					success: function(res) {
-						if(res.code == 200){
+						if (res.code == 200) {
 							button.addClass("selected");
 							cal.addEvents([
 								{date: target_date, status: 0, hour: button.html().split(":")[0]}
 							]);
-						}else if(res.code == 201){
+						} else if (res.code == 201) {
 							button.removeClass("selected");
-							cal.removeEvents(function(event){
+							cal.removeEvents(function (event) {
 								return (event.date == target_date && event.hour == button.html().split(":")[0]);
 							});
-						}else if(res.code == 202){
+						} else if (res.code == 202) {
 							button.addClass("reserved");
 						}
 					}
-				})
+				});
 			}
 			lock = false;
 		});
