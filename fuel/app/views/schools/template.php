@@ -38,45 +38,6 @@
 		<figure><img src="/assets/img/pictures/s_<?= $user->getImage(); ?>" alt="<?= $name; ?>"></figure>
 		<div class="profile">
 			<p class="name"><? echo $user->school_name; ?></p>
-			<p class="enrolled">
-				<? if($user->charge_html == 1): ?>
-					<?
-					$html = Model_Lessontime::count([
-						"where" => [
-							["language", 0],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-					?>
-				enchant.js Course (<?= $html; ?>/12)
-				<? elseif($user->charge_html == 11): ?>
-					<?
-					$html = Model_Lessontime::count([
-						"where" => [
-							["language", 0],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0],
-						],
-					]);
-					?>
-				enchant.js Course (<?= $html; ?>/12)
-				<? elseif($user->charge_html == 111): ?>
-					<?
-					$html = Model_Lessontime::count([
-						"where" => [
-							["language", 0],
-							["student_id", $this->user->id],
-							["status", 2],
-							["deleted_at", 0]
-						],
-					]);
-					?>
-				enchant.js Course (<?= $html; ?>/12)
-				<? endif ?>
-			</p>
 		</div>
 		<div class="reserve">
 			<?

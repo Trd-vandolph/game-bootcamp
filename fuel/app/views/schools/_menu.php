@@ -10,6 +10,7 @@
 
 <!--            <li>--><?// echo Html::anchor('/schools/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?><!--</li>-->
 			<li><? echo Html::anchor('/schools/classroom', '<i class="fa fa-fw fa-users"></i> Classroom &<br><i class="fa fa-fw fa-calendar"></i> Lesson Schedule'); ?></li>
+			<li><? echo Html::anchor('/schools/students', '<i class="fa fa-fw fa-graduation-cap"></i> Students Management'); ?></li>
 			<li><? echo Html::anchor('/schools/lesson/histories', '<i class="fa fa-fw fa-history"></i> Learning History'); ?></li>
 			<li><? echo Html::anchor('/schools/textbooks', '<i class="fa fa-fw fa-book"></i> Textbook'); ?></li>
 			<?php /* <li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i> How to Take Lesson</a></li> */ ?>

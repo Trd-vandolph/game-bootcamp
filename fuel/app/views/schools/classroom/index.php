@@ -58,6 +58,11 @@
                             <button data-remodal-action="cancel" class="button gray" data-remodal-target="detail_<?=$class->id; ?>">No</button>
                             <a href="/schools/classroom/?del_reserve=<? cancelClass($class->id); ?>"><button data-remodal-action="confirm" class="button">Yes</button></a>
                         </div>
+                        <div class="remodal" data-remodal-id="cancel_<?=$class->id; ?>" class="detail-remodal">
+                            <div class="classroom-remodal-header"><h3>Are you sure you want to cancel this class?</h3></div>
+                            <button data-remodal-action="cancel" class="button gray" data-remodal-target="detail_<?=$class->id; ?>">No</button>
+                            <a href="/schools/classroom/?del_reserve=<? cancelClass($class->id); ?>"><button data-remodal-action="confirm" class="button">Yes</button></a>
+                        </div>
                     <? endforeach; ?>
                 <? endif; ?>
             </tbody>
@@ -149,7 +154,7 @@
                 ],
             ]);
             $data['student'] = $st;
-            echo "<a href='". $st->id ."'>". $st->firstname ."</a><br>";
+            echo "<a href='/schools/students/detail/". $st->id ."'>". $st->firstname ."</a><br>";
         }
     }
     function delStudent($del)

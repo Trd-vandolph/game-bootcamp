@@ -21,38 +21,51 @@
 		</section>
 		<h3>Lesson Schedule</h3>
 		<section class="schedule">
-			<? if($reservations == null): ?>
+			<? if($class_arr == null): ?>
 				<div class="content-wrap">
 					You don’t have reservation of classes.
 				</div>
 			<? else: ?>
 			<ul>
-				<? foreach($reservations as $reservation): ?>
-				<li class="course1">
-					<p class="date"><? echo date("d ", $reservation->freetime_at); echo Config::get("statics.months", [])[(int)date("m ", $reservation->freetime_at) - 1];?><span><? echo date("H:i", $reservation->freetime_at); ?></span></p>
-					<div class="detail">
-						Tutor：<? if($reservation->teacher != null) echo $reservation->teacher->firstname; ?><br />
-						<? /* if($reservation->teacher != null) echo Html::anchor("schools/teachers/detail/{$reservation->teacher_id}", $reservation->teacher->firstname); */ ?>
-						<? if($reservation->language != -1):  ?>
-							<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 12 Lessons
-						<? else: ?>
-							<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span>
-						<? endif; ?>
-					</div>
+				<? foreach($class_arr as $reserve): ?>
 					<?
-					$text = Model_Content::find("first", [
-						"where" => [
-							["number", $reservation->number],
-							["type_id", $reservation->language],
-							["text_type_id", 0],
-							["deleted_at", 0]
-						]
-					]);
-					if($text != null):
+						$reservations = Model_Lessontime::find("all", [
+							"where" => [
+								["id", $reserve],
+								["deleted_at", 0]
+							],
+							"order_by" => [
+								["freetime_at", "desc"]
+							]
+						]);
 					?>
-					<p class="textbook"><?= Html::anchor("contents/{$text->path}", '<i class="fa fa-fw fa-book"></i> ', ["target" => "_blank"]); ?></p>
-					<? endif;?>
-				</li>
+					<? foreach($reservations as $reservation): ?>
+						<li class="course1">
+							<p class="date"><? echo date("d ", $reservation->freetime_at); echo Config::get("statics.months", [])[(int)date("m ", $reservation->freetime_at) - 1];?><span><? echo date("H:i", $reservation->freetime_at); ?></span></p>
+							<div class="detail">
+								Tutor：<? if($reservation->teacher != null) echo $reservation->teacher->firstname; ?><br />
+								<? /* if($reservation->teacher != null) echo Html::anchor("schools/teachers/detail/{$reservation->teacher_id}", $reservation->teacher->firstname); */ ?>
+								<? if($reservation->language != -1):  ?>
+									<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 12 Lessons
+								<? else: ?>
+									<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span>
+								<? endif; ?>
+							</div>
+							<?
+							$text = Model_Content::find("first", [
+								"where" => [
+									["number", $reservation->number],
+									["type_id", $reservation->language],
+									["text_type_id", 0],
+									["deleted_at", 0]
+								]
+							]);
+							if($text != null):
+							?>
+							<p class="textbook"><?= Html::anchor("contents/{$text->path}", '<i class="fa fa-fw fa-book"></i> ', ["target" => "_blank"]); ?></p>
+							<? endif;?>
+						</li>
+					<? endforeach; ?>
 				<? endforeach; ?>
 			</ul>
 			<? endif; ?>

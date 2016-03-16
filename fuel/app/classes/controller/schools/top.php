@@ -72,6 +72,35 @@ class Controller_Schools_Top extends Controller_Schools
 				]
 		]);
 
+		$data["class"] = Model_Classroom::find("all", [
+			"where" => [
+				["school_id", $this->user->id],
+				["deleted_at", 0]
+			]
+		]);
+
+		$class = $data["class"];
+		$class_arr = array();
+
+		foreach($class as $cl) {
+			$data["class_reservation"] = Model_Lessontime::find("all", [
+				"where" => [
+					["student_id", $cl->id],
+					["deleted_at", 0],
+					["status", 1],
+					["freetime_at", ">=", time()]
+				]
+			]);
+
+			$class_reservation = $data["class_reservation"];
+
+			foreach($class_reservation as $class_res) {
+				array_push($class_arr, $class_res->id);
+			}
+		}
+
+		$data["class_arr"] = $class_arr;
+
 		$data["user"] = $this->user;
 
 		$view = View::forge("schools/top", $data);
