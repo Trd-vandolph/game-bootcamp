@@ -210,28 +210,41 @@ class Controller_Schools_Lesson extends Controller_Schools
 			]
 		]);
 
-		$data["reservations"] = Model_Lessontime::find("all", [
+		$data["class"] = Model_Classroom::find("all", [
 			"where" => [
 				["deleted_at", 0],
-				["student_id", $this->user->id],
-				["status", "<>", 0],
-				["freetime_at", "<", time()],
-			],
-			"order_by" => [
-				["updated_at", "desc"],
+				["school_id", $this->user->id]
 			]
 		]);
+
+		$count = array();
+
+		foreach($data["class"] as $class) {
+			$reservations = Model_Lessontime::find("all", [
+				"where" => [
+					["deleted_at", 0],
+					["student_id", $class->id],
+					["status", "<>", 0],
+					["freetime_at", "<", time()],
+				],
+				"order_by" => [
+					["updated_at", "desc"],
+				]
+			]);
+			foreach($reservations as $reserve) {
+				array_push($count, $reserve->student_id);
+			}
+		}
 
 		$config=array(
 			'pagination_url'=>"",
 			'uri_segment'=>"p",
 			'num_links'=>9,
 			'per_page'=>20,
-			'total_items'=>count($data["reservations"]),
+			'total_items'=>count($count),
 		);
 
 		$data["pager"] = Pagination::forge('mypagination', $config);
-
 
 		$data["user"] = $this->user;
 		$view = View::forge("schools/lesson/histories", $data);

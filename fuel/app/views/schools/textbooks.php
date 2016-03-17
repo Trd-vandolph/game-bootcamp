@@ -40,14 +40,6 @@
 			</thead>
 			<tbody>
 			<? foreach($enchantJS as $content): ?>
-				<?
-				if($count_enchant < $content->number and $content->text_type_id == 1){
-					break;
-				}
-				if($count_enchant + 1 < $content->number and $content->text_type_id == 0){
-					break;
-				}
-				?>
 				<tr id="content_<? echo $content->id; ?>">
 					<td class="number"><?= $content->number; ?></td>
 					<td><i class="fa fa-file-pdf-o"></i> <? echo Html::anchor("contents/{$content->path}", "$content->path", ["target" => "_blank"]); ?></td>

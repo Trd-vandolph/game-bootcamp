@@ -10,7 +10,6 @@
 
 <!--            <li>--><?// echo Html::anchor('/schools/lesson/add', '<i class="fa fa-fw fa-calendar"></i> <span>Lesson Schedule</span>'); ?><!--</li>-->
 			<li><? echo Html::anchor('/schools/classroom', '<i class="fa fa-fw fa-users"></i> Classroom &<br><i class="fa fa-fw fa-calendar"></i> Lesson Schedule'); ?></li>
-			<li><? echo Html::anchor('/schools/students', '<i class="fa fa-fw fa-graduation-cap"></i> Students Management'); ?></li>
 			<li><? echo Html::anchor('/schools/lesson/histories', '<i class="fa fa-fw fa-history"></i> Learning History'); ?></li>
 			<li><? echo Html::anchor('/schools/textbooks', '<i class="fa fa-fw fa-book"></i> Textbook'); ?></li>
 			<?php /* <li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i> How to Take Lesson</a></li> */ ?>
@@ -19,7 +18,7 @@
 	<h3> MENU</h3>
 	<nav>
 		<ul>
-			<?php /* <li><a href="#"><i class="fa fa-fw fa-credit-card"></i> New Course</a></li> */ ?>
+			<li><? echo Html::anchor('/schools/students', '<i class="fa fa-fw fa-graduation-cap"></i> Students Management'); ?></li>
 			<li><? echo Html::anchor('/schools/teachers', '<i class="fa fa-fw fa-search"></i> Tutors'); ?></li>
 			<li><? echo Html::anchor('/schools/documents', '<i class="fa fa-fw fa-file"></i> Documents'); ?></li>
 			<li><? echo Html::anchor('/schools/news', '<i class="fa fa-fw fa-info-circle"></i> Information'); ?></li>

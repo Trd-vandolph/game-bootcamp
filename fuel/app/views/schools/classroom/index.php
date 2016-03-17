@@ -16,7 +16,7 @@
                 <? if($classroom != NULL): ?>
                     <? foreach($classroom as $class): ?>
                         <tr id="class_<?=$class->id; ?>">
-                            <td><? echo $class->classname; ?></td>
+                            <td><a href="/schools/classroom/add/?id=<?=$class->id; ?>"><? echo $class->classname; ?></td>
                             <td><? echo date("F j, Y", $class->created_at)."<br>".date("h:i A", $class->created_at); ?></td>
                             <td><? echo getStudent($class->students_id); ?></td>
                             <td><? getProgress($class->id); ?></td>
@@ -95,7 +95,7 @@
         ]);
 
         if($det != NULL) {
-            echo "<button class='button classroom'><a href='#' data-remodal-target='detail_".$class_id."'><i class='fa fa-info'></i> Details</a></button>";
+            echo "<button class='button classroom' id='detail_button'><a href='#' data-remodal-target='detail_".$class_id."'><i class='fa fa-info'></i> Details</a></button>";
         }
     }
 
@@ -113,6 +113,8 @@
             if($prog->language < 0) {
                 if($prog->status == 1) {
                     echo $prog->number."/1 Trial<br><span class='pending'>Pending</span>";
+                }else {
+                    echo $prog->number."/1 Trial<br><span class='pending'>Done</span>";
                 }
             }else {
                 if($prog->status == 1) {
