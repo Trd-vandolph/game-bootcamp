@@ -12,7 +12,7 @@ class Controller_GroupStudent_Top extends Controller_Groupstudent
 	public function action_index()
 	{
 		if($this->user->birthday == "0000-00-00"){
-			Response::redirect("students/setting/new");
+			Response::redirect("groupstudent/setting/new");
 		}
 
 		$data["reservations"] = Model_Lessontime::find("all", [

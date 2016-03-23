@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Setting extends Controller_Students
+class Controller_Groupstudent_Setting extends Controller_Groupstudent
 {
 
 	public function before(){

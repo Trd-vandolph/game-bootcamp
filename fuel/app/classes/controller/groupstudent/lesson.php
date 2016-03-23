@@ -287,7 +287,7 @@ class Controller_Groupstudent_Lesson extends Controller_Groupstudent
 
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -296,7 +296,7 @@ class Controller_Groupstudent_Lesson extends Controller_Groupstudent
 
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -306,7 +306,7 @@ class Controller_Groupstudent_Lesson extends Controller_Groupstudent
 		$data["reservations"] = Model_Lessontime::find("all", [
 			"where" => [
 				["deleted_at", 0],
-				["student_id", $this->user->id],
+				["student_id", $this->user->classroom_id],
 				["status", "<>", 0],
 				["freetime_at", "<", time()],
 			],

@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Profile extends Controller_Students
+class Controller_Groupstudent_Profile extends Controller_Groupstudent
 {
 
 	public function before(){

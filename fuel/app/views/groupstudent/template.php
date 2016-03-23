@@ -26,9 +26,9 @@
 		<div class="toggle"><i class="fa fa-bars"></i></div>
 		<ul>
 			<? if($auth_status): ?>
-				<li><? echo Html::anchor('/students/profile', '<i class="fa fa-user"></i> Profile'); ?></li>
-				<li><? echo Html::anchor('/students/setting', '<i class="fa fa-cog"></i> Setting'); ?></li>
-				<li><? echo Html::anchor('/students/?logout=1', '<i class="fa fa-sign-out"></i> Logout'); ?></li>
+				<li><? echo Html::anchor('/groupstudent/profile', '<i class="fa fa-user"></i> Profile'); ?></li>
+				<li><? echo Html::anchor('/groupstudent/setting', '<i class="fa fa-cog"></i> Setting'); ?></li>
+				<li><? echo Html::anchor('/groupstudent/?logout=1', '<i class="fa fa-sign-out"></i> Logout'); ?></li>
 			<? endif; ?>
 		</ul>
 	</nav>
