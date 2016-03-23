@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Teachers extends Controller_Students
+class Controller_Groupstudent_Teachers extends Controller_Groupstudent
 {
 
 	public function before(){
@@ -13,7 +13,7 @@ class Controller_Students_Teachers extends Controller_Students
 		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -22,14 +22,14 @@ class Controller_Students_Teachers extends Controller_Students
 		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
 				]
 		]);
 		$data["user"] = $this->user;
-		$view = View::forge("students/teachers/index", $data);
+		$view = View::forge("groupstudent/teachers/index", $data);
 		$this->template->content = $view;
 	}
 
@@ -43,7 +43,7 @@ class Controller_Students_Teachers extends Controller_Students
 		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -52,7 +52,7 @@ class Controller_Students_Teachers extends Controller_Students
 		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -61,7 +61,7 @@ class Controller_Students_Teachers extends Controller_Students
 
 		$data["user"] = $teacher;
 
-		$view = View::forge("students/teachers/detail", $data);
+		$view = View::forge("groupstudent/teachers/detail", $data);
 		$this->template->content = $view;
 	}
 }

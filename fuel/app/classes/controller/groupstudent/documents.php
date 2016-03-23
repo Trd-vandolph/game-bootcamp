@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Documents extends Controller_Students
+class Controller_Groupstudent_Documents extends Controller_Groupstudent
 {
 
 	public function action_index()
@@ -16,7 +16,7 @@ class Controller_Students_Documents extends Controller_Students
 
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -25,7 +25,7 @@ class Controller_Students_Documents extends Controller_Students
 
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -33,7 +33,7 @@ class Controller_Students_Documents extends Controller_Students
 		]);
 
 		$data['user'] = $this->user;
-		$view = View::forge("students/documents", $data);
+		$view = View::forge("groupstudent/documents", $data);
 		$this->template->content = $view;
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Lesson extends Controller_Students
+class Controller_Groupstudent_Lesson extends Controller_Groupstudent
 {
 
 	public function action_add()
@@ -279,7 +279,7 @@ class Controller_Students_Lesson extends Controller_Students
 		$data["user"] = $this->user;
 		$data["course"] = Input::get("course", 0);
 
-		$view = View::forge("students/lesson/add", $data);
+		$view = View::forge("groupstudent/lesson/add", $data);
 		$this->template->content = $view;
 	}
 
@@ -327,7 +327,7 @@ class Controller_Students_Lesson extends Controller_Students
 
 
 		$data["user"] = $this->user;
-		$view = View::forge("students/lesson/histories", $data);
+		$view = View::forge("groupstudent/lesson/histories", $data);
 		$this->template->content = $view;
 	}
 }

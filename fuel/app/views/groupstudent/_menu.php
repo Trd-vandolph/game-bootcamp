@@ -1,14 +1,14 @@
 <div id="side">
 	<nav>
 		<ul>
-			<li><? echo Html::anchor('/students/', '<i class="fa fa-fw fa-newspaper-o"></i> Dashboard'); ?></li>
+			<li><? echo Html::anchor('/groupstudent/', '<i class="fa fa-fw fa-newspaper-o"></i> Dashboard'); ?></li>
 		</ul>
 	</nav>
 	<h3>LESSON</h3>
 	<nav>
 		<ul>
-			<li><? echo Html::anchor('/students/lesson/histories', '<i class="fa fa-fw fa-history"></i> Learning History'); ?></li>
-			<li><? echo Html::anchor('/students/textbooks', '<i class="fa fa-fw fa-book"></i> Textbooks'); ?></li>
+			<li><? echo Html::anchor('/groupstudent/lesson/histories', '<i class="fa fa-fw fa-history"></i> Learning History'); ?></li>
+			<li><? echo Html::anchor('/groupstudent/textbooks', '<i class="fa fa-fw fa-book"></i> Textbooks'); ?></li>
 			<?php /* <li><a href="#"><i class="fa fa-fw fa-graduation-cap"></i> How to Take Lesson</a></li> */ ?>
 		</ul>
 	</nav>
@@ -16,11 +16,11 @@
 	<nav>
 		<ul>
 			<?php /* <li><a href="#"><i class="fa fa-fw fa-credit-card"></i> New Course</a></li> */ ?>
-			<li><? echo Html::anchor('/students/teachers', '<i class="fa fa-fw fa-search"></i> Tutors'); ?></li>
-			<li><? echo Html::anchor('/students/documents', '<i class="fa fa-fw fa-file"></i> Documents'); ?></li>
-			<li><? echo Html::anchor('/students/news', '<i class="fa fa-fw fa-info-circle"></i> Information'); ?></li>
-			<!-- li><? echo Html::anchor('/students/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li-->
-			<li><? echo Html::anchor('/students/contactforum', '<i class="fa fa-fw fa-envelope"></i> Contact'); ?></li>
+			<li><? echo Html::anchor('/groupstudent/teachers', '<i class="fa fa-fw fa-search"></i> Tutors'); ?></li>
+			<li><? echo Html::anchor('/groupstudent/documents', '<i class="fa fa-fw fa-file"></i> Documents'); ?></li>
+			<li><? echo Html::anchor('/groupstudent/news', '<i class="fa fa-fw fa-info-circle"></i> Information'); ?></li>
+			<!-- li><? echo Html::anchor('/groupstudent/forum', '<i class="fa fa-fw fa-users"></i> Forum'); ?></li-->
+			<li><? echo Html::anchor('/groupstudent/contactforum', '<i class="fa fa-fw fa-envelope"></i> Contact'); ?></li>
 			<li><? echo Html::anchor('/faq', '<i class="fa fa-fw fa-question-circle"></i> FAQ', array('class' => 'blank')); ?></li>
 		</ul>
 	</nav>

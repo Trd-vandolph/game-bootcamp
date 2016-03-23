@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Contactforum extends Controller_Students
+class Controller_Groupstudent_Contactforum extends Controller_Groupstudent
 {
 
 	public function before(){
@@ -29,7 +29,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -38,7 +38,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -57,7 +57,7 @@ class Controller_Students_Contactforum extends Controller_Students
 
 		$data["news"] = array_slice($data["forum"], $data["pager"]->offset, $data["pager"]->per_page);
 		$data["user"] = $this->user;
-		$view = View::forge("students/contacts/forum/index", $data);
+		$view = View::forge("groupstudent/contacts/forum/index", $data);
 		$this->template->content = $view;
 	}
 
@@ -67,7 +67,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -76,7 +76,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -100,7 +100,7 @@ class Controller_Students_Contactforum extends Controller_Students
 			Response::redirect("/students/contactforum/");
 		}
 		$data["user"] = $this->user;
-		$view = View::forge("students/contacts/forum/edit", $data);
+		$view = View::forge("groupstudent/contacts/forum/edit", $data);
 		$this->template->content = $view;
 	}
 
@@ -110,7 +110,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -119,7 +119,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -127,7 +127,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		]);
 		
 		if($data["comment"] == null or $data["comment"]->user_id != $this->user->id){
-			Response::redirect("/students/contactforum/");
+			Response::redirect("/groupstudent/contactforum/");
 		}
 
 		// add
@@ -136,9 +136,9 @@ class Controller_Students_Contactforum extends Controller_Students
 			// save
 			$data["comment"]->body = Input::post("body", "");
 			$data["comment"]->save();
-			Response::redirect("/students/contactforum/detail/{$data["comment"]->contactforum_id}");
+			Response::redirect("/groupstudent/contactforum/detail/{$data["comment"]->contactforum_id}");
 		}
-		$view = View::forge("students/forum/comment", $data);
+		$view = View::forge("groupstudent/forum/comment", $data);
 		$this->template->content = $view;
 	}
 
@@ -146,7 +146,7 @@ class Controller_Students_Contactforum extends Controller_Students
 	{
 		$data['pasts'] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -155,7 +155,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
@@ -165,7 +165,7 @@ class Controller_Students_Contactforum extends Controller_Students
 		$data["forum"] = Model_Contactforum::find($id);
 
 		if($data["forum"] == null){
-			Response::redirect("/students/contactforum/");
+			Response::redirect("/groupstudent/contactforum/");
 		}
 
 		if(Input::get("del_id", null) != null){
@@ -191,7 +191,7 @@ class Controller_Students_Contactforum extends Controller_Students
 
 		$data["user"] = $this->user;
 
-		$view = View::forge("students/contacts/forum/detail", $data);
+		$view = View::forge("groupstudent/contacts/forum/detail", $data);
 		$this->template->content = $view;
 	}
 }

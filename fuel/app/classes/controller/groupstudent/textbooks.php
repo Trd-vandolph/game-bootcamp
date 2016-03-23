@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Textbooks extends Controller_Students
+class Controller_Groupstudent_Textbooks extends Controller_Groupstudent
 {
 
 	public function action_index()
@@ -43,21 +43,21 @@ class Controller_Students_Textbooks extends Controller_Students
 		$data["count_enchant"] = Model_Lessontime::count([
 			"where" => [
 				["language", 0],
-				["student_id", $this->user->id],
+				["student_id", $this->user->classroom_id],
 				["status", 2],
 				["deleted_at", 0],
 			],
 		]);
 		$data["done_html"] = Model_Lessontime::count([
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", 0],
 				],
 		]);
 		$data["pasts"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", 0)],
 						["deleted_at", 0]
@@ -66,14 +66,14 @@ class Controller_Students_Textbooks extends Controller_Students
 
 		$data["donetrial"] = Model_Lessontime::find("all", [
 				"where" => [
-						["student_id", $this->user->id],
+						["student_id", $this->user->classroom_id],
 						["status", 2],
 						["language", Input::get("course", -1)],
 						["deleted_at", 0]
 				]
 		]);
 
-		$view = View::forge("students/textbooks", $data);
+		$view = View::forge("groupstudent/textbooks", $data);
 		$this->template->content = $view;
 
 	}
