@@ -1,6 +1,6 @@
 <?php
 
-class Controller_Students_Top extends Controller_Students
+class Controller_GroupStudent_Top extends Controller_Groupstudent
 {
 
 	public function before(){
@@ -78,7 +78,7 @@ class Controller_Students_Top extends Controller_Students
 
 		$data["user"] = $this->user;
 
-		$view = View::forge("students/top", $data);
+		$view = View::forge("groupstudent/top", $data);
 		$this->template->content = $view;
 	}
 }
