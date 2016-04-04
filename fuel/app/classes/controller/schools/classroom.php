@@ -64,6 +64,44 @@ class Controller_Schools_Classroom extends Controller_Schools
                 ['id', 'desc']
             ]
         ]);
+
+        //Determine if newly added
+        $data["student_past"] = array();
+
+        if(Input::get("id", 0) != NULL and Input::get("id", 0) != '') {
+            $find_past = Model_Lessontime::find("last", [
+                "where" => [
+                    ["student_id", $id],
+                    ["for_group", 1],
+                    ["deleted_at", 0],
+                    ["status", "<>", 0]
+                ]
+            ]);
+
+            $data["find_past"] = $find_past;
+
+            $look_stud = Model_User::find("all", [
+               "where" => [
+                   ["deleted_at", 0],
+                   ["school_admitted", $this->user->id],
+                   ["group_id", 75],
+                   ["classroom_id", 0]
+               ]
+            ]);
+
+            foreach($look_stud as $look) {
+                if($find_past != NULL) {
+                    if ($find_past->number != $look->progress) {
+                        array_push($data["student_past"], $look->id);
+                    }
+                } else {
+                    if ($look->progress != 0) {
+                        array_push($data["student_past"], $look->id);
+                    }
+                }
+            }
+        }
+
         
         $data["classroom"] = $classroom;
 
@@ -111,7 +149,8 @@ class Controller_Schools_Classroom extends Controller_Schools
                $check_class = Model_Classroom::find("first", [
                     "where" => [
                         ["classname", $classname],
-                        ["deleted_at", 0]
+                        ["deleted_at", 0],
+                        ["school_id", $this->user->id]
                     ]
                 ]);
 
@@ -146,6 +185,7 @@ class Controller_Schools_Classroom extends Controller_Schools
 		}
 
 		$data["classroom"] = $classroom;
+        $data["school_id"] = $this->user->id;
         
 		$view = View::forge("schools/classroom/add", $data);
 		$this->template->content = $view;

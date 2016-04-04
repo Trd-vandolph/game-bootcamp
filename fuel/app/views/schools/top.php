@@ -11,12 +11,6 @@
 <? } ?>
 <div id="contents-wrap">
 	<div id="main">
-		<? if(count($user->charge_html) < 2 && $user->charge_html == 0 ): ?>
-		<section class="notice new-course-proposal content-wrap">
-			<p>How did you find a trial lesson? Have a try if you haven't taken it.<br>Proceed to take the course by signing up as paying student if you like our lesson. 　</p>
-			<a href="/schools/courses" class="button yellow right">Sign up as paying student <i class="fa fa-chevron-right"></i></a>
-		</section>
-		<? endif; ?>
 		<section class="notice content-wrap" style="display: none" id="reservation_area">
 		</section>
 		<h3>Lesson Schedule</h3>

@@ -206,6 +206,9 @@ class Model_User extends \Orm\Model
         'classroom_id'      => array(
 				'default' 	  => 0,
 		),
+		'progress'      => array(
+			'default' 	  => 0,
+		),
 	);
 
 	/**

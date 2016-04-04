@@ -33,7 +33,7 @@ class Controller_Groupstudent extends Controller_Base
 
 		$this->template->user = $this->user;
 		$this->template->auth_status = $this->auth_status;
-		$this->template->title = "Schools";
+		$this->template->title = "Group Student";
 	}
 
 	public function action_index()

@@ -402,3 +402,28 @@ hr {
 #detail_button {
     background-color: #e48130;
 }
+span#find-past {
+    font-size: 12px;
+    background-color: #A5CBDB;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    color: #E42E56;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px #FFF;
+}
+span#find-past:hover {
+    box-shadow: 0px 0px 5px #E41D48;
+    cursor: pointer;
+}
+div.classroom-remodal-body {
+    padding-top: 20px;
+}
+div.classroom-remodal-body ol li {
+    list-style-type: lower-alpha;
+    list-style-position: inside;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0px 0px 2px #D0C9C9;
+    padding: 10px;
+}

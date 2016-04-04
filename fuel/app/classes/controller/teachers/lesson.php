@@ -159,10 +159,25 @@ class Controller_Teachers_Lesson extends Controller_Teachers
 		// add
 		if($data["reservation"]->teacher_id == $this->user->id and Input::post("feedback", null) != null and Security::check_token()){
 
+			if($data["reservation"]->for_group != 1) {
+				$data["reservation"]->feedback = Input::post("feedback", "");
+				$data["reservation"]->status = 2;
+				$data["reservation"]->save();
+			} else {
+				$data["reservation"]->feedback = Input::post("feedback", "");
+				$data["reservation"]->status = 2;
+				$data["reservation"]->save();
 
-			$data["reservation"]->feedback = Input::post("feedback", "");
-			$data["reservation"]->status = 2;
-			$data["reservation"]->save();
+				$class = Model_Classroom::find($data["reservation"]->student_id);
+				$students = explode(",", $class->students_id);
+
+				foreach($students as $student) {
+					$student_change = Model_User::find($student);
+					$student_change->progress = $data["reservation"]->number;
+					$student_change->save();
+				}
+			}
+
 
 			$query = DB::update('reservation')->set(array(
 				'status' => 2,

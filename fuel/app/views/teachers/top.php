@@ -10,7 +10,11 @@
 							<div class="non-feedback">
 								<div class="feedback-message">
 									<i class="fa fa-exclamation-circle"></i>
-									Please provide feedback on <b><? echo $feedback->student->firstname; ?>'s</b> class that was scheduled on <b><? echo date("G:i ~ G:45, j M Y", $feedback->freetime_at); ?></b>.
+									<? if($feedback->for_group != 1): ?>
+										Please provide feedback on <b><? echo $feedback->student->firstname; ?>'s</b> class that was scheduled on <b><? echo date("G:i ~ G:45, j M Y", $feedback->freetime_at); ?></b>.
+									<? else: ?>
+										Please provide feedback on <b><? echo $feedback->classroom->classname; ?>'s</b> class that was scheduled on <b><? echo date("G:i ~ G:45, j M Y", $feedback->freetime_at); ?></b>.
+									<? endif; ?>
 								</div>
 								<p><? echo Html::anchor("/teachers/lesson/feedback/{$feedback->id}", '<i class="fa fa-pencil-square-o"></i> Add feedback now', array('class' => 'feedback-button')); ?></p>
 							</div>

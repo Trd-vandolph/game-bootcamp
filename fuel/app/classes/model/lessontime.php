@@ -45,6 +45,13 @@ class Model_Lessontime extends \Orm\Model
 			'key_to'   => 'id',
 			'cascade_delete' => false,
 		),
+
+		'classroom' => array(
+			'model_to' => 'Model_Classroom',
+			'key_from' => 'student_id',
+			'key_to'   => 'id',
+			'cascade_delete' => false,
+		),
 	);
 
 	protected static $_table_name = 'lessontimes';
