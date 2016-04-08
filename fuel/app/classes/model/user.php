@@ -266,6 +266,13 @@ class Model_User extends \Orm\Model
 			'key_to'   => 'user_id',
 			'cascade_delete' => false,
 		),
+
+		'classroom' => array(
+			'model_to' => 'Model_Classroom',
+			'key_from' => 'classroom_id',
+			'key_to'   => 'id',
+			'cascade_delete' => false,
+		),
 	);
 
 	/**

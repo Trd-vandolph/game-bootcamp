@@ -22,7 +22,7 @@
                             <td><? getProgress($class->id); ?></td>
                             <td id="classroom-action">
                                 <? getDetail($class->id); ?>
-                                <button class="button classroom"><a href="/schools/lesson/add/?class=<?=$class->id; ?><? getLink($class->id); ?>"><i class="fa fa-calendar"></i> Book</a></button>
+                                <button class="button classroom"><a href="/schools/lesson/add/?class=<?=$class->id; ?><? getLink($class->id); ?><? getUnpaid($class->id); ?>"><i class="fa fa-calendar"></i> Book</a></button>
                                 <button class="button classroom blue"><a href="/schools/classroom/add/?id=<?=$class->id; ?>"><i class="fa fa-cog"></i> Edit</a></button>
                                 <button class="button classroom gray"><a id="del_class" href="/schools/classroom/?del=<?=$class->id; ?>"><i class="fa fa-times"></i> Delete</button>
                            </td>
@@ -141,6 +141,38 @@
             echo "&course=-1";
         }else {
             echo "&course=0";
+        }
+    }
+    function getUnpaid($class_id)
+    {
+        $class = Model_Classroom::find($class_id);
+        $studArr = explode(",",$class->students_id);
+
+        $past = Model_Lessontime::find("all", [
+            "where" => [
+                ["deleted_at", 0],
+                ["for_group", 1],
+                ["student_id", $class->id],
+                ["status", 2],
+                ["language", 0]
+            ]
+        ]);
+
+        $count = 0;
+
+        foreach($studArr as $stud_id) {
+            $studInfo = Model_User::find($stud_id);
+            if($studInfo->charge_html == 0 and $studInfo->progress == 1 and count($past) < 1) {
+                $count++;
+            } elseif ($studInfo->charge_html == 1 and $studInfo->progress == 4 and count($past) < 8) {
+                $count++;
+            } elseif ($studInfo->charge_html == 11 and $studInfo->progress == 8 and count($past) < 12) {
+                $count++;
+            }
+        }
+
+        if($count>0) {
+            echo "#unpaid";
         }
     }
 

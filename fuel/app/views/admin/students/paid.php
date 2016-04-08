@@ -2,7 +2,8 @@
 	<div id="main">
 		<h3>Students</h3>
 		<div class="search-table">
-			<p class="link-more table-top left"><? echo Html::anchor("admin/students", '<i class="fa fa-fw fa-graduation-cap"></i> View all Students'); ?></p>
+			<p class="link-more table-top left"><? echo Html::anchor("admin/students/group", '<i class="fa fa-fw fa-users"></i> View Group Students'); ?></p>
+			<p class="link-more table-top left"><? echo Html::anchor("admin/students", '<i class="fa fa-fw fa-graduation-cap"></i> View Private Students'); ?></p>
 			<p class="link-more table-top left"><? echo Html::anchor("admin/students/trial", '<i class="fa fa-fw fa-graduation-cap"></i> View Trial Students'); ?></p>
 		</div>
 		<table class="table-base" width="100%" border="0" cellpadding="0" cellspacing="0" >

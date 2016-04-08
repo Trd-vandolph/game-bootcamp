@@ -59,13 +59,6 @@ class Controller_Schools_Lesson extends Controller_Schools
 
 		$class_id = Input::get("class", 0);
 
-//		$stID = Model_Classroom::find($class_id);
-//		$studID = $stID->students_id;
-//
-//		$studIDS = explode(",", $studID);
-//
-//		$countStud = count($studIDS);
-
 		$reserved = Model_Lessontime::find("first", [
 			"where" => [
 				["student_id", $class_id],
@@ -121,7 +114,62 @@ class Controller_Schools_Lesson extends Controller_Schools
 		}
 
 		//End Booking *************************************************************************************************
+		//Determined Paid Student *************************************************************************************
+		if(Input::get("class", 0)!= 0) {
+			$class = Model_Classroom::find(Input::get("class", 0));
+			$studArr = explode(",",$class->students_id);
 
+			$past = Model_Lessontime::find("all", [
+				"where" => [
+					["deleted_at", 0],
+					["for_group", 1],
+					["student_id", $class->id],
+					["status", 2],
+					["language", 0]
+				]
+			]);
+
+			$data["unpaid"] = array();
+
+			foreach($studArr as $stud_id) {
+				$studInfo = Model_User::find($stud_id);
+				if($studInfo->charge_html == 0 and $studInfo->progress == 1 and count($past) < 1) {
+					array_push($data["unpaid"], $stud_id);
+				} elseif ($studInfo->charge_html == 1 and $studInfo->progress == 4 and count($past) < 8) {
+					array_push($data["unpaid"], $stud_id);
+				} elseif ($studInfo->charge_html == 11 and $studInfo->progress == 8 and count($past) < 12) {
+					array_push($data["unpaid"], $stud_id);
+				}
+			}
+		}
+
+		//End Determined Paid Student *********************************************************************************
+
+		//Remove unpaid students **************************************************************************************
+		if(Input::get("remove", 0)!= 0) {
+			$unpaid = $data["unpaid"];
+			$class = Input::get("class", 0);
+
+			$classInfo = Model_Classroom::find($class);
+			$studArr = explode(",",$classInfo->students_id);
+
+			foreach($unpaid as $un) {
+				$studArr = array_diff($studArr, array($un));
+
+				$student = Model_User::find($un);
+				$student->classroom_id = 0;
+				$student->save();
+			}
+
+
+			$updateStuds = implode(",", $studArr);
+
+			$classInfo->students_id = $updateStuds;
+			$classInfo->save();
+
+		}
+
+		//End Remove unpaid students **********************************************************************************
 		$course_where = null;
 		switch(Input::get("course", 0)){
 			case -1:

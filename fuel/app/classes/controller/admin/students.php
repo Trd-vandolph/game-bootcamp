@@ -16,6 +16,7 @@ class Controller_Admin_Students extends Controller_Admin
 
 		$query = Model_User::query()
 			->where('group_id', '=', 1)
+			->or_where('group_id', '=', 75)
 			->where('deleted_at', '=', 0);
 
 		if($search_text = Input::get("search_text", ""))
@@ -49,6 +50,12 @@ class Controller_Admin_Students extends Controller_Admin
 			]
 
 		]);
+
+//		$data["users"] = Model_User::query()
+//			->where('group_id', '=', 1)
+//			->or_where('group_id', '=', 75)
+//			->where('deleted_at', '=', 0)
+//			->order_by('id', 'desc');
 
 		Input::get("search_text", "") ? $pages = 'result' : $pages = 'users';
 
@@ -128,6 +135,34 @@ class Controller_Admin_Students extends Controller_Admin
 		$data["lessons"] = array_slice($data["lessons"], $data["pager"]->offset, $data["pager"]->per_page);
 
 		$view = View::forge("admin/students/trial", $data);
+		$this->template->content = $view;
+	}
+	public function action_group()
+	{
+
+		$where = [["group_id", 75],["deleted_at", 0]];
+
+		$data["users"] = Model_User::find("all", [
+			"where" => $where,
+			"order_by" => [
+				["id", "desc"]
+			]
+
+		]);
+
+		$config=array(
+			'pagination_url'=>"?search_text=".Input::get("search_text", ""),
+			'uri_segment'=>"p",
+			'num_links'=>9,
+			'per_page'=>20,
+			'total_items'=>count($data["users"]),
+		);
+
+		$data["pager"] = Pagination::forge('mypagination', $config);
+
+		$data["users"] = array_slice($data["users"], $data["pager"]->offset, $data["pager"]->per_page);
+
+		$view = View::forge("admin/students/group", $data);
 		$this->template->content = $view;
 	}
 

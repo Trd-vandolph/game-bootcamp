@@ -1548,3 +1548,33 @@ button.cancel:hover {
 #classroom-action a {
     color: white;
 }
+
+/*Schools - add [Unpaid message]*/
+p#title-unpaid-message {
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 10px;
+    font-weight: 600;
+}
+div#title-unpaid-body {
+    margin-top: 5px;
+    background-color: white;
+    border: 1px solid #eee;
+    text-align: left;
+    padding: 10px;
+}
+div#title-unpaid-body ul {
+    border-bottom: 1px dashed #C5BFBF;
+    margin-bottom: 10px;
+}
+div#title-unpaid-body ul#unpaid-choices {
+    border-bottom: none;
+}
+div#title-unpaid-body ul#unpaid-choices li {
+    list-style-type: lower-alpha;
+    text-indent: 5%;
+}
+div#title-unpaid-body ul li {
+    list-style-type: decimal;
+    list-style-position: inside;
+}

@@ -182,6 +182,28 @@
 		</div> <!-- calendar for online students end -->
 		<? endif; ?>
 	</div>
+	<div  class="remodal" data-remodal-id="unpaid">
+		<div class="content unpaid">
+			<p id="title-unpaid-message">Some or all student/s on this class has pending payment.</p>
+			<div id="title-unpaid-body">
+				<span>Unpaid students:</span>
+				<ul>
+				<? foreach($unpaid as $un): ?>
+					<? $stud = Model_User::find($un);
+						echo "<li>".$stud->firstname." ".$stud->lastname."</li>";
+					?>
+				<? endforeach; ?>
+				</ul>
+				<span>These are the following possible action you can do. Please choose.</span>
+				<ul id="unpaid-choices">
+					<li><a href="/schools/classroom/">Temporary postpone class. Wait for the student/s to pay.</a></li>
+					<li><a href="/schools/lesson/add/?class=<?=$class_id; ?>&course=<?=$course; ?>&remove=1">
+							Remove the student/s who are not paying.
+						</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<? echo View::forge("schools/_menu")->set($this->get()); ?>
 </div>
 
