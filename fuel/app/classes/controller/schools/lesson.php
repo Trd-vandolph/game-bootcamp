@@ -108,6 +108,8 @@ class Controller_Schools_Lesson extends Controller_Schools
 							$query = DB::insert('reservation')->columns(array('student_id', 'student_email', 'edoo_tutor', 'freetime_at', 'status', ));
 							$query->values(array( $this->user->id, $this->user->email, $reserve->teacher->email, $reserve->freetime_at, 1, ))->execute('shared');
 						}
+
+					Response::redirect('/schools/classroom');
 					}
 				}
 			}

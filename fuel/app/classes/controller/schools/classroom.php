@@ -100,6 +100,8 @@ class Controller_Schools_Classroom extends Controller_Schools
                     }
                 }
             }
+        } else {
+            $data["find_past"] = NULL;
         }
 
         
