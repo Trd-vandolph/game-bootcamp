@@ -13,6 +13,7 @@
 				<th>ID</th>
 				<th>name / email</th>
 				<th>class</th>
+				<th>lesson progress</th>
 				<th>date enrolled</th>
 				<th></th>
 			</tr>
@@ -27,7 +28,8 @@
                         <p><?= $user->firstname; ?> <?= $user->middlename; ?> <?= $user->lastname; ?></p>
                         <p class="email"><? echo Html::anchor("schools/students/detail/{$user->id}", $user->email); ?></p>
                     </td>
-                    <td class="classroom-assigned"><? getClass($user->id); ?></td>
+                    <td class="classroom-assigned"><?=$user->classroom->classname; ?></td>
+					<td><?=$user->progress; ?>/12 enchant.js</td>
                     <td><? getEnroll($user->id); ?></td>
                     <td><button class="button yellow right" onclick="deleteUser(<? echo $user->id; ?>)"><i class="fa fa-times"></i>Delete</button></td>
                 </tr>
@@ -42,24 +44,6 @@
 
 <?
 	//PHP FUNCTION
-	function getClass($id) {
-		$class = Model_Classroom::find("all", [
-			"where" => [
-				["deleted_at", 0]
-			]
-		]);
-		foreach($class as $cl) {
-			$a = Model_Classroom::find($cl->id);
-			$studs = $a->students_id;
-
-			$arr = explode(",", $studs);
-
-			if(in_array($id, $arr)) {
-				echo $a->classname;
-			}
-            
-		}
-	}
 	function getEnroll($id) {
 		$stud = Model_User::find($id);
 

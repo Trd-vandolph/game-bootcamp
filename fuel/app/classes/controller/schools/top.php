@@ -16,7 +16,8 @@ class Controller_Schools_Top extends Controller_Schools
 				["deleted_at", 0],
 				["student_id", $this->user->id],
 				["status", 1],
-				["freetime_at", ">=", time()]
+				["freetime_at", ">=", time()],
+				["for_group", 1],
 			],
 			"order_by" => [
 				["id", "desc"],
@@ -28,7 +29,8 @@ class Controller_Schools_Top extends Controller_Schools
 				["student_id", $this->user->id],
 				["status", 2],
 				["language", Input::get("course", 0)],
-				["deleted_at", 0]
+				["deleted_at", 0],
+				["for_group", 1],
 			]
 		]);
 
@@ -40,6 +42,7 @@ class Controller_Schools_Top extends Controller_Schools
 				["status", 1],
 				["freetime_at", "<=", time() + 1800],
 				["freetime_at", ">=", time() - 1800],
+				["for_group", 1],
 			]
 		]);
 
@@ -59,7 +62,8 @@ class Controller_Schools_Top extends Controller_Schools
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", 0)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["for_group", 1],
 				]
 		]);
 
@@ -68,7 +72,8 @@ class Controller_Schools_Top extends Controller_Schools
 						["student_id", $this->user->id],
 						["status", 2],
 						["language", Input::get("course", -1)],
-						["deleted_at", 0]
+						["deleted_at", 0],
+						["for_group", 1],
 				]
 		]);
 
@@ -88,7 +93,8 @@ class Controller_Schools_Top extends Controller_Schools
 					["student_id", $cl->id],
 					["deleted_at", 0],
 					["status", 1],
-					["freetime_at", ">=", time()]
+					["freetime_at", ">=", time()],
+					["for_group", 1],
 				]
 			]);
 

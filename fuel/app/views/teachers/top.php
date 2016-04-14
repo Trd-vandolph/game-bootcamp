@@ -54,9 +54,25 @@
 						<li class="course1">
 							<p class="date"><? echo date("d ", $reservation->freetime_at); echo Config::get("statics.months", [])[(int)date("m ", $reservation->freetime_at) - 1];?><span><? echo date("H:i", $reservation->freetime_at); ?></span></p>
 							<div class="detail">
-								Student：<? if($reservation->student != null) echo $reservation->student->firstname; ?><br />
-								<? /* if($reservation->student != null) echo Html::anchor("teachers/students/detail/{$reservation->student_id}", $reservation->student->firstname); */ ?>
-								<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><? if($reservation->language != -1) { ?><?= $reservation->number; ?> / 24 Lessons <? } ?>
+								<? if($reservation->for_group != 1): ?>
+									Student：<? if($reservation->student != null) echo $reservation->student->firstname; ?><br />
+									<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><? if($reservation->language != -1) { ?><?= $reservation->number; ?> / 24 Lessons <? } ?>
+								<? else: ?>
+									<? if ($reservation->for_group == 1):?>
+										<span>Class:
+										<a href="/schools/classroom/add/?id=<?= $reservation->student_id; ?>">
+											<? $class = Model_Classroom::find($reservation->student_id);
+											echo $class->classname;
+											?>
+										</a>
+										<br></span>
+									<? endif; ?>
+									<? if($reservation->language != -1):  ?>
+										<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 12 Lessons
+									<? else: ?>
+										<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span>
+									<? endif; ?>
+								<? endif; ?>
 							</div>
 							<?
 							$text = Model_Content::find("first", [

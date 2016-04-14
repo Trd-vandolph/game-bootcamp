@@ -26,7 +26,8 @@
 						$reservations = Model_Lessontime::find("all", [
 							"where" => [
 								["id", $reserve],
-								["deleted_at", 0]
+								["deleted_at", 0],
+								["for_group", 1]
 							],
 							"order_by" => [
 								["freetime_at", "desc"]
@@ -39,11 +40,21 @@
 							<div class="detail">
 								Tutor：<? if($reservation->teacher != null) echo $reservation->teacher->firstname; ?><br />
 								<? /* if($reservation->teacher != null) echo Html::anchor("schools/teachers/detail/{$reservation->teacher_id}", $reservation->teacher->firstname); */ ?>
+								<? if ($reservation->for_group == 1):?>
+									<span>Class:
+										<a href="/schools/classroom/add/?id=<?= $reservation->student_id; ?>">
+										<? $class = Model_Classroom::find($reservation->student_id);
+											echo $class->classname;
+										?>
+										</a>
+										<br></span>
+								<? endif; ?>
 								<? if($reservation->language != -1):  ?>
 									<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span><?= $reservation->number; ?> / 12 Lessons
 								<? else: ?>
 									<span class="icon-course1"><?php echo Model_Lessontime::getCourse($reservation->language); ?></span>
 								<? endif; ?>
+
 							</div>
 							<?
 							$text = Model_Content::find("first", [

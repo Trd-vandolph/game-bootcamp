@@ -9,26 +9,26 @@ $token = Form::hidden(Config::get('security.csrf_token_key'), Security::fetch_to
 		<section class="content-wrap">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul class="forms">
-					<li><h4>Reservation email</h4>
-						<div>
-							<label for="reservation-on">
-							<input <? if(Input::post("need_reservation_email", $user->need_reservation_email) == 1) echo "checked" ?> id="reservation-on" name="need_reservation_email" type="radio" value="1">On
-							</label>
-							<label for="reservation-off">
-							<input <? if(Input::post("need_reservation_email", $user->need_reservation_email) == 0) echo "checked" ?> id="reservation-off" name="need_reservation_email" type="radio" value="0">Off
-							</label>
-						</div>
-					</li>
-					<li><h4>News email</h4>
-						<div>
-							<label for="news-on">
-							<input <? if(Input::post("need_news_email", $user->need_news_email) == 1) echo "checked" ?> id="news-on" name="need_news_email" type="radio" value="1">On
-							</label>
-							<label for="news-off">
-							<input <? if(Input::post("need_news_email", $user->need_news_email) == 0) echo "checked" ?> id="news-off" name="need_news_email" type="radio" value="0">Off
-							</label>
-						</div>
-					</li>
+<!--					<li><h4>Reservation email</h4>-->
+<!--						<div>-->
+<!--							<label for="reservation-on">-->
+<!--							<input --><?// if(Input::post("need_reservation_email", $user->need_reservation_email) == 1) echo "checked" ?><!-- id="reservation-on" name="need_reservation_email" type="radio" value="1">On-->
+<!--							</label>-->
+<!--							<label for="reservation-off">-->
+<!--							<input --><?// if(Input::post("need_reservation_email", $user->need_reservation_email) == 0) echo "checked" ?><!-- id="reservation-off" name="need_reservation_email" type="radio" value="0">Off-->
+<!--							</label>-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li><h4>News email</h4>-->
+<!--						<div>-->
+<!--							<label for="news-on">-->
+<!--							<input --><?// if(Input::post("need_news_email", $user->need_news_email) == 1) echo "checked" ?><!-- id="news-on" name="need_news_email" type="radio" value="1">On-->
+<!--							</label>-->
+<!--							<label for="news-off">-->
+<!--							<input --><?// if(Input::post("need_news_email", $user->need_news_email) == 0) echo "checked" ?><!-- id="news-off" name="need_news_email" type="radio" value="0">Off-->
+<!--							</label>-->
+<!--						</div>-->
+<!--					</li>-->
 				</ul>
 				<p class="button-area">
 					<button class="button" href="">Change</button>

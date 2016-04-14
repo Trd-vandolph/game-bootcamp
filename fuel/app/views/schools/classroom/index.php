@@ -104,7 +104,8 @@
         $prog = Model_Lessontime::find("last", [
             "where" => [
                 ["student_id", $class_id],
-                ["deleted_at", 0]
+                ["deleted_at", 0],
+                ["for_group", 1]
             ]
         ]);
 
@@ -133,7 +134,8 @@
         $link = Model_Lessontime::find("first", [
             "where" => [
                 ["student_id", $class_id],
-                ["deleted_at", 0]
+                ["deleted_at", 0],
+                ["for_group", 1],
             ]
         ]);
 

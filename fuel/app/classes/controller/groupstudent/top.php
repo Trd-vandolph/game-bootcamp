@@ -20,7 +20,8 @@ class Controller_GroupStudent_Top extends Controller_Groupstudent
 				["deleted_at", 0],
 				["student_id", $this->user->classroom_id],
 				["status", 1],
-				["freetime_at", ">=", time()]
+				["freetime_at", ">=", time()],
+				["for_group", 1],
 			],
 			"order_by" => [
 				["id", "desc"],

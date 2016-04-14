@@ -64,6 +64,7 @@ class Controller_Schools_Lesson extends Controller_Schools
 				["student_id", $class_id],
 				["status", 1],
 				["deleted_at", 0],
+				["for_group", 1],
 			]
 		]);
 		$pasts = Model_Lessontime::find("all", [
@@ -71,7 +72,8 @@ class Controller_Schools_Lesson extends Controller_Schools
 				["student_id", $class_id],
 				["status", 2],
 				["language", Input::get("course", 0)],
-				["deleted_at", 0]
+				["deleted_at", 0],
+				["for_group", 1],
 			]
 		]);
 		$lastClass = Model_Lessontime::find("last", [
@@ -79,7 +81,8 @@ class Controller_Schools_Lesson extends Controller_Schools
 				["student_id", $class_id],
 				["status", 2],
 				["language", Input::get("course", 0)],
-				["deleted_at", 0]
+				["deleted_at", 0],
+				["for_group", 1],
 			]
 		]);
 

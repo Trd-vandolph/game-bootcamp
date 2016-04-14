@@ -43,6 +43,11 @@
 							<?= date("M d, Y.", strtotime($user->birthday)); ?>
 						</div>
 					</li>
+					<li><h4>Class</h4>
+						<div>
+							<? if($user->classroom->classname != NULL) {echo $user->classroom->classname; } ?>
+						</div>
+					</li>
 				</ul>
 				<p class="button-area">
 					<button class="button" href="">Change</button>

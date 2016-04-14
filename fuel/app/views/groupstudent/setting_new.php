@@ -60,31 +60,32 @@
 							</select>
 						</div>
 					</li>
-					<li><h4>Gmail address</h4>
-						<div>
-							<input name="google_account" type="text" required pattern=".{2,40}" title="must be less than 40 chars" value="<? echo Session::get_flash("google_account", ""); ?>">
-						</div>
-					</li>
-					<li><h4>Reservation email</h4>
-						<div>
-							<label for="reservation-on">
-							<input id="reservation-on" <? if(Session::get_flash("need_reservation_email", 1) == 1) echo "checked" ?> name="need_reservation_email" type="radio" value="1">On
-							</label>
-							<label for="reservation-off">
-							<input id="reservation-off" <? if(Session::get_flash("need_reservation_email", 1) == 0) echo "checked" ?> name="need_reservation_email" type="radio" value="0">Off
-							</label>
-						</div>
-					</li>
-					<li><h4>News email</h4>
-						<div>
-							<label for="news-on">
-							<input id="news-on" <? if(Session::get_flash("need_news_email", 1) == 1) echo "checked" ?> name="need_news_email" type="radio" value="1">On
-							</label>
-							<label for="news-off">
-							<input id="news-off" <? if(Session::get_flash("need_news_email", 1) == 0) echo "checked" ?> name="need_news_email" type="radio" value="0">Off
-							</label>
-						</div>
-					</li>
+<!--					<li><h4>Gmail address</h4>-->
+<!--						<div>-->
+<!--							<input name="google_account" type="text" required pattern=".{2,40}" title="must be less than 40 chars" value="--><?// echo Session::get_flash("google_account", ""); ?><!--">-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li><h4>Reservation email</h4>-->
+<!--						<div>-->
+<!--							<label for="reservation-on">-->
+<!--							<input id="reservation-on" --><?// if(Session::get_flash("need_reservation_email", 1) == 1) echo "checked" ?><!-- name="need_reservation_email" type="radio" value="1">On-->
+<!--							</label>-->
+<!--							<label for="reservation-off">-->
+<!--							<input id="reservation-off" --><?// if(Session::get_flash("need_reservation_email", 1) == 0) echo "checked" ?><!-- name="need_reservation_email" type="radio" value="0">Off-->
+<!--							</label>-->
+<!--						</div>-->
+<!--					</li>-->
+<!--					<li><h4>News email</h4>-->
+<!--						<div>-->
+<!--							<label for="news-on">-->
+<!--							<input id="news-on" --><?// if(Session::get_flash("need_news_email", 1) == 1) echo "checked" ?><!-- name="need_news_email" type="radio" value="1">On-->
+<!--							</label>-->
+<!--							<label for="news-off">-->
+<!--							<input id="news-off" --><?// if(Session::get_flash("need_news_email", 1) == 0) echo "checked" ?><!-- name="need_news_email" type="radio" value="0">Off-->
+<!--							</label>-->
+<!--						</div>-->
+<!--						</div>-->
+<!--					</li>-->
 					<li><h4>Timezone</h4>
 						<div>
 							<?= View::forge("_timezone",["user" => ""]); ?>

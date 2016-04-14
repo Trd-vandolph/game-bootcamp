@@ -16,7 +16,11 @@
 				<? if($reservations != null): ?>
 					<? foreach($reservations as $reservation): ?>
 					<tr id="reservation_<? echo $reservation->id; ?>">
+						<? if($reservation->for_group != 1): ?>
 						<td><? if($reservation->student != null) echo Html::anchor("teachers/students/detail/{$reservation->student_id}", $reservation->student->firstname); ?></td>
+						<? else: ?>
+						<td><?=$reservation->classroom->classname; ?></td>
+						<? endif; ?>
 						<td><?php echo Model_Lessontime::getCourse($reservation->language); ?></td>
 						<td><? echo date("M d, Y. H:i:s", $reservation->freetime_at); ?></td>
 						<td><? echo Config::get("statics.reservation_status", [])[$reservation->status]; ?></td>
